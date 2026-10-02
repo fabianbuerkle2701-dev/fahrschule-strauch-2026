@@ -9,7 +9,7 @@ function includes() {
   const render = (html, depth = 0) =>
     html.replace(/<!--\s*@include\s+([\w-]+)((?:\s+\w+="[^"]*")*)\s*-->/g, (_, name, attrs) => {
       const params = Object.fromEntries([...attrs.matchAll(/(\w+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
-      let part = readFileSync(resolve(__dirname, 'src/partials', `${name}.html`), 'utf8');
+      let part = readFileSync(resolve(import.meta.dirname, 'src/partials', `${name}.html`), 'utf8');
       part = part.replace(/\{\{current:([\w-]+)\}\}/g, (_, p) => (params.page === p ? 'aria-current="page"' : ''));
       part = part.replace(/\{\{(\w+)\}\}/g, (_, k) => params[k] ?? '');
       return depth < 3 ? render(part, depth + 1) : part;
@@ -30,8 +30,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: Object.fromEntries([
-        ...pages.map((p) => [p || 'home', resolve(__dirname, p, 'index.html')]),
-        ['404', resolve(__dirname, '404.html')],
+        ...pages.map((p) => [p || 'home', resolve(import.meta.dirname, p, 'index.html')]),
+        ['404', resolve(import.meta.dirname, '404.html')],
       ]),
     },
   },

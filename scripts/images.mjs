@@ -18,8 +18,19 @@ const jobs = [
   { src: 'photos/peter-harter.jpg', out: 'team-peter-harter', crop: [440, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/gerold-remmele.jpg', out: 'team-gerold-remmele', crop: [420, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/nadine-duerr.jpg', out: 'team-nadine-duerr', crop: [470, 0, 720, 900], widths: [400, 640, 720] },
-  // Querformat-Fassungen für die Über-uns-Seite
-  { src: 'photos/viktor-strauch.jpg', out: 'team-viktor-strauch-wide', crop: [0, 0, 1200, 900], widths: [640, 1200] },
+  // Querformat-Fassungen (Team-Bühne auf der Startseite)
+  { src: 'photos/viktor-strauch.jpg', out: 'team-viktor-strauch-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
+  { src: 'photos/peter-harter.jpg', out: 'team-peter-harter-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
+  { src: 'photos/gerold-remmele.jpg', out: 'team-gerold-remmele-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
+  { src: 'photos/nadine-duerr.jpg', out: 'team-nadine-duerr-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
+  // Avatare (quadratisch, Gesicht)
+  { src: 'photos/peter-harter.jpg', out: 'avatar-peter-harter', crop: [770, 0, 180, 180], widths: [160] },
+  { src: 'photos/gerold-remmele.jpg', out: 'avatar-gerold-remmele', crop: [850, 90, 200, 200], widths: [160] },
+  { src: 'photos/nadine-duerr.jpg', out: 'avatar-nadine-duerr', crop: [840, 0, 180, 180], widths: [160] },
+  { src: 'photos/viktor-strauch.jpg', out: 'avatar-viktor-strauch', crop: [1000, 40, 180, 180], widths: [160] },
+  // Intro: Schaufenster mit Logo (klein) und Fuhrpark 3:2 (groß)
+  { src: 'photos/gerold-remmele.jpg', out: 'intro-schaufenster', crop: [640, 0, 560, 442], widths: [480, 720] },
+  { src: 'photos/fuhrpark.jpg', out: 'intro-fuhrpark', crop: [420, 220, 1560, 1040], widths: [640, 960, 1400] },
 ];
 
 const manifest = {};
@@ -49,5 +60,5 @@ await sharp(path.join(SRC, 'photos/fuhrpark.jpg'))
   .jpeg({ quality: 80, mozjpeg: true })
   .toFile(path.join(OUT, 'og-fahrschule-strauch.jpg'));
 
-await writeFile(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2));
+await writeFile(path.join('assets-src', 'image-manifest.json'), JSON.stringify(manifest, null, 2));
 console.log('fertig');

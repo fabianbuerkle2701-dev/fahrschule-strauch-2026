@@ -107,6 +107,9 @@
 .hero__visual {
   position: relative;
   min-height: 460px;
+  /* Straße läuft am unteren Rand weich aus statt hart abgeschnitten */
+  -webkit-mask-image: linear-gradient(#000 calc(100% - 120px), transparent);
+  mask-image: linear-gradient(#000 calc(100% - 120px), transparent);
   margin-inline: calc(var(--gutter) * -1);
 }
 .hero__road {
@@ -240,84 +243,80 @@
   margin-top: 1.25rem;
 }
 
-/* --- 02 Intro ----------------------------------------------------------- */
+/* --- 02 Intro (Raster nach MotionSites „Axion About“) ------------------ */
 .intro {
   position: relative;
   z-index: 1;
   background: #fff;
 }
+.intro__title {
+  max-width: 16ch;
+  margin-bottom: clamp(2.5rem, 1.5rem + 4vw, 6rem);
+}
 .intro__grid {
   display: grid;
-  gap: clamp(3rem, 2rem + 4vw, 5rem);
+  gap: 1.25rem;
 }
-.intro__body {
-  margin-top: 1.75rem;
+.intro__small {
+  aspect-ratio: 560 / 442;
+  border-radius: var(--radius-md);
 }
-.intro__body .lead {
-  color: var(--color-neutral-800);
+.intro__large {
+  aspect-ratio: 3 / 2;
+}
+.intro__large img {
+  height: 112%;
+  margin-top: -6%;
+  will-change: transform;
+}
+.intro__text {
+  display: grid;
+  justify-items: start;
+  gap: 1.25rem;
+  margin-block: 0.75rem 1.75rem;
+}
+.intro__lead {
+  max-width: 34ch;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-neutral-950);
 }
 .intro__ru {
-  margin-top: 1.5rem;
   color: var(--color-text-muted);
 }
 .intro__ru span {
   color: var(--color-text);
   font-weight: 600;
 }
-.intro__years-title {
-  margin-bottom: 1rem;
-  color: var(--color-text-muted);
-  font-weight: 600;
-  font-size: var(--fs-small);
+.intro__text .btn {
+  margin-top: 0.5rem;
 }
-.years {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 2px solid var(--color-neutral-950);
-}
-.years__item {
-  position: relative;
-  display: grid;
-  gap: 0.25rem;
-  padding: 1.25rem 0 1.5rem;
-  border-bottom: 1px solid var(--color-line);
-}
-.years__item:nth-child(odd) {
-  padding-right: 1rem;
-}
-.years__num {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 2rem + 4vw, 5.25rem);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-brand-night);
-}
-.years__name {
-  font-weight: 560;
-  color: var(--color-text-muted);
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 640px) and (max-width: 1023px) {
   .intro__grid {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    column-gap: calc(var(--grid-gap) * 3);
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
     align-items: end;
   }
-  .years {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .intro__text {
+    grid-column: 1 / -1;
+    grid-row: 1;
   }
-  .years__num {
-    font-size: clamp(2.75rem, 1rem + 3.2vw, 4.25rem);
+}
+@media (min-width: 1024px) {
+  .intro__grid {
+    grid-template-columns: 26% minmax(0, 1fr) 48%;
+    column-gap: clamp(1.5rem, 1rem + 1vw, 2rem);
+    align-items: end;
   }
-  .years__item {
-    padding-right: 1rem;
-    border-bottom: 0;
+  .intro__small {
+    align-self: end;
   }
-  .years__item + .years__item {
-    padding-left: 1rem;
-    border-left: 1px solid var(--color-line);
+  .intro__text {
+    align-self: start;
+    margin: 0;
   }
 }
 
@@ -639,12 +638,14 @@
   max-width: 34rem;
   transition: opacity 400ms var(--ease-ui);
 }
-.js .step {
-  opacity: 0.38;
+.step__title,
+.step p {
+  transition: color 400ms var(--ease-ui);
 }
-.js .step.is-active,
-.js .step.is-done {
-  opacity: 1;
+/* noch nicht erreichte Etappen: gedämpft, aber lesbar (6:1) */
+.js .step:not(.is-active):not(.is-done) .step__title,
+.js .step:not(.is-active):not(.is-done) p {
+  color: var(--color-neutral-600);
 }
 .step__title {
   display: flex;
@@ -692,6 +693,7 @@
     column-gap: calc(var(--grid-gap) * 2);
   }
   .journey__stage {
+    box-shadow: none;
     top: calc(var(--header-h) + 8px);
     align-self: start;
     height: calc(100svh - var(--header-h) - 16px);
@@ -715,89 +717,193 @@
   }
 }
 
-/* --- 05 Team ------------------------------------------------------------ */
-.team__panorama {
-  margin: 0 0 clamp(3rem, 2rem + 3vw, 5rem);
-}
-.team__panorama-frame {
-  width: calc(100% - var(--gutter) * 2);
-  max-width: var(--container);
-  margin-inline: auto;
-  aspect-ratio: 2400 / 840;
-}
-.team__panorama-frame img {
-  height: 112%;
-  margin-top: -6%;
-  will-change: transform;
-}
-.team__caption {
-  margin-top: 0.85rem;
-}
-.team__scroller {
+/* --- 05 Team: Bühne mit Avatar-Auswahl (nach MotionSites „Talent Collective“) --- */
+.crew__stage {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 640px;
+  border-radius: var(--radius-lg);
+  background: var(--color-neutral-800);
+  color: #fff;
 }
-.team__list {
+.crew__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
+.crew__slide.is-active {
+  opacity: 1;
+}
+.crew__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos, 75%) 18%;
+}
+.crew__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(14 34 36 / 0.66) 0%, rgb(14 34 36 / 0.18) 30%, rgb(14 34 36 / 0) 42%, rgb(14 34 36 / 0.55) 62%, rgb(14 34 36 / 0.88) 100%);
+}
+.crew__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  min-height: inherit;
+  padding: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+}
+.crew__top {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min(72vw, 300px);
-  gap: var(--grid-gap);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: var(--gutter);
-  padding-inline: var(--gutter);
-  scrollbar-width: none;
+  gap: 1.25rem;
+  max-width: 34rem;
 }
-.team__list::-webkit-scrollbar {
+.crew__title {
+  color: #fff;
+  text-shadow: 0 2px 18px rgb(14 34 36 / 0.35);
+  font-size: var(--fs-h2);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+.crew__title span {
+  color: #a5e1e6;
+}
+.crew__quote {
+  max-width: 26rem;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  text-shadow: 0 1px 12px rgb(14 34 36 / 0.45);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.88);
+}
+.crew__quote.is-changing,
+.crew__name.is-changing {
+  animation: crew-in 500ms ease both;
+}
+@keyframes crew-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.crew__bottom {
+  display: grid;
+  gap: 1.5rem;
+}
+.crew__picker {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-top: 4px;
+}
+.crew__picker::-webkit-scrollbar {
   display: none;
 }
-.person {
-  scroll-snap-align: start;
+.crew__pick {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
 }
-.person__photo {
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-md);
+.crew__avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.35);
+  transition: box-shadow 300ms var(--ease-ui), transform 300ms var(--ease-out);
 }
-.person__photo img {
-  transition: transform 900ms var(--ease-out);
+.crew__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.person:hover .person__photo img {
-  transform: scale(1.04);
-}
-.person__name {
-  margin-top: 1.25rem;
-  font-size: 1.625rem;
-  line-height: 1.1;
-}
-.person__since {
-  margin-top: 0.3rem;
-  color: var(--color-brand-ink);
+.crew__year {
+  font-family: var(--font-display);
+  font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgb(255 255 255 / 0.62);
+  transition: color 300ms var(--ease-ui);
+}
+.crew__pick:hover .crew__avatar {
+  transform: translateY(-2px);
+}
+.crew__pick[aria-pressed='true'] .crew__avatar {
+  box-shadow: 0 0 0 3px var(--color-brand), 0 0 0 5px #fff;
+}
+.crew__pick[aria-pressed='true'] .crew__year {
+  color: #fff;
+}
+.crew__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgb(255 255 255 / 0.24);
   font-size: var(--fs-small);
+  font-weight: 560;
 }
-.person__quote {
-  margin-top: 1rem;
-  color: var(--color-neutral-800);
-  font-size: 1.0625rem;
-  line-height: 1.5;
+.crew__name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
-.team__more {
-  margin-top: 2.5rem;
+.crew__role {
+  color: rgb(255 255 255 / 0.78);
+}
+.crew__link {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--dur-ui) var(--ease-ui);
+}
+.crew__link:hover {
+  color: #a5e1e6;
+}
+@media (max-width: 639px) {
+  .crew__stage {
+    min-height: 620px;
+    margin-inline: calc(var(--gutter) * -0.5);
+  }
+  .crew__role {
+    flex-basis: 100%;
+    order: 3;
+  }
 }
 @media (min-width: 1024px) {
-  .team__list {
-    max-width: calc(var(--container) + 2 * var(--gutter));
-    margin-inline: auto;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    overflow: visible;
-    align-items: start;
+  .crew__stage {
+    min-height: min(88svh, 760px);
   }
-  .person:nth-child(even) {
-    margin-top: 4.5rem;
+  .crew__quote {
+    max-width: 30rem;
   }
-  .team__controls {
-    display: none;
+  .crew__avatar {
+    width: 64px;
+    height: 64px;
   }
 }
 
@@ -1053,9 +1159,6 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .js .step {
-    opacity: 1;
   }
   .journey__stage {
     position: relative;

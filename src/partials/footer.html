@@ -1,44 +1,42 @@
 <footer class="site-footer on-dark">
-  <div class="stripe-band" aria-hidden="true"></div>
+  <!-- Aufbau nach MotionSites „Stark Minimal Footer“, Punkte-Band ersetzt durch Fahrbahnmarkierung -->
+  <div class="footer-lane" aria-hidden="true"><div class="footer-lane__line"></div></div>
   <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" loading="lazy" />
-        <p>Führerschein Klasse B und BE, Begleitetes Fahren ab 17, B197 und BKF-Weiterbildung in Lahr.</p>
-      </div>
-      <div>
+    <div class="footer__top">
+      <p class="footer__claim">Wir sehen uns <span>auf der Straße.</span></p>
+      <nav class="footer__nav" aria-label="Kontakt">
         <h2 class="footer__title">Kontakt</h2>
-        <ul class="footer__list" role="list">
-          <li><a href="tel:+4915560410413">+49 155 60 41 04 13</a></li>
-          <li><a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a></li>
-          <li>Schwarzwaldstraße 93<br />77933 Lahr</li>
-          <li lang="ru">Говорим по-русски</li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="footer__title">Fahrschule</h2>
-        <ul class="footer__list" role="list">
-          <li><a href="/fuehrerschein/">Führerschein</a></li>
-          <li><a href="/berufskraftfahrer/">Berufskraftfahrer</a></li>
-          <li><a href="/ueber-uns/">Über uns</a></li>
-          <li><a href="/anmeldung/">Anmeldung</a></li>
-          <li><a href="/ueber-uns/#jobs">Fahrlehrer gesucht</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="footer__title">Folgen</h2>
-        <ul class="footer__list" role="list">
-          <li><a href="https://instagram.com/fahrschulestrauch" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-instagram-logo" /></svg>Instagram</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100063727025765" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-facebook-logo" /></svg>Facebook</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p>© 2026 Fahrschule Viktor Strauch</p>
-      <nav aria-label="Rechtliches">
-        <a href="/impressum/">Impressum</a>
-        <a href="/datenschutz/">Datenschutz</a>
+        <a href="tel:+4915560410413">+49 155 60 41 04 13</a>
+        <a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a>
+        <span>Schwarzwaldstraße 93<br />77933 Lahr</span>
+        <span lang="ru">Говорим по-русски</span>
       </nav>
+      <nav class="footer__nav" aria-label="Fahrschule">
+        <h2 class="footer__title">Fahrschule</h2>
+        <a href="/fuehrerschein/">Führerschein</a>
+        <a href="/berufskraftfahrer/">Berufskraftfahrer</a>
+        <a href="/ueber-uns/">Über uns</a>
+        <a href="/anmeldung/">Anmeldung</a>
+        <a href="/ueber-uns/#jobs">Fahrlehrer gesucht</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Soziale Medien">
+        <h2 class="footer__title">Folgen</h2>
+        <a href="https://instagram.com/fahrschulestrauch" rel="noopener" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100063727025765" rel="noopener" target="_blank">Facebook</a>
+      </nav>
+    </div>
+
+    <a class="footer__brand" href="/" aria-label="Fahrschule Strauch, zur Startseite">
+      <span class="footer__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M46 6c0 13-28 9-28 22s28 9 28 22c0 6-6 8-14 10" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" /><path d="M46 6c0 13-28 9-28 22s28 9 28 22c0 6-6 8-14 10" fill="none" stroke="#0199a6" stroke-width="1.6" stroke-dasharray="4 4" /></svg>
+      </span>
+      <span class="footer__word" aria-hidden="true">Fahrschule Strauch</span>
+    </a>
+
+    <div class="footer__legal">
+      <p>© 2026 Fahrschule Viktor Strauch</p>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
     </div>
   </div>
 </footer>

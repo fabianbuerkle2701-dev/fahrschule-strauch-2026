@@ -529,12 +529,41 @@
 
 /* Russische Seite: Barlow hat kein Kyrillisch, Überschriften in Onest */
 :lang(ru) :is(h1, h2, h3, .h1, .h2, .h3),
-.menu__links a:lang(ru),
-.footer__list li:lang(ru) {
+.menu__links a[lang='ru'],
+.footer__nav [lang='ru'] {
   font-family: var(--font-text);
   font-weight: 650;
   letter-spacing: -0.03em;
 }
 .lang-switch {
   margin-bottom: 1.5rem;
+}
+
+/* Personen (Über-uns-Seite) */
+.person__photo {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-md);
+}
+.person__photo img {
+  transition: transform 900ms var(--ease-out);
+}
+.person:hover .person__photo img {
+  transform: scale(1.04);
+}
+.person__name {
+  margin-top: 1.25rem;
+  font-size: 1.625rem;
+  line-height: 1.1;
+}
+.person__since {
+  margin-top: 0.3rem;
+  color: var(--color-brand-ink);
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+.person__quote {
+  margin-top: 1rem;
+  color: var(--color-neutral-800);
+  font-size: 1.0625rem;
+  line-height: 1.5;
 }

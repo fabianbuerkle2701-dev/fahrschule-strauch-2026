@@ -52,7 +52,7 @@
               Fahrschule Viktor Strauch: Klasse B und BE, Begleitetes Fahren ab 17 und Automatik mit Schaltberechtigung.
             </p>
             <div class="actions hero__actions">
-              <a class="btn" href="/anmeldung/">Jetzt anmelden <svg class="icon icon--move" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+              <a class="btn btn--roll" href="/anmeldung/"><span class="btn__label"><span>Jetzt anmelden</span><span aria-hidden="true">Jetzt anmelden</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
               <a class="btn btn--secondary" href="#klassen">Klassen ansehen</a>
             </div>
           </div>
@@ -82,24 +82,28 @@
         </div>
       </section>
 
-      <!-- 02 Intro: Erfahrung -->
+      <!-- 02 Intro: Haltung (Muster nach MotionSites „Axion About“) -->
       <section class="intro section" id="fahrschule" aria-labelledby="intro-title">
-        <div class="container intro__grid">
-          <div class="intro__text">
-            <h2 class="h2" id="intro-title" data-reveal>Bei uns darfst du <span class="accent">Fehler machen.</span></h2>
-            <div class="intro__body" data-reveal style="--stagger: 1">
-              <p class="lead">Fragen sind erwünscht, und niemand muss Angst vor einem Fehler haben. Unser Ziel ist nicht nur die bestandene Prüfung, sondern dass du danach sicher und selbstbewusst fährst.</p>
+        <div class="container">
+          <h2 class="h2 intro__title" id="intro-title" data-reveal>Bei uns darfst du <span class="accent">Fehler machen.</span></h2>
+          <div class="intro__grid">
+            <figure class="frame intro__small" data-reveal style="--stagger: 1">
+              <picture>
+                <source type="image/avif" srcset="/images/intro-schaufenster-480.avif 480w, /images/intro-schaufenster-720.avif 720w" sizes="(min-width: 1024px) 26vw, (min-width: 640px) 42vw, 92vw" />
+                <img src="/images/intro-schaufenster-480.webp" srcset="/images/intro-schaufenster-480.webp 480w, /images/intro-schaufenster-720.webp 720w" sizes="(min-width: 1024px) 26vw, (min-width: 640px) 42vw, 92vw" width="560" height="442" alt="Fahrlehrer Gerold Remmele vor dem Schaufenster der Fahrschule mit dem Logo" loading="lazy" decoding="async" />
+              </picture>
+            </figure>
+            <div class="intro__text" data-reveal style="--stagger: 2">
+              <p class="intro__lead">Fragen sind erwünscht, und niemand muss Angst vor einem Fehler haben. Unser Ziel ist nicht nur die bestandene Prüfung, sondern dass du danach sicher und selbstbewusst fährst.</p>
               <p class="intro__ru"><span lang="ru">Говорим по-русски.</span> Wir beraten dich auch auf Russisch.</p>
+              <a class="btn btn--roll btn--secondary" href="/ueber-uns/"><span class="btn__label"><span>Mehr über uns</span><span aria-hidden="true">Mehr über uns</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
             </div>
-          </div>
-          <div class="intro__years">
-            <p class="intro__years-title" data-reveal>Fahrlehrer seit</p>
-            <ol class="years" role="list">
-              <li class="years__item" data-reveal style="--stagger: 1"><span class="years__num">1984</span><span class="years__name">Peter Harter</span></li>
-              <li class="years__item" data-reveal style="--stagger: 2"><span class="years__num">1988</span><span class="years__name">Gerold Remmele</span></li>
-              <li class="years__item" data-reveal style="--stagger: 3"><span class="years__num">2000</span><span class="years__name">Nadine Dürr</span></li>
-              <li class="years__item" data-reveal style="--stagger: 4"><span class="years__num">2007</span><span class="years__name">Viktor Strauch</span></li>
-            </ol>
+            <figure class="frame intro__large" data-reveal style="--stagger: 3">
+              <picture>
+                <source type="image/avif" srcset="/images/intro-fuhrpark-640.avif 640w, /images/intro-fuhrpark-960.avif 960w, /images/intro-fuhrpark-1400.avif 1400w" sizes="(min-width: 1024px) 48vw, (min-width: 640px) 52vw, 92vw" />
+                <img src="/images/intro-fuhrpark-960.webp" srcset="/images/intro-fuhrpark-640.webp 640w, /images/intro-fuhrpark-960.webp 960w, /images/intro-fuhrpark-1400.webp 1400w" sizes="(min-width: 1024px) 48vw, (min-width: 640px) 52vw, 92vw" width="1560" height="1040" alt="Das Team der Fahrschule Strauch mit vier Fahrschulautos vor der Fahrschule in der Schwarzwaldstraße" loading="lazy" decoding="async" data-parallax />
+              </picture>
+            </figure>
           </div>
         </div>
       </section>
@@ -276,80 +280,63 @@
         </div>
       </section>
 
-      <!-- 05 Team -->
-      <section class="team section" id="team" aria-labelledby="team-title">
+      <!-- 05 Team (Bühne nach MotionSites „Talent Collective“) -->
+      <section class="crew section" id="team" aria-labelledby="team-title">
         <div class="container">
-          <header class="section-head">
-            <h2 class="h2" id="team-title" data-reveal>Wer neben dir <span class="accent">sitzt.</span></h2>
-          </header>
-        </div>
-
-        <figure class="team__panorama" data-reveal>
-          <div class="frame team__panorama-frame">
-            <picture>
-              <source type="image/avif" srcset="/images/fuhrpark-wide-960.avif 960w, /images/fuhrpark-wide-1440.avif 1440w, /images/fuhrpark-wide-2000.avif 2000w" sizes="(min-width: 1320px) 1240px, 94vw" />
-              <source type="image/webp" srcset="/images/fuhrpark-wide-960.webp 960w, /images/fuhrpark-wide-1440.webp 1440w, /images/fuhrpark-wide-2000.webp 2000w" sizes="(min-width: 1320px) 1240px, 94vw" />
-              <img src="/images/fuhrpark-wide-1440.webp" width="2400" height="840" alt="Das Team der Fahrschule Strauch mit vier Fahrschulautos vor der Fahrschule in der Schwarzwaldstraße" loading="lazy" decoding="async" data-parallax />
-            </picture>
+          <div class="crew__stage on-dark" data-crew>
+              <picture class="crew__slide is-active" data-crew-slide style="--pos: 78%">
+                <source type="image/avif" srcset="/images/team-peter-harter-wide-640.avif 640w, /images/team-peter-harter-wide-960.avif 960w, /images/team-peter-harter-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
+                <img src="/images/team-peter-harter-wide-960.webp" srcset="/images/team-peter-harter-wide-640.webp 640w, /images/team-peter-harter-wide-960.webp 960w, /images/team-peter-harter-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Peter Harter an der geöffneten Fahrertür eines Fahrschulautos" loading="lazy" decoding="async" />
+              </picture>
+              <picture class="crew__slide" data-crew-slide style="--pos: 82%">
+                <source type="image/avif" srcset="/images/team-gerold-remmele-wide-640.avif 640w, /images/team-gerold-remmele-wide-960.avif 960w, /images/team-gerold-remmele-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
+                <img src="/images/team-gerold-remmele-wide-960.webp" srcset="/images/team-gerold-remmele-wide-640.webp 640w, /images/team-gerold-remmele-wide-960.webp 960w, /images/team-gerold-remmele-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Gerold Remmele neben einem Fahrschulauto vor der Fahrschule" loading="lazy" decoding="async" />
+              </picture>
+              <picture class="crew__slide" data-crew-slide style="--pos: 80%">
+                <source type="image/avif" srcset="/images/team-nadine-duerr-wide-640.avif 640w, /images/team-nadine-duerr-wide-960.avif 960w, /images/team-nadine-duerr-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
+                <img src="/images/team-nadine-duerr-wide-960.webp" srcset="/images/team-nadine-duerr-wide-640.webp 640w, /images/team-nadine-duerr-wide-960.webp 960w, /images/team-nadine-duerr-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Nadine Dürr an der geöffneten Fahrertür eines Fahrschulautos" loading="lazy" decoding="async" />
+              </picture>
+              <picture class="crew__slide" data-crew-slide style="--pos: 92%">
+                <source type="image/avif" srcset="/images/team-viktor-strauch-wide-640.avif 640w, /images/team-viktor-strauch-wide-960.avif 960w, /images/team-viktor-strauch-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
+                <img src="/images/team-viktor-strauch-wide-960.webp" srcset="/images/team-viktor-strauch-wide-640.webp 640w, /images/team-viktor-strauch-wide-960.webp 960w, /images/team-viktor-strauch-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Viktor Strauch lehnt an einem Fahrschulauto" loading="lazy" decoding="async" />
+              </picture>
+            <div class="crew__shade" aria-hidden="true"></div>
+            <div class="crew__content">
+              <div class="crew__top">
+                <h2 class="crew__title" id="team-title">Wer neben dir <span>sitzt.</span></h2>
+              </div>
+              <div class="crew__bottom">
+                <blockquote class="crew__quote" data-crew-quote><p>„Der Weg ist das Ziel, viel Spaß auf deinen neuen Wegen.“</p></blockquote>
+                <div class="crew__picker" role="group" aria-label="Fahrlehrer auswählen">
+                <button class="crew__pick" type="button" aria-pressed="true" data-crew-pick data-name="Peter Harter" data-role="Fahrlehrer aller Klassen seit 1984" data-quote="Der Weg ist das Ziel, viel Spaß auf deinen neuen Wegen.">
+                  <span class="crew__avatar"><img src="/images/avatar-peter-harter-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
+                  <span class="crew__year">1984</span>
+                  <span class="visually-hidden">Peter Harter zeigen</span>
+                </button>
+                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Gerold Remmele" data-role="Fahrlehrer aller Klassen seit 1988" data-quote="Ein Stop-Schild ist keine Empfehlung.">
+                  <span class="crew__avatar"><img src="/images/avatar-gerold-remmele-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
+                  <span class="crew__year">1988</span>
+                  <span class="visually-hidden">Gerold Remmele zeigen</span>
+                </button>
+                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Nadine Dürr" data-role="Fahrlehrerin seit 2000" data-quote="Und immer noch Spaß daran, Jugendliche sicher auf die Straße zu bringen.">
+                  <span class="crew__avatar"><img src="/images/avatar-nadine-duerr-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
+                  <span class="crew__year">2000</span>
+                  <span class="visually-hidden">Nadine Dürr zeigen</span>
+                </button>
+                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Viktor Strauch" data-role="Inhaber, Fahrlehrer seit 2007" data-quote="Fährst du rückwärts gegen Baum, verkleinert sich dein Kofferraum!">
+                  <span class="crew__avatar"><img src="/images/avatar-viktor-strauch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
+                  <span class="crew__year">2007</span>
+                  <span class="visually-hidden">Viktor Strauch zeigen</span>
+                </button>
+                </div>
+                <div class="crew__meta" aria-live="polite">
+                  <span class="crew__name" data-crew-name>Peter Harter</span>
+                  <span class="crew__role" data-crew-role>Fahrlehrer aller Klassen seit 1984</span>
+                  <a class="crew__link" href="/ueber-uns/">Mehr über uns</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <figcaption class="container team__caption small muted">Das Team und ein Teil der Fahrschulautos vor der Fahrschule in der Schwarzwaldstraße.</figcaption>
-        </figure>
-
-        <div class="team__scroller" data-scroller>
-          <ul class="team__list" role="list" data-scroller-track>
-            <li class="person" data-reveal>
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-peter-harter-400.avif 400w, /images/team-peter-harter-640.avif 640w" sizes="(min-width: 1024px) 300px, 72vw" />
-                  <img src="/images/team-peter-harter-640.webp" srcset="/images/team-peter-harter-400.webp 400w, /images/team-peter-harter-640.webp 640w" sizes="(min-width: 1024px) 300px, 72vw" width="720" height="900" alt="Peter Harter neben einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Peter Harter</h3>
-              <p class="person__since">Fahrlehrer aller Klassen seit 1984</p>
-              <blockquote class="person__quote"><p>„Der Weg ist das Ziel, viel Spaß auf deinen neuen Wegen.“</p></blockquote>
-            </li>
-            <li class="person" data-reveal style="--stagger: 1">
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-gerold-remmele-400.avif 400w, /images/team-gerold-remmele-640.avif 640w" sizes="(min-width: 1024px) 300px, 72vw" />
-                  <img src="/images/team-gerold-remmele-640.webp" srcset="/images/team-gerold-remmele-400.webp 400w, /images/team-gerold-remmele-640.webp 640w" sizes="(min-width: 1024px) 300px, 72vw" width="720" height="900" alt="Gerold Remmele neben einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Gerold Remmele</h3>
-              <p class="person__since">Fahrlehrer aller Klassen seit 1988</p>
-              <blockquote class="person__quote"><p>„Ein Stop-Schild ist keine Empfehlung.“</p></blockquote>
-            </li>
-            <li class="person" data-reveal style="--stagger: 2">
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-nadine-duerr-400.avif 400w, /images/team-nadine-duerr-640.avif 640w" sizes="(min-width: 1024px) 300px, 72vw" />
-                  <img src="/images/team-nadine-duerr-640.webp" srcset="/images/team-nadine-duerr-400.webp 400w, /images/team-nadine-duerr-640.webp 640w" sizes="(min-width: 1024px) 300px, 72vw" width="720" height="900" alt="Nadine Dürr an der geöffneten Fahrertür eines Fahrschulautos" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Nadine Dürr</h3>
-              <p class="person__since">Fahrlehrerin seit 2000</p>
-              <blockquote class="person__quote"><p>„Und immer noch Spaß daran, Jugendliche sicher auf die Straße zu bringen.“</p></blockquote>
-            </li>
-            <li class="person" data-reveal style="--stagger: 3">
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-viktor-strauch-400.avif 400w, /images/team-viktor-strauch-640.avif 640w" sizes="(min-width: 1024px) 300px, 72vw" />
-                  <img src="/images/team-viktor-strauch-640.webp" srcset="/images/team-viktor-strauch-400.webp 400w, /images/team-viktor-strauch-640.webp 640w" sizes="(min-width: 1024px) 300px, 72vw" width="720" height="900" alt="Viktor Strauch lehnt an einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Viktor Strauch</h3>
-              <p class="person__since">Inhaber, Fahrlehrer seit 2007</p>
-              <blockquote class="person__quote"><p>„Fährst du rückwärts gegen Baum, verkleinert sich dein Kofferraum!“</p></blockquote>
-            </li>
-          </ul>
-          <div class="container scroller-controls team__controls">
-            <div class="scroller-progress" aria-hidden="true"><span data-scroller-bar></span></div>
-            <button class="scroller-btn" type="button" data-scroller-prev aria-label="Vorherige Person"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-left" /></svg></button>
-            <button class="scroller-btn" type="button" data-scroller-next aria-label="Nächste Person"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></button>
-          </div>
-        </div>
-        <div class="container">
-          <a class="link team__more" href="/ueber-uns/" data-reveal>Mehr über uns <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
         </div>
       </section>
 

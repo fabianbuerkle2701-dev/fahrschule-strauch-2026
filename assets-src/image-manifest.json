@@ -1,0 +1,148 @@
+{
+  "fuhrpark-wide": {
+    "width": 2400,
+    "height": 840,
+    "widths": [
+      640,
+      960,
+      1440,
+      2000
+    ]
+  },
+  "fuhrpark-hero": {
+    "width": 2400,
+    "height": 1250,
+    "widths": [
+      640,
+      960,
+      1440,
+      2000
+    ]
+  },
+  "fuhrpark-close": {
+    "width": 1240,
+    "height": 780,
+    "widths": [
+      480,
+      800,
+      1200
+    ]
+  },
+  "team-viktor-strauch": {
+    "width": 720,
+    "height": 900,
+    "widths": [
+      400,
+      640,
+      720
+    ]
+  },
+  "team-peter-harter": {
+    "width": 720,
+    "height": 900,
+    "widths": [
+      400,
+      640,
+      720
+    ]
+  },
+  "team-gerold-remmele": {
+    "width": 720,
+    "height": 900,
+    "widths": [
+      400,
+      640,
+      720
+    ]
+  },
+  "team-nadine-duerr": {
+    "width": 720,
+    "height": 900,
+    "widths": [
+      400,
+      640,
+      720
+    ]
+  },
+  "team-viktor-strauch-wide": {
+    "width": 1200,
+    "height": 900,
+    "widths": [
+      640,
+      960,
+      1200
+    ]
+  },
+  "team-peter-harter-wide": {
+    "width": 1200,
+    "height": 900,
+    "widths": [
+      640,
+      960,
+      1200
+    ]
+  },
+  "team-gerold-remmele-wide": {
+    "width": 1200,
+    "height": 900,
+    "widths": [
+      640,
+      960,
+      1200
+    ]
+  },
+  "team-nadine-duerr-wide": {
+    "width": 1200,
+    "height": 900,
+    "widths": [
+      640,
+      960,
+      1200
+    ]
+  },
+  "avatar-peter-harter": {
+    "width": 180,
+    "height": 180,
+    "widths": [
+      160
+    ]
+  },
+  "avatar-gerold-remmele": {
+    "width": 200,
+    "height": 200,
+    "widths": [
+      160
+    ]
+  },
+  "avatar-nadine-duerr": {
+    "width": 180,
+    "height": 180,
+    "widths": [
+      160
+    ]
+  },
+  "avatar-viktor-strauch": {
+    "width": 180,
+    "height": 180,
+    "widths": [
+      160
+    ]
+  },
+  "intro-schaufenster": {
+    "width": 560,
+    "height": 442,
+    "widths": [
+      480,
+      720
+    ]
+  },
+  "intro-fuhrpark": {
+    "width": 1560,
+    "height": 1040,
+    "widths": [
+      640,
+      960,
+      1400
+    ]
+  }
+}

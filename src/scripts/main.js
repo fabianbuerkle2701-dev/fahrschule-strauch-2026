@@ -286,6 +286,47 @@ function initScrollers() {
   });
 }
 
+/* --- Team-Bühne: Fahrlehrer per Avatar wählen ------------------------- */
+function initCrew() {
+  const root = document.querySelector('[data-crew]');
+  if (!root) return;
+  const slides = [...root.querySelectorAll('[data-crew-slide]')];
+  const picks = [...root.querySelectorAll('[data-crew-pick]')];
+  const quote = root.querySelector('[data-crew-quote]');
+  const name = root.querySelector('[data-crew-name]');
+  const role = root.querySelector('[data-crew-role]');
+  const replay = (el) => {
+    el.classList.remove('is-changing');
+    void el.offsetWidth; // Animation neu starten
+    el.classList.add('is-changing');
+  };
+  const show = (i) => {
+    const pick = picks[i];
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    picks.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
+    quote.innerHTML = `<p>„${pick.dataset.quote}“</p>`;
+    name.textContent = pick.dataset.name;
+    role.textContent = pick.dataset.role;
+    if (!reduceMotion.matches) [quote, name].forEach(replay);
+  };
+  picks.forEach((pick, i) => {
+    pick.addEventListener('click', () => show(i));
+    pick.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = (i + (e.key === 'ArrowRight' ? 1 : -1) + picks.length) % picks.length;
+      picks[next].focus();
+      show(next);
+    });
+  });
+  // Bilder der anderen Fahrlehrer vorladen, sobald die Bühne in Sicht kommt
+  new IntersectionObserver(([entry], io) => {
+    if (!entry.isIntersecting) return;
+    slides.forEach((s) => s.querySelector('img').setAttribute('loading', 'eager'));
+    io.disconnect();
+  }, { rootMargin: '400px' }).observe(root);
+}
+
 /* --- Sprungnavigation: aktiven Abschnitt markieren --------------------- */
 function initSubnav() {
   const nav = document.querySelector('[data-subnav]');
@@ -317,5 +358,6 @@ initReveal();
 initHeroCar();
 initScrollers();
 initSubnav();
+initCrew();
 const loops = [initJourney(), initParallax()].filter(Boolean);
 if (loops.length) initScrollLoop(loops);
