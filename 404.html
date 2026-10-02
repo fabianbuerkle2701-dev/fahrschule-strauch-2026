@@ -15,7 +15,10 @@
           <a class="btn btn--roll" href="/"><span class="btn__label"><span>Zur Startseite</span><span aria-hidden="true">Zur Startseite</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
           <a class="btn btn--secondary" href="/fuehrerschein/">Klassen ansehen</a>
         </div>
-        <svg class="notfound__art" viewBox="0 0 330 150" aria-hidden="true"><use href="#ill-car-side" /></svg>
+        <picture class="notfound__art">
+          <source type="image/avif" srcset="/images/ill-auto-seite-480.avif 480w, /images/ill-auto-seite-800.avif 800w, /images/ill-auto-seite-1005.avif 1005w" sizes="(min-width: 640px) 520px, 92vw" />
+          <img src="/images/ill-auto-seite-800.webp" srcset="/images/ill-auto-seite-480.webp 480w, /images/ill-auto-seite-800.webp 800w, /images/ill-auto-seite-1005.webp 1005w" sizes="(min-width: 640px) 520px, 92vw" width="1005" height="491" alt="" loading="lazy" decoding="async" />
+        </picture>
       </section>
     </main>
     <!-- @include footer -->

@@ -1,5 +1,7 @@
 # Illustrationen zum Austausch
 
+**Stand 02.10.2026:** Fünf Illustrationen sind generiert, mit dem echten Logo versehen und eingebaut (Auto, Auto mit Anhänger, Automatik/Schaltung, Begleitetes Fahren, Lkw). Herkunft und Job-Nummern stehen in `assets-src/illustrationen/README.md`. Straßenschild und das kleine Auto im Ablauf sind weiterhin SVG. Ein Bild lässt sich austauschen, indem die PNG in `assets-src/illustrationen/` ersetzt und danach `python3 scripts/illustrations.py` und `npm run images` ausgeführt werden (Logo-Position in `scripts/illustrations.py` anpassen).
+
 Alle selbst gezeichneten SVG-Illustrationen der Website, mit den Maßen, die neue (generierte) Bilder haben sollten. Fotos sind nicht betroffen.
 
 **So geht der Austausch:** Lege die fertigen Dateien unter dem angegebenen Namen in `assets-src/illustrationen/` ab (PNG mit transparentem Hintergrund, wo angegeben) und sag Bescheid. Ich baue sie dann ein: Bildvarianten in AVIF und WebP, Lazy-Loading, Alt-Text, die bestehenden Hover-Bewegungen und die russischen Seiten gleich mit.

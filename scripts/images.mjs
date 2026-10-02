@@ -49,6 +49,22 @@ for (const job of jobs) {
   console.log('✓', job.out);
 }
 
+// Illustrationen (generiert, Logo eingesetzt, freigestellt: scripts/illustrations.py)
+import { readdir } from 'node:fs/promises';
+for (const file of (await readdir(path.join(SRC, 'illustrationen/final'))).filter((f) => f.endsWith('.png'))) {
+  const name = path.basename(file, '.png');
+  const input = sharp(path.join(SRC, 'illustrationen/final', file));
+  const { width, height } = await input.metadata();
+  const widths = [480, 800, width].filter((w, i, a) => w <= width && a.indexOf(w) === i);
+  manifest[`ill-${name}`] = { width, height, widths };
+  for (const w of widths) {
+    const pipe = input.clone().resize({ width: w });
+    await pipe.clone().avif({ quality: 60, effort: 6 }).toFile(path.join(OUT, `ill-${name}-${w}.avif`));
+    await pipe.clone().webp({ quality: 82, alphaQuality: 90 }).toFile(path.join(OUT, `ill-${name}-${w}.webp`));
+  }
+  console.log('✓ ill-' + name, width + '×' + height, widths.join('/'));
+}
+
 // Logo: verlustarm verkleinert, als PNG (Original-Design unverändert)
 await sharp(path.join(SRC, 'brand/logo.png')).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile(path.join(OUT, 'logo.png'));
 await sharp(path.join(SRC, 'brand/logo.png')).webp({ lossless: true }).toFile(path.join(OUT, 'logo.webp'));

@@ -536,8 +536,13 @@
 .class-tile:hover .art-trailer {
   transform: translateX(10px);
 }
-.class-tile:hover .art-gears .gear-knob {
-  transform: translateY(-4px);
+.class-tile:hover .art-gears {
+  transform: translateY(-4px) rotate(-1deg);
+}
+/* generierte Illustrationen (Bilder mit Transparenz) */
+:is(.class-tile__art, .page-head__art, .block__art, .notfound__art) img {
+  width: 100%;
+  height: auto;
 }
 .class-tile:hover .art-seats {
   transform: translateY(-4px);
