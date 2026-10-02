@@ -17,7 +17,15 @@ function picture(attrs) {
   const load = p.eager ? 'fetchpriority="high"' : 'loading="lazy"';
   const cls = p.class ? ` class="${p.class}"` : '';
   const style = p.style ? ` style="${p.style}"` : '';
-  return `<picture${cls}><source type="image/avif" srcset="${set('avif')}" sizes="${p.sizes}" /><img src="/images/${p.src}-${fallback}.webp" srcset="${set('webp')}" sizes="${p.sizes}" width="${m.width}" height="${m.height}" alt="${p.alt ?? ''}"${style} ${load} decoding="async" /></picture>`;
+  // Bildausschnitt für schmale Bildschirme: narrow="name" narrow-media="(max-width: …)" narrow-sizes="…"
+  let narrow = '';
+  if (p.narrow) {
+    const n = manifest[p.narrow];
+    if (!n) throw new Error(`@pic: Bild ${p.narrow} fehlt im Manifest`);
+    const nset = (ext) => n.widths.map((w) => `/images/${p.narrow}-${w}.${ext} ${w}w`).join(', ');
+    for (const ext of ['avif', 'webp']) narrow += `<source media="${p['narrow-media']}" type="image/${ext}" srcset="${nset(ext)}" sizes="${p['narrow-sizes']}" />`;
+  }
+  return `<picture${cls}>${narrow}<source type="image/avif" srcset="${set('avif')}" sizes="${p.sizes}" /><img src="/images/${p.src}-${fallback}.webp" srcset="${set('webp')}" sizes="${p.sizes}" width="${m.width}" height="${m.height}" alt="${p.alt ?? ''}"${style} ${load} decoding="async" /></picture>`;
 }
 
 function includes() {

@@ -61,6 +61,21 @@ for (const file of (await readdir(path.join(SRC, 'illustrationen/final'))).filte
   console.log('✓ ill-' + name, width + '×' + height, widths.join('/'));
 }
 
+// Hero-Ausschnitt für schmale Bildschirme: rechte Hälfte der Szene ohne Ladenschild
+// (sonst stünde das Schild-Logo direkt unter dem Logo der Kopfzeile), mit Figuren und Auto samt Logo
+{
+  const crop = { left: 1700, top: 300, width: 1468, height: 782 };
+  const input = sharp(path.join(SRC, 'illustrationen/final/hero-szene.png')).extract(crop);
+  const widths = [480, 800, 1200, 1468];
+  manifest['ill-hero-rechts'] = { width: crop.width, height: crop.height, widths };
+  for (const w of widths) {
+    const pipe = input.clone().resize({ width: w });
+    await pipe.clone().avif({ quality: 60, effort: 6 }).toFile(path.join(OUT, `ill-hero-rechts-${w}.avif`));
+    await pipe.clone().webp({ quality: 82 }).toFile(path.join(OUT, `ill-hero-rechts-${w}.webp`));
+  }
+  console.log('✓ ill-hero-rechts');
+}
+
 // Vorschaubilder der Formulare (erste PDF-Seite, erzeugt mit: sips -s format png -Z 1400 datei.pdf)
 for (const file of (await readdir(path.join(SRC, 'pdf-vorschau'))).filter((f) => f.endsWith('.png'))) {
   const name = `pdf-${path.basename(file, '.png')}`;
