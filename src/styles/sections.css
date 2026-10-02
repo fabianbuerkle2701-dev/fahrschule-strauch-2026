@@ -134,7 +134,7 @@
 .hero__stage {
   position: relative;
   width: max(100%, 860px);
-  aspect-ratio: 2400 / 820;
+  aspect-ratio: 3168 / 1082;
   overflow: hidden;
   border-radius: calc(var(--radius-lg) - 4px);
   background: var(--color-neutral-100);
@@ -715,6 +715,9 @@
   .class-tile--be .class-tile__art {
     width: clamp(220px, 19vw, 290px);
   }
+  .class-tile--b197 .class-tile__art {
+    width: clamp(220px, 20vw, 300px);
+  }
   .class-tile--bf17 {
     grid-column: 1 / -1;
     grid-row: 3;
@@ -1279,6 +1282,12 @@
   font-size: 62px;
   letter-spacing: -0.5px;
   fill: var(--color-neutral-950);
+}
+.sign-logo__plate {
+  fill: #fff;
+  stroke: var(--color-neutral-300);
+  stroke-width: 2;
+  filter: drop-shadow(0 8px 12px rgb(14 59 63 / 0.12));
 }
 .sign-number__plate {
   fill: var(--color-brand);

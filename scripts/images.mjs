@@ -11,8 +11,6 @@ const OUT = 'public/images';
 const jobs = [
   // Fuhrpark: Team mit vier Autos vor der Fahrschule (Quelle 2400×1800)
   { src: 'photos/fuhrpark.jpg', out: 'fuhrpark-hero', crop: [0, 120, 2400, 1250], widths: [640, 960, 1440, 2000] },
-  // Hero-Bühne (Muster nach MotionSites „Veyra Electric“): Gebäude, Team, vier Autos
-  { src: 'photos/fuhrpark.jpg', out: 'hero-buehne', crop: [0, 240, 2400, 820], widths: [640, 960, 1440, 2000] },
   // Teamporträts (Quelle 1200×900), Hochformat 4:5 mit Person und Fahrzeugfront
   { src: 'photos/viktor-strauch.jpg', out: 'team-viktor-strauch', crop: [480, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/peter-harter.jpg', out: 'team-peter-harter', crop: [440, 0, 720, 900], widths: [400, 640, 720] },
@@ -55,7 +53,8 @@ for (const file of (await readdir(path.join(SRC, 'illustrationen/final'))).filte
   const name = path.basename(file, '.png');
   const input = sharp(path.join(SRC, 'illustrationen/final', file));
   const { width, height } = await input.metadata();
-  const widths = [480, 800, width].filter((w, i, a) => w <= width && a.indexOf(w) === i);
+  const steps = name.startsWith('hero') ? [960, 1440, 2000, width] : [480, 800, width];
+  const widths = steps.filter((w, i, a) => w <= width && a.indexOf(w) === i);
   manifest[`ill-${name}`] = { width, height, widths };
   for (const w of widths) {
     const pipe = input.clone().resize({ width: w });

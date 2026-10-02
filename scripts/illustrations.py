@@ -18,17 +18,32 @@ SRC = os.path.join(ROOT, 'assets-src', 'illustrationen')
 OUT = os.path.join(SRC, 'final')
 LOGO = Image.open(os.path.join(ROOT, 'assets-src', 'brand', 'logo.png')).convert('RGBA')
 
-# Logo-Platzierung: (Mittelpunkt x, Mittelpunkt y, Breite) in Pixeln des Quellbilds
+# Regel: Jede Illustration trägt das echte Logo der Fahrschule (nie vom Generator gezeichnet).
+# Logo-Platzierung: (Mittelpunkt x, Mittelpunkt y, Breite[, 'badge']) in Pixeln des Quellbilds.
+# 'badge' legt ein weißes Schild unter das Logo (für dunkle Hintergründe).
 JOBS = {
     'auto-seite': [(800, 360, 280)],
     'auto-anhaenger': [(605, 374, 250), (1240, 338, 300)],
     'begleitet-17': [(482, 482, 196)],
     'lkw': [(955, 300, 560)],
-    'automatik-schaltung': [],
+    'automatik-schaltung': [(688, 690, 250, 'badge')],
+}
+# Szenen mit vollem Hintergrund: kein Freistellen, fester Zuschnitt (links, oben, rechts, unten)
+SCENES = {
+    'hero-szene': {
+        'logos': [(1582, 375, 437), (480, 895, 230), (1480, 893, 230), (2585, 900, 230)],
+        'crop': (0, 170, 3168, 1252),
+    },
 }
 
 
-def place_logo(img, cx, cy, width):
+def place_logo(img, cx, cy, width, mode=None):
+    if mode == 'badge':
+        from PIL import ImageDraw
+        pad_x, pad_y = round(width * 0.09), round(width * 0.07)
+        h = round(width * LOGO.height / LOGO.width)
+        box = [cx - width / 2 - pad_x, cy - h / 2 - pad_y, cx + width / 2 + pad_x, cy + h / 2 + pad_y]
+        ImageDraw.Draw(img).rounded_rectangle([round(v) for v in box], radius=round(h * 0.35), fill=(255, 255, 255, 255))
     scale = width / LOGO.width
     logo = LOGO.resize((round(LOGO.width * scale), round(LOGO.height * scale)), Image.LANCZOS)
     if scale > 1:
@@ -77,14 +92,21 @@ def main():
     for name, logos in JOBS.items():
         img = Image.open(os.path.join(SRC, f'{name}.png')).convert('RGBA')
         img, bg = remove_background(img)
-        for cx, cy, width in logos:
-            place_logo(img, cx, cy, width)
+        for spec in logos:
+            place_logo(img, *spec)
         box = img.getchannel('A').point(lambda v: 255 if v > 8 else 0).getbbox()
         pad = 12
         box = (max(0, box[0] - pad), max(0, box[1] - pad), min(img.width, box[2] + pad), min(img.height, box[3] + pad))
         img = img.crop(box)
         img.save(os.path.join(OUT, f'{name}.png'), optimize=True)
         print(f'✓ {name}: {img.size[0]}×{img.size[1]}, Hintergrund {bg}, Logos {len(logos)}')
+    for name, cfg in SCENES.items():
+        img = Image.open(os.path.join(SRC, f'{name}.png')).convert('RGBA')
+        for spec in cfg['logos']:
+            place_logo(img, *spec)
+        img = img.crop(cfg['crop']).convert('RGB')
+        img.save(os.path.join(OUT, f'{name}.png'), optimize=True)
+        print(f'✓ {name}: {img.size[0]}×{img.size[1]}, Szene, Logos {len(cfg["logos"])}')
 
 
 if __name__ == '__main__':

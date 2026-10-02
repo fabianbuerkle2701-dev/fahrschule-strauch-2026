@@ -156,7 +156,7 @@
   },
   "ill-automatik-schaltung": {
     "width": 1065,
-    "height": 486,
+    "height": 620,
     "widths": [
       480,
       800,
@@ -170,6 +170,16 @@
       480,
       800,
       1157
+    ]
+  },
+  "ill-hero-szene": {
+    "width": 3168,
+    "height": 1082,
+    "widths": [
+      960,
+      1440,
+      2000,
+      3168
     ]
   },
   "ill-lkw": {
