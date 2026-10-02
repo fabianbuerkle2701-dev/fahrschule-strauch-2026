@@ -82,10 +82,11 @@ Skala (rem): 0,25 · 0,5 · 0,75 · 1 · 1,5 · 2 · 3 · 4 · 6 · 8 · 10 (4 �
 
 ## UI
 
-- **Buttons** (genau drei Typen):
+- **Buttons** (genau drei Typen, Primär und Sekundär optional als Roll-Variante):
   - Primär „Jetzt anmelden“: Pille, Höhe 52 px (mobil 56), Polster 0 28 px, `--color-brand-ink` mit Weiß, Hover `--color-brand-dark` + Pfeil 3 px nach rechts, aktiv `scale(.98)`.
   - Sekundär: Pille, transparent, 1,5 px Rand `--color-neutral-300`, Text `--color-neutral-950`; Hover Rand Petrol.
   - Textlink: Text `--color-brand-ink`, Unterstreichung 1,5 px, Abstand 0,2em; Hover wächst die Linie von links.
+  - Roll-Variante `.btn--roll` (nach MotionSites „Axion About“): Beschriftung rollt beim Hover eine Zeile nach oben (500 ms, `cubic-bezier(.25,.1,.25,1)`), Pfeil im 40-px-Kreis dreht sich von −45° auf 0°. Für alle Pfeil-CTAs („Jetzt anmelden“, „Mehr über uns“).
 - **Links im Fließtext**: unterstrichen, Petrol-Ink.
 - **Karten**: nur wo echte Gruppierung (Klassen-Kacheln, Team). Keine Karten-in-Karten. Kein Schatten auf Karten, Hierarchie über Fläche (Mint, Weiß mit Linie, Night).
 - **Formfelder**: nicht benötigt (Anmeldung extern). Falls doch: Label über Feld, 52 px hoch, Radius 12 px, Rand neutral-300, Fokus 3 px Petrol-Ring.
@@ -114,7 +115,9 @@ Skala (rem): 0,25 · 0,5 · 0,75 · 1 · 1,5 · 2 · 3 · 4 · 6 · 8 · 10 (4 �
 
 - **Reveal**: Opacity 0→1, Y 24→0 px, ausgelöst per IntersectionObserver (Schwelle 15 %), einmalig. Inhalte sind ohne JS sichtbar (Klasse `js` am `<html>` schaltet Reveal erst ein).
 - **Stagger**: 70 ms je Element, max. 6 Elemente (Klassen-Kacheln, Team, Angebote).
-- **Parallax**: nur Fuhrpark-Foto im Intro, max. 6 % Versatz, nur ab 1024 px.
+- **Parallax**: nur Fuhrpark-Foto im Intro, max. 5 % Versatz, nur ab 1024 px.
+- **Team-Bühne**: Überblendung 700 ms ease-out, Zitat und Name blenden 500 ms mit 4 px Hub ein, Pfeiltasten wechseln zwischen Fahrlehrern.
+- **Footer-Fahrbahn**: Mittellinie läuft in 18 s endlos nach links (nur ohne reduzierte Bewegung).
 - **Signatur: Fahrt durch die Ausbildung.** Im Ablauf ist die Straße sticky; der Scrollfortschritt durch sechs Stationen bewegt das Auto (`getPointAtLength`, Rotation per Tangente) und färbt die Strecke hinter ihm Petrol. Jede Station wird aktiv, wenn das Auto sie erreicht.
 - **Hero**: Fahrbahn zeichnet sich einmal beim Laden (stroke-dashoffset, 1,4 s).
 - **Navigation**: wird nach 24 px Scroll zur schwebenden Pille (Hintergrund Weiß 88 %, Blur 16 px, Schatten).
@@ -137,13 +140,25 @@ Skala (rem): 0,25 · 0,5 · 0,75 · 1 · 1,5 · 2 · 3 · 4 · 6 · 8 · 10 (4 �
 
 Hauptnavigation: Führerschein · Ablauf · Über uns · Kontakt · RU · [Jetzt anmelden]. Die alten Menüpunkte „Information“, „Maxi“, „BF17“, „BKF“ gehen in sprechenden Seiten auf.
 
+## Übernommene Vorlagen (MotionSites)
+
+Auf Wunsch wurden Muster aus der MotionSites-Bibliothek übernommen. Übernommen wurden nur Aufbau und Bewegung, keine Bilder, Texte oder Schriften; umgesetzt in Vanilla-HTML/CSS/JS im eigenen Designsystem.
+
+| Vorlage | Einsatz | Anpassung |
+|---|---|---|
+| Axion About | Startseite, Intro | Raster 26 % · Text · 48 % mit kleinem Foto unten links, Text oben in der Mitte, großem Foto rechts; Roll-Button |
+| Talent Collective | Startseite, Team | Bühne im Container (statt Vollbild, weil die Fotos nur 1200 px breit sind), 700-ms-Überblendung, Avatar-Leiste mit Jahreszahl statt Punkt, Meta-Zeile Name · seit · Link; Zitat unten, damit es keine Gesichter verdeckt |
+| Stark Minimal Footer | Footer aller Seiten | Punkte-Band ersetzt durch Fahrbahn mit laufender Mittellinie (18 s, linear, aus bei reduzierter Bewegung), Claim + drei Spalten, übergroße Wortmarke mit Straßen-S, Rechtszeile 15 px statt 9 px |
+
+Die passenderen Auto- und Scroll-Vorlagen (z. B. „Scroll Landing Page“, „Avelon Drive“) sind Premium und ohne MotionSites-Abo nicht abrufbar.
+
 ## Startseite
 
 1. **Hero** – „Führerschein in Lahr.“ in großer Straßenschrift, darunter ein Satz zu Klassen und Ort, „Jetzt anmelden“ und „Klassen ansehen“. Rechts schlängelt sich das Straßen-S aus dem Logo durch den Bildschirm, im Bogen sitzt das echte Fuhrparkfoto. Beantwortet sofort: wer, was, wo.
-2. **Intro: Seit 1984 am Beifahrersitz** – Kurze Haltung (Fehler dürfen passieren, Fragen sind erwünscht) und die vier Jahreszahlen des Teams als Beleg. Vertrauen kommt vor dem Angebot, weil Eltern zuerst wissen wollen, wem sie ihr Kind anvertrauen.
+2. **Intro: Bei uns darfst du Fehler machen** – Haltung in zwei Sätzen, Hinweis auf Russisch, Schaufensterfoto und Fuhrparkfoto im asymmetrischen Raster. Vertrauen kommt vor dem Angebot, weil Eltern zuerst wissen wollen, wem sie ihr Kind anvertrauen.
 3. **Führerscheinklassen** – Vier unterschiedlich große Kacheln: B, BE, B197 („Automatik oder Schaltung? Beides.“), BF17. Große Klassen-Typografie, eigene Fahrzeug-Illustrationen. Direkt nach dem Vertrauen, weil hier die Entscheidung fällt.
 4. **Ablauf** – Die Straße wird sticky, das Auto fährt durch Anmelden, Unterlagen, Theorie, Fahrstunden, Prüfung, Führerschein. Signatur-Moment und Antwort auf „Wie läuft das ab?“.
-5. **Team** – Die vier Fahrlehrer mit Foto am eigenen Auto, Jahreszahl und eigenem Spruch. Echte Menschen als Bildmoment nach dem abstrakten Ablauf.
+5. **Team** – Bühne mit den vier Fahrlehrern am eigenen Auto; Avatar-Leiste zeigt die Jahreszahlen 1984 · 1988 · 2000 · 2007 als Beleg, ein Klick wechselt Foto, Spruch und Name. Echte Menschen als Bildmoment nach dem abstrakten Ablauf.
 6. **Mehr als die erste Fahrstunde** – Editoriale Liste: Schnellkurs, Auffrischung, BKF-Weiterbildung, Finanzierung, App MAX. Für die zweite Zielgruppe (Erwachsene, Profis), deshalb nach dem Kernangebot.
 7. **Kontakt & Standort** – Telefonnummer groß, E-Mail, Adresse, Unterrichtszeiten, Routenlink, russischer Hinweis. Kein Formular.
 8. **FAQ** – Sieben echte Fragen (Alter, Unterlagen, Automatik, Kosten, Russisch, Schnellkurs, Finanzierung) mit Antworten aus den Originalinhalten.
