@@ -21,6 +21,8 @@ const fix = (url) => (url.startsWith('/') && !url.startsWith('//') ? base + url 
 for (const file of files) {
   let s = await readFile(file, 'utf8');
   if (file.endsWith('.html')) {
+    // Vorschau: nicht in Suchmaschinen aufnehmen, bis die Fahrschule die Seite freigibt
+    s = s.replace('<head>', '<head>\n    <meta name="robots" content="noindex, nofollow" />');
     s = s.replace(/\b(href|src|action)="([^"]*)"/g, (_, a, v) => `${a}="${fix(v)}"`);
     s = s.replace(/\b(srcset|imagesrcset)="([^"]*)"/g, (_, a, v) => `${a}="${v.split(',').map((part) => part.replace(/^(\s*)(\S+)/, (m, sp, u) => sp + fix(u))).join(',')}"`);
   }

@@ -52,7 +52,12 @@ Aktualisieren mit `sh scripts/deploy-pages.sh`: baut die Seite, setzt alle Pfade
 ## Offene Punkte für die Fahrschule
 
 1. **Telefonnummer klären**: Kopf/Footer der alten Seite nennen +49 155 60 41 04 13, Impressum, Preis-PDFs und Schaufenster 0151 42522180. Die Website nutzt die erste als Kontaktnummer, das Impressum unverändert die zweite.
-2. **Datenschutzerklärung aktualisieren** (Stand 2018, nennt YouTube und TMG). Text wurde unverändert übernommen.
+2. **Rechtstexte freigeben lassen** (am 02.10.2026 neu gefasst, Rechtsprüfung im Chat): Die Datenschutzerklärung beschreibt jetzt die tatsächliche Verarbeitung (Hosting über GitHub Pages, keine Cookies, Kontakt inkl. WhatsApp wie im Anmeldeformular, Online-Anmeldung über den Fahrschul-Manager der TECVIA GmbH, Ausbildungsdaten, Rechte, Aufsichtsbehörde BW). Das Impressum verweist auf das DDG statt TMG und verlinkt die berufsrechtlichen Regelungen. Vor dem Start sollte die Fahrschule bzw. eine fachkundige Person beides freigeben und bestätigen:
+   - Wird die echte Domain woanders gehostet als auf GitHub Pages, Abschnitt 3 der Datenschutzerklärung anpassen.
+   - Mit dem Anbieter des Fahrschul-Managers sollte ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO) bestehen.
+   - Preis-PDFs: aktuell und identisch mit dem Preisaushang (§ 32 FahrlG)? Ein Datum („Stand“) und „inkl. MwSt.“ ergänzen.
+   - Schriftliche Einwilligung der Fahrlehrerinnen und Fahrlehrer zur Veröffentlichung ihrer Fotos.
+   - Die GitHub-Vorschau ist für Suchmaschinen gesperrt (noindex), bis die Fahrschule zustimmt.
 3. **Schnellkurs-Termine**: Der letzte Termin (24.–31.08.2026) ist vorbei; die Seite verweist auf Anfrage.
 4. **Russische Fassung** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen. Alle Inhaltsseiten gibt es auf Russisch (Anrede „вы“); der DE/RU-Umschalter springt jeweils zur passenden Seite. Impressum, Datenschutz, PDF-Formulare und die Online-Anmeldung bleiben deutsch.
    Wichtig bei Textänderungen: deutsche Seite ändern, dann `python3 scripts/translate_ru.py` ausführen. Das Skript bricht ab, wenn ein geänderter deutscher Satz noch keine russische Entsprechung hat.

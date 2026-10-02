@@ -471,7 +471,7 @@ UEBER = [
     ('Fahrlehrerin seit 2000', 'Инструктор с 2000 года'),
     QUOTE_VIKTOR, QUOTE_PETER, QUOTE_GEROLD, QUOTE_NADINE,
     ('<span class="eyebrow">Jobs</span>', '<span class="eyebrow">Вакансии</span>'),
-    ('Fahrlehrer gesucht.</h2>', 'Ищем инструкторов.</h2>'),
+    ('Fahrlehrer (m/w/d) gesucht.</h2>', 'Ищем инструкторов (м/ж/д).</h2>'),
     ('Unser Team braucht Verstärkung. Wenn du Fahrlehrerin oder Fahrlehrer bist und zu uns passen möchtest, melde dich.',
      'Нашей команде нужно пополнение. Если вы инструктор по вождению и хотите работать с нами, свяжитесь с нами.'),
     ANRUFEN,
