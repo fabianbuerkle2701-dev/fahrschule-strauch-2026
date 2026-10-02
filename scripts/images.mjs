@@ -31,6 +31,7 @@ const jobs = [
   // Intro: Schaufenster mit Logo (klein) und Fuhrpark 3:2 (groß)
   { src: 'photos/gerold-remmele.jpg', out: 'intro-schaufenster', crop: [640, 0, 560, 442], widths: [480, 720] },
   { src: 'photos/fuhrpark.jpg', out: 'intro-fuhrpark', crop: [420, 220, 1560, 1040], widths: [640, 960, 1400] },
+  { src: 'photos/viktor-strauch.jpg', out: 'intro-viktor', crop: [0, 60, 1200, 800], widths: [640, 960, 1200] },
 ];
 
 const manifest = {};

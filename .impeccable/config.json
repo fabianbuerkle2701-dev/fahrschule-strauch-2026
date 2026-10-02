@@ -1,0 +1,80 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.515Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "fuehrerschein/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.528Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "berufskraftfahrer/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.542Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "ueber-uns/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.555Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "anmeldung/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.567Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "impressum/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.579Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "datenschutz/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.592Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "ru/index.html"
+        ],
+        "createdAt": "2026-10-02T08:12:39.603Z",
+        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+      }
+    ]
+  }
+}

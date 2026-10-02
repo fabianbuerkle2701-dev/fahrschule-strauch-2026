@@ -132,7 +132,7 @@ function initJourney() {
     const trail = svg.querySelector('[data-trail]');
     const car = svg.querySelector('[data-car]');
     const length = path.getTotalLength();
-    const [a, b] = vertical ? [0.07, 0.93] : [0.06, 0.94];
+    const [a, b] = vertical ? [0.07, 0.93] : [0.08, 0.92];
     const fractions = steps.map((_, i) => a + ((b - a) * i) / (steps.length - 1));
     trail.style.strokeDasharray = `${length} ${length}`;
     trail.style.strokeDashoffset = `${length}`;
@@ -145,13 +145,13 @@ function initJourney() {
       const c = document.createElementNS(svgNS, 'circle');
       c.setAttribute('cx', x);
       c.setAttribute('cy', y);
-      c.setAttribute('r', vertical ? 15 : 30);
+      c.setAttribute('r', vertical ? 15 : 36);
       g.append(c);
       const t = document.createElementNS(svgNS, 'text');
       t.setAttribute('x', x);
-      t.setAttribute('y', y + (vertical ? 5.5 : 10));
+      t.setAttribute('y', y + (vertical ? 5.5 : 11.5));
       t.setAttribute('text-anchor', 'middle');
-      if (!vertical) t.setAttribute('font-size', '30');
+      if (!vertical) t.setAttribute('font-size', '33');
       t.textContent = String(i + 1);
       g.append(t);
       const title = document.createElementNS(svgNS, 'title');
