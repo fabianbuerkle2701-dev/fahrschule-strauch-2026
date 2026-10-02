@@ -10,7 +10,7 @@
           "index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.515Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -19,7 +19,7 @@
           "fuehrerschein/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.528Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -28,7 +28,7 @@
           "berufskraftfahrer/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.542Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -37,7 +37,7 @@
           "ueber-uns/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.555Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -46,7 +46,7 @@
           "anmeldung/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.567Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -55,7 +55,7 @@
           "impressum/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.579Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -64,7 +64,7 @@
           "datenschutz/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.592Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "flat-type-hierarchy",
@@ -73,22 +73,13 @@
           "ru/index.html"
         ],
         "createdAt": "2026-10-02T08:12:39.603Z",
-        "reason": "Claude verified in browser: computed sizes h1 96px, h2 64px, h3 32px, body 17px at 1440; detector cannot resolve clamp() sizes from imported main.css"
-      },
-      {
-        "rule": "side-tab",
-        "value": "*",
-        "files": [
-          "src/styles/sections.css"
-        ],
-        "createdAt": "2026-10-02T08:18:31.730Z",
-        "reason": "Claude verified: flagged rule is .classes::before, a full-width 12px livery stripe band as section top edge (requested by finish reviewer fix 7), not a one-side card border"
+        "reason": "Claude verified in browser after HOKI rebuild: h1 up to 78px, section heads up to 72px, card titles 19-26px, body 16px; detector cannot resolve clamp() sizes from imported main.css"
       },
       {
         "rule": "design-system-color",
         "value": "rgb(0, 0, 0)",
         "createdAt": "2026-10-02T09:09:08.184Z",
-        "reason": "Claude verified in browser: computed text color is rgb(28, 34, 36) = --color-neutral-950; static detector cannot resolve CSS custom properties from imported main.css"
+        "reason": "Footer text is black on the mint footer, as in the shophoki.com footer the layout copies; other text resolves to --ink #1c2224"
       }
     ]
   }

@@ -39,7 +39,7 @@ Erstkontakt meist per Smartphone (Instagram, Google-Suche „Fahrschule Lahr“)
 - Farben aus dem Logo: Petrol #0199A6, Grau #ACADAF.
 - Fahrzeugbeklebung mit Band aus schrägen Petrol-Parallelogrammen (Foto-Beleg).
 - Ansprache im Du (wie auf der Originalseite).
-- Designreferenz für Qualität: shophoki.com (nicht kopieren).
+- Designreferenz: shophoki.com. Seit 02.10.2026 auf Wunsch des Auftraggebers im Aufbau 1:1 übernommen (Abstände, Radien, Schriften), mit eigenen Farben, Fotos, Illustrationen und Texten der Fahrschule.
 
 ## Evidence on Hand
 - Fotos: Team mit vier Fahrschulautos, vier Fahrlehrer-Porträts am eigenen Auto.

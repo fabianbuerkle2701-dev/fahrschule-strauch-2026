@@ -1,357 +1,200 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-02T12:00:00+02:00",
+  "generatedAt": "2026-10-02T14:00:00+02:00",
   "title": "Design System: Fahrschule Strauch",
   "extensions": {
     "colorMeta": {
-      "brand": {
+      "forest": {
+        "role": "primary",
+        "displayName": "Petrol-Wald",
+        "hint": "HOKI forest #26401F. Haupt-Knöpfe, Fortschrittsbalken, aktiver Chip, Text auf Mint.",
+        "tonalRamp": ["#0a2c2f", "#0e3b3f", "#0b5258", "#0d6269", "#12676e", "#00717b", "#0199a6", "#a5e1e6"]
+      },
+      "forest-hover": { "role": "primary", "displayName": "Petrol-Wald Hover" },
+      "accent": {
         "role": "primary",
         "displayName": "Logo-Petrol",
-        "tonalRamp": [
-          "#e3f3f4",
-          "#f1f8f8",
-          "#0199a6",
-          "#00717b",
-          "#0b5258",
-          "#0e3b3f"
-        ]
+        "hint": "HOKI-Salbeiakzent #7ba64c. Als Schrift nur ab 24 px (3,44:1 auf Weiß); Fokus-Ring, Auswahl."
       },
-      "brand-ink": {
+      "green": {
         "role": "primary",
-        "displayName": "Petrol-Ink",
-        "hint": "Text-Stufe des Logo-Petrols (5,76:1 auf Weiß): Links, Haupt-Button, eingefärbtes Wort, Abschluss-Fläche."
+        "displayName": "Petrol-Tinte",
+        "hint": "HOKI #56613E. Mono-Etiketten und kleine Akzente auf Weiß, Caret."
       },
-      "brand-dark": {
-        "role": "primary",
-        "displayName": "Petrol dunkel",
-        "hint": "Hover von Button und Links, Asphalt der Abschluss-Straße."
-      },
-      "brand-night": {
+      "forest2": {
         "role": "secondary",
         "displayName": "Nacht-Petrol",
-        "hint": "Illustrationslinien und die dunklen Flächen (B197, Team-Bühne, Anmelde-Block)."
+        "hint": "HOKI forest2 #1A2C18. Dunkle Flächen, Grund hinter Fotos."
       },
-      "brand-light": {
+      "forest3": { "role": "secondary", "displayName": "Tiefes Petrol", "hint": "Dunkles Ende der Verläufe, Schrift auf Lime." },
+      "forest-glow": { "role": "secondary", "displayName": "Petrol-Schein", "hint": "Heller Ton der Verläufe (HOKI #3c5b35)." },
+      "mint": {
         "role": "secondary",
         "displayName": "Mint",
-        "hint": "Klasse-B-Kachel, offener Akkordeon-Knopf."
+        "hint": "HOKI mint #EAF2E6. Kacheln, Karten, Chips, Sprachumschalter.",
+        "tonalRamp": ["#d2e9eb", "#d4e6e7", "#dbe7e8", "#e3f3f4", "#f1f8f8", "#ffffff"]
       },
-      "brand-mist": {
-        "role": "secondary",
-        "displayName": "Nebel",
-        "hint": "Grund des Ablaufs, getönte Panels, Hover der Angebotszeilen."
-      },
-      "brand-glow": {
+      "mint2": { "role": "secondary", "displayName": "Mint-Rand", "hint": "HOKI #E1EDDB. 1-px-Rand der Mint-Karten." },
+      "cream": { "role": "secondary", "displayName": "Nebel", "hint": "HOKI #f4f1ea. Grund der Kreis-Karten." },
+      "lime": {
         "role": "tertiary",
-        "displayName": "Petrol hell (Glow)",
-        "hint": "Einzige Hervorhebungsfarbe auf dunklem Petrol: eingefärbtes Wort (Team, Abschluss, Footer-Claim, B197), Schaltpfeil, Hover des Team-Links."
+        "displayName": "Petrol hell",
+        "hint": "HOKI lime #C6E09B. Einziger Akzent auf dunklem Grund und auf Fotos."
       },
-      "neutral-950": {
+      "lime-hover": { "role": "tertiary", "displayName": "Petrol hell Hover" },
+      "ink": {
         "role": "neutral",
         "displayName": "Tinte",
-        "tonalRamp": [
-          "#f6f7f7",
-          "#eceeef",
-          "#d9dcdd",
-          "#acadaf",
-          "#8a8f92",
-          "#565d60",
-          "#3e4547",
-          "#1c2224"
-        ]
+        "tonalRamp": ["#1c2224", "#3e4547", "#565d60", "#acadaf", "#dbe7e8", "#ffffff"]
       },
-      "neutral-800": {
-        "role": "neutral",
-        "displayName": "Asphalt"
-      },
-      "neutral-600": {
-        "role": "neutral",
-        "displayName": "Sekundärtext"
-      },
-      "neutral-400": {
-        "role": "neutral",
-        "displayName": "Deko-Grau",
-        "hint": "Nie für Text."
-      },
-      "neutral-300": {
-        "role": "neutral",
-        "displayName": "Logo-Grau"
-      },
-      "neutral-200": {
-        "role": "neutral",
-        "displayName": "Linie"
-      },
-      "neutral-100": {
-        "role": "neutral",
-        "displayName": "Hover-Fläche"
-      },
-      "neutral-50": {
-        "role": "neutral",
-        "displayName": "Abschnittsgrund"
-      },
-      "background": {
-        "role": "neutral",
-        "displayName": "Weiß"
-      }
+      "muted": { "role": "neutral", "displayName": "Grau", "hint": "HOKI #6B7563, für AA dunkler. Leads, Beschreibungen." },
+      "line": { "role": "neutral", "displayName": "Linie", "hint": "HOKI #DDE6D7." },
+      "footer": { "role": "neutral", "displayName": "Footer-Mint", "hint": "HOKI rgb(213 222 205). Nur Footer-Fläche, Schrift Schwarz." },
+      "paper": { "role": "neutral", "displayName": "Papier" }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Nur die Hero-Headline der Startseite."
-      },
-      "h1": {
-        "displayName": "H1",
-        "purpose": "Seitenköpfe der Unterseiten und 404."
-      },
-      "h2": {
-        "displayName": "H2",
-        "purpose": "Abschnittsüberschriften, zweiter Satzteil in Petrol-Ink."
-      },
-      "h3": {
-        "displayName": "H3",
-        "purpose": "Kachel-, Etappen- und Panel-Titel."
-      },
-      "lead": {
-        "displayName": "Lead",
-        "purpose": "Einleitungssatz unter Überschriften, Sekundärtext-Farbe."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Fließtext, max. 64ch."
-      },
-      "small": {
-        "displayName": "Small",
-        "purpose": "Meta, Fakten-Labels, Rechtszeile, Chips."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Kurze Bezeichnungen, nicht versal."
-      },
-      "button": {
-        "displayName": "Button",
-        "purpose": "Alle Buttons."
-      }
+      "display": { "displayName": "Display", "purpose": "Nur die Hero-Headline der Startseite, weiß auf Foto." },
+      "h1": { "displayName": "H1", "purpose": "Unterseiten-Köpfe mit Akzentwort in accent, teils mit wechselndem Wort." },
+      "headline": { "displayName": "Headline", "purpose": "Abschnittsköpfe; Varianten je Baustein (qa 82, ki 72, pz 56, faq 52 px max)." },
+      "title": { "displayName": "Title", "purpose": "Kacheltitel." },
+      "lead": { "displayName": "Lead", "purpose": "Unterzeile in muted, max. 46ch." },
+      "body": { "displayName": "Body", "purpose": "Grundtext Geist 16 px." },
+      "label": { "displayName": "Label", "purpose": "Space Mono in Versalien für Tags, Badges, Brotkrumen, Datenlisten; Russisch Geist Mono." },
+      "button": { "displayName": "Button", "purpose": "Alle Knöpfe." }
     },
     "shadows": [
-      {
-        "name": "shadow-float",
-        "value": "0 18px 40px -18px rgb(14 59 63 / 0.28)",
-        "purpose": "Einziger UI-Schatten: schwebende Navigation (plus inset 0 0 0 1px rgb(14 59 63 / .06)) und Hero-Foto."
-      },
-      {
-        "name": "car-ground",
-        "value": "drop-shadow(0 6px 8px rgb(14 59 63 / 0.25))",
-        "purpose": "Bodenschatten des gezeichneten Autos (Hero; Ablauf 0 5px 6px / .28). Teil der Illustration."
-      }
+      { "name": "button", "value": "0 8px 22px rgb(10 44 47 / 0.14)", "purpose": "Haupt-Knopf." },
+      { "name": "icon-tile", "value": "0 6px 16px rgb(10 44 47 / 0.06)", "purpose": "Icon-Feld in ki-Kacheln." },
+      { "name": "circle-card", "value": "0 14px 32px rgb(10 44 47 / 0.08)", "purpose": "nf-Kreise; Hover 0 24px 46px / .14." },
+      { "name": "faq-open", "value": "0 14px 34px rgb(10 44 47 / 0.08)", "purpose": "Offener FAQ-Eintrag." },
+      { "name": "image-tile", "value": "0 18px 40px rgb(10 44 47 / 0.16)", "purpose": "Coverflow-Bilder, Hochkant-Videos (16px 38px), Dokument-Vorschau (/.18)." },
+      { "name": "big-card", "value": "0 20px 46px rgb(10 44 47 / 0.2)", "purpose": "Foto- und Petrol-Karten im nf-Baustein." },
+      { "name": "header-pill", "value": "0 8px 24px rgb(0 0 0 / 0.08)", "purpose": "Schwebende Kopfzeile, plus 1px Rand Weiß 80 %." }
     ],
     "motion": [
-      {
-        "name": "ease-out",
-        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Reveals, Hero, Auto, Header-Morph, Pfeile."
-      },
-      {
-        "name": "ease-ui",
-        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
-        "purpose": "Hover, Menü, Akkordeon, Etappen-Farben."
-      },
-      {
-        "name": "ease-roll",
-        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-        "purpose": "Roll-Button, 500 ms."
-      },
-      {
-        "name": "dur-ui",
-        "value": "180ms",
-        "purpose": "Buttons, Links, Farbwechsel."
-      },
-      {
-        "name": "dur-med",
-        "value": "320ms",
-        "purpose": "Akkordeon, Menü, Header-Morph, Link-Unterstreichung."
-      },
-      {
-        "name": "dur-reveal",
-        "value": "800ms",
-        "purpose": "Scroll-Reveal: Y 24px -> 0, Schwelle 12 %, Stagger 70 ms je Stufe (0-4)."
-      },
-      {
-        "name": "hero-road-draw",
-        "value": "1.6s ease-out 0.15s",
-        "purpose": "Straße zeichnet sich einmal beim Laden über eine Maske."
-      },
-      {
-        "name": "crew-crossfade",
-        "value": "700ms ease-out",
-        "purpose": "Team-Bühne: Fotowechsel; Zitat und Name 500 ms mit 4 px Hub."
-      },
-      {
-        "name": "lane-move",
-        "value": "18s linear infinite",
-        "purpose": "Footer-Fahrstreifen, Mittellinie läuft nach links."
-      },
-      {
-        "name": "parallax",
-        "value": "±5% translateY, ab 1024px",
-        "purpose": "Nur Intro-Porträt Viktor Strauch."
-      },
-      {
-        "name": "header-morph",
-        "value": "translateY(12px), logo scale(.85), 320ms ease-out",
-        "purpose": "Navigation wird nach 24 px Scroll zur schwebenden Pille."
-      }
+      { "name": "ease", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Hover, Farben, Schublade-Hintergrund, wechselndes Wort." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reveal, Kopfzeilen-Einflug, Schublade, Sprach-Daumen, Coverflow." },
+      { "name": "reveal", "value": "800ms ease-out, translate 22px, stagger 80ms", "purpose": "Einmalig per IntersectionObserver, Schwelle 12 %, rootMargin unten -6 %; nur mit Klasse js." },
+      { "name": "header-pill-in", "value": "320ms ease-out from translateY(-12px)", "purpose": "Kopfzeile wird zur schwebenden Pille, wenn der 40-px-Wächter oben verschwindet." },
+      { "name": "drawer", "value": "420ms ease-out", "purpose": "Menü-Schublade von links." },
+      { "name": "lang-thumb", "value": "320ms ease-out, Seitenwechsel nach 240ms", "purpose": "Sprachumschalter DE/RU." },
+      { "name": "coverflow", "value": "600ms ease-out, Autoplay 4200ms", "purpose": "Instagram-Karussell; Pause bei Zeiger, Fokus und außerhalb des Bildes; Wischen ab 40 px." },
+      { "name": "rotating-word", "value": "2400ms Takt, 280ms Übergang", "purpose": "Wechselndes Wort in der Unterseiten-H1." },
+      { "name": "ki-flow", "value": "16s ease infinite (Lichtflecken 12s alternate)", "purpose": "Fließender Petrol-Verlauf im ki-Band." },
+      { "name": "chip-flow", "value": "5s ease infinite", "purpose": "Verlauf im Banner-Chip des Produktbilds." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "prefers-reduced-motion: alle Dauern 0,01 ms, Reveal aus, kein Autoplay, kein wechselndes Wort, kein glattes Scrollen." }
     ],
     "breakpoints": [
-      {
-        "name": "xs-max",
-        "value": "479px",
-        "purpose": "Button-Höhe 56 px."
-      },
-      {
-        "name": "sm",
-        "value": "640px"
-      },
-      {
-        "name": "md",
-        "value": "768px"
-      },
-      {
-        "name": "lg",
-        "value": "1024px",
-        "purpose": "Hauptumbruch zu Desktop."
-      },
-      {
-        "name": "footer",
-        "value": "1100px",
-        "purpose": "Footer in vier Spalten."
-      }
+      { "name": "scrim-max", "value": "699px", "purpose": "Stärkere Scrims auf Fotos." },
+      { "name": "spec", "value": "640px", "purpose": "Datenlisten zweispaltig." },
+      { "name": "sm", "value": "700px" },
+      { "name": "footer", "value": "760px", "purpose": "Footer dreispaltig." },
+      { "name": "pz", "value": "820px", "purpose": "Drei Schritte nebeneinander." },
+      { "name": "md", "value": "880px" },
+      { "name": "hero-split", "value": "900px", "purpose": "Produkt-Hero zweispaltig." },
+      { "name": "header", "value": "1000px", "purpose": "Kopfzeile 98 px, Logo 46 px." },
+      { "name": "qa", "value": "1100px" },
+      { "name": "lg", "value": "1200px", "purpose": "wrap-wide 1240 px." },
+      { "name": "xl", "value": "1300px" }
     ]
   },
   "components": [
     {
-      "name": "Primär-Button",
+      "name": "Haupt-Knopf",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Haupt-Aktion „Jetzt anmelden“; Pille in Petrol-Ink.",
-      "html": "<a class=\"ds-btn\" href=\"#\">Jetzt anmelden</a>",
-      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:.6em; min-height:52px; padding:0 1.75rem; border:1.5px solid transparent; border-radius:999px; background:var(--color-brand-ink, #00717b); color:#fff; font-family:Onest, system-ui, sans-serif; font-size:1rem; font-weight:600; line-height:1; text-decoration:none; transition:background-color 180ms cubic-bezier(.4,0,.2,1), transform 180ms cubic-bezier(.4,0,.2,1); } .ds-btn:hover { background:var(--color-brand-dark, #0b5258); } .ds-btn:active { transform:scale(.98); } .ds-btn:focus-visible { outline:3px solid #0199a6; outline-offset:3px; }"
+      "description": "hoki-cta: Petrol-Pille mit Pfeil, für die Anmeldung.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Jetzt anmelden <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-cta { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:14px 28px; border:none; border-radius:999px; background:var(--forest, #0b5258); color:#fff; font-family:Geist, system-ui, sans-serif; font-size:15px; font-weight:600; line-height:1.2; text-decoration:none; box-shadow:0 8px 22px rgb(10 44 47 / .14); transition:all .15s cubic-bezier(.4,0,.2,1); } .ds-cta:hover { background:var(--forest-hover, #0d6269); transform:translateY(-1px); } .ds-cta:active { transform:translateY(0) scale(.98); } .ds-cta:focus-visible { outline:3px solid #0199a6; outline-offset:3px; }"
     },
     {
-      "name": "Sekundär-Button",
+      "name": "Outline-Knopf",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Zweite Aktion neben dem Primär-Button; transparente Pille mit Logo-Grau-Rand.",
-      "html": "<a class=\"ds-btn-sec\" href=\"#\">Klassen ansehen</a>",
-      "css": ".ds-btn-sec { display:inline-flex; align-items:center; min-height:52px; padding:0 1.75rem; border:1.5px solid var(--color-neutral-300, #acadaf); border-radius:999px; background:transparent; color:var(--color-neutral-950, #1c2224); font-family:Onest, system-ui, sans-serif; font-size:1rem; font-weight:600; line-height:1; text-decoration:none; transition:border-color 180ms cubic-bezier(.4,0,.2,1), color 180ms cubic-bezier(.4,0,.2,1); } .ds-btn-sec:hover { border-color:var(--color-brand-ink, #00717b); color:var(--color-brand-ink, #00717b); }"
+      "refersTo": "button-outline",
+      "description": "Zweite Aktion, z. B. Anrufen oder PDF.",
+      "html": "<a class=\"ds-cta-ol\" href=\"#\">Antrag als PDF</a>",
+      "css": ".ds-cta-ol { display:inline-flex; align-items:center; gap:9px; padding:12px 28px; border:2px solid var(--forest, #0b5258); border-radius:999px; background:transparent; color:var(--forest, #0b5258); font-family:Geist, system-ui, sans-serif; font-size:15px; font-weight:600; line-height:1.2; text-decoration:none; transition:all .15s cubic-bezier(.4,0,.2,1); } .ds-cta-ol:hover { background:var(--forest, #0b5258); color:#fff; } .ds-cta-ol:focus-visible { outline:3px solid #0199a6; outline-offset:3px; }"
     },
     {
-      "name": "Roll-Button",
+      "name": "Lime-Knopf",
       "kind": "button",
-      "refersTo": "button-roll",
-      "description": "Pfeil-CTA nach MotionSites „Axion About“: Beschriftung rollt hoch, Pfeil im Kreis dreht von -45° auf 0°.",
-      "html": "<a class=\"ds-roll\" href=\"#\"><span class=\"ds-roll__label\"><span>Jetzt anmelden</span><span aria-hidden=\"true\">Jetzt anmelden</span></span><span class=\"ds-roll__arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
-      "css": ".ds-roll { display:inline-flex; align-items:center; gap:.9rem; min-height:52px; padding:0 6px 0 1.6rem; border-radius:999px; background:var(--color-brand-ink, #00717b); color:#fff; font-family:Onest, system-ui, sans-serif; font-size:1rem; font-weight:600; text-decoration:none; transition:background-color 180ms cubic-bezier(.4,0,.2,1); } .ds-roll:hover { background:var(--color-brand-dark, #0b5258); } .ds-roll__label { display:block; height:1.25em; overflow:hidden; line-height:1.25; } .ds-roll__label > span { display:block; transition:transform 500ms cubic-bezier(.25,.1,.25,1); } .ds-roll__arrow { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:#fff; color:var(--color-brand-ink, #00717b); } .ds-roll__arrow svg { transform:rotate(-45deg); transition:transform 500ms cubic-bezier(.25,.1,.25,1); } .ds-roll:hover .ds-roll__label > span, .ds-roll:focus-visible .ds-roll__label > span { transform:translateY(-100%); } .ds-roll:hover .ds-roll__arrow svg, .ds-roll:focus-visible .ds-roll__arrow svg { transform:rotate(0deg); }"
+      "refersTo": "button-lime",
+      "description": "Heller Knopf auf dunklem Petrol-Band.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-cta-lime\" href=\"#\">Jetzt anmelden</a></div>",
+      "css": ".ds-dark { padding:24px; background:#0e3b3f; } .ds-cta-lime { display:inline-flex; align-items:center; padding:15px 30px; border-radius:999px; background:var(--lime, #a5e1e6); color:var(--forest3, #0a2c2f); font-family:Geist, system-ui, sans-serif; font-size:15px; font-weight:600; text-decoration:none; transition:all .15s cubic-bezier(.4,0,.2,1); } .ds-cta-lime:hover { background:var(--lime-hover, #bdeaee); } .ds-cta-lime:focus-visible { outline:3px solid #fff; outline-offset:3px; }"
     },
     {
-      "name": "Textlink",
-      "kind": "custom",
-      "description": "Petrol-Ink-Link, Unterstreichung wächst beim Hover von links.",
-      "html": "<a class=\"ds-link\" href=\"#\">Mehr zu Klasse B →</a>",
-      "css": ".ds-link { display:inline-flex; align-items:center; gap:.45em; padding-bottom:2px; color:var(--color-brand-ink, #00717b); font-family:Onest, system-ui, sans-serif; font-weight:600; text-decoration:none; background:linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1.5px; transition:background-size 320ms cubic-bezier(.16,1,.3,1), color 180ms cubic-bezier(.4,0,.2,1); } .ds-link:hover { background-size:100% 1.5px; color:var(--color-brand-dark, #0b5258); }"
-    },
-    {
-      "name": "Schwebende Navigation",
+      "name": "Schwebende Kopfzeile",
       "kind": "nav",
-      "description": "Header nach dem Scrollen: Pille mit Blur und dem einzigen UI-Schatten.",
-      "html": "<nav class=\"ds-nav\"><strong class=\"ds-nav__logo\">Fahrschule Strauch</strong><a class=\"ds-nav__link\" href=\"#\">Führerschein</a><a class=\"ds-nav__link\" href=\"#\">Ablauf</a><a class=\"ds-nav__link\" href=\"#\">Über uns</a></nav>",
-      "css": ".ds-nav { display:flex; align-items:center; gap:.25rem; max-width:1120px; height:64px; padding:0 .5rem 0 .75rem; border-radius:999px; background:rgb(255 255 255 / .86); -webkit-backdrop-filter:blur(16px) saturate(1.4); backdrop-filter:blur(16px) saturate(1.4); box-shadow:0 18px 40px -18px rgb(14 59 63 / .28), inset 0 0 0 1px rgb(14 59 63 / .06); font-family:Onest, system-ui, sans-serif; } .ds-nav__logo { margin-right:auto; color:var(--color-brand-ink, #00717b); } .ds-nav__link { display:inline-flex; align-items:center; height:44px; padding:0 .85rem; border-radius:999px; color:var(--color-neutral-800, #3e4547); font-size:.975rem; font-weight:520; text-decoration:none; transition:background-color 180ms cubic-bezier(.4,0,.2,1); } .ds-nav__link:hover { background:var(--color-neutral-100, #eceeef); color:var(--color-neutral-950, #1c2224); }"
+      "refersTo": "header-pill",
+      "description": "Dreispaltige Kopfzeile im gescrollten Zustand: 780-px-Pille mit Blur, Sprachumschalter rechts.",
+      "html": "<div class=\"ds-hd\"><span class=\"ds-hd__ic\"><svg viewBox=\"0 0 24 24\" width=\"21\" height=\"21\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg></span><strong class=\"ds-hd__logo\">Fahrschule Strauch</strong><span class=\"ds-lang\"><a class=\"is-on\" href=\"#\">DE</a><a href=\"#\">RU</a></span></div>",
+      "css": ".ds-hd { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; max-width:780px; height:44px; padding:0 16px; border-radius:999px; background:rgb(255 255 255 / .85); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); border:1px solid rgb(255 255 255 / .8); box-shadow:0 8px 24px rgb(0 0 0 / .08); font-family:Geist, system-ui, sans-serif; } .ds-hd__ic { width:36px; color:#1a1a1a; } .ds-hd__logo { color:#0b5258; font-size:14px; } .ds-lang { justify-self:end; display:inline-flex; padding:3px; border-radius:999px; background:var(--mint, #e3f3f4); font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.08em; } .ds-lang a { display:grid; place-items:center; min-width:34px; height:22px; padding:0 8px; border-radius:999px; color:var(--forest, #0b5258); text-decoration:none; transition:background-color .32s cubic-bezier(.16,1,.3,1), color .2s; } .ds-lang a.is-on { background:var(--forest, #0b5258); color:#fff; } .ds-lang a:focus-visible { outline:3px solid #0199a6; outline-offset:3px; }"
     },
     {
-      "name": "Unterseiten-Chip",
+      "name": "Effekt-Chip",
       "kind": "chip",
-      "refersTo": "subnav-chip",
-      "description": "Sticky Sprungleiste auf Unterseiten; aktueller Chip dunkel gefüllt.",
-      "html": "<div class=\"ds-chips\"><a class=\"ds-chip is-current\" href=\"#\">Klasse B</a><a class=\"ds-chip\" href=\"#\">BE</a><a class=\"ds-chip\" href=\"#\">BF17</a></div>",
-      "css": ".ds-chips { display:flex; gap:.5rem; } .ds-chip { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border-radius:999px; background:rgb(255 255 255 / .9); box-shadow:inset 0 0 0 1px var(--color-neutral-200, #d9dcdd); color:#1c2224; font-family:Onest, system-ui, sans-serif; font-size:.9375rem; font-weight:600; text-decoration:none; } .ds-chip:hover { box-shadow:inset 0 0 0 1.5px var(--color-brand-ink, #00717b); color:var(--color-brand-ink, #00717b); } .ds-chip.is-current { background:var(--color-neutral-950, #1c2224); box-shadow:none; color:#fff; }"
+      "refersTo": "chip",
+      "description": "Mint-Chips unter den Startseiten-Kacheln.",
+      "html": "<ul class=\"ds-chips\"><li>Schaltung oder Automatik</li><li>ab 18</li></ul>",
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0; list-style:none; } .ds-chips li { padding:5px 11px; border-radius:100px; border:1px solid var(--mint2, #d2e9eb); background:var(--mint, #e3f3f4); color:var(--forest, #0b5258); font-family:Geist, system-ui, sans-serif; font-size:12.5px; font-weight:500; line-height:1.3; }"
     },
     {
-      "name": "Klassen-Kachel",
+      "name": "Filter-Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "hoki-faq: Filter über dem Akkordeon, gedrückt Petrol gefüllt.",
+      "html": "<div class=\"ds-filter\"><button class=\"ds-fchip\" aria-pressed=\"true\">Alle</button><button class=\"ds-fchip\" aria-pressed=\"false\">Unterlagen</button></div>",
+      "css": ".ds-filter { display:flex; gap:8px; } .ds-fchip { padding:7px 13px; border:1px solid var(--line, #dbe7e8); border-radius:999px; background:#fff; color:var(--forest, #0b5258); font-family:Geist, system-ui, sans-serif; font-size:12.5px; font-weight:600; cursor:pointer; transition:all .18s cubic-bezier(.4,0,.2,1); } .ds-fchip:hover { border-color:var(--forest, #0b5258); } .ds-fchip[aria-pressed='true'] { background:var(--forest, #0b5258); border-color:var(--forest, #0b5258); color:#fff; } .ds-fchip:focus-visible { outline:3px solid #0199a6; outline-offset:3px; }"
+    },
+    {
+      "name": "Kachel",
       "kind": "card",
-      "refersTo": "class-tile-mint",
-      "description": "Kachel mit großem Klassen-Buchstaben in Straßenschrift; Varianten Mint, Weiß mit Innenlinie, Nacht-Petrol. Kein Schatten.",
-      "html": "<article class=\"ds-tile\"><div class=\"ds-tile__glyph\">B</div><h3 class=\"ds-tile__title\">Klasse B</h3><p class=\"ds-tile__text\">Der Autoführerschein, mit Schaltung oder Automatik.</p></article>",
-      "css": ".ds-tile { display:grid; gap:1.25rem; max-width:420px; padding:clamp(1.5rem, 1rem + 2vw, 2.5rem); border-radius:clamp(20px, 1rem + 1.4vw, 36px); background:var(--color-brand-light, #e3f3f4); font-family:Onest, system-ui, sans-serif; } .ds-tile__glyph { font-family:'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight:600; font-size:7rem; line-height:.78; letter-spacing:-.04em; color:var(--color-brand, #0199a6); } .ds-tile__title { margin:0; font-family:'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight:600; font-size:1.75rem; line-height:1.12; color:#1c2224; } .ds-tile__text { margin:0; color:var(--color-neutral-800, #3e4547); }"
+      "refersTo": "tile-mint",
+      "description": "Kachelreihe 3:4 der Unterseiten; Varianten Mint, Petrol-Verlauf, Foto mit Scrim.",
+      "html": "<div class=\"ds-tiles\"><article class=\"ds-tile\"><h3>Klasse B</h3><p>Der Autoführerschein, mit Schaltung oder Automatik.</p></article><article class=\"ds-tile ds-tile--wald\"><h3>Klasse BE</h3><p>Für Anhänger über 750 kg.</p></article></div>",
+      "css": ".ds-tiles { display:flex; gap:14px; } .ds-tile { width:260px; aspect-ratio:3/4; padding:26px; border-radius:24px; background:var(--mint, #e3f3f4); color:var(--ink, #1c2224); font-family:Geist, system-ui, sans-serif; transition:transform .3s cubic-bezier(.4,0,.2,1); } .ds-tile:hover { transform:translateY(-4px); } .ds-tile h3 { margin:0; font-family:'Schibsted Grotesk', Geist, sans-serif; font-weight:600; font-size:26px; line-height:1.1; letter-spacing:-.4px; } .ds-tile p { margin:10px 0 0; font-size:15px; line-height:1.5; color:var(--muted, #565d60); } .ds-tile--wald { color:#fff; background:radial-gradient(120% 120% at 82% 0%, #12676e 0%, #0b5258 46%, #0e3b3f 100%); } .ds-tile--wald p { color:rgb(255 255 255 / .85); }"
     },
     {
-      "name": "Akkordeon-Zeile",
+      "name": "FAQ-Eintrag",
       "kind": "custom",
-      "description": "FAQ-Frage mit Plus im Kreis, dreht beim Öffnen 45° und wird Mint.",
-      "html": "<details class=\"ds-acc\"><summary>Ab wann kann ich anfangen?<span class=\"ds-acc__icon\" aria-hidden=\"true\">+</span></summary><p>Mit der Ausbildung kannst du ein halbes Jahr vor dem Mindestalter beginnen.</p></details>",
-      "css": ".ds-acc { border-block:1px solid var(--color-neutral-200, #d9dcdd); font-family:Onest, system-ui, sans-serif; } .ds-acc summary { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; min-height:72px; padding-block:1.1rem; font-size:1.125rem; font-weight:600; line-height:1.35; list-style:none; cursor:pointer; } .ds-acc summary::-webkit-details-marker { display:none; } .ds-acc summary:hover { color:var(--color-brand-ink, #00717b); } .ds-acc__icon { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--color-neutral-100, #eceeef); font-size:1.4rem; transition:transform 320ms cubic-bezier(.16,1,.3,1); } .ds-acc[open] .ds-acc__icon { transform:rotate(45deg); background:var(--color-brand-light, #e3f3f4); } .ds-acc p { margin:0; padding:0 3.5rem 1.6rem 0; color:var(--color-neutral-600, #565d60); }"
-    },
-    {
-      "name": "Footer-Fahrstreifen",
-      "kind": "custom",
-      "description": "64 px Asphalt mit Petrol-Kanten und laufender weißer Mittellinie über dem Footer.",
-      "html": "<div class=\"ds-lane\" aria-hidden=\"true\"><div class=\"ds-lane__line\"></div></div>",
-      "css": ".ds-lane { position:relative; height:64px; overflow:hidden; background:var(--color-neutral-800, #3e4547); box-shadow:inset 0 5px 0 #0199a6, inset 0 -5px 0 #0199a6; } .ds-lane__line { position:absolute; left:0; top:50%; width:200%; height:3px; transform:translateY(-50%); background:repeating-linear-gradient(90deg, #fff 0 34px, transparent 34px 62px); } @media (prefers-reduced-motion: no-preference) { .ds-lane__line { animation:ds-lane 18s linear infinite; } } @keyframes ds-lane { from { transform:translate3d(0,-50%,0); } to { transform:translate3d(-50%,-50%,0); } }"
+      "refersTo": "faq-item",
+      "description": "hoki-faq: weiße Karte, runder Mint-Knopf wird beim Öffnen Petrol.",
+      "html": "<details class=\"ds-faq\"><summary>Ab wann kann ich anfangen?<span class=\"ds-faq__ic\" aria-hidden=\"true\">+</span></summary><p>Mit der Ausbildung kannst du ein halbes Jahr vor dem Mindestalter beginnen.</p></details>",
+      "css": ".ds-faq { max-width:560px; border:1px solid var(--line, #dbe7e8); border-radius:16px; background:#fff; font-family:Geist, system-ui, sans-serif; transition:box-shadow .2s cubic-bezier(.4,0,.2,1); } .ds-faq[open] { box-shadow:0 14px 34px rgb(10 44 47 / .08); } .ds-faq summary { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 18px; font-size:15.5px; font-weight:600; line-height:1.3; color:var(--ink, #1c2224); list-style:none; cursor:pointer; border-radius:16px; } .ds-faq summary::-webkit-details-marker { display:none; } .ds-faq summary:hover { background:#f6fafa; } .ds-faq summary:focus-visible { outline:3px solid #0199a6; outline-offset:3px; } .ds-faq__ic { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--mint, #e3f3f4); color:var(--forest, #0b5258); } .ds-faq[open] .ds-faq__ic { background:var(--forest, #0b5258); color:#fff; } .ds-faq p { margin:0; padding:0 18px 18px; font-size:15px; color:var(--muted, #565d60); }"
     }
   ],
   "narrative": {
-    "northStar": "Das S ist eine Straße",
-    "overview": "Das S im Logo ist eine Straße; die Startseite ist die Strecke, auf der ein Fahrschulauto beim Scrollen von der Anmeldung bis zum Führerschein fährt. Weiß trägt die Seite, Petrol erscheint als eingefärbtes Wort, auf dem Haupt-Button und in den Zeichnungen. Das zweite Markenelement ist das Schrägstreifen-Band der Fahrzeugbeklebung.\n\nEditorial und ruhig wie eine Consumer-Marke, aber mit eigener Welt: Fahrbahn mit Petrol-Rändern und weißer Strichelung, Straßenschrift Barlow Semi Condensed für alles, was man wie ein Schild liest, Onest für alles, was man wie einen Satz liest. Flächen statt Schatten, Pillen statt Kanten, echte Fotos von Team und Fuhrpark statt Stockbildern.",
+    "northStar": "HOKI in Petrol",
+    "overview": "Die Website übernimmt den Aufbau von shophoki.com 1:1: Gliederung der Abschnitte, Radien, Abstände, Schriftgrade und das Verhalten der Bausteine. Eigen sind nur die Besetzung und der Inhalt: HOKIs Waldgrün wird durch das Petrol des Logos ersetzt, Produktfotos durch echte Fotos von Team und Fuhrpark, Produktbilder durch eigene Fahrzeug-Illustrationen mit dem echten Logo.\n\nDie Seite ist eine Folge von Bausteinen, die je einen HOKI-Abschnitt spiegeln: Vollbild-Foto mit Abdunklung und weißer Headline, waagrechte Kachelreihen mit Fortschrittsbalken, Mint-Karten, dunkle Petrol-Bänder mit fließendem Verlauf, Akkordeon mit Filter-Chips, Mint-Footer. Weiß trägt die Seite, Mint gruppiert, Nacht-Petrol setzt die dunklen Momente. Mobil zuerst: fast jede Reihe ist auf dem Handy wischbar.\n\nWas entfernt wurde und nicht zurückkommt: Barlow Semi Condensed und Onest, die Straßen-Animation im Ablauf, die Team-Bühne, der Veyra-Hero, der Footer-Fahrstreifen und das Streifen-Band als Kante.",
     "keyCharacteristics": [
-      "Weiß als Grund, Petrol-Ink als eingefärbtes Wort, Nacht-Petrol für dunkle Flächen",
-      "Barlow Semi Condensed 600 für Überschriften und Schild-Inhalte, Onest für Text",
-      "Fahrbahn-Motiv mit Petrol-Rändern, Asphalt und 16/14-Mittellinie",
-      "Streifen-Band an Fahrzeugen, als Kante nur einmal (Klassen-Oberkante)",
-      "Pillen-Buttons, Bildradien 20 bis 36 px, Karten ohne Schatten",
-      "Scroll-gekoppelte Fahrt des Autos durch sechs Etappen als Signatur"
+      "Aufbau, Radien, Abstände und Schriftgrade wie HOKI, Farben aus dem Logo",
+      "Schibsted Grotesk für Überschriften, Geist für Text, Space Mono für kleine Etiketten",
+      "Vollbild-Fotos mit Abdunklung (Scrim), weiße Headline unten links, Akzentwort in Petrol hell",
+      "Waagrechte, wischbare Reihen mit 2-px-Fortschrittsbalken statt Raster auf dem Handy",
+      "Pillen-Knöpfe, Kacheln mit 22 bis 34 px Radius",
+      "Fließende Petrol-Verläufe als einzige Dauerbewegung, alles aus bei reduzierter Bewegung"
     ],
     "rules": [
-      {
-        "name": "Die Ein-Fläche-Regel",
-        "body": "Petrol besitzt pro Seite höchstens eine ganze Fläche (Abschluss in Petrol-Ink). Dunkle Flächen sind Nacht-Petrol.",
-        "section": "colors"
-      },
-      {
-        "name": "Die Verlaufs-Regel",
-        "body": "Keine dekorativen Verläufe; nur als Lesbarkeits-Abdunklung über Fotos, Ausblendkante unter der Sticky-Straße und wachsende Link-Unterstreichung.",
-        "section": "colors"
-      },
-      {
-        "name": "Die Beklebungs-Regel",
-        "body": "Das Streifen-Band gehört an Fahrzeuge und erscheint als Kante genau einmal.",
-        "section": "colors"
-      },
-      {
-        "name": "Die Straßenschrift-Regel",
-        "body": "Was man wie ein Schild liest, steht in Barlow Semi Condensed 600; was man wie einen Satz liest, in Onest.",
-        "section": "typography"
-      },
-      {
-        "name": "Die Inset-Linien-Regel",
-        "body": "Karten werfen keinen Schatten; Abgrenzung über Fläche oder innere 1-px-Linie.",
-        "section": "elevation"
-      },
-      {
-        "name": "Die Ein-Schatten-Regel",
-        "body": "Genau ein UI-Schatten, Petrol-getönt, für schwebende Navigation und Hero-Foto.",
-        "section": "elevation"
-      }
+      { "name": "The Großschrift-Akzent Rule", "body": "Logo-Petrol (accent) erreicht auf Weiß nur 3,44:1 und steht als Schrift ausschließlich ab 24 px. Kleine farbige Schrift auf Weiß ist green oder forest.", "section": "colors" },
+      { "name": "The Hell-auf-Dunkel Rule", "body": "Auf Nacht-Petrol und auf Fotos ist lime die einzige Akzentfarbe; Text bleibt Weiß oder Weiß mit 82 bis 96 % Deckkraft.", "section": "colors" },
+      { "name": "The Scrim Rule", "body": "Jedes Foto, auf dem Text steht, trägt eine Abdunklung aus --scrim (Verlauf nach unten dunkler, mobil unter 700 px stärker: bis 0,9) und zusätzlich einen weichen Textschatten. Kein Text direkt auf ungedunkeltem Foto.", "section": "colors" },
+      { "name": "The Zwei-Ton-Überschrift Rule", "body": "Große Überschriften setzen den zweiten Satzteil farbig: auf Weiß in accent, auf Foto und Nacht-Petrol in lime. Nur ein farbiger Teil pro Überschrift.", "section": "typography" },
+      { "name": "The Weich-und-Getönt Rule", "body": "Schatten sind groß und weich, auf Inhalten Petrol-getönt (rgb(10 44 47)); kein harter Versatz, keine Kontur-Schatten.", "section": "elevation" }
     ],
     "dos": [
-      "Zweiten Satzteil von Überschriften in Petrol-Ink einfärben, auf dunklem Petrol in brand-glow",
-      "Noch nicht erreichte Etappen über die Farbe neutral-600 dämpfen, nicht über Deckkraft",
-      "Bewegung immer mit prefers-reduced-motion abschalten; Inhalte ohne JS sichtbar lassen",
-      "Hero-Höhe mit svh begrenzen, nie 100vh"
+      "Do neue Abschnitte aus den vorhandenen HOKI-Bausteinen bauen und deren Maße, Radien und Schriftgrade übernehmen.",
+      "Do accent als Schrift nur ab 24 px einsetzen; kleine Akzente in green oder forest.",
+      "Do jedes Foto mit Text darauf mit einem --scrim-Verlauf abdunkeln, mobil stärker.",
+      "Do auf dunklem Grund lime als einzige Akzentfarbe nutzen.",
+      "Do jede Bewegung unter prefers-reduced-motion abschalten und Inhalte ohne JS sichtbar lassen.",
+      "Do Bilder über <!-- @pic --> einbinden (AVIF und WebP aus assets-src/image-manifest.json), gemeinsame Teile über <!-- @include -->."
     ],
     "donts": [
-      "Keine Versal-Kicker oder Eyebrows über Überschriften",
-      "Keine dritte Schrift, keine Monospace-Labels",
-      "Keine Schatten auf Karten, keine grauen oder schwarzen Schatten",
-      "Logo nicht nachzeichnen oder verändern",
-      "Logo-Petrol nicht für Text unter 24 px"
+      "Don't HOKIs Grün- und Salbeitöne verwenden; jede Farbe kommt aus den Petrol-Token.",
+      "Don't Schibsted Grotesk oder Space Mono für russischen Text erzwingen; die Umstellung über html:lang(ru) bleibt.",
+      "Don't harte, versetzte Schatten oder graue Kontur-Schatten.",
+      "Don't das Logo nachzeichnen oder verändern."
     ]
   }
 }
