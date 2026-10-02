@@ -382,10 +382,11 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 
 ## Scroll-Animationen (seit 02.10.2026, Kundenwunsch)
 
-- **Fahrschulauto auf der Straße:** Am rechten Rand läuft eine Asphalt-Spur über die ganze Seite (Start- und Zielflagge, gestrichelte Mittellinie; `src/partials/drive.html`, im Header-Baustein eingebunden). Das Auto ist ein SVG von oben mit dem echten Logo auf der Motorhaube. Es fährt mit dem Scrollfortschritt von oben nach unten, lenkt bei schnellem Scrollen leicht ein, hat Scheinwerferkegel beim Vorwärtsfahren, weiße Rückfahrlichter beim Hochscrollen und Bremslichter beim Anhalten. Spur/Auto: 24/28 px mobil, 46/36 px ab 1000 px, 64/50 px ab 1300 px.
-- **Überschriften** unterhalb des ersten Bildschirms laufen Wort für Wort ein (`data-split`). Überschriften im ersten Bildschirm stehen sofort, damit der sichtbare Inhalt schnell lädt.
-- **Kartenreihen** fahren gestaffelt von rechts ein, Kreis-Karten, Schritte und FAQ-Einträge ploppen gestaffelt auf.
-- **Parallaxe:** Hero-Bild und -Text verschieben sich beim Scrollen, das Fuhrparkfoto zoomt heraus, Fotokarten driften leicht, Illustrationen der Autos fahren seitlich ins Bild, die Illustration im Petrol-Band schwebt.
+- **Fahrschulauto auf der Straße:** Am rechten Rand läuft eine Asphalt-Spur vom Ende des Heros bis zum Seitenende (der Hero bleibt unberührt) (Start- und Zielflagge, gestrichelte Mittellinie; `src/partials/drive.html`, im Header-Baustein eingebunden). Das Auto ist ein SVG von oben mit dem echten Logo auf der Motorhaube. Es fährt mit dem Scrollfortschritt von oben nach unten, lenkt bei schnellem Scrollen leicht ein, hat Scheinwerferkegel beim Vorwärtsfahren, weiße Rückfahrlichter beim Hochscrollen und Bremslichter beim Anhalten. Spur/Auto: 24/28 px mobil, 46/36 px ab 1000 px, 64/50 px ab 1300 px.
+- **Überschriften** unterhalb des ersten Bildschirms blenden Wort für Wort leicht ein (`data-split`, 0,3 em, 25 ms Versatz). Überschriften im ersten Bildschirm stehen sofort, damit der sichtbare Inhalt schnell lädt.
+- **Kartenreihen** gleiten gestaffelt 16 px von rechts herein, Kreis-Karten, Schritte und FAQ-Einträge blenden mit 97 % Größe ein.
+- **Parallaxe:** Der Hero bewegt sich nicht. Das Fuhrparkfoto zoomt heraus, Fotokarten driften leicht, Illustrationen der Autos fahren seitlich ins Bild, die Illustration im Petrol-Band schwebt.
 - **Zähler:** „1984“ und Kennzahlen wie „3.500 kg“ zählen hoch.
 - **Drei Schritte** leuchten nacheinander auf, während man durch den Abschnitt scrollt.
+- Am 02.10.2026 auf Wunsch abgeschwächt: Hero-Bild 0,12, Hero-Text 0,05, Fotozoom 6 %, Drift 2–2,5 %, Einfahren 8 %, Lenken max. 4°.
 - Alles wird erst ab dem ersten Scrollen berechnet und läuft nur für sichtbare Elemente. Bei „Bewegung reduzieren“ entfällt alles, die Straße wird ausgeblendet.

@@ -242,7 +242,8 @@ function initLangSwitch() {
   });
 }
 
-/* --- Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter --- */
+/* --- Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter ---
+   Die Straße beginnt erst unter dem Hero, das Auto berührt den Hero nie. */
 function initDrive() {
   const drive = document.querySelector('[data-drive]');
   if (!drive) return;
@@ -252,23 +253,34 @@ function initDrive() {
   }
   const car = drive.querySelector('.drive__car');
   const root = document.documentElement;
+  const hero = document.querySelector('.sol__hero, .pr__hero, .legal--head, .notfound');
+  let laneTop = 0;
   let last = window.scrollY;
   let vel = 0;
   let raf = 0;
   let stopTimer = 0;
+  const measure = () => {
+    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
+    laneTop = hero ? hero.getBoundingClientRect().bottom + window.scrollY + 24 : headerH;
+    drive.style.top = `${Math.round(laneTop)}px`;
+  };
   const update = () => {
     raf = 0;
-    const max = root.scrollHeight - window.innerHeight;
-    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
-    const top = Math.max(16, headerH + 16 - window.scrollY);
+    const vh = window.innerHeight;
+    const sy = window.scrollY;
+    const max = root.scrollHeight - vh;
+    const start = Math.max(0, laneTop - vh * 0.6);
+    const p = max > start ? Math.min(1, Math.max(0, (sy - start) / (max - start))) : 0;
     const body = car.getBoundingClientRect().width * (108 / 60);
-    const y = top + p * (window.innerHeight - top - body - 18);
-    const dy = window.scrollY - last;
-    last = window.scrollY;
+    const minY = 16;
+    let y = minY + p * (vh - minY - body - 18);
+    y = Math.max(y, laneTop - sy + 14); // nie oberhalb des Straßenanfangs, also nie im Hero
+    const dy = sy - last;
+    last = sy;
     vel = vel * 0.75 + dy * 0.25;
-    const steer = Math.max(-9, Math.min(9, Math.sin(p * Math.PI * 14) * Math.min(1, Math.abs(vel) / 30) * 9));
+    const steer = Math.max(-4, Math.min(4, Math.sin(p * Math.PI * 14) * Math.min(1, Math.abs(vel) / 30) * 4));
     car.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) rotate(${steer.toFixed(2)}deg)`;
+    car.style.visibility = y > vh ? 'hidden' : '';
     if (dy !== 0) {
       car.classList.toggle('is-forward', dy > 0);
       car.classList.toggle('is-reverse', dy < 0);
@@ -285,7 +297,15 @@ function initDrive() {
     if (!raf) raf = requestAnimationFrame(update);
   };
   window.addEventListener('scroll', queue, { passive: true });
-  window.addEventListener('resize', queue);
+  window.addEventListener('resize', () => {
+    measure();
+    queue();
+  });
+  new ResizeObserver(() => {
+    measure();
+    queue();
+  }).observe(document.body);
+  measure();
   update();
 }
 
@@ -325,10 +345,10 @@ function countUp(el) {
   if (!m) return;
   const sep = m[1].includes('.') ? '.' : '';
   const target = parseInt(m[1].replace(/\./g, ''), 10);
-  const from = target >= 1900 && target <= 2100 ? target - 60 : 0;
+  const from = target >= 1900 && target <= 2100 ? target - 20 : Math.round(target * 0.6);
   const fmt = (n) => (sep ? n.toLocaleString('de-DE') : String(n)) + m[2];
   const t0 = performance.now();
-  const dur = 1400;
+  const dur = 900;
   const tick = (t) => {
     const k = Math.min(1, (t - t0) / dur);
     const e = 1 - Math.pow(1 - k, 3);
@@ -355,7 +375,7 @@ function initScrollFx() {
     { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
   );
   document
-    .querySelectorAll('.sol__h, .revhead h2, .sec-h, .qa__h, .pz__h, .faq__h, .ig__h, .ki__h .l1, .ki__lead h3, .cm__h .small, .pr__h1')
+    .querySelectorAll('.revhead h2, .sec-h, .qa__h, .pz__h, .faq__h, .ig__h, .ki__h .l1, .ki__lead h3, .cm__h .small')
     .forEach((el) => {
       if (el.querySelector('.rot')) return;
       // Überschriften im ersten Bildschirm sofort zeigen (schneller sichtbarer Inhalt beim Laden)
@@ -376,7 +396,7 @@ function initScrollFx() {
       once.observe(c);
     });
   });
-  document.querySelectorAll('.cm__h .big, .proof__r b, .social__i b').forEach((el) => {
+  document.querySelectorAll('.cm__h .big, .proof__r b').forEach((el) => {
     if (!/^\d/.test(el.textContent.trim())) return;
     el.setAttribute('data-count', '');
     once.observe(el);
@@ -388,12 +408,9 @@ function initScrollFx() {
     document.querySelectorAll(sel).forEach((el) => {
       fx.push({ el, kind, f, on: false });
     });
-  add('.sol__media img', 'hero');
-  add('.sol__text', 'heroText');
   add('.cm__hero > picture img', 'zoom');
-  add('.pr__media > picture img', 'drift', 0.06);
-  add('.tile--photo > picture img, .big--photo > picture img, .cm__vtile img', 'drift', 0.08);
-  add('.ki__art > *', 'float', 0.1);
+  add('.tile--photo > picture img, .big--photo > picture img, .cm__vtile img', 'drift', 0.025);
+  add('.ki__art > *', 'float', 0.04);
   add('.sol__art img, .nf__circle picture img, .qa__img--ill img', 'driveIn');
   const steps = document.querySelector('[data-steps]');
 
@@ -409,29 +426,21 @@ function initScrollFx() {
   const frame = () => {
     raf = 0;
     const vh = window.innerHeight;
-    const sy = window.scrollY;
     for (const x of fx) {
-      if (!x.on && x.kind !== 'hero' && x.kind !== 'heroText') continue;
+      if (!x.on) continue;
       const r = x.el.getBoundingClientRect();
       const center = r.top + r.height / 2 - vh / 2;
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
       let t = '';
-      if (x.kind === 'hero') {
-        if (sy > vh * 1.2) continue;
-        t = `translate3d(0, ${(sy * 0.32).toFixed(1)}px, 0) scale(${(1 + sy * 0.00012).toFixed(4)})`;
-      } else if (x.kind === 'heroText') {
-        if (sy > vh * 1.2) continue;
-        x.el.style.opacity = Math.max(0, 1 - sy / (vh * 0.75)).toFixed(3);
-        t = `translate3d(0, ${(sy * 0.18).toFixed(1)}px, 0)`;
-      } else if (x.kind === 'zoom') {
-        t = `scale(${(1.2 - 0.2 * Math.min(1, p * 1.6)).toFixed(4)})`;
+      if (x.kind === 'zoom') {
+        t = `scale(${(1.06 - 0.06 * Math.min(1, p * 1.6)).toFixed(4)})`;
       } else if (x.kind === 'drift') {
-        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) scale(1.14)`;
+        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) scale(1.06)`;
       } else if (x.kind === 'float') {
-        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) rotate(${(center * -0.006).toFixed(2)}deg)`;
+        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0)`;
       } else if (x.kind === 'driveIn') {
         const k = Math.min(1, p * 2.2);
-        t = `translate3d(${((1 - k) * -26).toFixed(1)}%, 0, 0)`;
+        t = `translate3d(${((1 - k) * -8).toFixed(1)}%, 0, 0)`;
       }
       x.el.style.transform = t;
     }
