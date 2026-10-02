@@ -83,6 +83,12 @@
         ],
         "createdAt": "2026-10-02T08:18:31.730Z",
         "reason": "Claude verified: flagged rule is .classes::before, a full-width 12px livery stripe band as section top edge (requested by finish reviewer fix 7), not a one-side card border"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(0, 0, 0)",
+        "createdAt": "2026-10-02T09:09:08.184Z",
+        "reason": "Claude verified in browser: computed text color is rgb(28, 34, 36) = --color-neutral-950; static detector cannot resolve CSS custom properties from imported main.css"
       }
     ]
   }
