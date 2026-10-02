@@ -3,6 +3,7 @@
 <html lang="ru">
   <head>
     <!-- @include head locale="ru_RU" -->
+    <link rel="preload" href="/fonts/geist-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <title>Запись и контакты | Автошкола Strauch, Лар</title>
     <meta name="description" content="Запись в автошколу Strauch в Ларе: онлайн через Fahrschulmanager или с помощью бланка. Бланки, приложение Fahren Lernen MAX, финансирование и контакты." />
     <link rel="canonical" href="https://www.fahrschule-strauch.de/ru/anmeldung/" />
@@ -16,90 +17,88 @@
     <!-- @include header-ru page="anmeldung" de="/anmeldung/" ru="/ru/anmeldung/" -->
 
     <main id="inhalt">
-      <header class="page-head">
-        <div class="container">
-          <ol class="breadcrumb" role="list">
-            <li><a href="/ru/">Главная</a></li>
-            <li aria-current="page">Запись и контакты</li>
-          </ol>
-          <h1 class="h1">Записаться <span class="accent">и поехать.</span></h1>
-          <p class="lead">Онлайн, с помощью бланка или лично у нас на Schwarzwaldstraße&nbsp;93.</p>
-        </div>
-      </header>
-
-      <section class="container" id="online" aria-labelledby="online-title">
-        <div class="signup">
-          <div>
-            <h2 class="h2" id="online-title">Записаться онлайн</h2>
-            <p style="margin-top: 1rem">Запись проходит через Fahrschulmanager. Там вы один раз вводите свои данные онлайн. Форма на немецком языке.</p>
-          </div>
-          <div>
-            <form class="signup__form" action="https://api.fahrschulmanager.de/v1/onlineanmeldung/authenticate?t=oH%2BenRuJEfdHHfsX0l0oIYMP39vKOYeKeKUd0KZcZUX4jtQCUoDxkG0PGqJl9cs6aAP09PU9BdsgHg0WF6WR0A%3D%3D" method="post" target="_blank">
-              <button class="btn btn--light" type="submit">Записаться <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></button>
-            </form>
-            <p class="signup__hint">Запись в Fahrschulmanager откроется в новой вкладке.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="unterlagen" aria-labelledby="docs-title" style="border-top: 0">
-        <div class="container block__grid">
-          <div class="block__head">
-            <h2 class="h2" id="docs-title">Бланки <span class="accent">для скачивания.</span></h2>
-            <p class="lead">Удобнее на бумаге? Распечатайте бланк записи, заполните и принесите нам. Бланки на немецком языке.</p>
-          </div>
-          <div class="downloads">
-            <a class="download" href="/files/anmeldeformular.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Бланк записи</span><span class="download__meta">PDF, 653 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/fuehrerscheinantrag.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Заявление на получение прав</span><span class="download__meta">PDF, 216 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/info-preise-klasse-b.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Информация и цены, категория B</span><span class="download__meta">PDF, 15 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/info-preise-klasse-be.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Информация и цены, категория BE</span><span class="download__meta">PDF, 12 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/bf17-antrag.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Заявление на вождение с 17 лет</span><span class="download__meta">PDF, 286 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/bf17-erklaerung-begleitperson.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">BF17: заявление сопровождающего</span><span class="download__meta">PDF, 504 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-            <a class="download" href="/files/vordruck-kartenfuehrerschein.pdf">
-              <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-              <span><span class="download__name">Бланк для пластиковых прав</span><span class="download__meta">PDF, 306 КБ</span></span>
-              <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" style="padding-top: 0" aria-label="Приложение и финансирование">
-        <div class="container split">
-          <article class="panel panel--tint" id="max">
-            <h2 class="h3">Приложение Fahren Lernen MAX</h2>
-            <p>С интерактивными уроками и упражнениями вы учите теорию, когда и где удобно: дома на диване или в электричке. Вы видите свой прогресс и целенаправленно тренируете то, в чём ещё не уверены.</p>
-          </article>
-          <article class="panel" id="finanzierung">
-            <h2 class="h3">Финансирование с STARTHILFE</h2>
-            <p>STARTHILFE разработано специально для учеников автошкол издательством Heinrich Vogel и Credit Europe Bank N.V. во Франкфурте-на-Майне.</p>
-            <div class="actions">
-              <a class="link" href="https://starthilfe.fahren-lernen.de/" rel="noopener" target="_blank">Подробнее о STARTHILFE (на немецком) <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
+      <section class="pr" id="online" aria-labelledby="page-title">
+        <div class="pr__hero">
+          <div class="pr__text">
+            <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Запись</span>
+            <h1 class="pr__h1" id="page-title">Записаться <span class="ac">и поехать.</span></h1>
+            <p class="pr__sub">Онлайн, с помощью бланка или лично у нас на <span lang="de">Schwarzwaldstraße&nbsp;93</span>.</p>
+            <div class="social">
+              <div class="social__i"><b>Онлайн</b><span>Fahrschulmanager</span></div>
+              <div class="social__i"><b>PDF</b><span>бланк записи</span></div>
+              <div class="social__i"><b>Лично</b><span lang="de">Schwarzwaldstr. 93</span></div>
             </div>
+            <form class="pr__actions" action="https://api.fahrschulmanager.de/v1/onlineanmeldung/authenticate?t=oH%2BenRuJEfdHHfsX0l0oIYMP39vKOYeKeKUd0KZcZUX4jtQCUoDxkG0PGqJl9cs6aAP09PU9BdsgHg0WF6WR0A%3D%3D" method="post" target="_blank">
+              <button class="cta" type="submit">Записаться онлайн <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></button>
+              <a class="cta cta--outline" href="/files/anmeldeformular.pdf"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>Бланк записи</a>
+            </form>
+            <p class="cta-note" style="margin-top: 12px">Онлайн-запись откроет Fahrschulmanager в новой вкладке. Форма на немецком языке.</p>
+          </div>
+          <div class="pr__media" style="--pos: 74%">
+            <!-- @pic src="team-gerold-remmele" sizes="(min-width: 1200px) 500px, (min-width: 900px) 440px, 92vw" eager="1" alt="Инструктор Gerold Remmele рядом с учебным автомобилем перед автошколой" -->
+            <span class="pr__banner"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-map-pin" /></svg>Можно и лично</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="qa" id="unterlagen" aria-labelledby="docs-title">
+        <div class="wrap">
+          <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Бланки</span>
+          <h2 class="qa__h" id="docs-title">Бланки <b>для скачивания.</b></h2>
+          <p class="sec-sub">Удобнее на бумаге? Распечатайте бланк записи, заполните и принесите нам. Бланки на немецком языке.</p>
+        </div>
+        <div class="row qa__cards" data-row>
+          <a class="qa__card" href="/files/anmeldeformular.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-anmeldeformular" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 653 КБ</span></div>
+            <h3 class="qa__title">Бланк записи</h3>
+            <p class="qa__tx">Для записи на бумаге.</p>
+          </a>
+          <a class="qa__card" href="/files/fuehrerscheinantrag.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-fuehrerscheinantrag" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 216 КБ</span></div>
+            <h3 class="qa__title">Заявление на получение прав</h3>
+            <p class="qa__tx">Бланк заявления можно получить и у нас.</p>
+          </a>
+          <a class="qa__card" href="/files/info-preise-klasse-b.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-info-preise-klasse-b" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 15 КБ</span></div>
+            <h3 class="qa__title">Информация и цены, категория B</h3>
+            <p class="qa__tx">Базовая стоимость, уроки вождения и экзамены.</p>
+          </a>
+          <a class="qa__card" href="/files/info-preise-klasse-be.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-info-preise-klasse-be" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 12 КБ</span></div>
+            <h3 class="qa__title">Информация и цены, категория BE</h3>
+            <p class="qa__tx">Базовая стоимость, уроки вождения и экзамены.</p>
+          </a>
+          <a class="qa__card" href="/files/bf17-antrag.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-bf17-antrag" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 286 КБ</span></div>
+            <h3 class="qa__title">Заявление на вождение с 17 лет</h3>
+            <p class="qa__tx">Для BF17, с 16½ лет.</p>
+          </a>
+          <a class="qa__card" href="/files/bf17-erklaerung-begleitperson.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-bf17-erklaerung-begleitperson" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 504 КБ</span></div>
+            <h3 class="qa__title">BF17: заявление сопровождающего</h3>
+            <p class="qa__tx">Отдельный бланк на каждого сопровождающего.</p>
+          </a>
+          <a class="qa__card" href="/files/vordruck-kartenfuehrerschein.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-vordruck-kartenfuehrerschein" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 306 КБ</span></div>
+            <h3 class="qa__title">Бланк для пластиковых прав</h3>
+            <p class="qa__tx">Бланк для ваших прав в формате карты.</p>
+          </a>
+        </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Другие бланки</span></button></div>
+      </section>
+
+      <section class="nf" style="padding-top: 0" aria-label="Приложение и финансирование">
+        <div class="nf__stack">
+          <article class="big big--mint" id="max">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-device-mobile" /></svg></span>
+            <h2 class="bt">Приложение Fahren Lernen MAX</h2>
+            <p class="bd">С интерактивными уроками и упражнениями вы учите теорию, когда и где удобно: дома на диване или в электричке. Вы видите свой прогресс и целенаправленно тренируете то, в чём ещё не уверены.</p>
+          </article>
+          <article class="big big--dark" id="finanzierung">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-wallet" /></svg></span>
+            <h2 class="bt">Финансирование с STARTHILFE</h2>
+            <p class="bd">STARTHILFE разработано специально для учеников автошкол издательством Heinrich Vogel и Credit Europe Bank N.V. во Франкфурте-на-Майне.</p>
+            <a class="pill-btn" href="https://starthilfe.fahren-lernen.de/" rel="noopener" target="_blank">Подробнее о STARTHILFE (на немецком) <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
           </article>
         </div>
       </section>
@@ -107,7 +106,6 @@
       <!-- @include contact-ru -->
     </main>
 
-    <!-- @include footer-ru -->
-    <!-- @include symbols -->
+    <!-- @include footer-ru de="/anmeldung/" ru="/ru/anmeldung/" -->
   </body>
 </html>

@@ -16,17 +16,14 @@ const jobs = [
   { src: 'photos/peter-harter.jpg', out: 'team-peter-harter', crop: [440, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/gerold-remmele.jpg', out: 'team-gerold-remmele', crop: [420, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/nadine-duerr.jpg', out: 'team-nadine-duerr', crop: [470, 0, 720, 900], widths: [400, 640, 720] },
-  // Querformat-Fassungen (Team-Bühne auf der Startseite)
-  { src: 'photos/viktor-strauch.jpg', out: 'team-viktor-strauch-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
-  { src: 'photos/peter-harter.jpg', out: 'team-peter-harter-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
-  { src: 'photos/gerold-remmele.jpg', out: 'team-gerold-remmele-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
+  // Querformat (Instagram-Karussell auf der Startseite)
   { src: 'photos/nadine-duerr.jpg', out: 'team-nadine-duerr-wide', crop: [0, 0, 1200, 900], widths: [640, 960, 1200] },
   // Avatare (quadratisch, Gesicht)
   { src: 'photos/peter-harter.jpg', out: 'avatar-peter-harter', crop: [770, 0, 180, 180], widths: [160] },
   { src: 'photos/gerold-remmele.jpg', out: 'avatar-gerold-remmele', crop: [850, 90, 200, 200], widths: [160] },
   { src: 'photos/nadine-duerr.jpg', out: 'avatar-nadine-duerr', crop: [840, 0, 180, 180], widths: [160] },
   { src: 'photos/viktor-strauch.jpg', out: 'avatar-viktor-strauch', crop: [1000, 40, 180, 180], widths: [160] },
-  // Intro: Schaufenster mit Logo (klein) und Fuhrpark 3:2 (groß)
+  // Schaufenster mit Logo und Viktor Strauch am Auto (Karussell, Schnellkurs-Karte)
   { src: 'photos/gerold-remmele.jpg', out: 'intro-schaufenster', crop: [640, 0, 560, 442], widths: [480, 720] },
   { src: 'photos/viktor-strauch.jpg', out: 'intro-viktor', crop: [0, 60, 1200, 800], widths: [640, 960, 1200] },
 ];
@@ -62,6 +59,21 @@ for (const file of (await readdir(path.join(SRC, 'illustrationen/final'))).filte
     await pipe.clone().webp({ quality: 82, alphaQuality: 90 }).toFile(path.join(OUT, `ill-${name}-${w}.webp`));
   }
   console.log('✓ ill-' + name, width + '×' + height, widths.join('/'));
+}
+
+// Vorschaubilder der Formulare (erste PDF-Seite, erzeugt mit: sips -s format png -Z 1400 datei.pdf)
+for (const file of (await readdir(path.join(SRC, 'pdf-vorschau'))).filter((f) => f.endsWith('.png'))) {
+  const name = `pdf-${path.basename(file, '.png')}`;
+  const input = sharp(path.join(SRC, 'pdf-vorschau', file)).flatten({ background: '#ffffff' });
+  const { width, height } = await sharp(path.join(SRC, 'pdf-vorschau', file)).metadata();
+  const widths = [400, 700];
+  manifest[name] = { width, height, widths };
+  for (const w of widths) {
+    const pipe = input.clone().resize({ width: w });
+    await pipe.clone().avif({ quality: 58, effort: 6 }).toFile(path.join(OUT, `${name}-${w}.avif`));
+    await pipe.clone().webp({ quality: 80 }).toFile(path.join(OUT, `${name}-${w}.webp`));
+  }
+  console.log('✓', name);
 }
 
 // Logo: verlustarm verkleinert, als PNG (Original-Design unverändert)

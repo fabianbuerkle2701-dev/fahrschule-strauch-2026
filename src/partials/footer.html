@@ -1,42 +1,47 @@
-<footer class="site-footer on-dark">
-  <!-- Aufbau nach MotionSites „Stark Minimal Footer“, Punkte-Band ersetzt durch Fahrbahnmarkierung -->
-  <div class="footer-lane" aria-hidden="true"><div class="footer-lane__line"></div></div>
-  <div class="container">
-    <div class="footer__top">
-      <p class="footer__claim">Wir sehen uns <span>auf der Straße.</span></p>
-      <nav class="footer__nav" aria-label="Kontakt">
-        <h2 class="footer__title">Kontakt</h2>
-        <a href="tel:+4915560410413">+49 155 60 41 04 13</a>
-        <a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a>
-        <span>Schwarzwaldstraße 93<br />77933 Lahr</span>
-        <span lang="ru">Говорим по-русски</span>
+<footer class="ft">
+  <div class="ft__in">
+    <div class="ft__grid">
+      <nav aria-label="Fahrschule">
+        <ul class="ft__links">
+          <li><a href="/fuehrerschein/">Führerschein</a></li>
+          <li><a href="/berufskraftfahrer/">Berufskraftfahrer</a></li>
+          <li><a href="/ueber-uns/">Über uns</a></li>
+          <li><a href="/anmeldung/">Anmeldung</a></li>
+          <li><a href="/ueber-uns/#jobs">Fahrlehrer gesucht</a></li>
+        </ul>
       </nav>
-      <nav class="footer__nav" aria-label="Fahrschule">
-        <h2 class="footer__title">Fahrschule</h2>
-        <a href="/fuehrerschein/">Führerschein</a>
-        <a href="/berufskraftfahrer/">Berufskraftfahrer</a>
-        <a href="/ueber-uns/">Über uns</a>
-        <a href="/anmeldung/">Anmeldung</a>
-        <a href="/ueber-uns/#jobs">Fahrlehrer gesucht</a>
-      </nav>
-      <nav class="footer__nav" aria-label="Soziale Medien">
-        <h2 class="footer__title">Folgen</h2>
-        <a href="https://instagram.com/fahrschulestrauch" rel="noopener" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=100063727025765" rel="noopener" target="_blank">Facebook</a>
+      <div>
+        <ul class="ft__links" aria-label="Kontakt">
+          <li><a href="tel:+4915560410413">+49 155 60 41 04 13</a></li>
+          <li><a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Schwarzwaldstra%C3%9Fe%2093%2C%2077933%20Lahr" rel="noopener" target="_blank">Route planen</a></li>
+        </ul>
+        <p class="ft__small">Fahrschule Viktor Strauch, Schwarzwaldstraße 93, 77933 Lahr. Theorieunterricht montags von 19:00 bis 20:30 Uhr, mittwochs nach Vereinbarung.</p>
+        <p class="ft__small">Wir beraten dich auf Deutsch und Russisch. <span lang="ru">Говорим по-русски.</span></p>
+      </div>
+    </div>
+
+    <div class="ft__mid">
+      <div class="ft__social">
+        <a href="https://www.facebook.com/profile.php?id=100063727025765" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-facebook-logo" /></svg><span class="visually-hidden">Facebook</span></a>
+        <a href="https://instagram.com/fahrschulestrauch" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-instagram-logo" /></svg><span class="visually-hidden">Instagram</span></a>
+      </div>
+      <nav class="ft__langsel" aria-label="Sprache / Язык">
+        <a href="{{de}}" lang="de" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="{{ru}}" lang="ru" hreflang="ru">Русский</a>
       </nav>
     </div>
 
-    <a class="footer__brand" href="/" aria-label="Fahrschule Strauch, zur Startseite">
-      <span class="footer__mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64"><path d="M46 6c0 13-28 9-28 22s28 9 28 22c0 6-6 8-14 10" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" /><path d="M46 6c0 13-28 9-28 22s28 9 28 22c0 6-6 8-14 10" fill="none" stroke="#0199a6" stroke-width="1.6" stroke-dasharray="4 4" /></svg>
-      </span>
-      <span class="footer__word" aria-hidden="true">Fahrschule Strauch</span>
-    </a>
-
-    <div class="footer__legal">
-      <p>© 2026 Fahrschule Viktor Strauch</p>
-      <a href="/impressum/">Impressum</a>
-      <a href="/datenschutz/">Datenschutz</a>
+    <div class="ft__bottom">
+      <div>
+        <p>© 2026, Fahrschule Viktor Strauch</p>
+        <ul class="ft__legal">
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/datenschutz/">Datenschutz</a></li>
+          <li><a href="/anmeldung/#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <img class="ft__logo" src="/images/logo.webp" width="350" height="112" alt="" loading="lazy" decoding="async" />
     </div>
   </div>
 </footer>

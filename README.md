@@ -2,6 +2,8 @@
 
 Neubau der Website der Fahrschule Viktor Strauch in Lahr. Statisches Mehrseiten-Projekt mit Vite, ohne Framework und ohne Backend.
 
+Aufbau, Abstände, Radien und Schriften folgen 1:1 shophoki.com (Startseite und Produktseite), Farben, Fotos und Illustrationen sind die der Fahrschule. Details in `DESIGN.md`.
+
 ## Befehle
 
 ```bash
@@ -18,19 +20,26 @@ node scripts/check-ru.mjs         # russische Seiten auf übrig gebliebenes Deut
 
 ```text
 index.html, fuehrerschein/, berufskraftfahrer/, ueber-uns/, anmeldung/, ru/, impressum/, datenschutz/, 404.html
-src/partials/   gemeinsame Bausteine (head, header, footer, contact, finale, symbols)
-src/styles/     tokens.css, base.css, components.css, sections.css, pages.css
-src/scripts/    main.js (Navigation, Reveals, Autofahrt im Ablauf, Team-Bühne, Parallaxe)
+src/partials/   gemeinsame Bausteine (head, header, footer, contact; jeweils mit -ru-Fassung)
+src/styles/     tokens.css (Farben, Schriften), base.css, hoki.css (alle Bausteine nach HOKI)
+src/scripts/    main.js (schwebende Kopfzeile, Menü, Reveals, Reihen mit Fortschrittsbalken, Karussell, FAQ-Filter)
 public/         Bilder, Schriften, Icons, PDFs, robots.txt, sitemap.xml, Weiterleitungen
 assets-src/     Originalfotos und Logo (Provenienz in assets-src/README.md)
-scripts/        images.mjs (Bildpipeline), shots.mjs und eval.mjs (QA mit Chrome)
+scripts/        images.mjs (Bildpipeline), sprite.mjs (Icons), illustrations.py (Logo auf Illustrationen),
+                translate_ru.py (russische Seiten), stitch.mjs, shots.mjs, eval.mjs, check-ru.mjs (QA mit Chrome)
 ```
 
-Bausteine werden beim Bauen über `<!-- @include name -->` eingesetzt (kleines Plugin in `vite.config.js`).
+Beim Bauen setzt ein kleines Plugin in `vite.config.js` zwei Kürzel ein:
+
+- `<!-- @include name param="…" -->` fügt einen Baustein aus `src/partials/` ein.
+- `<!-- @pic src="ill-auto-seite" sizes="…" alt="…" -->` erzeugt ein `<picture>` mit AVIF und WebP in allen Breiten aus `assets-src/image-manifest.json`.
+
+Die Formular-Vorschauen (`pdf-*`) sind die ersten Seiten der PDFs, erzeugt mit `sips -s format png -Z 1400 datei.pdf --out assets-src/pdf-vorschau/name.png`, danach `npm run images`.
 
 ## Veröffentlichung
 
 - Die Seite erwartet, im Wurzelverzeichnis der Domain zu liegen (`https://www.fahrschule-strauch.de/`).
+- `dist/` vor dem Bauen löschen und frisch bauen (`rm -rf dist && npm run build`): Der Ordner liegt in iCloud, das legt sonst Kopien wie „index 2.html“ an.
 - Inhalt von `dist/` hochladen. Weiterleitungen von den alten Adressen liegen als `.htaccess` (Apache) und `_redirects` (Netlify) bei.
 - Schriften, Icons und Bilder sind selbst gehostet; es werden keine Drittanbieter geladen. Externe Links: Fahrschulmanager (Online-Anmeldung), STARTHILFE, Google Maps (nur Link), Instagram, Facebook.
 
@@ -41,4 +50,5 @@ Bausteine werden beim Bauen über `<!-- @include name -->` eingesetzt (kleines P
 3. **Schnellkurs-Termine**: Der letzte Termin (24.–31.08.2026) ist vorbei; die Seite verweist auf Anfrage.
 4. **Russische Fassung** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen. Alle Inhaltsseiten gibt es auf Russisch (Anrede „вы“); der DE/RU-Umschalter springt jeweils zur passenden Seite. Impressum, Datenschutz, PDF-Formulare und die Online-Anmeldung bleiben deutsch.
    Wichtig bei Textänderungen: deutsche Seite ändern, dann `python3 scripts/translate_ru.py` ausführen. Das Skript bricht ab, wenn ein geänderter deutscher Satz noch keine russische Entsprechung hat.
-5. Fotos liegen nur in 640×480 vor (hochskaliert). Neue Fotos in höherer Auflösung würden Hero, Team-Bühne und Intro deutlich schärfer machen.
+5. Fotos liegen nur in 640×480 vor (hochskaliert). Neue Fotos in höherer Auflösung würden die großen Fotokarten (Team mit Fuhrpark, Fahrlehrer-Kacheln) deutlich schärfer machen.
+6. **Instagram-Bereich**: Die Startseite zeigt wie HOKI ein Karussell „Folge uns auf Instagram“, gefüllt mit unseren eigenen Fotos und Illustrationen (keine echten Instagram-Beiträge). Ob das Profil instagram.com/fahrschulestrauch aktiv gepflegt wird, sollte die Fahrschule bestätigen.

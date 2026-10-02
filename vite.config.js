@@ -5,6 +5,21 @@ import { resolve } from 'node:path';
 // Einfache Include-Funktion für gemeinsame Bausteine (Header, Footer):
 // <!-- @include header page="fuehrerschein" -->
 // Im Baustein setzt {{current:fuehrerschein}} ein aria-current="page", wenn die Seite passt.
+// Bilder: <!-- @pic src="ill-auto-seite" sizes="…" alt="…" class="…" eager="1" -->
+// erzeugt <picture> mit AVIF und WebP in allen Breiten aus assets-src/image-manifest.json.
+function picture(attrs) {
+  const p = Object.fromEntries([...attrs.matchAll(/([\w-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
+  const manifest = JSON.parse(readFileSync(resolve(import.meta.dirname, 'assets-src/image-manifest.json'), 'utf8'));
+  const m = manifest[p.src];
+  if (!m) throw new Error(`@pic: Bild ${p.src} fehlt im Manifest`);
+  const set = (ext) => m.widths.map((w) => `/images/${p.src}-${w}.${ext} ${w}w`).join(', ');
+  const fallback = m.widths[Math.min(1, m.widths.length - 1)];
+  const load = p.eager ? 'fetchpriority="high"' : 'loading="lazy"';
+  const cls = p.class ? ` class="${p.class}"` : '';
+  const style = p.style ? ` style="${p.style}"` : '';
+  return `<picture${cls}><source type="image/avif" srcset="${set('avif')}" sizes="${p.sizes}" /><img src="/images/${p.src}-${fallback}.webp" srcset="${set('webp')}" sizes="${p.sizes}" width="${m.width}" height="${m.height}" alt="${p.alt ?? ''}"${style} ${load} decoding="async" /></picture>`;
+}
+
 function includes() {
   const render = (html, depth = 0) =>
     html.replace(/<!--\s*@include\s+([\w-]+)((?:\s+\w+="[^"]*")*)\s*-->/g, (_, name, attrs) => {
@@ -13,12 +28,12 @@ function includes() {
       part = part.replace(/\{\{current:([\w-]+)\}\}/g, (_, p) => (params.page === p ? 'aria-current="page"' : ''));
       part = part.replace(/\{\{(\w+)\}\}/g, (_, k) => params[k] ?? '');
       return depth < 3 ? render(part, depth + 1) : part;
-    });
+    }).replace(/<!--\s*@pic((?:\s+[\w-]+="[^"]*")*)\s*-->/g, (_, attrs) => picture(attrs));
   return {
     name: 'html-includes',
     transformIndexHtml: { order: 'pre', handler: (html) => render(html) },
     handleHotUpdate({ file, server }) {
-      if (file.includes('/src/partials/')) server.ws.send({ type: 'full-reload' });
+      if (file.includes('/src/partials/') || file.endsWith('image-manifest.json')) server.ws.send({ type: 'full-reload' });
     },
   };
 }

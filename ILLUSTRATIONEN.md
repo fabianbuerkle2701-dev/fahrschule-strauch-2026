@@ -1,6 +1,6 @@
 # Illustrationen zum Austausch
 
-**Stand 02.10.2026:** Sechs Illustrationen sind generiert (inklusive der Hero-Szene auf der Startseite), alle tragen das echte Logo der Fahrschule. Die fünf kleineren sind mit dem echten Logo versehen und eingebaut (Auto, Auto mit Anhänger, Automatik/Schaltung, Begleitetes Fahren, Lkw). Herkunft und Job-Nummern stehen in `assets-src/illustrationen/README.md`. Straßenschild und das kleine Auto im Ablauf sind weiterhin SVG. Ein Bild lässt sich austauschen, indem die PNG in `assets-src/illustrationen/` ersetzt und danach `python3 scripts/illustrations.py` und `npm run images` ausgeführt werden (Logo-Position in `scripts/illustrations.py` anpassen).
+**Stand 02.10.2026:** Sechs Illustrationen sind generiert (inklusive der Hero-Szene auf der Startseite), alle tragen das echte Logo der Fahrschule. Die fünf kleineren sind mit dem echten Logo versehen und eingebaut (Auto, Auto mit Anhänger, Automatik/Schaltung, Begleitetes Fahren, Lkw). Herkunft und Job-Nummern stehen in `assets-src/illustrationen/README.md`. Das Straßenschild (Kontakt auf der Anmeldeseite) ist weiterhin SVG, mit Logo-Tafel. Seit dem Umbau nach HOKI-Vorbild gibt es kein fahrendes Auto im Ablauf mehr. Ein Bild lässt sich austauschen, indem die PNG in `assets-src/illustrationen/` ersetzt und danach `python3 scripts/illustrations.py` und `npm run images` ausgeführt werden (Logo-Position in `scripts/illustrations.py` anpassen).
 
 Alle selbst gezeichneten SVG-Illustrationen der Website, mit den Maßen, die neue (generierte) Bilder haben sollten. Fotos sind nicht betroffen.
 
@@ -18,16 +18,15 @@ Alle selbst gezeichneten SVG-Illustrationen der Website, mit den Maßen, die neu
 
 | Datei | Motiv | Seitenverhältnis | Mindestgröße | Hintergrund | Wo es erscheint |
 |---|---|---|---|---|---|
-| `auto-seite.png` | Fahrschulauto (kompakter SUV) in Seitenansicht, nach rechts | 2,2 : 1 | 1320 × 600 px | transparent, steht auf hellem Mint bzw. Weiß | Startseite Kachel „Klasse B“, Führerschein-Seite Abschnitt Klasse B, 404-Seite |
-| `auto-anhaenger.png` | dasselbe Auto mit Kastenanhänger, nach rechts | 3,5 : 1 | 2080 × 600 px | transparent auf Weiß | Startseite Kachel „Klasse BE“, Kopf der Führerschein-Seite |
-| `automatik-schaltung.png` | Automatik-Wählhebel (P R N D) und Schaltkulisse (1 bis 5, R), dazwischen ein Pfeil | 2 : 1 | 1200 × 600 px | transparent, steht auf **dunklem Petrol `#0E3B3F`**, also helle Motive | Startseite Kachel „B197“ |
-| `begleitet-17.png` | Fahrschülerin oder Fahrschüler am Steuer, daneben die Begleitperson, gern von oben oder schräg | 1,5 : 1 | 1040 × 680 px | transparent auf Weiß | Startseite Kachel „Begleitetes Fahren ab 17“ |
-| `lkw.png` | Sattelzug in Seitenansicht, nach rechts | 2,7 : 1 | 1840 × 680 px | transparent auf Weiß | Kopf der Seite Berufskraftfahrer |
-| `strassenschild.png` | deutsches Straßenschild „Schwarzwaldstraße“ mit Hausnummer 93 (Text muss exakt stimmen, sonst lieber ohne Text liefern; ich setze ihn dann) | 1,9 : 1 | 1120 × 600 px | transparent auf Hellgrau | Abschnitt Kontakt (Startseite und Anmeldeseite) |
-| `auto-oben.png` | Fahrschulauto **genau von oben**, Front zeigt nach **rechts**, Dachschild sichtbar | 1,8 : 1 | 400 × 220 px | transparent | Fährt im Abschnitt Ablauf die Straße entlang (wird beim Scrollen gedreht) |
+| `auto-seite.png` | Fahrschulauto (kompakter SUV) in Seitenansicht, nach rechts | 2,2 : 1 | 1320 × 600 px | transparent, steht auf hellem Mint bzw. Weiß | Startseite Kachel „Klasse B“, Führerschein-Seite Kreis „Klasse B“, Instagram-Karussell, 404-Seite |
+| `auto-anhaenger.png` | dasselbe Auto mit Kastenanhänger, nach rechts | 3,5 : 1 | 2080 × 600 px | transparent auf Weiß | Startseite Kachel „Klasse BE“, Führerschein-Seite Kreis „Klasse BE“ |
+| `automatik-schaltung.png` | Automatik-Wählhebel (P R N D) und Schaltkulisse (1 bis 5, R), dazwischen ein Pfeil | 2 : 1 | 1200 × 600 px | transparent, steht auf **dunklem Petrol `#0E3B3F`**, also helle Motive | Startseite Kachel „B197“, Führerschein-Seite B197-Band |
+| `begleitet-17.png` | Fahrschülerin oder Fahrschüler am Steuer, daneben die Begleitperson, gern von oben oder schräg | 1,5 : 1 | 1040 × 680 px | transparent auf Weiß | Startseite Kachel „BF17“, Führerschein-Seite Abschnitt Begleitetes Fahren |
+| `lkw.png` | Sattelzug in Seitenansicht, nach rechts | 2,7 : 1 | 1840 × 680 px | transparent auf Weiß | Startseite Kachel „BKF“, Kopf der Seite Berufskraftfahrer, Instagram-Karussell |
+| `strassenschild.png` | deutsches Straßenschild „Schwarzwaldstraße“ mit Hausnummer 93 (Text muss exakt stimmen, sonst lieber ohne Text liefern; ich setze ihn dann) | 1,9 : 1 | 1120 × 600 px | transparent, steht auf dunklem Petrol | Kontakt-Band auf der Anmeldeseite |
 
 ## Was bleibt, wie es ist
 
-- **Die Straßen** im Ablauf, im Abschluss und im Footer sind keine Bilder, sondern Linien, an denen das Auto entlangfährt. Sie müssen gezeichnet (SVG) bleiben, sonst funktioniert die Fahrt nicht.
-- **Logo, Favicon und das Straßen-S im Footer** bleiben unverändert.
+- **Logo und Favicon** bleiben unverändert.
+- **Wo die Illustrationen jetzt stehen:** Hero der Startseite (Szene), Kachelreihe der Klassen auf der Startseite, Kreis-Karten und B197-Band auf der Führerschein-Seite, Kopf der BKF-Seite, Instagram-Karussell.
 - **Icons** (Pfeile, Telefon, PDF) stammen aus der Icon-Bibliothek Phosphor und sind keine Illustrationen.

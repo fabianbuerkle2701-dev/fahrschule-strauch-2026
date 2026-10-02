@@ -15,110 +15,112 @@
     <!-- @include header page="ueber-uns" de="/ueber-uns/" ru="/ru/ueber-uns/" -->
 
     <main id="inhalt">
-      <header class="page-head">
-        <div class="container">
-          <ol class="breadcrumb" role="list">
-            <li><a href="/">Start</a></li>
-            <li aria-current="page">Über uns</li>
-          </ol>
-          <h1 class="h1">In guten Händen, <span class="accent">vom ersten Meter an.</span></h1>
-          <p class="lead">Willkommen in der Fahrschule Viktor Strauch. Hier wird dein Weg zum Führerschein eine Reise, die sich lohnt.</p>
+      <section class="pr" aria-labelledby="page-title">
+        <div class="pr__hero">
+          <div class="pr__text">
+            <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Über uns</span>
+            <h1 class="pr__h1" id="page-title">In guten Händen, <span class="ac">vom ersten Meter an.</span></h1>
+            <p class="pr__sub">Willkommen in der Fahrschule Viktor Strauch. Hier wird dein Weg zum Führerschein eine Reise, die sich lohnt.</p>
+            <div class="social">
+              <div class="social__i"><b>1984</b><span>Fahrlehrer seit</span></div>
+              <div class="social__i"><b>4</b><span>Fahrlehrer</span></div>
+              <div class="social__i"><b>DE · RU</b><span>Beratung</span></div>
+            </div>
+          </div>
+          <div class="pr__media" style="--pos: 78%">
+            <!-- @pic src="team-viktor-strauch" sizes="(min-width: 1200px) 500px, (min-width: 900px) 440px, 92vw" eager="1" alt="Inhaber Viktor Strauch lehnt an einem Fahrschulauto" -->
+            <span class="pr__banner"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-seal-check" /></svg>Inhaber Viktor Strauch</span>
+          </div>
         </div>
-      </header>
 
-      <figure class="frame about-photo">
-        <picture>
-          <source type="image/avif" srcset="/images/fuhrpark-hero-960.avif 960w, /images/fuhrpark-hero-1440.avif 1440w, /images/fuhrpark-hero-2000.avif 2000w" sizes="(min-width: 1320px) 1240px, 94vw" />
-          <img src="/images/fuhrpark-hero-1440.webp" srcset="/images/fuhrpark-hero-960.webp 960w, /images/fuhrpark-hero-1440.webp 1440w, /images/fuhrpark-hero-2000.webp 2000w" sizes="(min-width: 1320px) 1240px, 94vw" width="2400" height="1250" alt="Das Team der Fahrschule Strauch mit vier Fahrschulautos vor dem Gebäude in der Schwarzwaldstraße" fetchpriority="high" decoding="async" />
-        </picture>
-      </figure>
+        <div class="row tiles" data-row>
+          <article class="tile tile--mint">
+            <div class="tile__in">
+              <span class="tag">Haltung</span>
+              <h2 class="tile__t" style="margin-top: 10px">Fehler passieren.</h2>
+              <p class="tile__d">Wir ermutigen dich, aus ihnen zu lernen, ohne Angst davor zu haben. Du sollst dich bei uns wohlfühlen und jede Frage stellen können.</p>
+              <ul class="check check--dark" role="list"><li>Fragen sind erwünscht</li><li>Keine Angst vor Fehlern</li></ul>
+            </div>
+          </article>
+          <article class="tile tile--wald">
+            <div class="tile__in">
+              <span class="mini">Unterricht</span>
+              <h2 class="tile__t" style="margin-top: 10px">Verstehen statt auswendig lernen.</h2>
+              <p class="tile__d" style="color: rgb(255 255 255 / 0.86)">Unser Unterricht setzt auf moderne Lehrmethoden, interaktive Stunden und praktische Übungen, damit du das Verkehrsgeschehen wirklich verstehst.</p>
+              <ul class="glass" role="list" style="margin-top: auto"><li>Theorie</li><li>Fahrstunde</li><li>Bei jedem Schritt dabei</li></ul>
+            </div>
+          </article>
+          <article class="tile tile--photo">
+            <!-- @pic src="fuhrpark-hero" sizes="372px" style="--pos: 50%" alt="Das Team der Fahrschule Strauch mit vier Fahrschulautos vor dem Gebäude" -->
+            <div class="tile__in">
+              <span class="kicker">Fahrlehrer seit</span>
+              <div class="proof">
+                <div class="proof__r"><b>1984</b><span>Peter Harter</span></div>
+                <div class="proof__r"><b>1988</b><span>Gerold Remmele</span></div>
+                <div class="proof__r"><b>2000</b><span>Nadine Dürr</span></div>
+                <div class="proof__r"><b>2007</b><span>Viktor Strauch</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="tile tile--mint">
+            <div class="tile__in">
+              <span class="tag">Ziel</span>
+              <h2 class="tile__t" style="margin-top: 10px">Mehr als die Prüfung.</h2>
+              <p class="tile__d">Unser Ziel ist nicht nur, dass du die Prüfung bestehst, sondern dass du ein verantwortungsbewusster und sicherer Fahrer wirst.</p>
+              <ul class="check check--dark" role="list"><li>Sicher und selbstbewusst</li><li>Beratung auch auf Russisch</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+        <div class="cta-wrap">
+          <a class="cta" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+        </div>
+      </section>
 
-      <section class="section" aria-labelledby="haltung-title">
-        <div class="container about-text">
-          <h2 class="h2" id="haltung-title" data-reveal>Verstehen statt <span class="accent">auswendig lernen.</span></h2>
-          <div class="prose" data-reveal style="--stagger: 1">
-            <p class="lead">Unsere Fahrlehrer lieben ihren Job und bringen dir alles bei, was du brauchst, um sicher und selbstbewusst hinter dem Steuer zu sitzen.</p>
-            <p>Fehler passieren. Wir ermutigen dich, aus ihnen zu lernen, ohne Angst davor zu haben. Du sollst dich bei uns wohlfühlen und jede Frage stellen können.</p>
-            <p>Unser Unterricht setzt auf moderne Lehrmethoden, interaktive Stunden und praktische Übungen, damit du das Verkehrsgeschehen wirklich verstehst. Ob Theorie oder Fahrstunde: Wir begleiten dich bei jedem Schritt.</p>
-            <p>Unser Ziel ist nicht nur, dass du die Prüfung bestehst, sondern dass du ein verantwortungsbewusster und sicherer Fahrer wirst. Und wir beraten dich auch auf Russisch: <span lang="ru">говорим по-русски</span>.</p>
+      <section class="qa" id="team" aria-labelledby="team-title">
+        <div class="wrap">
+          <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Das Team</span>
+          <h2 class="qa__h" id="team-title">Wer neben dir <b>sitzt.</b></h2>
+          <p class="sec-sub">Unsere Fahrlehrer lieben ihren Job und bringen dir alles bei, was du brauchst, um sicher und selbstbewusst hinter dem Steuer zu sitzen.</p>
+        </div>
+        <ul class="row qa__cards" data-row role="list">
+          <li class="qa__card">
+            <div class="qa__img" style="--pos: 85%"><!-- @pic src="team-viktor-strauch" sizes="340px" alt="Viktor Strauch lehnt an einem Fahrschulauto" --></div>
+            <h3 class="qa__title">Viktor Strauch</h3>
+            <p class="qa__tx">Inhaber, Fahrlehrer seit 2007<br /><q>Fährst du rückwärts gegen Baum, verkleinert sich dein Kofferraum!</q></p>
+          </li>
+          <li class="qa__card">
+            <div class="qa__img" style="--pos: 62%"><!-- @pic src="team-peter-harter" sizes="340px" alt="Peter Harter neben einem Fahrschulauto" --></div>
+            <h3 class="qa__title">Peter Harter</h3>
+            <p class="qa__tx">Fahrlehrer aller Klassen seit 1984<br /><q>Der Weg ist das Ziel, viel Spaß auf deinen neuen Wegen.</q></p>
+          </li>
+          <li class="qa__card">
+            <div class="qa__img" style="--pos: 72%"><!-- @pic src="team-gerold-remmele" sizes="340px" alt="Gerold Remmele neben einem Fahrschulauto" --></div>
+            <h3 class="qa__title">Gerold Remmele</h3>
+            <p class="qa__tx">Fahrlehrer aller Klassen seit 1988. Das Hobby zum Beruf gemacht.<br /><q>Ein Stop-Schild ist keine Empfehlung.</q></p>
+          </li>
+          <li class="qa__card">
+            <div class="qa__img" style="--pos: 66%"><!-- @pic src="team-nadine-duerr" sizes="340px" alt="Nadine Dürr an der geöffneten Fahrertür eines Fahrschulautos" --></div>
+            <h3 class="qa__title">Nadine Dürr</h3>
+            <p class="qa__tx">Fahrlehrerin seit 2000<br /><q>Und immer noch Spaß daran, Jugendliche sicher auf die Straße zu bringen.</q></p>
+          </li>
+        </ul>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+      </section>
+
+      <section class="pz" id="jobs" aria-labelledby="jobs-title">
+        <div class="pz__in">
+          <span class="eyebrow">Jobs</span>
+          <h2 class="pz__h" id="jobs-title">Fahrlehrer gesucht.</h2>
+          <p class="pz__sub">Unser Team braucht Verstärkung. Wenn du Fahrlehrerin oder Fahrlehrer bist und zu uns passen möchtest, melde dich.</p>
+          <div class="cta-wrap">
+            <a class="cta cta--lime" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>Anrufen</a>
+            <span class="cta-note"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-envelope" /></svg><a href="mailto:service@fahrschule-strauch.de?subject=Bewerbung%20Fahrlehrer">Bewerbung per E-Mail</a></span>
           </div>
         </div>
       </section>
-
-      <section class="section" style="padding-top: 0" aria-labelledby="team-title">
-        <div class="container">
-          <header class="section-head">
-            <h2 class="h2" id="team-title" data-reveal>Das <span class="accent">Team.</span></h2>
-          </header>
-          <ul class="team-grid" role="list">
-            <li class="person" data-reveal>
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-viktor-strauch-400.avif 400w, /images/team-viktor-strauch-720.avif 720w" sizes="(min-width: 640px) 46vw, 92vw" />
-                  <img src="/images/team-viktor-strauch-640.webp" srcset="/images/team-viktor-strauch-400.webp 400w, /images/team-viktor-strauch-720.webp 720w" sizes="(min-width: 640px) 46vw, 92vw" width="720" height="900" alt="Viktor Strauch lehnt an einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Viktor Strauch</h3>
-              <p class="person__since">Inhaber, Fahrlehrer seit 2007</p>
-              <blockquote class="person__quote"><p>„Fährst du rückwärts gegen Baum, verkleinert sich dein Kofferraum!“</p></blockquote>
-            </li>
-            <li class="person" data-reveal style="--stagger: 1">
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-peter-harter-400.avif 400w, /images/team-peter-harter-720.avif 720w" sizes="(min-width: 640px) 46vw, 92vw" />
-                  <img src="/images/team-peter-harter-640.webp" srcset="/images/team-peter-harter-400.webp 400w, /images/team-peter-harter-720.webp 720w" sizes="(min-width: 640px) 46vw, 92vw" width="720" height="900" alt="Peter Harter neben einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Peter Harter</h3>
-              <p class="person__since">Fahrlehrer aller Klassen seit 1984</p>
-              <blockquote class="person__quote"><p>„Der Weg ist das Ziel, viel Spaß auf deinen neuen Wegen.“</p></blockquote>
-            </li>
-            <li class="person" data-reveal>
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-gerold-remmele-400.avif 400w, /images/team-gerold-remmele-720.avif 720w" sizes="(min-width: 640px) 46vw, 92vw" />
-                  <img src="/images/team-gerold-remmele-640.webp" srcset="/images/team-gerold-remmele-400.webp 400w, /images/team-gerold-remmele-720.webp 720w" sizes="(min-width: 640px) 46vw, 92vw" width="720" height="900" alt="Gerold Remmele neben einem Fahrschulauto" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Gerold Remmele</h3>
-              <p class="person__since">Fahrlehrer aller Klassen seit 1988</p>
-              <p class="person__extra">Das Hobby zum Beruf gemacht.</p>
-              <blockquote class="person__quote"><p>„Ein Stop-Schild ist keine Empfehlung.“</p></blockquote>
-            </li>
-            <li class="person" data-reveal style="--stagger: 1">
-              <div class="frame person__photo">
-                <picture>
-                  <source type="image/avif" srcset="/images/team-nadine-duerr-400.avif 400w, /images/team-nadine-duerr-720.avif 720w" sizes="(min-width: 640px) 46vw, 92vw" />
-                  <img src="/images/team-nadine-duerr-640.webp" srcset="/images/team-nadine-duerr-400.webp 400w, /images/team-nadine-duerr-720.webp 720w" sizes="(min-width: 640px) 46vw, 92vw" width="720" height="900" alt="Nadine Dürr an der geöffneten Fahrertür eines Fahrschulautos" loading="lazy" decoding="async" />
-                </picture>
-              </div>
-              <h3 class="person__name">Nadine Dürr</h3>
-              <p class="person__since">Fahrlehrerin seit 2000</p>
-              <blockquote class="person__quote"><p>„Und immer noch Spaß daran, Jugendliche sicher auf die Straße zu bringen.“</p></blockquote>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" style="padding-top: 0" id="jobs" aria-labelledby="jobs-title">
-        <div class="container">
-          <div class="jobs" data-reveal>
-            <div>
-              <h2 class="h2" id="jobs-title">Fahrlehrer <span class="accent">gesucht.</span></h2>
-              <p class="lead" style="margin-top: 1rem">Unser Team braucht Verstärkung. Wenn du Fahrlehrerin oder Fahrlehrer bist und zu uns passen möchtest, melde dich.</p>
-            </div>
-            <div class="actions">
-              <a class="btn" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>Anrufen</a>
-              <a class="btn btn--secondary" href="mailto:service@fahrschule-strauch.de?subject=Bewerbung%20Fahrlehrer"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-envelope" /></svg>E-Mail schreiben</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- @include finale -->
     </main>
 
-    <!-- @include footer -->
-    <!-- @include symbols -->
+    <!-- @include footer de="/ueber-uns/" ru="/ru/ueber-uns/" -->
   </body>
 </html>

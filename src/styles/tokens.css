@@ -1,135 +1,118 @@
 /* ==========================================================================
-   Tokens: Farben aus dem Logo (#0199A6, #ACADAF), Typo, Abstände, Bewegung
+   Tokens: Aufbau, Schriften, Radien und Abstände 1:1 nach shophoki.com,
+   Farben aus dem Logo der Fahrschule (Petrol #0199A6, Grau #ACADAF).
    ========================================================================== */
 
+/* Schibsted Grotesk (Überschriften): nur Latein. Kyrillisch fällt auf Geist zurück. */
 @font-face {
-  font-family: 'Barlow Semi Condensed';
+  font-family: 'Schibsted Grotesk';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400 900;
   font-display: swap;
-  src: url('/fonts/barlow-semi-condensed-latin-600-normal.woff2') format('woff2');
+  src: url('/fonts/schibsted-grotesk-latin-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Barlow Semi Condensed';
+  font-family: 'Schibsted Grotesk';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400 900;
   font-display: swap;
-  src: url('/fonts/barlow-semi-condensed-latin-ext-600-normal.woff2') format('woff2');
+  src: url('/fonts/schibsted-grotesk-latin-ext-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* Geist (Fließtext, und Überschriften auf Russisch) */
 @font-face {
-  font-family: 'Onest';
+  font-family: 'Geist';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/onest-latin-wght-normal.woff2') format('woff2-variations');
+  src: url('/fonts/geist-latin-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Onest';
+  font-family: 'Geist';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/onest-latin-ext-wght-normal.woff2') format('woff2-variations');
+  src: url('/fonts/geist-latin-ext-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Onest';
+  font-family: 'Geist';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/onest-cyrillic-wght-normal.woff2') format('woff2-variations');
+  src: url('/fonts/geist-cyrillic-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-/* Metrisch angepasste Ersatzschrift gegen Layoutsprünge beim Nachladen */
+/* Space Mono (Etiketten): nur Latein. Kyrillisch in Geist Mono. */
 @font-face {
-  font-family: 'Barlow Fallback';
-  src: local('Arial Narrow'), local('Arial');
-  size-adjust: 88%;
-  ascent-override: 106%;
-  descent-override: 21%;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/space-mono-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/space-mono-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/geist-mono-cyrillic-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 :root {
   color-scheme: light;
 
-  /* Marke */
-  --color-brand: #0199a6;
-  --color-brand-ink: #00717b;
-  --color-brand-dark: #0b5258;
-  --color-brand-night: #0e3b3f;
-  --color-brand-light: #e3f3f4;
-  --color-brand-mist: #f1f8f8;
-  --color-brand-glow: #a5e1e6; /* Hervorhebung auf dunklem Petrol */
+  /* HOKI-Rollen, mit Petrol statt Waldgrün besetzt */
+  --paper: #ffffff;
+  --mint: #e3f3f4; /* HOKI #EAF2E6 */
+  --mint2: #d2e9eb; /* HOKI #E1EDDB */
+  --cream: #f1f8f8; /* HOKI #f4f1ea, Grund der Kreis-Karten */
+  --forest: #0b5258; /* HOKI #26401F: Knöpfe, Füllbalken, Text auf Mint */
+  --forest-hover: #0d6269;
+  --forest2: #0e3b3f; /* HOKI #1A2C18: dunkle Flächen */
+  --forest3: #0a2c2f; /* tiefster Ton der Verläufe */
+  --forest-glow: #12676e; /* heller Ton der Verläufe (HOKI #3c5b35) */
+  --green: #00717b; /* HOKI #56613E: Mono-Etiketten auf Weiß */
+  --accent: #0199a6; /* HOKI #7ba64c / #6f9a45: Akzentwort in großen Überschriften */
+  --lime: #a5e1e6; /* HOKI #C6E09B: Akzent auf dunklem Grund */
+  --lime-hover: #bdeaee;
+  --ink: #1c2224; /* HOKI #1C2419 */
+  --muted: #565d60; /* HOKI #6B7563, für AA etwas dunkler */
+  --line: #dbe7e8; /* HOKI #DDE6D7 */
+  --footer: #d4e6e7; /* HOKI rgb(213 222 205) */
+  --scrim: 8 34 37; /* HOKI rgba(14,22,10,…) */
 
-  /* Neutral (kühl, aus dem Logo-Grau abgeleitet) */
-  --color-neutral-950: #1c2224;
-  --color-neutral-800: #3e4547;
-  --color-neutral-600: #565d60;
-  --color-neutral-400: #8a8f92;
-  --color-neutral-300: #acadaf;
-  --color-neutral-200: #d9dcdd;
-  --color-neutral-100: #eceeef;
-  --color-neutral-50: #f6f7f7;
+  --disp: 'Schibsted Grotesk', 'Geist', system-ui, sans-serif;
+  --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'Space Mono', 'Geist Mono', ui-monospace, Menlo, monospace;
 
-  --color-background: #ffffff;
-  --color-surface: var(--color-neutral-50);
-  --color-text: var(--color-neutral-950);
-  --color-text-muted: var(--color-neutral-600);
-  --color-line: var(--color-neutral-200);
-  --color-asphalt: var(--color-neutral-800);
-
-  /* Schrift */
-  --font-display: 'Barlow Semi Condensed', 'Barlow Fallback', 'Arial Narrow', sans-serif;
-  --font-text: 'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-
-  --fs-display: clamp(3.25rem, 2rem + 5.2vw, 6rem);
-  --fs-h1: clamp(2.5rem, 1.6rem + 4vw, 4.75rem);
-  --fs-h2: clamp(2.125rem, 1.45rem + 3vw, 4rem);
-  --fs-h3: clamp(1.375rem, 1.15rem + 1vw, 2rem);
-  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
-  --fs-body: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
-  --fs-small: 0.9375rem;
-  --fs-label: 0.875rem;
-
-  /* Abstände (4er-Raster) */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
-  --space-10: 8rem;
-  --space-11: 10rem;
-  --section: clamp(5rem, 3rem + 8vw, 10rem);
-
-  --container: 1320px;
-  --container-narrow: 760px;
-  --gutter: clamp(1rem, 0.5rem + 2.5vw, 3rem);
-  --grid-gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
-
-  /* Form */
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: clamp(20px, 1rem + 1.4vw, 36px);
-  --radius-pill: 999px;
-  --shadow-float: 0 18px 40px -18px rgb(14 59 63 / 0.28);
-
-  /* Bewegung */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
-  --dur-ui: 180ms;
-  --dur-med: 320ms;
-  --dur-reveal: 800ms;
 
-  /* Ebenen */
+  --wrap: 1180px;
+  --wrap-wide: 1240px;
+  --pad: 22px;
+
   --z-header: 50;
   --z-menu: 60;
   --z-skip: 70;
+  --header-h: 72px;
+}
 
-  --header-h: 76px;
+/* Russisch: Schibsted Grotesk und Space Mono haben kein Kyrillisch */
+html:lang(ru) {
+  --disp: 'Geist', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, Menlo, monospace;
 }

@@ -1,56 +1,70 @@
-<section class="contact section" id="kontakt" aria-labelledby="contact-title">
-  <div class="container contact__grid">
-    <div class="contact__main">
-      <h2 class="h2" id="contact-title" data-reveal>Ruf an oder <span class="accent">komm vorbei.</span></h2>
-      <a class="contact__phone" href="tel:+4915560410413" data-reveal style="--stagger: 1">
-        <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>
-        <span class="tabular">+49 155 60 41 04 13</span>
-      </a>
-      <dl class="facts" data-reveal style="--stagger: 2">
-        <div>
-          <dt>E-Mail</dt>
-          <dd><a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a></dd>
-        </div>
-        <div>
-          <dt>Adresse</dt>
-          <dd>Schwarzwaldstraße 93<br />77933 Lahr</dd>
-        </div>
-        <div>
-          <dt>Theorieunterricht</dt>
-          <dd>Montag 19:00 bis 20:30 Uhr<br />Mittwoch nach Vereinbarung</dd>
-        </div>
-        <div>
-          <dt>Sprachen</dt>
-          <dd>Deutsch und Russisch</dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="contact__visual" data-reveal style="--stagger: 2">
-      <svg class="street-sign" viewBox="0 0 560 300" role="img" aria-labelledby="sign-title">
-        <title id="sign-title">Straßenschild Schwarzwaldstraße, Hausnummer 93</title>
-        <rect x="40" y="0" width="12" height="300" rx="4" class="sign-pole" />
-        <rect x="508" y="0" width="12" height="300" rx="4" class="sign-pole" />
-        <g class="sign-board">
+<section class="ki" id="kontakt" aria-labelledby="contact-title">
+  <div class="ki__hero">
+    <div class="ki__in">
+      <div class="ki__tx">
+        <span class="eyebrow" style="color: var(--lime)">Kontakt</span>
+        <h2 class="ki__h" id="contact-title"><span class="l1">Ruf an oder <em>komm vorbei.</em></span><span class="l2">Schwarzwaldstraße 93, Lahr</span></h2>
+        <p class="ki__sub">Wir beraten dich auf Deutsch und Russisch, am Telefon, per E-Mail oder direkt bei uns in der Fahrschule.</p>
+        <a class="ki__pill" href="tel:+4915560410413">
+          <span class="ph">+49 155 60 41 04 13</span>
+          <span class="send" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-phone" /></svg></span>
+        </a>
+      </div>
+      <div class="ki__art">
+        <svg class="street-sign" viewBox="0 0 560 300" role="img" aria-labelledby="sign-title">
+          <title id="sign-title">Straßenschild Schwarzwaldstraße, Hausnummer 93, mit dem Logo der Fahrschule</title>
+          <rect x="40" y="0" width="12" height="300" rx="4" class="sign-pole" />
+          <rect x="508" y="0" width="12" height="300" rx="4" class="sign-pole" />
           <rect x="8" y="34" width="544" height="120" rx="10" class="sign-face" />
           <rect x="18" y="44" width="524" height="100" rx="5" class="sign-border" />
           <text x="280" y="116" text-anchor="middle" class="sign-text">Schwarzwaldstraße</text>
-        </g>
-        <g class="sign-number" transform="translate(338 186)">
-          <rect width="132" height="90" rx="12" class="sign-number__plate" />
-          <rect x="7" y="7" width="118" height="76" rx="7" class="sign-number__border" />
-          <text x="66" y="66" text-anchor="middle" class="sign-number__text">93</text>
-        </g>
-        <g class="sign-logo" transform="translate(76 186)">
-          <rect width="236" height="90" rx="12" class="sign-logo__plate" />
-          <image href="/images/logo.png" x="18" y="13" width="200" height="64" />
-        </g>
-      </svg>
-      <a class="btn btn--secondary contact__route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Schwarzwaldstra%C3%9Fe%2093%2C%2077933%20Lahr" rel="noopener" target="_blank">
-        <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-navigation-arrow" /></svg>
-        Route planen
-      </a>
+          <g transform="translate(338 186)">
+            <rect width="132" height="90" rx="12" class="sign-number__plate" />
+            <rect x="7" y="7" width="118" height="76" rx="7" class="sign-number__border" />
+            <text x="66" y="66" text-anchor="middle" class="sign-number__text">93</text>
+          </g>
+          <g transform="translate(76 186)">
+            <rect width="236" height="90" rx="12" class="sign-logo__plate" />
+            <image href="/images/logo.png" x="18" y="13" width="200" height="64" />
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
-</section>
 
+  <div class="ki__lead">
+    <h3>So erreichst du <b>uns.</b></h3>
+    <p>Termine für Schnellkurse, BKF-Module und Auffrischung erfährst du telefonisch oder per E-Mail.</p>
+  </div>
+  <div class="row ki__tiles" data-row>
+    <article class="ki__tile">
+      <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-envelope" /></svg></span>
+      <div class="b">
+        <h4 class="tt"><span class="lead">E-Mail</span>Schreib uns</h4>
+        <p class="dd"><a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a></p>
+      </div>
+    </article>
+    <article class="ki__tile">
+      <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-map-pin" /></svg></span>
+      <div class="b">
+        <h4 class="tt"><span class="lead">Adresse</span>Schwarzwaldstraße 93</h4>
+        <p class="dd">77933 Lahr<br /><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Schwarzwaldstra%C3%9Fe%2093%2C%2077933%20Lahr" rel="noopener" target="_blank">Route planen</a></p>
+      </div>
+    </article>
+    <article class="ki__tile">
+      <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-chalkboard-teacher" /></svg></span>
+      <div class="b">
+        <h4 class="tt"><span class="lead">Theorieunterricht</span>Montag 19:00 bis 20:30 Uhr</h4>
+        <p class="dd">Mittwoch nach Vereinbarung</p>
+      </div>
+    </article>
+    <article class="ki__tile">
+      <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-translate" /></svg></span>
+      <div class="b">
+        <h4 class="tt"><span class="lead">Sprachen</span>Deutsch und Russisch</h4>
+        <p class="dd"><span lang="ru">Говорим по-русски.</span> <a href="/ru/" hreflang="ru">На русском языке</a></p>
+      </div>
+    </article>
+  </div>
+  <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+</section>

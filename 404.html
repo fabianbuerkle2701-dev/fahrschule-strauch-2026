@@ -8,12 +8,13 @@
   <body>
     <!-- @include header page="404" de="/" ru="/ru/" -->
     <main id="inhalt">
-      <section class="container notfound">
-        <h1 class="h1">Falsch <span class="accent">abgebogen.</span></h1>
-        <p class="lead" style="margin-top: 1.25rem">Diese Seite gibt es nicht (mehr). Vielleicht hilft dir einer dieser Wege weiter.</p>
-        <div class="actions">
-          <a class="btn btn--roll" href="/"><span class="btn__label"><span>Zur Startseite</span><span aria-hidden="true">Zur Startseite</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
-          <a class="btn btn--secondary" href="/fuehrerschein/">Klassen ansehen</a>
+      <section class="notfound">
+        <span class="eyebrow">Fehler 404</span>
+        <h1 class="pr__h1">Falsch <span class="ac">abgebogen.</span></h1>
+        <p class="pr__sub">Diese Seite gibt es nicht (mehr). Vielleicht hilft dir einer dieser Wege weiter.</p>
+        <div class="pr__actions">
+          <a class="cta" href="/">Zur Startseite <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+          <a class="cta cta--outline" href="/fuehrerschein/">Klassen ansehen</a>
         </div>
         <picture class="notfound__art">
           <source type="image/avif" srcset="/images/ill-auto-seite-480.avif 480w, /images/ill-auto-seite-800.avif 800w, /images/ill-auto-seite-1005.avif 1005w" sizes="(min-width: 640px) 520px, 92vw" />
@@ -21,7 +22,6 @@
         </picture>
       </section>
     </main>
-    <!-- @include footer -->
-    <!-- @include symbols -->
+    <!-- @include footer de="/" ru="/ru/" -->
   </body>
 </html>

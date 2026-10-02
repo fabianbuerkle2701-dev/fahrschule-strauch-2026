@@ -9,16 +9,6 @@
       2000
     ]
   },
-  "hero-buehne": {
-    "width": 2400,
-    "height": 820,
-    "widths": [
-      640,
-      960,
-      1440,
-      2000
-    ]
-  },
   "team-viktor-strauch": {
     "width": 720,
     "height": 900,
@@ -53,33 +43,6 @@
       400,
       640,
       720
-    ]
-  },
-  "team-viktor-strauch-wide": {
-    "width": 1200,
-    "height": 900,
-    "widths": [
-      640,
-      960,
-      1200
-    ]
-  },
-  "team-peter-harter-wide": {
-    "width": 1200,
-    "height": 900,
-    "widths": [
-      640,
-      960,
-      1200
-    ]
-  },
-  "team-gerold-remmele-wide": {
-    "width": 1200,
-    "height": 900,
-    "widths": [
-      640,
-      960,
-      1200
     ]
   },
   "team-nadine-duerr-wide": {
@@ -189,6 +152,62 @@
       480,
       800,
       1271
+    ]
+  },
+  "pdf-anmeldeformular": {
+    "width": 990,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-bf17-antrag": {
+    "width": 989,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-bf17-erklaerung-begleitperson": {
+    "width": 990,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-fuehrerscheinantrag": {
+    "width": 989,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-info-preise-klasse-b": {
+    "width": 990,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-info-preise-klasse-be": {
+    "width": 990,
+    "height": 1400,
+    "widths": [
+      400,
+      700
+    ]
+  },
+  "pdf-vordruck-kartenfuehrerschein": {
+    "width": 991,
+    "height": 1400,
+    "widths": [
+      400,
+      700
     ]
   }
 }

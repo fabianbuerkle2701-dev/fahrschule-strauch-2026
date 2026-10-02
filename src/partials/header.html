@@ -1,49 +1,50 @@
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
-<header class="site-header" data-header>
-  <nav class="nav" aria-label="Hauptnavigation">
-    <a class="nav__logo" href="/" aria-label="Fahrschule Viktor Strauch, zur Startseite">
+<header class="hd" data-header>
+  <div class="hd__bar">
+    <div class="hd__left">
+      <button class="hd__icon" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+        <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-list" /></svg>
+        <span class="visually-hidden">Menü öffnen</span>
+      </button>
+      <a class="hd__icon" href="tel:+4915560410413">
+        <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>
+        <span class="visually-hidden">Anrufen: +49 155 60 41 04 13</span>
+      </a>
+    </div>
+    <a class="hd__logo" href="/" aria-label="Fahrschule Viktor Strauch, zur Startseite">
       <img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" />
     </a>
-    <div class="nav__links">
-      <a class="nav__link" href="/fuehrerschein/" {{current:fuehrerschein}}>Führerschein</a>
-      <a class="nav__link" href="/#ablauf">Ablauf</a>
-      <a class="nav__link" href="/ueber-uns/" {{current:ueber-uns}}>Über uns</a>
-      <a class="nav__link" href="/anmeldung/#kontakt" {{current:anmeldung}}>Kontakt</a>
+    <div class="hd__right">
+      <nav class="lang" aria-label="Sprache / Язык" data-lang-switch>
+        <a class="lang__opt" href="{{de}}" lang="de" hreflang="de" aria-current="true"><span aria-hidden="true">DE</span><span class="visually-hidden">Deutsch</span></a>
+        <a class="lang__opt" href="{{ru}}" lang="ru" hreflang="ru"><span aria-hidden="true">RU</span><span class="visually-hidden">Русский</span></a>
+        <span class="lang__thumb" aria-hidden="true"></span>
+      </nav>
     </div>
-    <div class="lang-switch" role="group" aria-label="Sprache / Язык" data-lang-switch>
-      <a class="lang-switch__opt" href="{{de}}" lang="de" hreflang="de" data-lang="de"><span aria-hidden="true">DE</span><span class="visually-hidden">Deutsch</span></a>
-      <a class="lang-switch__opt" href="{{ru}}" lang="ru" hreflang="ru" data-lang="ru"><span aria-hidden="true">RU</span><span class="visually-hidden">Русский</span></a>
-      <span class="lang-switch__thumb" aria-hidden="true"></span>
-    </div>
-    <a class="btn nav__cta" href="/anmeldung/">Jetzt anmelden</a>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
-      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-list" /></svg>
-      <span class="visually-hidden">Menü öffnen</span>
-    </button>
-  </nav>
+  </div>
 </header>
 
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menü" data-menu hidden>
-  <div class="menu__top">
-    <a href="/" aria-label="Zur Startseite"><img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" /></a>
-    <button class="menu__close" type="button" data-menu-close>
-      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-x" /></svg>
-      <span class="visually-hidden">Menü schließen</span>
-    </button>
-  </div>
-  <nav class="menu__links" aria-label="Mobile Navigation">
-    <a href="/fuehrerschein/" style="--i: 0" {{current:fuehrerschein}}>Führerschein <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-    <a href="/#ablauf" style="--i: 1">Ablauf <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-    <a href="/ueber-uns/" style="--i: 2" {{current:ueber-uns}}>Über uns <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-    <a href="/berufskraftfahrer/" style="--i: 3" {{current:berufskraftfahrer}}>Berufskraftfahrer <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-    <a href="/anmeldung/#kontakt" style="--i: 4" {{current:anmeldung}}>Kontakt <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-  </nav>
-  <div class="menu__foot">
-    <a class="btn" href="/anmeldung/">Jetzt anmelden</a>
-    <a class="btn btn--secondary" href="tel:+4915560410413">
-      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>
-      +49 155 60 41 04 13
-    </a>
-    <p class="menu__note">Schwarzwaldstraße 93, 77933 Lahr</p>
+<div class="drawer" id="menu" role="dialog" aria-modal="true" aria-label="Menü" data-menu hidden>
+  <div class="drawer__backdrop" data-menu-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__top">
+      <a href="/" aria-label="Zur Startseite"><img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" /></a>
+      <button class="hd__icon" type="button" data-menu-close data-menu-x>
+        <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-x" /></svg>
+        <span class="visually-hidden">Menü schließen</span>
+      </button>
+    </div>
+    <nav class="drawer__links" aria-label="Hauptnavigation">
+      <a href="/" {{current:home}}>Start <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+      <a href="/fuehrerschein/" {{current:fuehrerschein}}>Führerschein <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+      <a href="/berufskraftfahrer/" {{current:berufskraftfahrer}}>Berufskraftfahrer <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+      <a href="/ueber-uns/" {{current:ueber-uns}}>Über uns <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+      <a href="/anmeldung/" {{current:anmeldung}}>Anmeldung und Kontakt <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="cta" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+      <a class="cta cta--outline" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>+49 155 60 41 04 13</a>
+      <p class="drawer__meta">Schwarzwaldstraße 93, 77933 Lahr · <span lang="ru">Говорим по-русски</span></p>
+    </div>
   </div>
 </div>

@@ -15,192 +15,342 @@
     <!-- @include header page="fuehrerschein" de="/fuehrerschein/" ru="/ru/fuehrerschein/" -->
 
     <main id="inhalt">
-      <header class="page-head">
-        <div class="container page-head__grid">
-          <div>
-            <ol class="breadcrumb" role="list">
-              <li><a href="/">Start</a></li>
-              <li aria-current="page">Führerschein</li>
-            </ol>
-            <h1 class="h1">Klassen und Kurse <span class="accent">im Überblick.</span></h1>
-            <p class="lead">Wir bilden in den Klassen B und BE aus, auch mit Begleitetem Fahren ab 17 und mit Automatik und Schaltberechtigung. Dazu kommen Schnellkurse und Auffrischungsstunden.</p>
-          </div>
-          <picture class="page-head__art">
-            <source type="image/avif" srcset="/images/ill-auto-anhaenger-480.avif 480w, /images/ill-auto-anhaenger-800.avif 800w, /images/ill-auto-anhaenger-1293.avif 1293w" sizes="(min-width: 1024px) 460px, 92vw" />
-            <img src="/images/ill-auto-anhaenger-800.webp" srcset="/images/ill-auto-anhaenger-480.webp 480w, /images/ill-auto-anhaenger-800.webp 800w, /images/ill-auto-anhaenger-1293.webp 1293w" sizes="(min-width: 1024px) 460px, 92vw" width="1293" height="425" alt="" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-      </header>
-
-      <div class="container">
-        <nav class="subnav" aria-label="Auf dieser Seite" data-subnav>
-          <ul role="list">
-            <li><a href="#klasse-b">Klasse B</a></li>
-            <li><a href="#klasse-be">Klasse BE</a></li>
-            <li><a href="#b197">B197</a></li>
-            <li><a href="#bf17">Begleitetes Fahren ab 17</a></li>
-            <li><a href="#schnellkurs">Schnellkurs</a></li>
-            <li><a href="#auffrischung">Auffrischung</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Klasse B -->
-      <section class="block" id="klasse-b" aria-labelledby="b-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <span class="block__glyph" aria-hidden="true">B</span>
-            <h2 class="h2" id="b-title">Klasse B</h2>
-            <p class="lead">Der Führerschein für Pkw und leichte Lkw, der Klassiker für den Alltag.</p>
-            <picture class="block__art">
-              <source type="image/avif" srcset="/images/ill-auto-seite-480.avif 480w, /images/ill-auto-seite-800.avif 800w, /images/ill-auto-seite-1005.avif 1005w" sizes="(min-width: 1024px) 520px, 92vw" />
-              <img src="/images/ill-auto-seite-800.webp" srcset="/images/ill-auto-seite-480.webp 480w, /images/ill-auto-seite-800.webp 800w, /images/ill-auto-seite-1005.webp 1005w" sizes="(min-width: 1024px) 520px, 92vw" width="1005" height="491" alt="" loading="lazy" decoding="async" />
-            </picture>
-          </div>
-          <div>
-            <dl class="spec">
-              <div><dt>Fahrzeuge</dt><dd>Kraftfahrzeuge bis 3.500 kg zulässige Gesamtmasse, für höchstens acht Personen außer dem Fahrer</dd></div>
-              <div><dt>Anhänger</dt><dd>bis 750 kg zulässige Gesamtmasse oder schwerer, solange die Kombination 3.500 kg nicht übersteigt</dd></div>
-              <div><dt>Mindestalter</dt><dd><strong>18</strong> <span class="muted">mit Begleitetem Fahren 17</span></dd></div>
-              <div><dt>Vorbesitz</dt><dd>nicht erforderlich</dd></div>
-              <div><dt>Eingeschlossen</dt><dd>Klassen L und AM</dd></div>
-            </dl>
-            <div class="actions">
-              <a class="btn btn--roll" href="/anmeldung/"><span class="btn__label"><span>Jetzt anmelden</span><span aria-hidden="true">Jetzt anmelden</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
-              <a class="btn btn--secondary" href="/files/info-preise-klasse-b.pdf"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>Info und Preise (PDF)</a>
+      <!-- 01 hoki-hero: geteilt, Kennzahlen, Kachelreihe -->
+      <section class="pr" aria-labelledby="page-title">
+        <div class="pr__hero">
+          <div class="pr__text">
+            <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Führerschein in Lahr</span>
+            <h1 class="pr__h1" id="page-title">Dein Führerschein: <span class="ac"><span class="visually-hidden">Klasse B, Klasse BE, B197 oder ab 17</span><span class="rot" data-rot aria-hidden="true"><span class="rot__sizer">Klasse BE</span><span class="rot__w is-on">Klasse B</span><span class="rot__w">Klasse BE</span><span class="rot__w">B197</span><span class="rot__w">ab 17</span></span></span></h1>
+            <p class="pr__sub">Wir bilden in den Klassen B und BE aus, auch mit Begleitetem Fahren ab 17 und mit Automatik und Schaltberechtigung. Dazu kommen Schnellkurse und Auffrischungsstunden.</p>
+            <div class="social">
+              <div class="social__i"><b>B · BE</b><span>Klassen</span></div>
+              <div class="social__i"><b>ab 17</b><span>mit Begleitung</span></div>
+              <div class="social__i"><b>B197</b><span>Automatik + Schaltung</span></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Klasse BE -->
-      <section class="block" id="klasse-be" aria-labelledby="be-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <span class="block__glyph" aria-hidden="true">BE</span>
-            <h2 class="h2" id="be-title">Klasse BE</h2>
-            <p class="lead">Für Gespanne mit größerem Anhänger, die über die Grenzen der Klasse B hinausgehen.</p>
+          <div class="pr__media" style="--pos: 62%">
+            <!-- @pic src="team-nadine-duerr" sizes="(min-width: 1200px) 500px, (min-width: 900px) 440px, 92vw" eager="1" alt="Fahrlehrerin Nadine Dürr an der geöffneten Fahrertür eines Fahrschulautos" -->
+            <span class="pr__banner"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg>Mit B197 auch Schaltwagen</span>
           </div>
-          <div>
-            <dl class="spec">
-              <div><dt>Fahrzeuge</dt><dd>Kombinationen aus einem Fahrzeug der Klasse B und einem Anhänger, die die Grenzwerte der Klasse B oder B96 übersteigen</dd></div>
-              <div><dt>Mindestalter</dt><dd><strong>18</strong> <span class="muted">mit Begleitetem Fahren 17</span></dd></div>
-              <div><dt>Vorbesitz</dt><dd>Klasse B</dd></div>
-            </dl>
-            <div class="actions">
-              <a class="btn btn--roll" href="/anmeldung/"><span class="btn__label"><span>Jetzt anmelden</span><span aria-hidden="true">Jetzt anmelden</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
-              <a class="btn btn--secondary" href="/files/info-preise-klasse-be.pdf"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>Info und Preise (PDF)</a>
+        </div>
+
+        <div class="row tiles" data-row>
+          <article class="tile tile--mint" id="klasse-b">
+            <div class="tile__in">
+              <span class="tag">Klasse B</span>
+              <h2 class="tile__t" style="margin-top: 10px">Der Klassiker für den Alltag.</h2>
+              <ul class="check check--dark" role="list">
+                <li>Kraftfahrzeuge bis 3.500 kg, für höchstens acht Personen außer dem Fahrer</li>
+                <li>Anhänger bis 750 kg, oder schwerer, solange die Kombination 3.500 kg nicht übersteigt</li>
+                <li>Ab 18, mit Begleitetem Fahren ab 17</li>
+                <li>Klassen L und AM eingeschlossen</li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- B197 -->
-      <section class="block block--tint" id="b197" aria-labelledby="b197-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <span class="block__glyph" aria-hidden="true">B197</span>
-            <h2 class="h2" id="b197-title">Automatik oder Schaltung? <span class="accent">Beides.</span></h2>
-            <p class="lead">Du machst die Prüfung im Automatikauto und darfst danach ohne Einschränkung auch Schaltwagen fahren. In der Theorie gibt es keinen Unterschied.</p>
-          </div>
-          <ol class="stages" role="list">
-            <li><div><h3>Grundausbildung</h3><p>Zum Großteil im Automatikauto. Du kannst aber auch im Schaltwagen beginnen.</p></div></li>
-            <li><div><h3>Besondere Ausbildungsfahrten</h3><p>Über Land, auf der Autobahn und bei Dunkelheit, teils im Automatik-, teils im Schaltwagen.</p></div></li>
-            <li><div><h3>Mindestens 10 Übungsstunden im Schaltwagen</h3><p>Erst danach darf die Testfahrt stattfinden.</p></div></li>
-            <li><div><h3>Testfahrt von mindestens 15 Minuten</h3><p>Dein Fahrlehrer stellt fest, dass du den Schaltwagen sicher, verantwortungsvoll und umweltbewusst fährst. Dafür bekommst du eine Bescheinigung.</p></div></li>
-            <li><div><h3>Praktische Prüfung im Automatikauto</h3><p>Prüfungsvorbereitung und Prüfung finden im Automatikauto statt.</p></div></li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- BF17 -->
-      <section class="block" id="bf17" aria-labelledby="bf17-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <span class="block__glyph" aria-hidden="true">17</span>
-            <h2 class="h2" id="bf17-title">Begleitetes Fahren ab 17</h2>
-            <p class="lead">Mit 17 Jahren die Klasse B oder BE erwerben und mit einer Begleitperson fahren, die in der Prüfungsbescheinigung namentlich eingetragen ist.</p>
-            <div class="note">
-              <p><strong>Ab 16½ Jahren</strong> kannst du den Antrag stellen, mit Einwilligung deiner Erziehungsberechtigten. Wer mit 16 anfängt, kann zum 17. Geburtstag fertig sein.</p>
+          </article>
+          <article class="tile tile--wald" id="klasse-be">
+            <div class="tile__in">
+              <span class="mini">Klasse BE</span>
+              <h2 class="tile__t" style="margin-top: 10px">Für Gespanne mit größerem Anhänger.</h2>
+              <ul class="glass" role="list"><li>Ab 18</li><li>Mit Begleitung ab 17</li><li>Vorbesitz Klasse B</li></ul>
+              <ul class="check" role="list" style="margin-top: auto">
+                <li>Kombinationen aus einem Fahrzeug der Klasse B und einem Anhänger</li>
+                <li>die die Grenzwerte der Klasse B oder B96 übersteigen</li>
+              </ul>
             </div>
-          </div>
-          <div>
-            <h3 class="h3">Diese Unterlagen brauchst du</h3>
-            <ul class="checklist" role="list" style="margin-top: 1.5rem">
-              <li>Personalausweis oder Pass</li>
-              <li>Ein biometrisches Lichtbild</li>
-              <li>Sehtestbescheinigung<small>nicht älter als zwei Jahre</small></li>
-              <li>Nachweis über die Unterweisung in lebensrettenden Sofortmaßnahmen</li>
-              <li>Für jede Begleitperson die „Anlage zum Antrag Begleitetes Fahren ab 17“<small>mit Personalien und Unterschrift der Begleitperson, Kopie ihres Personalausweises und ihres Führerscheins</small></li>
-            </ul>
-            <h3 class="h3" style="margin-top: 3rem; margin-bottom: 1rem">Formulare</h3>
-            <div class="downloads">
-              <a class="download" href="/files/bf17-antrag.pdf">
-                <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-                <span><span class="download__name">Antrag Begleitetes Fahren ab 17</span><span class="download__meta">PDF, 286 KB</span></span>
-                <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-              <a class="download" href="/files/bf17-erklaerung-begleitperson.pdf">
-                <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-                <span><span class="download__name">Erklärung der Begleitperson</span><span class="download__meta">PDF, 504 KB</span></span>
-                <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-              <a class="download" href="/files/vordruck-kartenfuehrerschein.pdf">
-                <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>
-                <span><span class="download__name">Vordruck Kartenführerschein</span><span class="download__meta">PDF, 306 KB</span></span>
-                <svg class="icon download__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
+          </article>
+          <article class="tile tile--photo">
+            <!-- @pic src="team-peter-harter" sizes="372px" style="--pos: 60%" alt="Fahrlehrer Peter Harter neben einem Fahrschulauto" -->
+            <div class="tile__in">
+              <span class="kicker">Eckdaten Klasse B</span>
+              <div class="proof">
+                <div class="proof__r"><b>3.500 kg</b><span>zulässige Gesamtmasse</span></div>
+                <div class="proof__r"><b>750 kg</b><span>Anhänger</span></div>
+                <div class="proof__r"><b>17</b><span>mit Begleitung</span></div>
+              </div>
             </div>
-          </div>
+          </article>
+          <article class="tile tile--mint">
+            <div class="tile__in">
+              <span class="tag">Kosten</span>
+              <h2 class="tile__t" style="margin-top: 10px">Info und Preise zum Herunterladen.</h2>
+              <p class="tile__d">Grundbetrag, Preise je Fahrstunde und Prüfungsvorstellungen. Was du am Ende zahlst, hängt davon ab, wie viele Fahrstunden du brauchst.</p>
+              <div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px">
+                <a class="cta cta--sm" href="/files/info-preise-klasse-b.pdf"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>Klasse B</a>
+                <a class="cta cta--sm" href="/files/info-preise-klasse-be.pdf"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>Klasse BE</a>
+              </div>
+            </div>
+          </article>
         </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+        <div class="cta-wrap">
+          <a class="cta" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+        </div>
+        <p class="footnote">Alle Preise stehen in der Preisinformation der jeweiligen Klasse.</p>
       </section>
 
-      <!-- Schnellkurs -->
-      <section class="block block--tint" id="schnellkurs" aria-labelledby="sk-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <h2 class="h2" id="sk-title">Theorie-<span class="accent">Schnellkurs</span></h2>
-          </div>
-          <div class="prose">
-            <p class="lead">Wenig Zeit für die Führerscheinausbildung? Im Intensivkurs, oft auch Crashkurs genannt, schaffst du die Theorie in kürzester Zeit.</p>
-            <p>Die nächsten Termine für Klasse B erfährst du telefonisch oder per E-Mail. Zur Anmeldung reicht eine kurze Nachricht an <a href="mailto:service@fahrschule-strauch.de">service@fahrschule-strauch.de</a>.</p>
-            <div class="actions">
-              <a class="btn" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>Anrufen</a>
-            </div>
-          </div>
+      <!-- 02 hoki-nf: alle Angebote als Kreise, zwei große Karten -->
+      <section class="nf" aria-labelledby="nf-title">
+        <div class="wrap">
+          <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Alle Angebote</span>
+          <h2 class="sec-h" id="nf-title">Sechs Wege <b>ans Steuer.</b></h2>
+          <p class="sec-sub">Vom ersten Führerschein bis zur Auffrischung, wenn du schon lange fährst.</p>
         </div>
-      </section>
+        <div class="row nf__cards" data-row>
+          <a class="nf__card" href="#klasse-b">
+            <div class="nf__circle"><!-- @pic src="ill-auto-seite" sizes="200px" alt="" --></div>
+            <h3 class="nf__cn">Klasse B</h3>
+            <span class="nf__tag">Pkw</span>
+            <p class="nf__cd">Pkw und leichte Lkw bis 3,5 t. Ab 18 Jahren, mit Begleitung ab 17.</p>
+          </a>
+          <a class="nf__card" href="#klasse-be">
+            <div class="nf__circle"><!-- @pic src="ill-auto-anhaenger" sizes="200px" alt="" --></div>
+            <h3 class="nf__cn">Klasse BE</h3>
+            <span class="nf__tag">Anhänger</span>
+            <p class="nf__cd">Für größere Anhänger hinter dem Pkw. Voraussetzung ist Klasse B.</p>
+          </a>
+          <a class="nf__card" href="#b197">
+            <div class="nf__circle nf__circle--dark"><!-- @pic src="ill-automatik-schaltung" sizes="200px" alt="" --></div>
+            <h3 class="nf__cn">B197</h3>
+            <span class="nf__tag">Automatik</span>
+            <p class="nf__cd">Prüfung im Automatikauto, danach auch Schaltwagen fahren.</p>
+          </a>
+          <a class="nf__card" href="#bf17">
+            <div class="nf__circle"><!-- @pic src="ill-begleitet-17" sizes="200px" alt="" --></div>
+            <h3 class="nf__cn">Begleitetes Fahren</h3>
+            <span class="nf__tag">ab 17</span>
+            <p class="nf__cd">Antrag ab 16½, danach mit eingetragener Begleitperson.</p>
+          </a>
+          <a class="nf__card" href="#schnellkurs">
+            <div class="nf__circle nf__circle--dark"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-lightning" /></svg></div>
+            <h3 class="nf__cn">Theorie-Schnellkurs</h3>
+            <span class="nf__tag">Theorie</span>
+            <p class="nf__cd">Intensivkurs für alle mit wenig Zeit.</p>
+          </a>
+          <a class="nf__card" href="#auffrischung">
+            <div class="nf__circle"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-steering-wheel" /></svg></div>
+            <h3 class="nf__cn">Auffrischung</h3>
+            <span class="nf__tag">Training</span>
+            <p class="nf__cd">Wieder sicher fahren, in Klasse B und BE.</p>
+          </a>
+        </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
 
-      <!-- Auffrischung -->
-      <section class="block" id="auffrischung" aria-labelledby="af-title">
-        <div class="container block__grid">
-          <div class="block__head">
-            <h2 class="h2" id="af-title">Führerschein <span class="accent">auffrischen.</span></h2>
-            <p class="lead">Separate Auffrischungsstunden für die Klassen B und BE. Was trainiert wird, vereinbarst du mit deinem Fahrlehrer.</p>
-            <div class="note"><p><strong>Voraussetzung:</strong> Du besitzt die jeweilige Führerscheinklasse.</p></div>
-          </div>
-          <div>
-            <h3 class="h3">Mögliche Trainingsinhalte</h3>
-            <ul class="checklist" role="list" style="margin-top: 1.5rem">
-              <li>Verkehrsregeln auffrischen, durch Teilnahme am Theorieunterricht</li>
-              <li>Fahren mit Schalt- oder Automatikfahrzeug</li>
-              <li>Angstbewältigung im Straßenverkehr</li>
-              <li>Schwierige Verkehrssituationen meistern</li>
+        <div class="nf__stack">
+          <article class="big big--photo" id="schnellkurs" style="--pos: 70%">
+            <!-- @pic src="intro-viktor" sizes="(min-width: 1000px) 570px, 94vw" alt="" -->
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-lightning" /></svg></span>
+            <h3 class="bt">Theorie-Schnellkurs</h3>
+            <p class="bd">Wenig Zeit für die Führerscheinausbildung? Im Intensivkurs, oft auch Crashkurs genannt, schaffst du die Theorie in kürzester Zeit. Die nächsten Termine für Klasse B erfährst du telefonisch oder per E-Mail.</p>
+            <a class="pill-btn" href="tel:+4915560410413">Termine erfragen <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg></a>
+          </article>
+          <article class="big big--dark" id="auffrischung">
+            <span class="ic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-steering-wheel" /></svg></span>
+            <h3 class="bt">Führerschein auffrischen</h3>
+            <p class="bd">Separate Auffrischungsstunden für die Klassen B und BE. Was trainiert wird, vereinbarst du mit deinem Fahrlehrer. Voraussetzung: Du besitzt die jeweilige Führerscheinklasse.</p>
+            <ul class="glass" role="list">
+              <li>Verkehrsregeln im Theorieunterricht</li>
+              <li>Schalt- oder Automatikfahrzeug</li>
+              <li>Angstbewältigung</li>
+              <li>Schwierige Verkehrssituationen</li>
               <li>Einparken</li>
               <li>Fahren bei Dunkelheit</li>
-              <li>Fahren bei Eis und Schnee<small>saisonbedingt und nur im Pkw</small></li>
+              <li>Eis und Schnee (saisonbedingt, nur Pkw)</li>
             </ul>
-            <div class="actions">
-              <a class="btn" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>Anrufen</a>
+            <a class="pill-btn" href="tel:+4915560410413">Anrufen <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg></a>
+          </article>
+        </div>
+        <div class="cta-wrap">
+          <a class="cta cta--outline" href="/files/info-preise-klasse-b.pdf">Info und Preise Klasse B (PDF) <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+        </div>
+      </section>
+
+      <!-- 03 hoki-ki: B197 im fließenden Petrol-Band -->
+      <section class="ki" id="b197" aria-labelledby="b197-title">
+        <div class="ki__hero">
+          <div class="ki__in">
+            <div class="ki__tx">
+              <span class="eyebrow" style="color: var(--lime)">Schlüsselzahl B197</span>
+              <h2 class="ki__h" id="b197-title"><span class="l1">Automatik oder Schaltung? <em>Beides.</em></span><span class="l2">Ein Führerschein, beide Getriebe.</span></h2>
+              <p class="ki__sub">Du machst die Prüfung im Automatikauto und darfst danach ohne Einschränkung auch Schaltwagen fahren. In der Theorie gibt es keinen Unterschied.</p>
+              <a class="ki__pill" href="/anmeldung/">
+                <span class="ph">Mit B197 anmelden</span>
+                <span class="send" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span>
+              </a>
             </div>
+            <div class="ki__art">
+              <!-- @pic src="ill-automatik-schaltung" sizes="(min-width: 880px) 480px, 92vw" alt="Illustration: Automatik-Wählhebel und Schaltknüppel mit dem Logo der Fahrschule Strauch" -->
+            </div>
+          </div>
+        </div>
+        <div class="ki__lead">
+          <h3>So läuft <b>B197.</b></h3>
+          <p>Fünf Schritte zwischen Automatik und Schaltwagen.</p>
+        </div>
+        <ol class="row ki__tiles" data-row role="list">
+          <li class="ki__tile">
+            <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-steering-wheel" /></svg></span>
+            <div class="b"><h4 class="tt"><span class="lead">Schritt 1</span>Grundausbildung</h4><p class="dd">Zum Großteil im Automatikauto. Du kannst aber auch im Schaltwagen beginnen.</p></div>
+          </li>
+          <li class="ki__tile">
+            <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-road-horizon" /></svg></span>
+            <div class="b"><h4 class="tt"><span class="lead">Schritt 2</span>Besondere Ausbildungsfahrten</h4><p class="dd">Über Land, auf der Autobahn und bei Dunkelheit, teils im Automatik-, teils im Schaltwagen.</p></div>
+          </li>
+          <li class="ki__tile">
+            <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-gear-six" /></svg></span>
+            <div class="b"><h4 class="tt"><span class="lead">Schritt 3</span>Mindestens 10 Übungsstunden im Schaltwagen</h4><p class="dd">Erst danach darf die Testfahrt stattfinden.</p></div>
+          </li>
+          <li class="ki__tile">
+            <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-clock" /></svg></span>
+            <div class="b"><h4 class="tt"><span class="lead">Schritt 4</span>Testfahrt von mindestens 15 Minuten</h4><p class="dd">Dein Fahrlehrer stellt fest, dass du den Schaltwagen sicher, verantwortungsvoll und umweltbewusst fährst. Dafür bekommst du eine Bescheinigung.</p></div>
+          </li>
+          <li class="ki__tile">
+            <span class="ki__tic"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-certificate" /></svg></span>
+            <div class="b"><h4 class="tt"><span class="lead">Schritt 5</span>Praktische Prüfung im Automatikauto</h4><p class="dd">Prüfungsvorbereitung und Prüfung finden im Automatikauto statt.</p></div>
+          </li>
+        </ol>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+      </section>
+
+      <!-- 04 hoki-qa: Begleitetes Fahren mit Formularen -->
+      <section class="qa" id="bf17" aria-labelledby="bf17-title">
+        <div class="wrap">
+          <span class="eyebrow"><span class="eyebrow__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Begleitetes Fahren</span>
+          <h2 class="qa__h" id="bf17-title">Ab 17 <b>am Steuer.</b></h2>
+          <p class="sec-sub">Mit 17 Jahren die Klasse B oder BE erwerben und mit einer Begleitperson fahren, die in der Prüfungsbescheinigung namentlich eingetragen ist. Den Antrag stellst du ab 16½ Jahren, mit Einwilligung deiner Erziehungsberechtigten.</p>
+          <a class="cta cta--outline cta--sm" href="/files/bf17-antrag.pdf">Antrag als PDF <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+        </div>
+        <div class="row qa__cards" data-row>
+          <div class="qa__card">
+            <div class="qa__img qa__img--ill"><!-- @pic src="ill-begleitet-17" sizes="340px" alt="Illustration: Fahrschüler am Steuer, daneben die Begleitperson" --></div>
+            <h3 class="qa__title">Mit 16 anfangen</h3>
+            <p class="qa__tx">Wer mit 16 anfängt, kann zum 17. Geburtstag fertig sein. Die Prüfung legst du kurz vor dem Geburtstag ab.</p>
+          </div>
+          <div class="qa__card">
+            <div class="qa__img qa__img--list">
+              <ul class="check check--dark" role="list" style="font-size: 15px">
+                <li>Personalausweis oder Pass</li>
+                <li>Biometrisches Lichtbild</li>
+                <li>Sehtest, nicht älter als zwei Jahre</li>
+                <li>Nachweis Erste Hilfe</li>
+                <li>Anlage für jede Begleitperson</li>
+              </ul>
+            </div>
+            <h3 class="qa__title">Diese Unterlagen brauchst du</h3>
+            <p class="qa__tx">Die Anlage zum Antrag enthält Personalien und Unterschrift der Begleitperson, dazu eine Kopie ihres Personalausweises und ihres Führerscheins.</p>
+          </div>
+          <a class="qa__card" href="/files/bf17-antrag.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-bf17-antrag" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 286 KB</span></div>
+            <h3 class="qa__title">Antrag Begleitetes Fahren ab 17</h3>
+            <p class="qa__tx">Ausdrucken, ausfüllen und zur Anmeldung mitbringen.</p>
+          </a>
+          <a class="qa__card" href="/files/bf17-erklaerung-begleitperson.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-bf17-erklaerung-begleitperson" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 504 KB</span></div>
+            <h3 class="qa__title">Erklärung der Begleitperson</h3>
+            <p class="qa__tx">Für jede Begleitperson ein eigenes Formular.</p>
+          </a>
+          <a class="qa__card" href="/files/vordruck-kartenfuehrerschein.pdf">
+            <div class="qa__img qa__img--doc"><!-- @pic src="pdf-vordruck-kartenfuehrerschein" sizes="230px" alt="" --><span class="qa__badge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-file-pdf" /></svg>PDF, 306 KB</span></div>
+            <h3 class="qa__title">Vordruck Kartenführerschein</h3>
+            <p class="qa__tx">Der Vordruck für deinen Kartenführerschein.</p>
+          </a>
+        </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Weiter</span></button></div>
+      </section>
+
+      <!-- 05 hoki-pz: drei Schritte zur Anmeldung -->
+      <section class="pz" aria-labelledby="pz-title">
+        <div class="pz__in">
+          <span class="eyebrow">In drei Schritten</span>
+          <h2 class="pz__h" id="pz-title">So meldest du dich an.</h2>
+          <p class="pz__sub">Online, mit dem Formular oder persönlich bei uns in der Schwarzwaldstraße&nbsp;93.</p>
+          <ol class="pz__steps" data-steps>
+            <li class="pz__step on">
+              <span class="pz__snum" aria-hidden="true">1</span>
+              <svg class="pz__sic" aria-hidden="true"><use href="/icons/sprite.svg#i-clipboard-text" /></svg>
+              <h3 class="pz__st">Anmelden</h3>
+              <p class="pz__sd">Online über den Fahrschulmanager oder mit dem Anmeldeformular.</p>
+              <span class="pz__pill">Online oder auf Papier</span>
+            </li>
+            <li class="pz__step">
+              <span class="pz__snum" aria-hidden="true">2</span>
+              <svg class="pz__sic" aria-hidden="true"><use href="/icons/sprite.svg#i-identification-card" /></svg>
+              <h3 class="pz__st">Unterlagen sammeln</h3>
+              <p class="pz__sd">Sehtest, Erste-Hilfe-Kurs, biometrisches Passfoto und Ausweis.</p>
+              <span class="pz__pill">Führerscheinantrag bei uns</span>
+            </li>
+            <li class="pz__step">
+              <span class="pz__snum" aria-hidden="true">3</span>
+              <svg class="pz__sic" aria-hidden="true"><use href="/icons/sprite.svg#i-chalkboard-teacher" /></svg>
+              <h3 class="pz__st">Theorie starten</h3>
+              <p class="pz__sd">Unterricht montags von 19:00 bis 20:30 Uhr, mittwochs nach Vereinbarung.</p>
+              <span class="pz__pill">Montag 19:00 Uhr</span>
+            </li>
+          </ol>
+          <div class="cta-wrap">
+            <a class="cta cta--lime" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            <span class="cta-note"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-translate" /></svg>Wir beraten dich auf Deutsch und Russisch.</span>
           </div>
         </div>
       </section>
 
-      <!-- @include finale -->
+      <!-- 06 hoki-faq -->
+      <section class="faq" id="fragen" aria-labelledby="faq-title" data-faq>
+        <div class="faq__in">
+          <span class="eyebrow">Häufige Fragen</span>
+          <h2 class="faq__h" id="faq-title">Fragen und Antworten</h2>
+          <p class="faq__sub">Die häufigsten Fragen rund um Führerschein, Unterlagen und Kosten, klar beantwortet.</p>
+          <div class="faq__filter" role="group" aria-label="Fragen filtern">
+            <button class="faq__chip" type="button" aria-pressed="true" data-faq-chip="alle">Alle</button>
+            <button class="faq__chip" type="button" aria-pressed="false" data-faq-chip="start">Voraussetzungen</button>
+            <button class="faq__chip" type="button" aria-pressed="false" data-faq-chip="ausbildung">Ausbildung</button>
+            <button class="faq__chip" type="button" aria-pressed="false" data-faq-chip="kosten">Kosten</button>
+            <button class="faq__chip" type="button" aria-pressed="false" data-faq-chip="sprache">Sprache</button>
+          </div>
+          <div class="faq__list">
+            <details class="faq__item" name="faq" data-cat="start">
+              <summary class="faq__q"><span class="faq__qtx">Ab wann kann ich mit dem Führerschein anfangen?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Für Klasse B bist du mit 18 dabei. Mit Begleitetem Fahren ab 17 kannst du den Antrag schon ab 16½ Jahren stellen, mit Einwilligung deiner Erziehungsberechtigten. So kannst du pünktlich zum 17. Geburtstag fertig sein.</p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="start">
+              <summary class="faq__q"><span class="faq__qtx">Welche Unterlagen brauche ich?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a">
+                <ul class="faq__props" role="list"><li>Ausweis oder Pass</li><li>Biometrisches Passfoto</li><li>Sehtest</li><li>Erste Hilfe</li></ul>
+                <p>Die Sehtestbescheinigung darf nicht älter als zwei Jahre sein. Für BF17 kommt für jede Begleitperson ein eigenes Formular dazu. <a href="/anmeldung/#unterlagen">Alle Formulare zum Herunterladen</a></p>
+              </div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="ausbildung">
+              <summary class="faq__q"><span class="faq__qtx">Automatik oder Schaltung, was ist besser?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Mit der Schlüsselzahl B197 musst du dich nicht entscheiden: Du lernst einen Großteil im Automatikauto und machst dort auch die Prüfung. Nach mindestens zehn Übungsstunden im Schaltwagen und einer Testfahrt von mindestens 15 Minuten darfst du später ohne Einschränkung auch Schaltwagen fahren.</p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="ausbildung">
+              <summary class="faq__q"><span class="faq__qtx">Was ist bei Klasse B eingeschlossen?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Mit Klasse B darfst du auch Fahrzeuge der Klassen L und AM fahren. Ein Vorbesitz ist für Klasse B nicht erforderlich.</p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="kosten">
+              <summary class="faq__q"><span class="faq__qtx">Was kostet der Führerschein?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Die Kosten hängen davon ab, wie viele Fahrstunden du brauchst. Grundbetrag, Preise je Fahrstunde und Prüfungsvorstellungen findest du in unserer Preisinformation.</p><p><a href="/files/info-preise-klasse-b.pdf">Info und Preise Klasse B (PDF)</a><br /><a href="/files/info-preise-klasse-be.pdf">Info und Preise Klasse BE (PDF)</a></p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="kosten">
+              <summary class="faq__q"><span class="faq__qtx">Kann ich den Führerschein finanzieren?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Ja, mit STARTHILFE, einer Führerscheinfinanzierung, die der Verlag Heinrich Vogel und die Credit Europe Bank speziell für Fahrschüler entwickelt haben.</p><p><a href="https://starthilfe.fahren-lernen.de/" rel="noopener" target="_blank">Mehr zu STARTHILFE</a></p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="ausbildung">
+              <summary class="faq__q"><span class="faq__qtx">Gibt es einen Schnellkurs?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Ja. Im Theorie-Schnellkurs lernst du die Theorie in wenigen, kompakten Tagen. Die nächsten Termine erfährst du telefonisch oder per E-Mail.</p></div>
+            </details>
+            <details class="faq__item" name="faq" data-cat="sprache">
+              <summary class="faq__q"><span class="faq__qtx">Sprecht ihr Russisch?</span><span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-plus" /></svg></span></summary>
+              <div class="faq__a"><p>Ja, wir beraten dich auch auf Russisch. <span lang="ru">Говорим по-русски.</span></p><p><a href="/ru/fuehrerschein/" hreflang="ru" lang="ru">Информация на русском языке</a></p></div>
+            </details>
+          </div>
+          <div class="cta-wrap">
+            <a class="cta" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            <span class="cta-note">Noch Fragen? Ruf an: <a href="tel:+4915560410413">+49 155 60 41 04 13</a></span>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- @include footer -->
-    <!-- @include symbols -->
+    <!-- @include footer de="/fuehrerschein/" ru="/ru/fuehrerschein/" -->
   </body>
 </html>

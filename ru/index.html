@@ -3,15 +3,16 @@
 <html lang="ru">
   <head>
     <!-- @include head locale="ru_RU" -->
+    <link rel="preload" href="/fonts/geist-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <title>Автошкола Strauch в Ларе | Права категорий B, BE, BF17 и B197</title>
-    <meta name="description" content="Автошкола Viktor Strauch в Ларе (Lahr), Schwarzwaldstraße 93: права категорий B и BE, вождение с сопровождением с 17 лет, автомат с правом вождения механики (B197), восстановление навыков и повышение квалификации профводителей. Говорим по-русски." />
+    <meta name="description" content="Автошкола Viktor Strauch в Ларе (Lahr), Schwarzwaldstraße 93: права категорий B и BE, вождение с сопровождением с 17 лет, автомат с правом вождения механики (B197), освежение навыков и повышение квалификации профводителей. Говорим по-русски." />
     <link rel="canonical" href="https://www.fahrschule-strauch.de/ru/" />
     <link rel="alternate" hreflang="de" href="https://www.fahrschule-strauch.de/" />
     <link rel="alternate" hreflang="ru" href="https://www.fahrschule-strauch.de/ru/" />
     <meta property="og:title" content="Автошкола Strauch: права в Ларе" />
     <meta property="og:description" content="Категории B и BE, вождение с 17 лет и B197. Schwarzwaldstraße 93, Лар. Говорим по-русски." />
     <meta property="og:url" content="https://www.fahrschule-strauch.de/ru/" />
-    <link rel="preload" as="image" type="image/avif" href="/images/ill-hero-szene-1440.avif" imagesrcset="/images/ill-hero-szene-960.avif 960w, /images/ill-hero-szene-1440.avif 1440w, /images/ill-hero-szene-2000.avif 2000w, /images/ill-hero-szene-3168.avif 3168w" imagesizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 860px" />
+    <link rel="preload" as="image" type="image/avif" href="/images/ill-hero-szene-1440.avif" imagesrcset="/images/ill-hero-szene-960.avif 960w, /images/ill-hero-szene-1440.avif 1440w, /images/ill-hero-szene-2000.avif 2000w, /images/ill-hero-szene-3168.avif 3168w" imagesizes="(min-width: 1000px) 160vw, 420vw" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -41,406 +42,269 @@
     <!-- @include header-ru page="home" de="/" ru="/ru/" -->
 
     <main id="inhalt">
-      <!-- 01 Hero (Muster nach MotionSites „Veyra Electric“: Bild-Bühne mit Punkten und Info-Leiste) -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="container">
-          <div class="hero__head">
-            <h1 class="display hero__title" id="hero-title">
-              <span class="hero__line">Права</span>
-              <span class="hero__line accent">в Ларе.</span>
-            </h1>
-            <div class="hero__side">
-              <p class="lead hero__lead">Автошкола Viktor Strauch: категории B и BE, вождение с сопровождением с 17 лет и автомат с правом вождения механики.</p>
-              <div class="actions hero__actions">
-                <a class="btn btn--roll" href="/ru/anmeldung/"><span class="btn__label"><span>Записаться</span><span aria-hidden="true">Записаться</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
-                <a class="btn btn--secondary" href="#klassen">Категории</a>
+      <!-- 01 hoki-solution: Vollbild-Hero und Kachelreihe der Klassen -->
+      <section class="sol" aria-labelledby="hero-title">
+        <div class="sol__hero">
+          <div class="sol__media">
+            <!-- @pic src="ill-hero-szene" sizes="(min-width: 1000px) 160vw, 420vw" eager="1" alt="Иллюстрация: автошкола Strauch с логотипом над витриной, три учебных автомобиля с логотипом, инструктор и ученик с ключом от машины" -->
+          </div>
+          <div class="sol__scrim" aria-hidden="true"></div>
+          <div class="sol__text">
+            <span class="sol__label">Автошкола Viktor Strauch · Лар</span>
+            <h1 class="sol__h" id="hero-title">Уверенно и спокойно <em>за руль.</em></h1>
+            <p class="sol__lead">Категории B и BE, вождение с сопровождением с 17 лет и автомат с правом вождения механики. На <span lang="de">Schwarzwaldstraße 93</span>, на немецком и русском.</p>
+          </div>
+        </div>
+
+        <div class="row sol__row" id="klassen" data-row aria-label="Категории прав">
+          <a class="sol__card" href="/ru/fuehrerschein/#klasse-b">
+            <div class="sol__tile">
+              <div class="sol__art"><!-- @pic src="ill-auto-seite" sizes="260px" alt="" --></div>
+              <div class="sol__cap">
+                <span class="sol__brand">Категория B <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
+                <h2><span class="visually-hidden">Категория B: </span>Права на легковой автомобиль</h2>
               </div>
             </div>
-          </div>
-
-          <div class="hero__frame" data-spots>
-            <div class="hero__pan" data-spots-pan>
-              <div class="hero__stage">
-                <picture class="hero__img">
-                  <source type="image/avif" srcset="/images/ill-hero-szene-960.avif 960w, /images/ill-hero-szene-1440.avif 1440w, /images/ill-hero-szene-2000.avif 2000w, /images/ill-hero-szene-3168.avif 3168w" sizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 860px" />
-                  <img src="/images/ill-hero-szene-1440.webp" srcset="/images/ill-hero-szene-960.webp 960w, /images/ill-hero-szene-1440.webp 1440w, /images/ill-hero-szene-2000.webp 2000w, /images/ill-hero-szene-3168.webp 3168w" sizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 860px" width="3168" height="1082" alt="Иллюстрация: автошкола Strauch с логотипом над витриной, три учебных автомобиля с логотипом, инструктор и ученик с ключом от машины" fetchpriority="high" decoding="async" />
-                </picture>
-              <div class="spot is-active" style="--x: 0.159; --y: 0.512; --i: 0" data-spot>
-                <button class="spot__dot" type="button" aria-pressed="true" aria-controls="spot-info-0"><span class="visually-hidden">Показать: категории B и BE</span></button>
-                <a class="spot__label" href="#klassen">Категории B и BE<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
-              </div>
-              <div class="spot spot--end" style="--x: 0.85; --y: 0.512; --i: 1" data-spot>
-                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-1"><span class="visually-hidden">Показать: автомат или механика</span></button>
-                <a class="spot__label" href="/ru/fuehrerschein/#b197" tabindex="-1">Автомат + механика<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
-              </div>
-              <div class="spot" style="--x: 0.631; --y: 0.604; --i: 2" data-spot>
-                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-2"><span class="visually-hidden">Показать: инструкторы с 1984 года</span></button>
-                <a class="spot__label" href="#team" tabindex="-1">С 1984 года<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
-              </div>
-              <div class="spot" style="--x: 0.35; --y: 0.183; --i: 3" data-spot>
-                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-3"><span class="visually-hidden">Показать: Schwarzwaldstraße 93</span></button>
-                <a class="spot__label" href="#kontakt" tabindex="-1">Schwarzwaldstraße 93<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
-              </div>
+            <div class="sol__effect">
+              <p class="lbl">Полезно знать</p>
+              <ul class="chips"><li>С 18 лет</li><li>С сопровождением с 17</li><li>До 3500 кг</li><li>Прицеп до 750 кг</li></ul>
+            </div>
+          </a>
+          <a class="sol__card" href="/ru/fuehrerschein/#klasse-be">
+            <div class="sol__tile">
+              <div class="sol__art"><!-- @pic src="ill-auto-anhaenger" sizes="260px" alt="" --></div>
+              <div class="sol__cap">
+                <span class="sol__brand">Категория BE <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
+                <h2><span class="visually-hidden">Категория BE: </span>Для большого прицепа</h2>
               </div>
             </div>
-          </div>
-
-          <ol class="hero__info" role="list">
-            <li class="hero__info-item is-active" id="spot-info-0" data-spot-info>
-              <button class="hero__info-btn" type="button" data-spot-pick="0">Категории B и BE</button>
-              <p>Легковые автомобили до 3,5 т и прицепы побольше. С сопровождением уже с 17 лет.</p>
-              <a class="link hero__info-link" href="#klassen">Все категории <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-            </li>
-            <li class="hero__info-item" id="spot-info-1" data-spot-info>
-              <button class="hero__info-btn" type="button" data-spot-pick="1">Автомат или механика</button>
-              <p>С B197 и то и другое: экзамен на автомате, а потом можно водить и механику.</p>
-              <a class="link hero__info-link" href="/ru/fuehrerschein/#b197">Как работает B197 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-            </li>
-            <li class="hero__info-item" id="spot-info-2" data-spot-info>
-              <button class="hero__info-btn" type="button" data-spot-pick="2">Инструкторы с 1984 года</button>
-              <p>Peter Harter, Gerold Remmele, Nadine Dürr и Viktor Strauch.</p>
-              <a class="link hero__info-link" href="#team">Команда <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-            </li>
-            <li class="hero__info-item" id="spot-info-3" data-spot-info>
-              <button class="hero__info-btn" type="button" data-spot-pick="3">Schwarzwaldstraße 93</button>
-              <p>Теория по понедельникам с 19:00 до 20:30. Консультируем на русском и немецком.</p>
-              <a class="link hero__info-link" href="#kontakt">Контакты <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- 02 Intro: Haltung (Muster nach MotionSites „Axion About“) -->
-      <section class="intro section" id="fahrschule" aria-labelledby="intro-title">
-        <div class="container">
-          <h2 class="h2 intro__title" id="intro-title" data-reveal>У нас можно <span class="accent">ошибаться.</span></h2>
-          <div class="intro__grid">
-            <figure class="frame intro__small" data-reveal style="--stagger: 1">
-              <picture>
-                <source type="image/avif" srcset="/images/intro-schaufenster-480.avif 480w, /images/intro-schaufenster-720.avif 720w" sizes="(min-width: 1024px) 26vw, (min-width: 640px) 42vw, 92vw" />
-                <img src="/images/intro-schaufenster-480.webp" srcset="/images/intro-schaufenster-480.webp 480w, /images/intro-schaufenster-720.webp 720w" sizes="(min-width: 1024px) 26vw, (min-width: 640px) 42vw, 92vw" width="560" height="442" alt="Инструктор Gerold Remmele у витрины автошколы с логотипом" loading="lazy" decoding="async" />
-              </picture>
-            </figure>
-            <div class="intro__text" data-reveal style="--stagger: 2">
-              <p class="intro__lead">Вопросы приветствуются, и никто не должен бояться ошибок. Наша цель не только сданный экзамен, но и то, чтобы потом вы ездили уверенно и безопасно.</p>
-              <p class="intro__ru"><span>Говорим по-русски.</span> Консультации на русском и немецком языке.</p>
-              <a class="btn btn--roll btn--secondary" href="/ru/ueber-uns/"><span class="btn__label"><span>Подробнее о нас</span><span aria-hidden="true">Подробнее о нас</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
+            <div class="sol__effect">
+              <p class="lbl">Полезно знать</p>
+              <ul class="chips"><li>С 18 лет</li><li>Сначала категория B</li><li>Большие автопоезда</li></ul>
             </div>
-            <figure class="frame intro__large" data-reveal style="--stagger: 3">
-              <picture>
-                <source type="image/avif" srcset="/images/intro-viktor-640.avif 640w, /images/intro-viktor-960.avif 960w, /images/intro-viktor-1200.avif 1200w" sizes="(min-width: 1024px) 48vw, (min-width: 640px) 52vw, 92vw" />
-                <img src="/images/intro-viktor-960.webp" srcset="/images/intro-viktor-640.webp 640w, /images/intro-viktor-960.webp 960w, /images/intro-viktor-1200.webp 1200w" sizes="(min-width: 1024px) 48vw, (min-width: 640px) 52vw, 92vw" width="1200" height="800" alt="Владелец Viktor Strauch у своего учебного автомобиля" loading="lazy" decoding="async" data-parallax />
-              </picture>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- 03 Führerscheinklassen -->
-      <section class="classes section" id="klassen" aria-labelledby="classes-title">
-        <div class="container">
-          <header class="section-head">
-            <h2 class="h2" id="classes-title" data-reveal>Какая категория <span class="accent">вам подходит?</span></h2>
-          </header>
-
-          <div class="classes__grid">
-            <!-- Klasse B -->
-            <article class="class-tile class-tile--b" data-reveal>
-              <a class="class-tile__link" href="/ru/fuehrerschein/#klasse-b" aria-labelledby="cls-b">
-                <span class="class-tile__glyph" aria-hidden="true">B</span>
-                <div class="class-tile__text">
-                  <h3 class="h3" id="cls-b">Категория B</h3>
-                  <p>Легковые автомобили и лёгкие грузовики до 3,5 т. С 18 лет, с сопровождением с 17. Прицеп до 750 кг включён.</p>
-                  <span class="link">Всё о категории B <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span>
-                </div>
-                <picture class="class-tile__art art-car">
-                  <source type="image/avif" srcset="/images/ill-auto-seite-480.avif 480w, /images/ill-auto-seite-800.avif 800w, /images/ill-auto-seite-1005.avif 1005w" sizes="(min-width: 1024px) 600px, 90vw" />
-                  <img src="/images/ill-auto-seite-800.webp" srcset="/images/ill-auto-seite-480.webp 480w, /images/ill-auto-seite-800.webp 800w, /images/ill-auto-seite-1005.webp 1005w" sizes="(min-width: 1024px) 600px, 90vw" width="1005" height="491" alt="" loading="lazy" decoding="async" />
-                </picture>
-              </a>
-            </article>
-
-            <!-- Klasse BE -->
-            <article class="class-tile class-tile--be" data-reveal style="--stagger: 1">
-              <a class="class-tile__link" href="/ru/fuehrerschein/#klasse-be" aria-labelledby="cls-be">
-                <span class="class-tile__glyph" aria-hidden="true">BE</span>
-                <div class="class-tile__text">
-                  <h3 class="h3" id="cls-be">Категория BE</h3>
-                  <p>Для прицепов побольше за легковым автомобилем. Нужна категория B.</p>
-                  <span class="link">Всё о категории BE <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span>
-                </div>
-                <picture class="class-tile__art art-trailer">
-                  <source type="image/avif" srcset="/images/ill-auto-anhaenger-480.avif 480w, /images/ill-auto-anhaenger-800.avif 800w, /images/ill-auto-anhaenger-1293.avif 1293w" sizes="(min-width: 1024px) 290px, 90vw" />
-                  <img src="/images/ill-auto-anhaenger-800.webp" srcset="/images/ill-auto-anhaenger-480.webp 480w, /images/ill-auto-anhaenger-800.webp 800w, /images/ill-auto-anhaenger-1293.webp 1293w" sizes="(min-width: 1024px) 290px, 90vw" width="1293" height="425" alt="" loading="lazy" decoding="async" />
-                </picture>
-              </a>
-            </article>
-
-            <!-- B197 -->
-            <article class="class-tile class-tile--b197 on-dark" data-reveal style="--stagger: 2">
-              <a class="class-tile__link" href="/ru/fuehrerschein/#b197" aria-labelledby="cls-b197">
-                <span class="class-tile__glyph" aria-hidden="true">B197</span>
-                <div class="class-tile__text">
-                  <h3 class="h3" id="cls-b197">Автомат или механика? <span class="class-tile__em">И то и другое.</span></h3>
-                  <p>С B197 вы сдаёте экзамен на автомате, а потом без ограничений можете водить и механику.</p>
-                  <span class="link">Как работает B197 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span>
-                </div>
-                <picture class="class-tile__art art-gears">
-                  <source type="image/avif" srcset="/images/ill-automatik-schaltung-480.avif 480w, /images/ill-automatik-schaltung-800.avif 800w, /images/ill-automatik-schaltung-1065.avif 1065w" sizes="(min-width: 1024px) 240px, 90vw" />
-                  <img src="/images/ill-automatik-schaltung-800.webp" srcset="/images/ill-automatik-schaltung-480.webp 480w, /images/ill-automatik-schaltung-800.webp 800w, /images/ill-automatik-schaltung-1065.webp 1065w" sizes="(min-width: 1024px) 240px, 90vw" width="1065" height="486" alt="" loading="lazy" decoding="async" />
-                </picture>
-              </a>
-            </article>
-
-            <!-- BF17 -->
-            <article class="class-tile class-tile--bf17" data-reveal style="--stagger: 3">
-              <a class="class-tile__link" href="/ru/fuehrerschein/#bf17" aria-labelledby="cls-bf17">
-                <span class="class-tile__glyph" aria-hidden="true">17</span>
-                <div class="class-tile__text">
-                  <h3 class="h3" id="cls-bf17">Вождение с 17 лет</h3>
-                  <p>Заявление с 16,5 лет, экзамен незадолго до 17-летия. Затем вы ездите с сопровождающим, вписанным в документ.</p>
-                  <span class="link">Документы для BF17 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span>
-                </div>
-                <picture class="class-tile__art art-seats">
-                  <source type="image/avif" srcset="/images/ill-begleitet-17-480.avif 480w, /images/ill-begleitet-17-800.avif 800w, /images/ill-begleitet-17-1157.avif 1157w" sizes="(min-width: 1024px) 300px, 90vw" />
-                  <img src="/images/ill-begleitet-17-800.webp" srcset="/images/ill-begleitet-17-480.webp 480w, /images/ill-begleitet-17-800.webp 800w, /images/ill-begleitet-17-1157.webp 1157w" sizes="(min-width: 1024px) 300px, 90vw" width="1157" height="566" alt="" loading="lazy" decoding="async" />
-                </picture>
-              </a>
-            </article>
-          </div>
-
-          <p class="classes__more" data-reveal>
-            А также: <a href="/ru/fuehrerschein/#schnellkurs">интенсивные курсы</a>, <a href="/ru/fuehrerschein/#auffrischung">занятия для восстановления навыков</a> и <a href="/ru/berufskraftfahrer/">повышение квалификации профводителей</a>.
-          </p>
-        </div>
-      </section>
-
-      <!-- 04 Ablauf -->
-      <section class="journey" id="ablauf" aria-labelledby="journey-title" data-journey>
-        <div class="container">
-          <header class="section-head journey__head">
-            <h2 class="h2" id="journey-title" data-reveal>Как проходит <span class="accent">обучение.</span></h2>
-            <p class="lead" data-reveal style="--stagger: 1">От записи до прав за шесть этапов.</p>
-          </header>
-        </div>
-
-        <div class="container journey__layout">
-          <div class="journey__stage" aria-hidden="true">
-            <svg class="journey__road journey__road--v" viewBox="0 0 360 1000" preserveAspectRatio="xMidYMid meet" data-road="v">
-              <path class="road-edge" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
-              <path class="road-asphalt" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
-              <path class="road-center" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
-              <path class="road-trail" data-trail d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
-              <g data-stations></g>
-              <use href="#car-top" class="journey__car" data-car />
-            </svg>
-            <svg class="journey__road journey__road--h" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" data-road="h">
-              <path class="road-edge" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
-              <path class="road-asphalt" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
-              <path class="road-center" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
-              <path class="road-trail" data-trail d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
-              <g data-stations></g>
-              <use href="#car-top" class="journey__car" data-car />
-            </svg>
-          </div>
-
-          <ol class="journey__steps" role="list" data-steps>
-            <li class="step" data-step>
-              <h3 class="step__title">Запись</h3>
-              <p>Онлайн через Fahrschulmanager, с помощью бланка или прямо у нас на Schwarzwaldstraße&nbsp;93.</p>
-              <a class="link" href="/ru/anmeldung/">К записи <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-            </li>
-            <li class="step" data-step>
-              <h3 class="step__title">Документы</h3>
-              <p>Проверка зрения, курс первой помощи, биометрическое фото и удостоверение личности. Бланк заявления на права вы получите у нас.</p>
-            </li>
-            <li class="step" data-step>
-              <h3 class="step__title">Теория</h3>
-              <p>Занятия по понедельникам с 19:00 до 20:30, по средам по договорённости. В промежутках можно учиться в приложении Fahren Lernen MAX.</p>
-            </li>
-            <li class="step" data-step>
-              <h3 class="step__title">Уроки вождения</h3>
-              <p>Базовое обучение и обязательные специальные поездки: за городом, по автобану и в тёмное время суток. На механике или на автомате.</p>
-            </li>
-            <li class="step" data-step>
-              <h3 class="step__title">Экзамен</h3>
-              <p>Сначала теоретический экзамен, затем практический. Мы запишем вас, когда вы будете готовы.</p>
-            </li>
-            <li class="step" data-step>
-              <h3 class="step__title">Права</h3>
-              <p>Сдано! При вождении с 17 лет сначала ездите с сопровождающим, в остальных случаях сразу самостоятельно.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- 05 Team (Bühne nach MotionSites „Talent Collective“) -->
-      <section class="crew section" id="team" aria-labelledby="team-title">
-        <div class="container">
-          <div class="crew__stage on-dark" data-crew>
-              <picture class="crew__slide is-active" data-crew-slide style="--pos: 78%">
-                <source type="image/avif" srcset="/images/team-peter-harter-wide-640.avif 640w, /images/team-peter-harter-wide-960.avif 960w, /images/team-peter-harter-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
-                <img src="/images/team-peter-harter-wide-960.webp" srcset="/images/team-peter-harter-wide-640.webp 640w, /images/team-peter-harter-wide-960.webp 960w, /images/team-peter-harter-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Peter Harter у открытой водительской двери учебного автомобиля" loading="lazy" decoding="async" />
-              </picture>
-              <picture class="crew__slide" data-crew-slide style="--pos: 82%">
-                <source type="image/avif" srcset="/images/team-gerold-remmele-wide-640.avif 640w, /images/team-gerold-remmele-wide-960.avif 960w, /images/team-gerold-remmele-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
-                <img src="/images/team-gerold-remmele-wide-960.webp" srcset="/images/team-gerold-remmele-wide-640.webp 640w, /images/team-gerold-remmele-wide-960.webp 960w, /images/team-gerold-remmele-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Gerold Remmele рядом с учебным автомобилем перед автошколой" loading="lazy" decoding="async" />
-              </picture>
-              <picture class="crew__slide" data-crew-slide style="--pos: 80%">
-                <source type="image/avif" srcset="/images/team-nadine-duerr-wide-640.avif 640w, /images/team-nadine-duerr-wide-960.avif 960w, /images/team-nadine-duerr-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
-                <img src="/images/team-nadine-duerr-wide-960.webp" srcset="/images/team-nadine-duerr-wide-640.webp 640w, /images/team-nadine-duerr-wide-960.webp 960w, /images/team-nadine-duerr-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Nadine Dürr у открытой водительской двери учебного автомобиля" loading="lazy" decoding="async" />
-              </picture>
-              <picture class="crew__slide" data-crew-slide style="--pos: 92%">
-                <source type="image/avif" srcset="/images/team-viktor-strauch-wide-640.avif 640w, /images/team-viktor-strauch-wide-960.avif 960w, /images/team-viktor-strauch-wide-1200.avif 1200w" sizes="(min-width: 1320px) 1240px, 94vw" />
-                <img src="/images/team-viktor-strauch-wide-960.webp" srcset="/images/team-viktor-strauch-wide-640.webp 640w, /images/team-viktor-strauch-wide-960.webp 960w, /images/team-viktor-strauch-wide-1200.webp 1200w" sizes="(min-width: 1320px) 1240px, 94vw" width="1200" height="900" alt="Viktor Strauch у учебного автомобиля" loading="lazy" decoding="async" />
-              </picture>
-            <div class="crew__shade" aria-hidden="true"></div>
-            <div class="crew__content">
-              <div class="crew__top">
-                <h2 class="crew__title" id="team-title">Кто сидит <span>рядом с вами.</span></h2>
+          </a>
+          <a class="sol__card" href="/ru/fuehrerschein/#b197">
+            <div class="sol__tile sol__tile--dark">
+              <div class="sol__art"><!-- @pic src="ill-automatik-schaltung" sizes="260px" alt="" --></div>
+              <div class="sol__cap">
+                <span class="sol__brand">B197 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
+                <h2><span class="visually-hidden">B197: </span>Автомат или механика? И то и другое.</h2>
               </div>
-              <div class="crew__bottom">
-                <blockquote class="crew__quote" data-crew-quote><p>«Путь и есть цель. Удачи на новых дорогах!»</p></blockquote>
-                <div class="crew__picker" role="group" aria-label="Выбрать инструктора">
-                <button class="crew__pick" type="button" aria-pressed="true" data-crew-pick data-name="Peter Harter" data-role="Инструктор по всем категориям с 1984 года" data-quote="Путь и есть цель. Удачи на новых дорогах!">
-                  <span class="crew__avatar"><img src="/images/avatar-peter-harter-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
-                  <span class="crew__year">1984</span>
-                  <span class="visually-hidden">Показать: Peter Harter</span>
-                </button>
-                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Gerold Remmele" data-role="Инструктор по всем категориям с 1988 года" data-quote="Знак „Стоп“ не рекомендация.">
-                  <span class="crew__avatar"><img src="/images/avatar-gerold-remmele-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
-                  <span class="crew__year">1988</span>
-                  <span class="visually-hidden">Показать: Gerold Remmele</span>
-                </button>
-                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Nadine Dürr" data-role="Инструктор с 2000 года" data-quote="И мне до сих пор нравится помогать молодым людям безопасно выезжать на дорогу.">
-                  <span class="crew__avatar"><img src="/images/avatar-nadine-duerr-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
-                  <span class="crew__year">2000</span>
-                  <span class="visually-hidden">Показать: Nadine Dürr</span>
-                </button>
-                <button class="crew__pick" type="button" aria-pressed="false" data-crew-pick data-name="Viktor Strauch" data-role="Владелец, инструктор с 2007 года" data-quote="Сдашь назад в дерево, и багажник станет меньше!">
-                  <span class="crew__avatar"><img src="/images/avatar-viktor-strauch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" /></span>
-                  <span class="crew__year">2007</span>
-                  <span class="visually-hidden">Показать: Viktor Strauch</span>
-                </button>
-                </div>
-                <div class="crew__meta" aria-live="polite">
-                  <span class="crew__name" data-crew-name>Peter Harter</span>
-                  <span class="crew__role" data-crew-role>Инструктор по всем категориям с 1984 года</span>
-                  <a class="crew__link" href="/ru/ueber-uns/">Подробнее о нас</a>
-                </div>
+            </div>
+            <div class="sol__effect">
+              <p class="lbl">Полезно знать</p>
+              <ul class="chips"><li>Экзамен на автомате</li><li>10 часов на механике</li><li>Пробная поездка от 15 минут</li></ul>
+            </div>
+          </a>
+          <a class="sol__card" href="/ru/fuehrerschein/#bf17">
+            <div class="sol__tile">
+              <div class="sol__art"><!-- @pic src="ill-begleitet-17" sizes="260px" alt="" --></div>
+              <div class="sol__cap">
+                <span class="sol__brand">BF17 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
+                <h2><span class="visually-hidden">BF17: </span>Вождение с сопровождением с 17 лет</h2>
               </div>
+            </div>
+            <div class="sol__effect">
+              <p class="lbl">Полезно знать</p>
+              <ul class="chips"><li>Заявление с 16½</li><li>Сопровождающий вписан</li><li>Категория B или BE</li></ul>
+            </div>
+          </a>
+          <a class="sol__card" href="/ru/berufskraftfahrer/">
+            <div class="sol__tile">
+              <div class="sol__art"><!-- @pic src="ill-lkw" sizes="260px" alt="" --></div>
+              <div class="sol__cap">
+                <span class="sol__brand">BKF <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
+                <h2><span class="visually-hidden">BKF: </span>Повышение квалификации профводителей</h2>
+              </div>
+            </div>
+            <div class="sol__effect">
+              <p class="lbl">Полезно знать</p>
+              <ul class="chips"><li>Модули 1–5</li><li>Код 95</li><li>Официально признано</li></ul>
+            </div>
+          </a>
+        </div>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Другие категории</span></button></div>
+        <p class="note">Базовая стоимость и цена урока вождения указаны в информации о ценах для <a href="/files/info-preise-klasse-b.pdf">категории B</a> и <a href="/files/info-preise-klasse-be.pdf">категории BE</a> (PDF, на немецком). Теория по понедельникам с 19:00 до 20:30.</p>
+      </section>
+
+      <!-- 02 hoki-cm: Zahl auf Foto, Ablauf als Karten, Fahrlehrer als Hochkant-Kacheln -->
+      <section class="cm" aria-labelledby="cm-title">
+        <div class="wrap">
+          <div class="cm__hero" data-reveal>
+            <!-- @pic src="fuhrpark-hero" sizes="(min-width: 1180px) 1136px, 94vw" alt="Команда автошколы Strauch с четырьмя учебными автомобилями перед зданием на Schwarzwaldstraße" -->
+            <div class="cm__scrim" aria-hidden="true"></div>
+            <div class="cm__htx">
+              <p class="cm__label">Четыре инструктора, одна команда</p>
+              <h2 class="cm__h" id="cm-title"><span class="big">1984</span><span class="small">Инструкторы <em>с 1984 года.</em></span></h2>
+              <p class="cm__sub">Peter Harter учит людей водить с 1984 года. Вместе с Gerold Remmele (с 1988), Nadine Dürr (с 2000) и владельцем Viktor Strauch (с 2007) рядом с вами сидит опыт.</p>
+              <p class="cm__facts"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-steering-wheel" /></svg><b>4</b> инструктора <span class="sep" aria-hidden="true"></span> <b>B · BE · B197 · BF17</b> <span class="sep" aria-hidden="true"></span> Немецкий и русский</p>
             </div>
           </div>
         </div>
+
+        <div class="revhead" id="ablauf">
+          <h2>Как проходит <em>обучение</em></h2>
+          <p>шесть этапов, от записи до получения прав</p>
+        </div>
+        <ol class="row cm__cards" data-row role="list">
+          <li class="cm__card expert">
+            <div>
+              <span class="cm__badge">Наш принцип</span>
+              <p class="cm__quote">«У нас можно ошибаться. Вопросы приветствуются, и никто не должен бояться ошибки.»</p>
+            </div>
+            <div class="cm__cf">
+              <div class="cm__exrow">
+                <span class="cm__avs" aria-hidden="true">
+                  <img src="/images/avatar-viktor-strauch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
+                  <img src="/images/avatar-peter-harter-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
+                  <img src="/images/avatar-gerold-remmele-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
+                  <img src="/images/avatar-nadine-duerr-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
+                </span>
+                <div class="cm__who">
+                  <span class="cm__name">Команда автошколы</span>
+                  <span class="cm__verif"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-seal-check" /></svg>Viktor, Peter, Gerold и Nadine</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Онлайн через Fahrschulmanager, с помощью бланка записи или прямо у нас на <span lang="de">Schwarzwaldstraße&nbsp;93</span>.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Запись</span><a class="cm__verif" href="/ru/anmeldung/">К записи <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a></div>
+              <span class="cm__num" aria-hidden="true">01/06</span>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Проверка зрения, курс первой помощи, биометрическое фото и удостоверение личности. Бланк заявления на права вы получите у нас.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Документы</span><span class="cm__verif">Этап 2</span></div>
+              <span class="cm__num" aria-hidden="true">02/06</span>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Занятия по понедельникам с 19:00 до 20:30, по средам по договорённости. В промежутках вы учитесь с приложением Fahren Lernen MAX.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Теория</span><span class="cm__verif">Этап 3</span></div>
+              <span class="cm__num" aria-hidden="true">03/06</span>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Базовое обучение и особые поездки: за городом, по автобану и в темноте. На механике или на автомате.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Уроки вождения</span><span class="cm__verif">Этап 4</span></div>
+              <span class="cm__num" aria-hidden="true">04/06</span>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Сначала теоретический экзамен, потом практический. Мы запишем вас, когда вы будете готовы.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Экзамен</span><span class="cm__verif">Этап 5</span></div>
+              <span class="cm__num" aria-hidden="true">05/06</span>
+            </div>
+          </li>
+          <li class="cm__card">
+            <p class="cm__quote">Сдано. При вождении с 17 лет сначала ездите с сопровождающим, иначе сразу самостоятельно.</p>
+            <div class="cm__cf">
+              <div class="cm__who"><span class="cm__name">Права</span><span class="cm__verif">Этап 6</span></div>
+              <span class="cm__num" aria-hidden="true">06/06</span>
+            </div>
+          </li>
+        </ol>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Следующий этап</span></button></div>
+
+        <div class="revhead" id="team">
+          <h2>Кто сидит <em>рядом с вами</em></h2>
+          <p>четыре инструктора, своими словами</p>
+        </div>
+        <ul class="row cm__videos" data-row role="list">
+          <li class="cm__vtile">
+            <!-- @pic src="team-peter-harter" sizes="286px" style="--pos: 62%" alt="Peter Harter рядом с учебным автомобилем" -->
+            <span class="cm__vscrim" aria-hidden="true"></span>
+            <span class="cm__vbadge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-check" /></svg>С 1984 года</span>
+            <div class="cm__vcap">
+              <blockquote>«Путь и есть цель. Удачи на новых дорогах!»</blockquote>
+              <p><b>Peter Harter</b>Инструктор по всем категориям</p>
+            </div>
+          </li>
+          <li class="cm__vtile">
+            <!-- @pic src="team-gerold-remmele" sizes="286px" style="--pos: 70%" alt="Gerold Remmele рядом с учебным автомобилем" -->
+            <span class="cm__vscrim" aria-hidden="true"></span>
+            <span class="cm__vbadge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-check" /></svg>С 1988 года</span>
+            <div class="cm__vcap">
+              <blockquote>«Знак «Стоп» не рекомендация.»</blockquote>
+              <p><b>Gerold Remmele</b>Инструктор по всем категориям</p>
+            </div>
+          </li>
+          <li class="cm__vtile">
+            <!-- @pic src="team-nadine-duerr" sizes="286px" style="--pos: 66%" alt="Nadine Dürr у открытой водительской двери учебного автомобиля" -->
+            <span class="cm__vscrim" aria-hidden="true"></span>
+            <span class="cm__vbadge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-check" /></svg>С 2000 года</span>
+            <div class="cm__vcap">
+              <blockquote>«И мне до сих пор нравится помогать молодым людям безопасно выезжать на дорогу.»</blockquote>
+              <p><b>Nadine Dürr</b>Инструктор</p>
+            </div>
+          </li>
+          <li class="cm__vtile">
+            <!-- @pic src="team-viktor-strauch" sizes="286px" style="--pos: 80%" alt="Viktor Strauch у учебного автомобиля" -->
+            <span class="cm__vscrim" aria-hidden="true"></span>
+            <span class="cm__vbadge"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-check" /></svg>С 2007 года</span>
+            <div class="cm__vcap">
+              <blockquote>«Сдашь назад в дерево, и багажник станет меньше!»</blockquote>
+              <p><b>Viktor Strauch</b>Владелец и инструктор</p>
+            </div>
+          </li>
+        </ul>
+        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Следующий инструктор</span></button></div>
+        <p class="note note--center">Больше о нашей команде и о том, как мы учим, читайте на странице <a href="/ru/ueber-uns/">О нас</a>.</p>
       </section>
 
-      <!-- 06 Angebote -->
-      <section class="offers section" id="angebote" aria-labelledby="offers-title">
-        <div class="container offers__grid">
-          <h2 class="h2 offers__title" id="offers-title" data-reveal>Больше, чем <span class="accent">первый урок.</span></h2>
-          <ul class="offers__list" role="list">
-            <li data-reveal>
-              <a class="offer" href="/ru/fuehrerschein/#schnellkurs">
-                <span class="offer__title">Интенсивный курс теории</span>
-                <span class="offer__text">Для тех, у кого мало времени. Ближайшие даты узнавайте у нас.</span>
-                <svg class="icon offer__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-            </li>
-            <li data-reveal style="--stagger: 1">
-              <a class="offer" href="/ru/fuehrerschein/#auffrischung">
-                <span class="offer__title">Восстановление навыков</span>
-                <span class="offer__text">Снова уверенно за рулём: парковка, темнота, сложные ситуации, страх вождения.</span>
-                <svg class="icon offer__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-            </li>
-            <li data-reveal style="--stagger: 2">
-              <a class="offer" href="/ru/berufskraftfahrer/">
-                <span class="offer__title">Повышение квалификации BKF</span>
-                <span class="offer__text">Модули с 1 по 5 для кода 95. Официально признанный учебный центр.</span>
-                <svg class="icon offer__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-            </li>
-            <li data-reveal style="--stagger: 3">
-              <a class="offer" href="/ru/anmeldung/#finanzierung">
-                <span class="offer__title">Финансирование</span>
-                <span class="offer__text">STARTHILFE: финансирование обучения для учеников автошкол от издательства Heinrich Vogel и Credit Europe Bank.</span>
-                <svg class="icon offer__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-            </li>
-            <li data-reveal style="--stagger: 4">
-              <a class="offer" href="/ru/anmeldung/#max">
-                <span class="offer__title">Приложение Fahren Lernen MAX</span>
-                <span class="offer__text">Учитесь, когда и где удобно: дома на диване или в электричке.</span>
-                <svg class="icon offer__arrow" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg>
-              </a>
-            </li>
-          </ul>
+      <!-- 03 Instagram-Karussell -->
+      <section class="ig" aria-labelledby="ig-title">
+        <h2 class="ig__h" id="ig-title">Мы в Instagram</h2>
+        <p class="ig__sub">Автошкола Strauch в Instagram и Facebook.</p>
+        <div class="ig__flow" data-flow role="group" aria-label="Фотографии из автошколы">
+          <button class="ig__item ig__item--photo" type="button" data-flow-item>
+            <!-- @pic src="fuhrpark-hero" sizes="372px" alt="Команда автошколы Strauch с четырьмя учебными автомобилями" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>Команда</span><b>Четыре инструктора</b></span>
+          </button>
+          <button class="ig__item ig__item--photo" type="button" data-flow-item>
+            <!-- @pic src="intro-viktor" sizes="372px" alt="Владелец Viktor Strauch у своего учебного автомобиля" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>Владелец</span><b>Viktor Strauch</b></span>
+          </button>
+          <button class="ig__item ig__item--ill" type="button" data-flow-item>
+            <!-- @pic src="ill-auto-seite" sizes="372px" alt="Иллюстрация: учебный автомобиль с логотипом автошколы Strauch" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>Категория B</span><b>Наш учебный автомобиль</b></span>
+          </button>
+          <button class="ig__item ig__item--photo" type="button" data-flow-item>
+            <!-- @pic src="ill-hero-szene" sizes="560px" alt="Иллюстрация: автошкола Strauch на Schwarzwaldstraße с учебными автомобилями" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>Где нас найти</span><b lang="de">Schwarzwald&shy;straße 93</b></span>
+          </button>
+          <button class="ig__item ig__item--photo" type="button" data-flow-item>
+            <!-- @pic src="intro-schaufenster" sizes="372px" alt="Инструктор Gerold Remmele перед витриной автошколы с логотипом" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>Лар</span><b>Наша витрина</b></span>
+          </button>
+          <button class="ig__item ig__item--ill" type="button" data-flow-item>
+            <!-- @pic src="ill-lkw" sizes="372px" alt="Иллюстрация: седельный тягач с логотипом автошколы Strauch" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>BKF</span><b>Повышение квалификации</b></span>
+          </button>
+          <button class="ig__item ig__item--photo" type="button" data-flow-item>
+            <!-- @pic src="team-nadine-duerr-wide" sizes="372px" alt="Nadine Dürr у открытой водительской двери учебного автомобиля" -->
+            <span class="ig__corner" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-images" /></svg></span>
+            <span class="ig__cap"><span>С 2000 года</span><b>Nadine Dürr</b></span>
+          </button>
+        </div>
+        <div class="cta-wrap">
+          <a class="cta cta--outline" href="https://instagram.com/fahrschulestrauch" rel="noopener" target="_blank">Открыть Instagram</a>
         </div>
       </section>
-
-      <!-- 07 Kontakt -->
-      <!-- @include contact-ru -->
-
-      <!-- 08 FAQ -->
-      <section class="faq section" id="fragen" aria-labelledby="faq-title">
-        <div class="container faq__grid">
-          <h2 class="h2 faq__title" id="faq-title" data-reveal>Частые <span class="accent">вопросы.</span></h2>
-          <div class="accordion" data-reveal style="--stagger: 1">
-            <details name="faq">
-              <summary>С какого возраста можно начинать? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Для категории B нужно 18 лет. При вождении с сопровождением заявление можно подать уже с 16,5 лет с согласия родителей. Так вы успеете получить права к 17-летию.</p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>Какие документы нужны? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Удостоверение личности или паспорт, биометрическое фото, справка о проверке зрения (не старше двух лет) и подтверждение курса первой помощи. Для BF17 на каждого сопровождающего нужен отдельный бланк.</p>
-                <p><a href="/ru/anmeldung/#unterlagen">Все бланки для скачивания</a></p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>Автомат или механика: что лучше? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>С кодом B197 выбирать не нужно: большую часть обучения вы проходите на автомате и там же сдаёте экзамен. После не менее десяти учебных часов на механике и контрольной поездки не менее 15 минут вы сможете без ограничений водить и механику.</p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>Сколько стоят права? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Стоимость зависит от того, сколько уроков вождения вам понадобится. Базовый взнос, цены за урок и за допуск к экзаменам указаны в нашей информации о ценах (на немецком).</p>
-                <p><a href="/files/info-preise-klasse-b.pdf">Информация и цены, категория B (PDF, нем.)</a><br /><a href="/files/info-preise-klasse-be.pdf">Информация и цены, категория BE (PDF, нем.)</a></p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>Можно ли профинансировать обучение? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Да, через STARTHILFE: финансирование, которое издательство Heinrich Vogel и Credit Europe Bank разработали специально для учеников автошкол.</p>
-                <p><a href="https://starthilfe.fahren-lernen.de/" rel="noopener" target="_blank">Подробнее о STARTHILFE (на немецком)</a></p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>Есть ли интенсивный курс? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Да. На интенсивном курсе теории вы пройдёте теорию за несколько насыщенных дней. Ближайшие даты узнавайте по телефону или по e-mail.</p>
-              </div>
-            </details>
-            <details name="faq">
-              <summary>На каком языке можно получить консультацию? <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-plus" /></svg></summary>
-              <div class="accordion__body">
-                <p>Мы консультируем на русском и немецком языке. Все вопросы можно обсудить с нами по-русски.</p>
-                <p><a href="/" hreflang="de" lang="de">Deutsche Version</a></p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- 09 Abschluss -->
-      <!-- @include finale-ru -->
     </main>
 
-    <!-- @include footer-ru -->
-    <!-- @include symbols -->
+    <!-- @include footer-ru de="/" ru="/ru/" -->
   </body>
 </html>

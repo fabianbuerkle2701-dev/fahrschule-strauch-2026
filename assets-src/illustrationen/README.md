@@ -16,4 +16,4 @@ Ergebnis in `final/`; die Web-Varianten erzeugt `npm run images` (Dateien `publi
 
 **Regel: Jede Illustration trägt das echte Logo.** Es wird immer per `scripts/illustrations.py` aus `assets-src/brand/logo.png` eingesetzt, nie vom Generator gezeichnet.
 
-Bewusst SVG geblieben: das Straßenschild „Schwarzwaldstraße 93“ (Text muss exakt stimmen; das Logo hängt als Tafel neben der Hausnummer) und das kleine Auto im Ablauf (fährt und dreht sich entlang der Straße; das Logo wäre dort nur wenige Pixel groß).
+Bewusst SVG geblieben: das Straßenschild „Schwarzwaldstraße 93“ (Text muss exakt stimmen; das Logo hängt als Tafel neben der Hausnummer). Das kleine Auto im Ablauf ist mit dem Umbau nach HOKI-Vorbild entfallen.
