@@ -263,6 +263,7 @@ function initDrive() {
     const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
     laneTop = hero ? hero.getBoundingClientRect().bottom + window.scrollY + 24 : headerH;
     drive.style.top = `${Math.round(laneTop)}px`;
+    drive.classList.add('is-ready');
   };
   const update = () => {
     raf = 0;

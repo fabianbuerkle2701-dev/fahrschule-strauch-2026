@@ -2801,6 +2801,10 @@ html:lang(ru) .qa__tx q {
 .drive[hidden] {
   display: none;
 }
+/* erst zeigen, wenn main.js den Anfang unter dem Hero berechnet hat (kein Layoutsprung) */
+.drive:not(.is-ready) {
+  visibility: hidden;
+}
 .drive__lane {
   position: absolute;
   inset: 0;
