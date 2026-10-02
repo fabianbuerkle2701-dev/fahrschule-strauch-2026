@@ -286,11 +286,36 @@ function initScrollers() {
   });
 }
 
+/* --- Sprungnavigation: aktiven Abschnitt markieren --------------------- */
+function initSubnav() {
+  const nav = document.querySelector('[data-subnav]');
+  if (!nav) return;
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const map = new Map(links.map((a) => [document.querySelector(a.getAttribute('href')), a]));
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((a) => a.classList.remove('is-current'));
+        const link = map.get(entry.target);
+        if (!link) continue;
+        link.classList.add('is-current');
+        const list = link.closest('ul');
+        const x = link.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2;
+        list.scrollTo({ left: x, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      }
+    },
+    { rootMargin: '-45% 0px -50% 0px' },
+  );
+  map.forEach((_, section) => section && io.observe(section));
+}
+
 /* --- Start ---------------------------------------------------------------- */
 initHeader();
 initMenu();
 initReveal();
 initHeroCar();
 initScrollers();
+initSubnav();
 const loops = [initJourney(), initParallax()].filter(Boolean);
 if (loops.length) initScrollLoop(loops);
