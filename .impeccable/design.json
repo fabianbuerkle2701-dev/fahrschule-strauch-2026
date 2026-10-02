@@ -4,58 +4,227 @@
   "title": "Design System: Fahrschule Strauch",
   "extensions": {
     "colorMeta": {
-      "brand": { "role": "primary", "displayName": "Logo-Petrol", "tonalRamp": ["#e3f3f4", "#f1f8f8", "#0199a6", "#00717b", "#0b5258", "#0e3b3f"] },
-      "brand-ink": { "role": "primary", "displayName": "Petrol-Ink", "hint": "Text-Stufe des Logo-Petrols (5,76:1 auf Weiß): Links, Haupt-Button, eingefärbtes Wort, Abschluss-Fläche." },
-      "brand-dark": { "role": "primary", "displayName": "Petrol dunkel", "hint": "Hover von Button und Links, Asphalt der Abschluss-Straße." },
-      "brand-night": { "role": "secondary", "displayName": "Nacht-Petrol", "hint": "Illustrationslinien und die dunklen Flächen (B197, Team-Bühne, Anmelde-Block)." },
-      "brand-light": { "role": "secondary", "displayName": "Mint", "hint": "Klasse-B-Kachel, offener Akkordeon-Knopf." },
-      "brand-mist": { "role": "secondary", "displayName": "Nebel", "hint": "Grund des Ablaufs, getönte Panels, Hover der Angebotszeilen." },
-      "petrol-glow": { "role": "tertiary", "displayName": "Petrol hell", "hint": "Eingefärbtes Wort auf dunklem Grund (Team, Abschluss). Im Code hart gesetzt, nicht in tokens.css." },
-      "petrol-glow-strong": { "role": "tertiary", "displayName": "Petrol hell kräftig", "hint": "Eingefärbtes Wort auf dunklem Grund (Footer-Claim, B197). Im Code hart gesetzt, nicht in tokens.css." },
-      "neutral-950": { "role": "neutral", "displayName": "Tinte", "tonalRamp": ["#f6f7f7", "#eceeef", "#d9dcdd", "#acadaf", "#8a8f92", "#565d60", "#3e4547", "#1c2224"] },
-      "neutral-800": { "role": "neutral", "displayName": "Asphalt" },
-      "neutral-600": { "role": "neutral", "displayName": "Sekundärtext" },
-      "neutral-400": { "role": "neutral", "displayName": "Deko-Grau", "hint": "Nie für Text." },
-      "neutral-300": { "role": "neutral", "displayName": "Logo-Grau" },
-      "neutral-200": { "role": "neutral", "displayName": "Linie" },
-      "neutral-100": { "role": "neutral", "displayName": "Hover-Fläche" },
-      "neutral-50": { "role": "neutral", "displayName": "Abschnittsgrund" },
-      "background": { "role": "neutral", "displayName": "Weiß" }
+      "brand": {
+        "role": "primary",
+        "displayName": "Logo-Petrol",
+        "tonalRamp": [
+          "#e3f3f4",
+          "#f1f8f8",
+          "#0199a6",
+          "#00717b",
+          "#0b5258",
+          "#0e3b3f"
+        ]
+      },
+      "brand-ink": {
+        "role": "primary",
+        "displayName": "Petrol-Ink",
+        "hint": "Text-Stufe des Logo-Petrols (5,76:1 auf Weiß): Links, Haupt-Button, eingefärbtes Wort, Abschluss-Fläche."
+      },
+      "brand-dark": {
+        "role": "primary",
+        "displayName": "Petrol dunkel",
+        "hint": "Hover von Button und Links, Asphalt der Abschluss-Straße."
+      },
+      "brand-night": {
+        "role": "secondary",
+        "displayName": "Nacht-Petrol",
+        "hint": "Illustrationslinien und die dunklen Flächen (B197, Team-Bühne, Anmelde-Block)."
+      },
+      "brand-light": {
+        "role": "secondary",
+        "displayName": "Mint",
+        "hint": "Klasse-B-Kachel, offener Akkordeon-Knopf."
+      },
+      "brand-mist": {
+        "role": "secondary",
+        "displayName": "Nebel",
+        "hint": "Grund des Ablaufs, getönte Panels, Hover der Angebotszeilen."
+      },
+      "brand-glow": {
+        "role": "tertiary",
+        "displayName": "Petrol hell (Glow)",
+        "hint": "Einzige Hervorhebungsfarbe auf dunklem Petrol: eingefärbtes Wort (Team, Abschluss, Footer-Claim, B197), Schaltpfeil, Hover des Team-Links."
+      },
+      "neutral-950": {
+        "role": "neutral",
+        "displayName": "Tinte",
+        "tonalRamp": [
+          "#f6f7f7",
+          "#eceeef",
+          "#d9dcdd",
+          "#acadaf",
+          "#8a8f92",
+          "#565d60",
+          "#3e4547",
+          "#1c2224"
+        ]
+      },
+      "neutral-800": {
+        "role": "neutral",
+        "displayName": "Asphalt"
+      },
+      "neutral-600": {
+        "role": "neutral",
+        "displayName": "Sekundärtext"
+      },
+      "neutral-400": {
+        "role": "neutral",
+        "displayName": "Deko-Grau",
+        "hint": "Nie für Text."
+      },
+      "neutral-300": {
+        "role": "neutral",
+        "displayName": "Logo-Grau"
+      },
+      "neutral-200": {
+        "role": "neutral",
+        "displayName": "Linie"
+      },
+      "neutral-100": {
+        "role": "neutral",
+        "displayName": "Hover-Fläche"
+      },
+      "neutral-50": {
+        "role": "neutral",
+        "displayName": "Abschnittsgrund"
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Weiß"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Nur die Hero-Headline der Startseite." },
-      "h1": { "displayName": "H1", "purpose": "Seitenköpfe der Unterseiten und 404." },
-      "h2": { "displayName": "H2", "purpose": "Abschnittsüberschriften, zweiter Satzteil in Petrol-Ink." },
-      "h3": { "displayName": "H3", "purpose": "Kachel-, Etappen- und Panel-Titel." },
-      "lead": { "displayName": "Lead", "purpose": "Einleitungssatz unter Überschriften, Sekundärtext-Farbe." },
-      "body": { "displayName": "Body", "purpose": "Fließtext, max. 64ch." },
-      "small": { "displayName": "Small", "purpose": "Meta, Fakten-Labels, Rechtszeile, Chips." },
-      "label": { "displayName": "Label", "purpose": "Kurze Bezeichnungen, nicht versal." },
-      "button": { "displayName": "Button", "purpose": "Alle Buttons." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur die Hero-Headline der Startseite."
+      },
+      "h1": {
+        "displayName": "H1",
+        "purpose": "Seitenköpfe der Unterseiten und 404."
+      },
+      "h2": {
+        "displayName": "H2",
+        "purpose": "Abschnittsüberschriften, zweiter Satzteil in Petrol-Ink."
+      },
+      "h3": {
+        "displayName": "H3",
+        "purpose": "Kachel-, Etappen- und Panel-Titel."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Einleitungssatz unter Überschriften, Sekundärtext-Farbe."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Fließtext, max. 64ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Meta, Fakten-Labels, Rechtszeile, Chips."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Kurze Bezeichnungen, nicht versal."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Alle Buttons."
+      }
     },
     "shadows": [
-      { "name": "shadow-float", "value": "0 18px 40px -18px rgb(14 59 63 / 0.28)", "purpose": "Einziger UI-Schatten: schwebende Navigation (plus inset 0 0 0 1px rgb(14 59 63 / .06)) und Hero-Foto." },
-      { "name": "car-ground", "value": "drop-shadow(0 6px 8px rgb(14 59 63 / 0.25))", "purpose": "Bodenschatten des gezeichneten Autos (Hero; Ablauf 0 5px 6px / .28). Teil der Illustration." }
+      {
+        "name": "shadow-float",
+        "value": "0 18px 40px -18px rgb(14 59 63 / 0.28)",
+        "purpose": "Einziger UI-Schatten: schwebende Navigation (plus inset 0 0 0 1px rgb(14 59 63 / .06)) und Hero-Foto."
+      },
+      {
+        "name": "car-ground",
+        "value": "drop-shadow(0 6px 8px rgb(14 59 63 / 0.25))",
+        "purpose": "Bodenschatten des gezeichneten Autos (Hero; Ablauf 0 5px 6px / .28). Teil der Illustration."
+      }
     ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reveals, Hero, Auto, Header-Morph, Pfeile." },
-      { "name": "ease-ui", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Hover, Menü, Akkordeon, Etappen-Farben." },
-      { "name": "ease-roll", "value": "cubic-bezier(0.25, 0.1, 0.25, 1)", "purpose": "Roll-Button, 500 ms." },
-      { "name": "dur-ui", "value": "180ms", "purpose": "Buttons, Links, Farbwechsel." },
-      { "name": "dur-med", "value": "320ms", "purpose": "Akkordeon, Menü, Header-Morph, Link-Unterstreichung." },
-      { "name": "dur-reveal", "value": "800ms", "purpose": "Scroll-Reveal: Y 24px -> 0, Schwelle 12 %, Stagger 70 ms je Stufe (0-4)." },
-      { "name": "hero-road-draw", "value": "1.6s ease-out 0.15s", "purpose": "Straße zeichnet sich einmal beim Laden über eine Maske." },
-      { "name": "crew-crossfade", "value": "700ms ease-out", "purpose": "Team-Bühne: Fotowechsel; Zitat und Name 500 ms mit 4 px Hub." },
-      { "name": "lane-move", "value": "18s linear infinite", "purpose": "Footer-Fahrstreifen, Mittellinie läuft nach links." },
-      { "name": "parallax", "value": "±5% translateY, ab 1024px", "purpose": "Nur Intro-Porträt Viktor Strauch." },
-      { "name": "header-morph", "value": "translateY(12px), logo scale(.85), 320ms ease-out", "purpose": "Navigation wird nach 24 px Scroll zur schwebenden Pille." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Reveals, Hero, Auto, Header-Morph, Pfeile."
+      },
+      {
+        "name": "ease-ui",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Hover, Menü, Akkordeon, Etappen-Farben."
+      },
+      {
+        "name": "ease-roll",
+        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "purpose": "Roll-Button, 500 ms."
+      },
+      {
+        "name": "dur-ui",
+        "value": "180ms",
+        "purpose": "Buttons, Links, Farbwechsel."
+      },
+      {
+        "name": "dur-med",
+        "value": "320ms",
+        "purpose": "Akkordeon, Menü, Header-Morph, Link-Unterstreichung."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "800ms",
+        "purpose": "Scroll-Reveal: Y 24px -> 0, Schwelle 12 %, Stagger 70 ms je Stufe (0-4)."
+      },
+      {
+        "name": "hero-road-draw",
+        "value": "1.6s ease-out 0.15s",
+        "purpose": "Straße zeichnet sich einmal beim Laden über eine Maske."
+      },
+      {
+        "name": "crew-crossfade",
+        "value": "700ms ease-out",
+        "purpose": "Team-Bühne: Fotowechsel; Zitat und Name 500 ms mit 4 px Hub."
+      },
+      {
+        "name": "lane-move",
+        "value": "18s linear infinite",
+        "purpose": "Footer-Fahrstreifen, Mittellinie läuft nach links."
+      },
+      {
+        "name": "parallax",
+        "value": "±5% translateY, ab 1024px",
+        "purpose": "Nur Intro-Porträt Viktor Strauch."
+      },
+      {
+        "name": "header-morph",
+        "value": "translateY(12px), logo scale(.85), 320ms ease-out",
+        "purpose": "Navigation wird nach 24 px Scroll zur schwebenden Pille."
+      }
     ],
     "breakpoints": [
-      { "name": "xs-max", "value": "479px", "purpose": "Button-Höhe 56 px." },
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px", "purpose": "Hauptumbruch zu Desktop." },
-      { "name": "footer", "value": "1100px", "purpose": "Footer in vier Spalten." }
+      {
+        "name": "xs-max",
+        "value": "479px",
+        "purpose": "Button-Höhe 56 px."
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Hauptumbruch zu Desktop."
+      },
+      {
+        "name": "footer",
+        "value": "1100px",
+        "purpose": "Footer in vier Spalten."
+      }
     ]
   },
   "components": [
@@ -140,15 +309,39 @@
       "Scroll-gekoppelte Fahrt des Autos durch sechs Etappen als Signatur"
     ],
     "rules": [
-      { "name": "Die Ein-Fläche-Regel", "body": "Petrol besitzt pro Seite höchstens eine ganze Fläche (Abschluss in Petrol-Ink). Dunkle Flächen sind Nacht-Petrol.", "section": "colors" },
-      { "name": "Die Verlaufs-Regel", "body": "Keine dekorativen Verläufe; nur als Lesbarkeits-Abdunklung über Fotos, Ausblendkante unter der Sticky-Straße und wachsende Link-Unterstreichung.", "section": "colors" },
-      { "name": "Die Beklebungs-Regel", "body": "Das Streifen-Band gehört an Fahrzeuge und erscheint als Kante genau einmal.", "section": "colors" },
-      { "name": "Die Straßenschrift-Regel", "body": "Was man wie ein Schild liest, steht in Barlow Semi Condensed 600; was man wie einen Satz liest, in Onest.", "section": "typography" },
-      { "name": "Die Inset-Linien-Regel", "body": "Karten werfen keinen Schatten; Abgrenzung über Fläche oder innere 1-px-Linie.", "section": "elevation" },
-      { "name": "Die Ein-Schatten-Regel", "body": "Genau ein UI-Schatten, Petrol-getönt, für schwebende Navigation und Hero-Foto.", "section": "elevation" }
+      {
+        "name": "Die Ein-Fläche-Regel",
+        "body": "Petrol besitzt pro Seite höchstens eine ganze Fläche (Abschluss in Petrol-Ink). Dunkle Flächen sind Nacht-Petrol.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Verlaufs-Regel",
+        "body": "Keine dekorativen Verläufe; nur als Lesbarkeits-Abdunklung über Fotos, Ausblendkante unter der Sticky-Straße und wachsende Link-Unterstreichung.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Beklebungs-Regel",
+        "body": "Das Streifen-Band gehört an Fahrzeuge und erscheint als Kante genau einmal.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Straßenschrift-Regel",
+        "body": "Was man wie ein Schild liest, steht in Barlow Semi Condensed 600; was man wie einen Satz liest, in Onest.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Inset-Linien-Regel",
+        "body": "Karten werfen keinen Schatten; Abgrenzung über Fläche oder innere 1-px-Linie.",
+        "section": "elevation"
+      },
+      {
+        "name": "Die Ein-Schatten-Regel",
+        "body": "Genau ein UI-Schatten, Petrol-getönt, für schwebende Navigation und Hero-Foto.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Zweiten Satzteil von Überschriften in Petrol-Ink einfärben, auf Dunkel in Petrol hell",
+      "Zweiten Satzteil von Überschriften in Petrol-Ink einfärben, auf dunklem Petrol in brand-glow",
       "Noch nicht erreichte Etappen über die Farbe neutral-600 dämpfen, nicht über Deckkraft",
       "Bewegung immer mit prefers-reduced-motion abschalten; Inhalte ohne JS sichtbar lassen",
       "Hero-Höhe mit svh begrenzen, nie 100vh"

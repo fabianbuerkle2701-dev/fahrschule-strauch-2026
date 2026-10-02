@@ -8,8 +8,7 @@ colors:
   brand-night: "#0e3b3f"
   brand-light: "#e3f3f4"
   brand-mist: "#f1f8f8"
-  petrol-glow: "#a5e1e6"
-  petrol-glow-strong: "#7fd3da"
+  brand-glow: "#a5e1e6"
   neutral-950: "#1c2224"
   neutral-800: "#3e4547"
   neutral-600: "#565d60"
@@ -201,7 +200,7 @@ Pixelauswertung von `Logo_Viktor_Strauch.png`: Logo-Petrol `brand` (#0199A6, dom
 | Nacht-Petrol | `brand-night` #0E3B3F | Linien der Illustrationen, dunkle Flächen (B197-Kachel, Team-Bühne, Anmelde-Block) |
 | Mint | `brand-light` #E3F3F4 | Klasse-B-Kachel, offener Akkordeon-Knopf, Hover heller Button |
 | Nebel | `brand-mist` #F1F8F8 | Grund des Ablaufs, getönte Panels, Hover der Angebotszeilen |
-| Petrol hell auf Dunkel | `petrol-glow` #A5E1E6, `petrol-glow-strong` #7FD3DA | Eingefärbtes Wort in Überschriften auf dunklem Grund (Team, Abschluss, Footer-Claim, B197) |
+| Petrol hell (Glow) | `brand-glow` #A5E1E6 | Hervorhebung auf dunklem Petrol: eingefärbtes Wort in Überschriften (Team, Abschluss, Footer-Claim, B197), Schaltpfeil der B197-Grafik, Hover des Team-Links |
 | Text | `neutral-950` #1C2224 | Text, Footer-Grund, aktiver Unterseiten-Chip |
 | Asphalt | `neutral-800` #3E4547 | Fahrbahn, Footer-Fahrstreifen, Navigationslinks |
 | Sekundärtext | `neutral-600` #565D60 | Leads, Beschreibungen, noch nicht erreichte Etappen (6,7:1) |
@@ -253,7 +252,7 @@ Sondergrößen in Straßenschrift: Klassen-Buchstabe bis 240 px (Zeilenhöhe 0,7
 
 **Die Straßenschrift-Regel.** Alles, was man wie ein Schild liest (Überschriften, Klassen, Telefonnummer, Jahreszahlen, Namen, Wortmarke), steht in Barlow Semi Condensed 600; alles, was man liest wie einen Satz, in Onest.
 
-Regeln: Fließtext max. 64ch, Lead max. 34em. Überschriften `text-wrap: balance` ohne automatische Trennung, Fließtext `text-wrap: pretty` mit `hyphens: auto` unter `lang="de"` (schmale Spalten wie Intro-Lead und Team-Zitat ohne Trennung). Zweifarbige Überschriften: der zweite Satzteil in Petrol-Ink, auf Dunkel in Petrol hell. Keine Versal-Kicker über Überschriften.
+Regeln: Fließtext max. 64ch, Lead max. 34em. Überschriften `text-wrap: balance` ohne automatische Trennung, Fließtext `text-wrap: pretty` mit `hyphens: auto` unter `lang="de"` (schmale Spalten wie Intro-Lead und Team-Zitat ohne Trennung). Zweifarbige Überschriften: der zweite Satzteil in Petrol-Ink, auf dunklem Petrol in `brand-glow`. Keine Versal-Kicker über Überschriften.
 
 ---
 
