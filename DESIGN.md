@@ -389,4 +389,5 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 - **Zähler:** „1984“ und Kennzahlen wie „3.500 kg“ zählen hoch.
 - **Drei Schritte** leuchten nacheinander auf, während man durch den Abschnitt scrollt.
 - Am 02.10.2026 auf Wunsch abgeschwächt: Hero-Bild 0,12, Hero-Text 0,05, Fotozoom 6 %, Drift 2–2,5 %, Einfahren 8 %, Lenken max. 4°.
+- **Technik gegen Ruckeln:** Das Auto hängt an der Straße und fährt über eine CSS-Scroll-Animation (`animation-timeline: scroll()`), Parallaxe, Zoom und einfahrende Autos über View-Timelines (`data-fx`). Der Browser rechnet das selbst, JavaScript setzt nur Startwerte, Lenken und Lichter. Browser ohne diese Technik bekommen die Fahrt per JavaScript, die Parallaxe entfällt dort.
 - Alles wird erst ab dem ersten Scrollen berechnet und läuft nur für sichtbare Elemente. Bei „Bewegung reduzieren“ entfällt alles, die Straße wird ausgeblendet.

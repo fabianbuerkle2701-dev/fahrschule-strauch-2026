@@ -2831,15 +2831,31 @@ html:lang(ru) .qa__tx q {
   bottom: 0;
 }
 .drive__car {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 14px;
   right: calc((var(--lane) - var(--car)) / 2);
   width: var(--car);
   height: auto;
   overflow: visible;
-  will-change: transform;
+  will-change: translate, rotate;
   filter: drop-shadow(0 6px 8px rgb(0 0 0 / 0.35));
-  transform: translate3d(0, 120vh, 0);
+  transition: rotate 0.35s var(--ease);
+}
+/* Fahrt über die Scroll-Zeitleiste des Browsers: läuft flüssig, ohne JavaScript pro Bild */
+@supports (animation-timeline: scroll()) {
+  .drive__car {
+    animation: car-drive linear both;
+    animation-timeline: scroll(root);
+    animation-range: var(--car-from, 0px) var(--car-to, 100%);
+  }
+}
+@keyframes car-drive {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 var(--car-travel, 0px);
+  }
 }
 .drive__beams {
   opacity: 0;
@@ -2899,17 +2915,62 @@ html:lang(ru) .qa__tx q {
   opacity: 1;
   scale: 1;
 }
-/* Grundzoom der Fotos, damit die Parallaxe beim Scrollen keine Ränder zeigt */
-.js .tile--photo > picture img,
-.js .big--photo > picture img,
-.js .cm__vtile img {
-  transform: scale(1.06);
+/* Parallaxe, Zoom und einfahrende Autos über View-Timelines: der Browser rechnet sie selbst,
+   flüssig und ohne JavaScript pro Bild. Ohne Unterstützung bleiben die Bilder einfach ruhig. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-fx='zoom'] {
+      animation: fx-zoom linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 50%;
+    }
+    [data-fx='drift'] {
+      animation: fx-drift linear both;
+      animation-timeline: view();
+    }
+    [data-fx='float'] {
+      animation: fx-float linear both;
+      animation-timeline: view();
+    }
+    [data-fx='drive-in'] {
+      animation: fx-drive-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+  }
 }
-@media (prefers-reduced-motion: reduce) {
-  .js .tile--photo > picture img,
-  .js .big--photo > picture img,
-  .js .cm__vtile img {
-    transform: none;
+@keyframes fx-zoom {
+  from {
+    scale: 1.06;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes fx-drift {
+  from {
+    scale: 1.06;
+    translate: 0 14px;
+  }
+  to {
+    scale: 1.06;
+    translate: 0 -14px;
+  }
+}
+@keyframes fx-float {
+  from {
+    translate: 0 18px;
+  }
+  to {
+    translate: 0 -18px;
+  }
+}
+@keyframes fx-drive-in {
+  from {
+    translate: -8% 0;
+  }
+  to {
+    translate: 0 0;
   }
 }
 

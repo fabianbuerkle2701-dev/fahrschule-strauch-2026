@@ -243,7 +243,9 @@ function initLangSwitch() {
 }
 
 /* --- Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter ---
-   Die Straße beginnt erst unter dem Hero, das Auto berührt den Hero nie. */
+   Das Auto hängt an der Straße (scrollt also nativ mit) und wird zusätzlich über eine
+   CSS-Scroll-Animation bewegt, die der Browser selbst flüssig rechnet. Die Straße beginnt
+   unter dem Hero, das Auto berührt den Hero nie. */
 function initDrive() {
   const drive = document.querySelector('[data-drive]');
   if (!drive) return;
@@ -254,60 +256,84 @@ function initDrive() {
   const car = drive.querySelector('.drive__car');
   const root = document.documentElement;
   const hero = document.querySelector('.sol__hero, .pr__hero, .legal--head, .notfound');
-  let laneTop = 0;
+  const nativeTimeline = CSS.supports('animation-timeline: scroll()');
+  // feste Fensterhöhe: die ein- und ausfahrende Adressleiste am Handy soll nichts verschieben
+  let vh = window.innerHeight;
+  let width = window.innerWidth;
+  let from = 0;
+  let to = 1;
+  let travel = 0;
+
+  const measure = () => {
+    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
+    const laneTop = hero ? hero.getBoundingClientRect().bottom + window.scrollY + 24 : headerH;
+    drive.style.top = `${Math.round(laneTop)}px`;
+    const carH = car.getBoundingClientRect().width * (108 / 60);
+    const max = Math.max(0, root.scrollHeight - vh);
+    // das Auto setzt sich in Bewegung, wenn der Straßenanfang bei 55 % der Fensterhöhe ist,
+    // und kommt am Seitenende unten im Fenster an
+    from = Math.max(0, Math.min(max, laneTop + 14 - vh * 0.55));
+    to = Math.max(from + 1, max);
+    // Weg = Scrollstrecke + Abstand von der Startposition im Fenster bis unten
+    const startVy = laneTop + 14 - from;
+    travel = Math.max(0, to - from + (vh - carH - 18) - startVy);
+    car.style.setProperty('--car-from', `${Math.round(from)}px`);
+    car.style.setProperty('--car-to', `${Math.round(to)}px`);
+    car.style.setProperty('--car-travel', `${Math.round(travel)}px`);
+    drive.classList.add('is-ready');
+    if (!nativeTimeline) position();
+  };
+  const position = () => {
+    const k = Math.min(1, Math.max(0, (window.scrollY - from) / (to - from)));
+    car.style.translate = `0 ${(k * travel).toFixed(1)}px`;
+  };
+
+  // Lenken und Lichter: nur Schreiben, kein Messen pro Bild
   let last = window.scrollY;
   let vel = 0;
   let raf = 0;
   let stopTimer = 0;
-  const measure = () => {
-    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
-    laneTop = hero ? hero.getBoundingClientRect().bottom + window.scrollY + 24 : headerH;
-    drive.style.top = `${Math.round(laneTop)}px`;
-    drive.classList.add('is-ready');
+  let state = '';
+  const setState = (next) => {
+    if (next === state) return;
+    car.classList.remove('is-forward', 'is-reverse', 'is-brake');
+    if (next) car.classList.add(next);
+    state = next;
   };
-  const update = () => {
+  const frame = () => {
     raf = 0;
-    const vh = window.innerHeight;
     const sy = window.scrollY;
-    const max = root.scrollHeight - vh;
-    const start = Math.max(0, laneTop - vh * 0.6);
-    const p = max > start ? Math.min(1, Math.max(0, (sy - start) / (max - start))) : 0;
-    const body = car.getBoundingClientRect().width * (108 / 60);
-    const minY = 16;
-    let y = minY + p * (vh - minY - body - 18);
-    y = Math.max(y, laneTop - sy + 14); // nie oberhalb des Straßenanfangs, also nie im Hero
     const dy = sy - last;
     last = sy;
-    vel = vel * 0.75 + dy * 0.25;
-    const steer = Math.max(-4, Math.min(4, Math.sin(p * Math.PI * 14) * Math.min(1, Math.abs(vel) / 30) * 4));
-    car.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) rotate(${steer.toFixed(2)}deg)`;
-    car.style.visibility = y > vh ? 'hidden' : '';
+    vel = vel * 0.8 + dy * 0.2;
+    if (!nativeTimeline) position();
+    car.style.rotate = `${Math.max(-4, Math.min(4, vel * -0.12)).toFixed(2)}deg`;
     if (dy !== 0) {
-      car.classList.toggle('is-forward', dy > 0);
-      car.classList.toggle('is-reverse', dy < 0);
-      car.classList.remove('is-brake');
+      setState(dy > 0 ? 'is-forward' : 'is-reverse');
       clearTimeout(stopTimer);
       stopTimer = setTimeout(() => {
-        car.classList.remove('is-forward', 'is-reverse');
-        car.classList.add('is-brake');
-        setTimeout(() => car.classList.remove('is-brake'), 700);
+        car.style.rotate = '0deg';
+        vel = 0;
+        setState('is-brake');
+        setTimeout(() => state === 'is-brake' && setState(''), 700);
       }, 160);
     }
   };
-  const queue = () => {
-    if (!raf) raf = requestAnimationFrame(update);
-  };
-  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!raf) raf = requestAnimationFrame(frame);
+  }, { passive: true });
   window.addEventListener('resize', () => {
+    if (window.innerWidth === width) return; // nur echte Größenänderungen, nicht die Adressleiste
+    width = window.innerWidth;
+    vh = window.innerHeight;
     measure();
-    queue();
   });
+  let pending = 0;
   new ResizeObserver(() => {
-    measure();
-    queue();
+    cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(measure);
   }).observe(document.body);
   measure();
-  update();
 }
 
 /* --- Scroll-Effekte: Wort-für-Wort-Überschriften, einfahrende Karten, Parallaxe, Zähler --- */
@@ -403,64 +429,34 @@ function initScrollFx() {
     once.observe(el);
   });
 
-  // laufende Effekte, nur solange sichtbar
-  const fx = [];
-  const add = (sel, kind, f = 0) =>
-    document.querySelectorAll(sel).forEach((el) => {
-      fx.push({ el, kind, f, on: false });
-    });
-  add('.cm__hero > picture img', 'zoom');
-  add('.tile--photo > picture img, .big--photo > picture img, .cm__vtile img', 'drift', 0.025);
-  add('.ki__art > *', 'float', 0.04);
-  add('.sol__art img, .nf__circle picture img, .qa__img--ill img', 'driveIn');
+  // laufende Effekte rechnet der Browser selbst über CSS-View-Timelines (hoki.css, data-fx)
+  const mark = (sel, kind) => document.querySelectorAll(sel).forEach((el) => el.setAttribute('data-fx', kind));
+  mark('.cm__hero > picture img', 'zoom');
+  mark('.tile--photo > picture img, .big--photo > picture img, .cm__vtile img', 'drift');
+  mark('.ki__art > *', 'float');
+  mark('.sol__art img, .nf__circle picture img, .qa__img--ill img', 'drive-in');
+
+  // drei Schritte leuchten nacheinander auf (ein Messwert pro Bild, nur solange sichtbar)
   const steps = document.querySelector('[data-steps]');
-
-  const seen = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      const item = fx.find((x) => x.el === e.target);
-      if (item) item.on = e.isIntersecting;
-    }
-  });
-  fx.forEach((x) => seen.observe(x.el));
-
+  if (!steps) return;
+  let visible = false;
   let raf = 0;
   const frame = () => {
     raf = 0;
+    if (!visible) return;
+    const r = steps.getBoundingClientRect();
     const vh = window.innerHeight;
-    for (const x of fx) {
-      if (!x.on) continue;
-      const r = x.el.getBoundingClientRect();
-      const center = r.top + r.height / 2 - vh / 2;
-      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
-      let t = '';
-      if (x.kind === 'zoom') {
-        t = `scale(${(1.06 - 0.06 * Math.min(1, p * 1.6)).toFixed(4)})`;
-      } else if (x.kind === 'drift') {
-        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) scale(1.06)`;
-      } else if (x.kind === 'float') {
-        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0)`;
-      } else if (x.kind === 'driveIn') {
-        const k = Math.min(1, p * 2.2);
-        t = `translate3d(${((1 - k) * -8).toFixed(1)}%, 0, 0)`;
-      }
-      x.el.style.transform = t;
-    }
-    if (steps) {
-      const r = steps.getBoundingClientRect();
-      if (r.top < vh && r.bottom > 0) {
-        const k = Math.min(0.999, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
-        const idx = Math.floor(k * steps.children.length);
-        [...steps.children].forEach((s, i) => s.classList.toggle('on', i === idx));
-      }
-    }
+    const k = Math.min(0.999, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+    const idx = Math.floor(k * steps.children.length);
+    [...steps.children].forEach((st, i) => st.classList.toggle('on', i === idx));
   };
-  const queue = () => {
-    if (!raf) raf = requestAnimationFrame(frame);
-  };
-  window.addEventListener('scroll', queue, { passive: true });
-  window.addEventListener('resize', queue);
-  // erst ab dem ersten Scrollen rechnen, damit das Hero-Bild beim Laden sofort gemalt wird
-  if (window.scrollY > 0) frame();
+  new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting;
+    if (visible && !raf) raf = requestAnimationFrame(frame);
+  }).observe(steps);
+  window.addEventListener('scroll', () => {
+    if (visible && !raf) raf = requestAnimationFrame(frame);
+  }, { passive: true });
 }
 
 initHeader();
