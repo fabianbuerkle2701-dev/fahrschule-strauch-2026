@@ -80,121 +80,246 @@
   stroke-width: 5;
 }
 
-/* --- 01 Hero ------------------------------------------------------------ */
+/* --- 01 Hero: Bild-Bühne mit Punkten (nach MotionSites „Veyra Electric“) --- */
 .hero {
   position: relative;
-  padding-top: var(--header-h);
-  overflow: clip;
+  padding: calc(var(--header-h) + clamp(1.5rem, 1rem + 2.5vw, 3rem)) 0 clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  background: var(--color-brand-mist);
 }
-.hero__grid {
+.hero__head {
   display: grid;
-  gap: 2.5rem;
-  padding-top: clamp(2rem, 1rem + 4vw, 3.5rem);
+  gap: 1.5rem;
+  margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
 .hero__title {
-  display: grid;
-}
-.hero__line {
   display: block;
 }
+.hero__line {
+  display: inline;
+}
 .hero__lead {
-  margin-top: 1.5rem;
-  max-width: 27em;
+  max-width: 30em;
 }
 .hero__actions {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
-.hero__visual {
-  position: relative;
-  min-height: 460px;
+@media (min-width: 1024px) {
+  .hero__head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
+    align-items: end;
+    column-gap: calc(var(--grid-gap) * 2);
+  }
+  .hero__title {
+    font-size: clamp(4rem, 1rem + 5vw, 6rem);
+  }
+}
 
-  margin-inline: calc(var(--gutter) * -1);
-}
-.hero__road {
-  position: absolute;
-  inset: -40px 0 auto;
-  width: 100%;
-  height: calc(100% + 120px);
-  overflow: visible;
-}
-.hero__car {
-  filter: drop-shadow(0 6px 8px rgb(14 59 63 / 0.25));
-}
-.hero__photo {
-  position: absolute;
-  right: var(--gutter);
-  top: 14%;
-  width: min(78%, 560px);
-  aspect-ratio: 1240 / 780;
+/* Rahmen: weiße Innenkante wie in der Vorlage, darin das Foto */
+.hero__frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  padding: 4px;
   box-shadow: var(--shadow-float);
 }
-.hero__road-mask {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 120;
+.hero__pan {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+.hero__pan::-webkit-scrollbar {
+  display: none;
+}
+.hero__stage {
+  position: relative;
+  width: max(100%, 860px);
+  aspect-ratio: 2400 / 820;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 4px);
+  background: var(--color-neutral-100);
+}
+.hero__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .hero__visual {
-    min-height: 620px;
-    margin-inline: 0;
-  }
-  .hero__photo {
-    right: 4%;
-  }
+/* Punkte */
+.spot {
+  position: absolute;
+  left: calc(var(--x) * 100%);
+  top: calc(var(--y) * 100%);
+  z-index: 1;
+}
+.spot.is-active {
+  z-index: 2;
+}
+.spot__dot {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-brand);
+  box-shadow: 0 0 0 6px rgb(1 153 166 / 0.3), 0 6px 16px rgb(14 59 63 / 0.35);
+  cursor: pointer;
+  transition: transform var(--dur-med) var(--ease-out), background-color var(--dur-ui) var(--ease-ui);
+}
+.spot__dot::before,
+.spot__dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  margin: -1px 0 0 -6px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.spot__dot::after {
+  transform: rotate(90deg);
+}
+.spot__dot:hover {
+  transform: scale(1.1);
+}
+.spot.is-active .spot__dot {
+  background: var(--color-brand-ink);
+}
+.spot.is-active .spot__dot::after {
+  transform: rotate(0deg);
+}
+.spot__label {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  background: var(--color-brand-ink);
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 10px 24px -10px rgb(14 59 63 / 0.55);
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  pointer-events: none;
+  transition: opacity var(--dur-med) var(--ease-ui), transform var(--dur-med) var(--ease-out), background-color var(--dur-ui);
+}
+.spot__label .icon {
+  width: 16px;
+  height: 16px;
+}
+.spot__label:hover {
+  background: var(--color-brand-dark);
+}
+.spot.is-active .spot__label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+/* Etikett am rechten Rand nach links öffnen */
+.spot--end .spot__label {
+  transform: translate(-88%, 6px);
+}
+.spot--end.is-active .spot__label {
+  transform: translate(-88%, 0);
 }
 
+/* Info-Leiste unter dem Bild */
+.hero__info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem var(--grid-gap);
+  margin-top: clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+.hero__info-item {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-neutral-200);
+}
+.hero__info-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-brand-ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms var(--ease-out);
+}
+.hero__info-item.is-active::before {
+  transform: scaleX(1);
+}
+.hero__info-btn {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  transition: color var(--dur-ui) var(--ease-ui);
+}
+.hero__info-btn:hover,
+.hero__info-item.is-active .hero__info-btn {
+  color: var(--color-neutral-950);
+}
+.hero__info-item p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+.hero__info-link {
+  justify-self: start;
+  margin-top: 0.25rem;
+  font-size: var(--fs-small);
+}
+@media (max-width: 479px) {
+  .hero__info {
+    grid-template-columns: 1fr;
+  }
+}
 @media (min-width: 1024px) {
-  .hero {
-    min-height: min(100svh, 980px);
+  .hero__info {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .hero__grid {
-    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
-    align-items: center;
-    min-height: calc(min(100svh, 980px) - var(--header-h));
-    padding-top: 0;
-    padding-bottom: 2rem;
-  }
-  .hero__copy {
-    position: relative;
-    z-index: 1;
-    padding-bottom: 4vh;
-  }
-  .hero__visual {
-    align-self: stretch;
-    min-height: 0;
-    margin-right: calc((100vw - min(100vw, var(--container) + 2 * var(--gutter))) / -2 - var(--gutter));
-  }
-  .hero__road {
-    inset: -110px 0 auto -6%;
-    width: 106%;
-    height: calc(100% + 200px);
-  }
-  .hero__photo {
-    top: 22%;
-    right: max(var(--gutter), calc((100vw - var(--container)) / 2 - 20px));
-    width: min(74%, 560px);
+}
+@media (max-width: 767px) {
+  .hero__frame {
+    margin-inline: calc(var(--gutter) * -0.5);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .js .hero__road-mask {
-    stroke-dasharray: 1 1;
-    stroke-dashoffset: 1;
-    animation: road-draw 1.6s var(--ease-out) 0.15s forwards;
+  .spot__dot {
+    animation: spot-pulse 2.6s var(--ease-ui) infinite;
+    animation-delay: calc(var(--i, 0) * 0.35s);
   }
-  .js .hero__car {
-    opacity: 0;
-    animation: fade-in 0.7s var(--ease-out) 0.9s forwards;
-  }
-  .js .hero__photo {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-    animation: photo-in 1s var(--ease-out) 0.35s forwards;
+  .spot.is-active .spot__dot {
+    animation: none;
   }
   .js .hero__line,
-  .js .hero__lead,
-  .js .hero__actions {
+  .js .hero__side {
     opacity: 0;
     transform: translateY(22px);
     animation: rise 0.9s var(--ease-out) forwards;
@@ -202,16 +327,42 @@
   .js .hero__line:nth-child(2) {
     animation-delay: 0.08s;
   }
-  .js .hero__lead {
+  .js .hero__side {
     animation-delay: 0.18s;
   }
-  .js .hero__actions {
-    animation-delay: 0.26s;
+  .js .hero__frame {
+    clip-path: inset(6% 4% 0 4% round var(--radius-lg));
+    opacity: 0;
+    animation: stage-in 1.1s var(--ease-out) 0.2s forwards;
+  }
+  .js .hero__img img {
+    transform: scale(1.06);
+    animation: stage-img 1.6s var(--ease-out) 0.2s forwards;
+  }
+  .js .spot {
+    opacity: 0;
+    animation: fade-in 0.6s var(--ease-out) forwards;
+    animation-delay: calc(0.9s + var(--i, 0) * 0.12s);
   }
 }
-@keyframes road-draw {
+@keyframes spot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 6px rgb(1 153 166 / 0.3), 0 6px 16px rgb(14 59 63 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 13px rgb(1 153 166 / 0.12), 0 6px 16px rgb(14 59 63 / 0.35);
+  }
+}
+@keyframes stage-in {
   to {
-    stroke-dashoffset: 0;
+    clip-path: inset(0 0 0 0 round var(--radius-lg));
+    opacity: 1;
+  }
+}
+@keyframes stage-img {
+  to {
+    transform: none;
   }
 }
 @keyframes fade-in {
@@ -220,12 +371,6 @@
   }
 }
 @keyframes rise {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes photo-in {
   to {
     opacity: 1;
     transform: none;
@@ -1238,6 +1383,10 @@
 /* schmale Spalten ohne automatische Silbentrennung */
 :lang(de) .intro__lead,
 :lang(de) .crew__quote p {
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+:lang(de) .hero__info-item p {
   hyphens: manual;
   -webkit-hyphens: manual;
 }

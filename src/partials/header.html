@@ -9,7 +9,11 @@
       <a class="nav__link" href="/#ablauf">Ablauf</a>
       <a class="nav__link" href="/ueber-uns/" {{current:ueber-uns}}>Über uns</a>
       <a class="nav__link" href="/anmeldung/#kontakt" {{current:anmeldung}}>Kontakt</a>
-      <a class="nav__link nav__lang" href="/ru/" lang="ru" hreflang="ru" title="По-русски" {{current:ru}}>RU</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Sprache / Язык" data-lang-switch>
+      <a class="lang-switch__opt" href="/" lang="de" hreflang="de" data-lang="de"><span aria-hidden="true">DE</span><span class="visually-hidden">Deutsch</span></a>
+      <a class="lang-switch__opt" href="/ru/" lang="ru" hreflang="ru" data-lang="ru"><span aria-hidden="true">RU</span><span class="visually-hidden">Русский</span></a>
+      <span class="lang-switch__thumb" aria-hidden="true"></span>
     </div>
     <a class="btn nav__cta" href="/anmeldung/">Jetzt anmelden</a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
@@ -33,7 +37,6 @@
     <a href="/ueber-uns/" style="--i: 2" {{current:ueber-uns}}>Über uns <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
     <a href="/berufskraftfahrer/" style="--i: 3" {{current:berufskraftfahrer}}>Berufskraftfahrer <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
     <a href="/anmeldung/#kontakt" style="--i: 4" {{current:anmeldung}}>Kontakt <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
-    <a href="/ru/" style="--i: 5" lang="ru" hreflang="ru" {{current:ru}}>По-русски <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
   </nav>
   <div class="menu__foot">
     <a class="btn" href="/anmeldung/">Jetzt anmelden</a>

@@ -107,15 +107,45 @@ function placeOnPath(path, length, at) {
   return { x: p.x, y: p.y, angle };
 }
 
-/* --- Hero: Auto steht auf der Straße ------------------------------------- */
-function initHeroCar() {
-  const svg = document.querySelector('[data-hero-road]');
-  if (!svg) return;
-  const path = svg.querySelector('.road-asphalt');
-  const car = svg.querySelector('.hero__car');
-  const length = path.getTotalLength();
-  const { x, y, angle } = placeOnPath(path, length, length * 0.255);
-  car.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)})`);
+/* --- Hero: Punkte im Bild und Info-Leiste (nach MotionSites „Veyra Electric“) --- */
+function initSpots() {
+  const root = document.querySelector('[data-spots]');
+  if (!root) return;
+  const pan = root.querySelector('[data-spots-pan]');
+  const spots = [...root.querySelectorAll('[data-spot]')];
+  const infos = [...document.querySelectorAll('[data-spot-info]')];
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+  let current = 0;
+
+  const centerOn = (i) => {
+    if (pan.scrollWidth <= pan.clientWidth + 2) return;
+    const x = parseFloat(spots[i].style.getPropertyValue('--x')) * pan.scrollWidth - pan.clientWidth / 2;
+    pan.scrollTo({ left: Math.max(0, x), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  };
+  const show = (i, { center = false } = {}) => {
+    current = i;
+    spots.forEach((spot, k) => {
+      const on = k === i;
+      spot.classList.toggle('is-active', on);
+      spot.querySelector('.spot__dot').setAttribute('aria-pressed', String(on));
+      const label = spot.querySelector('.spot__label');
+      on ? label.removeAttribute('tabindex') : label.setAttribute('tabindex', '-1');
+    });
+    infos.forEach((info, k) => info.classList.toggle('is-active', k === i));
+    if (center) centerOn(i);
+  };
+
+  spots.forEach((spot, i) => {
+    spot.querySelector('.spot__dot').addEventListener('click', () => show(i));
+    spot.addEventListener('pointerenter', () => fine.matches && show(i));
+  });
+  document.querySelectorAll('[data-spot-pick]').forEach((btn) => {
+    const i = Number(btn.dataset.spotPick);
+    btn.addEventListener('click', () => show(i, { center: true }));
+    btn.addEventListener('pointerenter', () => fine.matches && show(i));
+  });
+  // mobil: Bild startet mittig, damit Punkte links und rechts erreichbar sind
+  requestAnimationFrame(() => centerOn(current));
 }
 
 /* --- Ablauf: Auto fährt mit dem Scrollfortschritt durch sechs Stationen -- */
@@ -351,13 +381,35 @@ function initSubnav() {
   map.forEach((_, section) => section && io.observe(section));
 }
 
+/* --- Sprachumschalter: aktive Sprache markieren, Daumen gleitet vor dem Wechsel --- */
+function initLangSwitch() {
+  const sw = document.querySelector('[data-lang-switch]');
+  if (!sw) return;
+  const lang = document.documentElement.lang.startsWith('ru') ? 'ru' : 'de';
+  sw.querySelectorAll('[data-lang]').forEach((opt) => {
+    const on = opt.dataset.lang === lang;
+    on ? opt.setAttribute('aria-current', 'true') : opt.removeAttribute('aria-current');
+    opt.addEventListener('click', (e) => {
+      if (on) {
+        e.preventDefault();
+        return;
+      }
+      if (reduceMotion.matches) return;
+      e.preventDefault();
+      sw.classList.add('is-leaving');
+      setTimeout(() => (window.location.href = opt.href), 220);
+    });
+  });
+}
+
 /* --- Start ---------------------------------------------------------------- */
 initHeader();
 initMenu();
 initReveal();
-initHeroCar();
+initSpots();
 initScrollers();
 initSubnav();
 initCrew();
+initLangSwitch();
 const loops = [initJourney(), initParallax()].filter(Boolean);
 if (loops.length) initScrollLoop(loops);

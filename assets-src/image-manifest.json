@@ -19,6 +19,16 @@
       2000
     ]
   },
+  "hero-buehne": {
+    "width": 2400,
+    "height": 820,
+    "widths": [
+      640,
+      960,
+      1440,
+      2000
+    ]
+  },
   "fuhrpark-close": {
     "width": 1240,
     "height": 780,

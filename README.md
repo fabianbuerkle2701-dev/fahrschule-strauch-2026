@@ -37,5 +37,5 @@ Bausteine werden beim Bauen über `<!-- @include name -->` eingesetzt (kleines P
 1. **Telefonnummer klären**: Kopf/Footer der alten Seite nennen +49 155 60 41 04 13, Impressum, Preis-PDFs und Schaufenster 0151 42522180. Die Website nutzt die erste als Kontaktnummer, das Impressum unverändert die zweite.
 2. **Datenschutzerklärung aktualisieren** (Stand 2018, nennt YouTube und TMG). Text wurde unverändert übernommen.
 3. **Schnellkurs-Termine**: Der letzte Termin (24.–31.08.2026) ist vorbei; die Seite verweist auf Anfrage.
-4. **Russische Seite** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen.
+4. **Russische Seite** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen. Der DE/RU-Umschalter führt auf eine kompakte russische Seite; die Unterseiten gibt es nur auf Deutsch.
 5. Fotos liegen nur in 640×480 vor (hochskaliert). Neue Fotos in höherer Auflösung würden Hero, Team-Bühne und Intro deutlich schärfer machen.

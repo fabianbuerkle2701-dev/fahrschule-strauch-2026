@@ -10,7 +10,7 @@
     <meta property="og:title" content="Fahrschule Strauch: Führerschein in Lahr" />
     <meta property="og:description" content="Klasse B und BE, Begleitetes Fahren ab 17 und B197. Schwarzwaldstraße 93, Lahr." />
     <meta property="og:url" content="https://www.fahrschule-strauch.de/" />
-    <link rel="preload" as="image" type="image/avif" href="/images/fuhrpark-close-800.avif" imagesrcset="/images/fuhrpark-close-480.avif 480w, /images/fuhrpark-close-800.avif 800w, /images/fuhrpark-close-1200.avif 1200w" imagesizes="(min-width: 1024px) 40vw, 90vw" />
+    <link rel="preload" as="image" type="image/avif" href="/images/hero-buehne-1440.avif" imagesrcset="/images/hero-buehne-960.avif 960w, /images/hero-buehne-1440.avif 1440w, /images/hero-buehne-2000.avif 2000w" imagesizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 760px" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,45 +40,72 @@
     <!-- @include header page="home" -->
 
     <main id="inhalt">
-      <!-- 01 Hero -->
+      <!-- 01 Hero (Muster nach MotionSites „Veyra Electric“: Bild-Bühne mit Punkten und Info-Leiste) -->
       <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero__grid">
-          <div class="hero__copy">
+        <div class="container">
+          <div class="hero__head">
             <h1 class="display hero__title" id="hero-title">
               <span class="hero__line">Führerschein</span>
               <span class="hero__line accent">in Lahr.</span>
             </h1>
-            <p class="lead hero__lead">
-              Fahrschule Viktor Strauch: Klasse B und BE, Begleitetes Fahren ab 17 und Automatik mit Schaltberechtigung.
-            </p>
-            <div class="actions hero__actions">
-              <a class="btn btn--roll" href="/anmeldung/"><span class="btn__label"><span>Jetzt anmelden</span><span aria-hidden="true">Jetzt anmelden</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
-              <a class="btn btn--secondary" href="#klassen">Klassen ansehen</a>
+            <div class="hero__side">
+              <p class="lead hero__lead">Fahrschule Viktor Strauch: Klasse B und BE, Begleitetes Fahren ab 17 und Automatik mit Schaltberechtigung.</p>
+              <div class="actions hero__actions">
+                <a class="btn btn--roll" href="/anmeldung/"><span class="btn__label"><span>Jetzt anmelden</span><span aria-hidden="true">Jetzt anmelden</span></span><span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="/icons/sprite.svg#i-arrow-right" /></svg></span></a>
+                <a class="btn btn--secondary" href="#klassen">Klassen ansehen</a>
+              </div>
             </div>
           </div>
 
-          <div class="hero__visual">
-            <svg class="hero__road" viewBox="0 0 640 900" preserveAspectRatio="xMidYMin meet" aria-hidden="true" data-hero-road>
-              <defs>
-                <mask id="hero-road-reveal" maskUnits="userSpaceOnUse" x="-100" y="-100" width="840" height="1100">
-                  <path class="hero__road-mask" d="M600 -60 C 600 120, 70 110, 70 330 C 70 520, 580 470, 580 690 C 580 810, 690 860, 860 880" pathLength="1" />
-                </mask>
-              </defs>
-              <g mask="url(#hero-road-reveal)">
-                <path class="road-edge" d="M600 -60 C 600 120, 70 110, 70 330 C 70 520, 580 470, 580 690 C 580 810, 690 860, 860 880" />
-                <path class="road-asphalt" d="M600 -60 C 600 120, 70 110, 70 330 C 70 520, 580 470, 580 690 C 580 810, 690 860, 860 880" />
-                <path class="road-center" d="M600 -60 C 600 120, 70 110, 70 330 C 70 520, 580 470, 580 690 C 580 810, 690 860, 860 880" />
-              </g>
-              <use href="#car-top" class="hero__car" transform="translate(84 262) rotate(102)" />
-            </svg>
-            <figure class="frame hero__photo">
-              <picture>
-                <source type="image/avif" srcset="/images/fuhrpark-close-480.avif 480w, /images/fuhrpark-close-800.avif 800w, /images/fuhrpark-close-1200.avif 1200w" sizes="(min-width: 1024px) 40vw, 90vw" />
-                <source type="image/webp" srcset="/images/fuhrpark-close-480.webp 480w, /images/fuhrpark-close-800.webp 800w, /images/fuhrpark-close-1200.webp 1200w" sizes="(min-width: 1024px) 40vw, 90vw" />
-                <img src="/images/fuhrpark-close-800.webp" width="1240" height="780" alt="Zwei Fahrlehrer der Fahrschule Strauch neben weißen Fahrschulautos mit petrolfarbener Beklebung vor der Fahrschule" fetchpriority="high" decoding="async" />
-              </picture>
-            </figure>
+          <div class="hero__frame" data-spots>
+            <div class="hero__pan" data-spots-pan>
+              <div class="hero__stage">
+                <picture class="hero__img">
+                  <source type="image/avif" srcset="/images/hero-buehne-960.avif 960w, /images/hero-buehne-1440.avif 1440w, /images/hero-buehne-2000.avif 2000w" sizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 760px" />
+                  <img src="/images/hero-buehne-1440.webp" srcset="/images/hero-buehne-960.webp 960w, /images/hero-buehne-1440.webp 1440w, /images/hero-buehne-2000.webp 2000w" sizes="(min-width: 1320px) 1320px, (min-width: 768px) 96vw, 760px" width="2400" height="820" alt="Das Team der Fahrschule Strauch mit vier Fahrschulautos vor der Fahrschule in der Schwarzwaldstraße 93" fetchpriority="high" decoding="async" />
+                </picture>
+              <div class="spot is-active" style="--x: 0.1125; --y: 0.624; --i: 0" data-spot>
+                <button class="spot__dot" type="button" aria-pressed="true" aria-controls="spot-info-0"><span class="visually-hidden">Klasse B und BE anzeigen</span></button>
+                <a class="spot__label" href="#klassen">Klasse B und BE<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
+              </div>
+              <div class="spot" style="--x: 0.375; --y: 0.59; --i: 1" data-spot>
+                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-1"><span class="visually-hidden">Automatik oder Schaltung anzeigen</span></button>
+                <a class="spot__label" href="/fuehrerschein/#b197" tabindex="-1">Automatik + Schaltung<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
+              </div>
+              <div class="spot spot--end" style="--x: 0.913; --y: 0.487; --i: 2" data-spot>
+                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-2"><span class="visually-hidden">Fahrlehrer seit 1984 anzeigen</span></button>
+                <a class="spot__label" href="#team" tabindex="-1">Seit 1984<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
+              </div>
+              <div class="spot" style="--x: 0.6125; --y: 0.302; --i: 3" data-spot>
+                <button class="spot__dot" type="button" aria-pressed="false" aria-controls="spot-info-3"><span class="visually-hidden">Schwarzwaldstraße 93 anzeigen</span></button>
+                <a class="spot__label" href="#kontakt" tabindex="-1">Schwarzwaldstraße 93<svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></a>
+              </div>
+              </div>
+            </div>
           </div>
+
+          <ol class="hero__info" role="list">
+            <li class="hero__info-item is-active" id="spot-info-0" data-spot-info>
+              <button class="hero__info-btn" type="button" data-spot-pick="0">Klasse B und BE</button>
+              <p>Pkw bis 3,5 t und größere Anhänger. Mit Begleitetem Fahren schon ab 17.</p>
+              <a class="link hero__info-link" href="#klassen">Klassen ansehen <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            </li>
+            <li class="hero__info-item" id="spot-info-1" data-spot-info>
+              <button class="hero__info-btn" type="button" data-spot-pick="1">Automatik oder Schaltung</button>
+              <p>Mit B197 beides: Prüfung im Automatikauto, danach auch Schaltwagen fahren.</p>
+              <a class="link hero__info-link" href="/fuehrerschein/#b197">So geht B197 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            </li>
+            <li class="hero__info-item" id="spot-info-2" data-spot-info>
+              <button class="hero__info-btn" type="button" data-spot-pick="2">Fahrlehrer seit 1984</button>
+              <p>Peter Harter, Gerold Remmele, Nadine Dürr und Viktor Strauch.</p>
+              <a class="link hero__info-link" href="#team">Das Team <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            </li>
+            <li class="hero__info-item" id="spot-info-3" data-spot-info>
+              <button class="hero__info-btn" type="button" data-spot-pick="3">Schwarzwaldstraße 93</button>
+              <p>Theorie montags 19:00 bis 20:30 Uhr. Wir beraten auf Deutsch und Russisch.</p>
+              <a class="link hero__info-link" href="#kontakt">Kontakt <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+            </li>
+          </ol>
         </div>
       </section>
 

@@ -10,9 +10,9 @@ const OUT = 'public/images';
 // crop: [left, top, width, height] in Pixeln der Quelldatei
 const jobs = [
   // Fuhrpark: Team mit vier Autos vor der Fahrschule (Quelle 2400×1800)
-  { src: 'photos/fuhrpark.jpg', out: 'fuhrpark-wide', crop: [0, 300, 2400, 840], widths: [640, 960, 1440, 2000] },
   { src: 'photos/fuhrpark.jpg', out: 'fuhrpark-hero', crop: [0, 120, 2400, 1250], widths: [640, 960, 1440, 2000] },
-  { src: 'photos/fuhrpark.jpg', out: 'fuhrpark-close', crop: [560, 380, 1240, 780], widths: [480, 800, 1200] },
+  // Hero-Bühne (Muster nach MotionSites „Veyra Electric“): Gebäude, Team, vier Autos
+  { src: 'photos/fuhrpark.jpg', out: 'hero-buehne', crop: [0, 240, 2400, 820], widths: [640, 960, 1440, 2000] },
   // Teamporträts (Quelle 1200×900), Hochformat 4:5 mit Person und Fahrzeugfront
   { src: 'photos/viktor-strauch.jpg', out: 'team-viktor-strauch', crop: [480, 0, 720, 900], widths: [400, 640, 720] },
   { src: 'photos/peter-harter.jpg', out: 'team-peter-harter', crop: [440, 0, 720, 900], widths: [400, 640, 720] },
@@ -30,7 +30,6 @@ const jobs = [
   { src: 'photos/viktor-strauch.jpg', out: 'avatar-viktor-strauch', crop: [1000, 40, 180, 180], widths: [160] },
   // Intro: Schaufenster mit Logo (klein) und Fuhrpark 3:2 (groß)
   { src: 'photos/gerold-remmele.jpg', out: 'intro-schaufenster', crop: [640, 0, 560, 442], widths: [480, 720] },
-  { src: 'photos/fuhrpark.jpg', out: 'intro-fuhrpark', crop: [420, 220, 1560, 1040], widths: [640, 960, 1400] },
   { src: 'photos/viktor-strauch.jpg', out: 'intro-viktor', crop: [0, 60, 1200, 800], widths: [640, 960, 1200] },
 ];
 

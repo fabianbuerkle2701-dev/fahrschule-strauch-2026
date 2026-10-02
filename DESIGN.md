@@ -217,10 +217,10 @@ Pixelauswertung von `Logo_Viktor_Strauch.png`: Logo-Petrol `brand` (#0199A6, dom
 Original-Logo als Bild, unverändert, Höhe 40 px mobil und 44 px ab 1024 px (Header und Mobilmenü); in der schwebenden Navigation auf 85 % skaliert. Kein Nachzeichnen des Logos. Der Footer zeigt nicht das Logo-Bild, sondern eine Petrol-Kreismarke mit gezeichnetem Straßen-S und die übergroße Wortmarke „Fahrschule Strauch“ in Straßenschrift. Das Straßen-S ist eine eigene Zeichnung, angelehnt an die Logo-Kurve.
 
 ### Motive
-- **Fahrbahn**: Petrol-Randlinien (Strich 84, darin Asphalt 70), weiße Mittellinie 3 px gestrichelt 16/14. Einsatz: Hero, Ablauf (mit Petrol-Spur 6 px hinter dem Auto), Abschluss (Asphalt Petrol-dunkel, Rand Weiß 12 %). Nicht in jeder Sektion.
+- **Fahrbahn**: Petrol-Randlinien (Strich 84, darin Asphalt 70), weiße Mittellinie 3 px gestrichelt 16/14. Einsatz: Ablauf (mit Petrol-Spur 6 px hinter dem Auto), Abschluss (Asphalt Petrol-dunkel, Rand Weiß 12 %). Nicht in jeder Sektion.
 - **Streifen-Band (Beklebung)**: schräge Petrol-Parallelogramme. Als SVG-Muster (`#livery`, 13 × 10) auf den gezeichneten Autos (Flanke, Dachkanten). Genau einmal als Kante: 12 px hohe Oberkante des Klassen-Abschnitts (SVG-Kachel 26 × 12).
 - **Footer-Fahrstreifen**: 64 px Asphalt mit 5 px Petrol-Kanten oben und unten, weiße Mittellinie (34/28) läuft endlos nach links.
-- **Fahrschulauto**: von oben (weiß, Dachschild Petrol, Beklebung an den Flanken) fährt im Hero und im Ablauf; von der Seite (SUV) in den Klassen-Kacheln und Seitenköpfen.
+- **Fahrschulauto**: von oben (weiß, Dachschild Petrol, Beklebung an den Flanken) fährt im Ablauf; von der Seite (SUV) in den Klassen-Kacheln und Seitenköpfen.
 - **Straßenschild**: weißes Schild mit dunklem Rand und Petrol-Hausnummernschild im Kontakt.
 
 **Die Beklebungs-Regel.** Das Streifen-Band gehört an Fahrzeuge und erscheint als Kante genau einmal (Klassen-Oberkante). Nicht als Trennlinie wiederholen.
@@ -277,6 +277,7 @@ Genau drei Grundtypen, alle als Pille, 52 px hoch (unter 480 px 56 px), Onest 60
 - **Textlink**: Petrol-Ink, 600; Unterstreichung 1,5 px wächst beim Hover von links (320 ms), Pfeil 3 px nach rechts.
 - **Auf Dunkel/Petrol**: hell (Weiß, Text Petrol dunkel; Hover Mint) und Geist-hell (transparent, Rand Weiß 55 %).
 - **Roll-Variante** (nach MotionSites „Axion About“): Beschriftung rollt beim Hover oder Fokus eine Zeile nach oben, der Pfeil im 40-px-Kreis (mobil 44 px) dreht sich von −45° auf 0° (beides 500 ms, `cubic-bezier(.25,.1,.25,1)`). Kreis weiß auf Primär, dunkel auf Sekundär (Hover Petrol-Ink), Petrol-Ink auf Hell. Für Pfeil-CTAs im Inhalt („Jetzt anmelden“ im Hero, „Mehr über uns“). Der kompakte Header-Button (44 px) bleibt einfach.
+- **Sprachumschalter DE | RU**: Pillen-Segment auf `neutral-100` mit 1-px-Innenlinie, zwei Felder je min. 44 × 38 px, Onest 650 / 14 px / +0,04em. Ein Petrol-Ink-Daumen markiert die aktive Sprache (weiße Schrift), die andere steht in `neutral-600`. Aktive Sprache mit `aria-current`, Gruppenname „Sprache / Язык“.
 
 ### Links, Navigation, Chips
 - **Links im Fließtext**: Petrol-Ink, unterstrichen 1,5 px mit 0,22em Abstand; Hover Petrol dunkel.
@@ -297,7 +298,7 @@ Fragen in Onest 600 (17 → 20 px), mindestens 72 px hoch, Linien oben und unten
 ### Radien, Borders, Schatten
 - **Radien**: `sm` 12 px kleine Elemente und Hover-Flächen, `md` 20 px Module, kleines Intro-Foto, Hinweise; `lg` 20 → 36 px Kacheln, Panels, Bildrahmen, Team-Bühne; `pill` Buttons, Navigation, Chips. Avatare, Pfeil-Knöpfe, Footer-Marke kreisrund.
 - **Borders**: 1 px `neutral-200` für Trennungen und Kartenränder (innen), 1,5 px für sekundäre Buttons und Karussell-Pfeile, 1 px `neutral-950` als kräftige Oberkante der Angebotsliste.
-- **Schatten**: ein UI-Schatten (`shadow-float`, Petrol-getönt) für die schwebende Navigation und das Hero-Foto. Die gezeichneten Autos und das Straßenschild tragen eigene, ebenfalls Petrol-getönte Bodenschatten als Teil der Illustration.
+- **Schatten**: ein UI-Schatten (`shadow-float`, Petrol-getönt) für die schwebende Navigation und den Hero-Bildrahmen. Die gezeichneten Autos und das Straßenschild tragen eigene, ebenfalls Petrol-getönte Bodenschatten als Teil der Illustration.
 
 **Die Ein-Schatten-Regel.** Es gibt genau einen UI-Schatten, und er ist Petrol-getönt, nie grau oder schwarz.
 
@@ -309,9 +310,9 @@ Fokus: 3-px-Ring Logo-Petrol mit 3 px Abstand, auf dunklem Grund Weiß. Textausw
 ## Layout
 
 - **Mobile first.** Breakpoints im Code: 480 (nur Button-Höhe), 640, 768, **1024** (Hauptumbruch zu Desktop), 1100 (nur Footer-Spalten).
-- **Raster**: Ein 12-Spalten-Raster nutzt nur das Klassen-Mosaik ab 1024 px (B 7 Spalten über zwei Zeilen, BE und B197 je 5 Spalten rechts, BF17 volle Breite). Alle anderen Abschnitte sind zweispaltige Verhältnisse: Hero 6:6, Ablauf 5:6, Kontakt 7:5, Angebote und FAQ 4:7 mit sticky Überschrift links, Anmelde-Block 7:4, Intro 26 % · Text · 48 %. Zwischen 768 und 1023 px meist zwei Spalten, darunter eine.
-- **Asymmetrie**: Text startet links; die Hero-Grafik bricht rechts bis zum Viewport-Rand aus dem Container aus, die Straße verlässt den Bildschirm am rechten Rand.
-- **Hero**: ab 1024 px `min-height: min(100svh, 980px)`, nie `100vh`.
+- **Raster**: Ein 12-Spalten-Raster nutzt nur das Klassen-Mosaik ab 1024 px (B 7 Spalten über zwei Zeilen, BE und B197 je 5 Spalten rechts, BF17 volle Breite). Alle anderen Abschnitte sind zweispaltige Verhältnisse: Hero-Kopf 1fr : 27rem, Ablauf 5:6, Kontakt 7:5, Angebote und FAQ 4:7 mit sticky Überschrift links, Anmelde-Block 7:4, Intro 26 % · Text · 48 %. Zwischen 768 und 1023 px meist zwei Spalten, darunter eine.
+- **Asymmetrie**: Text startet links; im Hero steht die Headline links unten, Lead und Buttons rechts.
+- **Hero**: Kopfzeile, darunter gerahmte Bild-Bühne in Containerbreite (Seitenverhältnis 2400:820), darunter Info-Leiste mit vier Spalten (ab 1024 px), zwei Spalten ab 480 px, darunter eine. Unter 860 px Bühnenbreite lässt sich das Bild seitlich wischen.
 - **Header**: fest, 76 px hoch; Desktop-Links ab 1024 px, Anmelde-Button ab 640 px, darunter Menü-Knopf (48 px) mit Vollbild-Menü.
 - **Footer**: Claim und drei Spalten (ab 768 px drei Spalten mit Claim darüber, ab 1100 px vier Spalten in einer Zeile), darunter die Wortmarke und die Rechtszeile.
 
@@ -328,7 +329,9 @@ Fokus: 3-px-Ring Logo-Petrol mit 3 px Abstand, auf dunklem Grund Weiß. Textausw
 | `--dur-reveal` | 800 ms | Scroll-Reveal |
 | Roll-Kurve | `cubic-bezier(.25, .1, .25, 1)`, 500 ms | Roll-Button |
 
-- **Hero beim Laden**: Die Straße zeichnet sich über eine Maske (1,6 s, ab 0,15 s). Die zwei Zeilen der Headline, Lead und Buttons steigen 22 px auf (0,9 s, versetzt 0 / 0,08 / 0,18 / 0,26 s), das Foto kommt mit 18 px Hub und Skalierung 0,98 (1 s, ab 0,35 s), das Auto blendet zuletzt ein (0,7 s, ab 0,9 s).
+- **Hero beim Laden**: Headline-Zeilen und rechte Spalte steigen 22 px auf (0,9 s, versetzt 0 / 0,08 / 0,18 s). Der Bildrahmen öffnet sich per `clip-path` von `inset(6% 4% 0 4%)` auf voll (1,1 s, ab 0,2 s), das Foto skaliert dabei von 1,06 auf 1 (1,6 s). Danach blenden die vier Punkte nacheinander ein (0,6 s, ab 0,9 s, je 0,12 s versetzt).
+- **Hero-Punkte**: inaktive Punkte pulsieren (Schein 6 → 13 px, 2,6 s, je 0,35 s versetzt); der aktive Punkt wird Petrol-Ink, das Plus dreht sich zum Minus, das Etikett gleitet 6 px nach oben ein (320 ms). Die aktive Spalte der Info-Leiste bekommt eine Petrol-Linie, die sich von links aufzieht (500 ms). Hover (nur Maus), Klick, Tipp und die Spaltentitel schalten um; auf dem Handy wischt das Bild zum gewählten Punkt.
+- **Sprachumschalter**: Der Petrol-Daumen gleitet vor dem Seitenwechsel auf die andere Sprache (320 ms, Wechsel nach 220 ms).
 - **Reveal**: Opacity 0→1, Y 24→0 px, 800 ms, per IntersectionObserver (Schwelle 12 %, unterer Rand −6 %), einmalig. Ohne JS sichtbar (Klasse `js` am `<html>` schaltet Reveal erst ein).
 - **Stagger**: 70 ms je Stufe, im Markup Stufen 0–4 (Intro-Bilder und Text, Klassen-Kacheln, Angebote, Kontakt). Mobilmenü: Links steigen 12 px auf, 520 ms, 45 ms Versatz plus 60 ms.
 - **Parallax**: nur das große Intro-Porträt von Viktor Strauch, ±5 % Versatz (Bild 112 % hoch), nur ab 1024 px und ohne reduzierte Bewegung.
@@ -356,7 +359,7 @@ Fokus: 3-px-Ring Logo-Petrol mit 3 px Abstand, auf dunklem Grund Weiß. Textausw
 | Datenschutz | `/datenschutz/` | Text unverändert vom Original |
 | 404 | `/404.html` | „Falsch abgebogen.“ mit Weg zurück |
 
-Hauptnavigation (Desktop): Führerschein · Ablauf · Über uns · Kontakt · RU · [Jetzt anmelden]. Mobilmenü zusätzlich mit Berufskraftfahrer und „По-русски“ ausgeschrieben. Footer: Kontakt, Fahrschule (inkl. „Fahrlehrer gesucht“), Folgen (Instagram, Facebook), Impressum, Datenschutz. Die alten Menüpunkte „Information“, „Maxi“, „BF17“, „BKF“ gehen in sprechenden Seiten auf.
+Hauptnavigation (Desktop): Führerschein · Ablauf · Über uns · Kontakt · [DE | RU] · [Jetzt anmelden]. Der Sprachumschalter steht auf allen Seiten und Größen in der Kopfzeile (mobil zwischen Logo und Menü-Button); DE führt zur Startseite, RU zur russischen Seite. Mobilmenü zusätzlich mit Berufskraftfahrer. Footer: Kontakt, Fahrschule (inkl. „Fahrlehrer gesucht“), Folgen (Instagram, Facebook), Impressum, Datenschutz. Die alten Menüpunkte „Information“, „Maxi“, „BF17“, „BKF“ gehen in sprechenden Seiten auf.
 
 ## Übernommene Vorlagen (MotionSites)
 
@@ -364,6 +367,7 @@ Auf Wunsch wurden Muster aus der MotionSites-Bibliothek übernommen. Übernommen
 
 | Vorlage | Einsatz | Anpassung |
 |---|---|---|
+| Veyra Electric | Startseite, Hero | Nachgebaut nach der öffentlichen Vorschau (der Bauplan-Text war nach Ausschöpfen des Gratis-Kontingents gesperrt): Kopfzeile mit Headline und Hinweis, gerahmte Bild-Bühne mit leuchtenden Punkten und Etikett mit Pfeil, Info-Leiste mit vier Spalten. Petrol statt Neongelb, echtes Fuhrparkfoto statt Studio-Auto, Punkte zeigen nur überprüfbare Fakten |
 | Axion About | Startseite, Intro | Raster 26 % · Text · 48 % ab 1024 px: kleines Schaufensterfoto unten links (Radius `md`), Text oben in der Mitte, großes Porträt von Inhaber Viktor Strauch rechts mit Parallaxe; Roll-Button „Mehr über uns“. Keine Jahreszahlen im Intro. 640–1023 px: Text über zwei Fotos (45:55). |
 | Talent Collective | Startseite, Team | Bühne im Container statt Vollbild, weil die Fotos nur 1200 px breit sind. Ab 1024 px steht das Foto nur in den rechten 60 %, links eine Nacht-Petrol-Fläche (40 %) mit Überschrift, Zitat, Avatar-Leiste und Meta-Zeile; unter 1024 px liegt die Überschrift auf einem Nacht-Petrol-Band über dem Foto, damit kein Gesicht verdeckt wird. 700-ms-Überblendung; Avatar-Leiste mit Jahreszahl (1984 · 1988 · 2000 · 2007) statt Punkt, aktiver Avatar mit Petrol- und Weißring; Meta-Zeile Name · seit · Link. |
 | Stark Minimal Footer | Footer aller Seiten | Punkte-Band ersetzt durch Footer-Fahrstreifen (Asphalt, Petrol-Kanten, laufende Mittellinie 18 s, aus bei reduzierter Bewegung). Claim „Wir sehen uns auf der Straße.“ plus drei Spalten, übergroße Wortmarke mit Straßen-S-Kreismarke, Rechtszeile 15 px statt 9 px. |
@@ -372,7 +376,7 @@ Die passenderen Auto- und Scroll-Vorlagen (z. B. „Scroll Landing Page“, „A
 
 ## Startseite
 
-1. **Hero** – „Führerschein / in Lahr.“ in großer Straßenschrift (Lahr in Petrol), darunter ein Satz zu Klassen und Ort, Roll-Button „Jetzt anmelden“ und „Klassen ansehen“. Rechts schlängelt sich das Straßen-S durch den Bildschirm und verlässt ihn am rechten Rand, im Bogen sitzt das echte Fuhrparkfoto, am Straßenanfang das Fahrschulauto. Beantwortet sofort: wer, was, wo.
+1. **Hero** (Muster nach MotionSites „Veyra Electric“) – „Führerschein in Lahr.“ groß links (Lahr in Petrol), rechts Lead, Roll-Button „Jetzt anmelden“ und „Klassen ansehen“. Darunter das echte Fuhrparkfoto als große Bühne mit vier Punkten: Hyundai → Klasse B und BE, VW → Automatik + Schaltung, Peter Harter → seit 1984, Schaufenster-Logo → Schwarzwaldstraße 93. Die Info-Leiste darunter erklärt die vier Punkte und verlinkt in die Seite. Beantwortet sofort: wer, was, wo, und zeigt die echten Menschen und Autos.
 2. **Intro: Bei uns darfst du Fehler machen** – Haltung in zwei Sätzen, Hinweis auf Russisch, Schaufensterfoto und Porträt von Viktor Strauch im asymmetrischen Raster. Vertrauen kommt vor dem Angebot, weil Eltern zuerst wissen wollen, wem sie ihr Kind anvertrauen; der Inhaber steht mit Gesicht dafür.
 3. **Führerscheinklassen** – Streifen-Band als Oberkante, dann ein Mosaik aus vier unterschiedlich großen Kacheln: B (Mint, groß), BE (Weiß mit Linie), B197 („Automatik oder Schaltung? Beides.“, Nacht-Petrol), BF17 (Weiß, Querformat). Große Klassen-Buchstaben, eigene Fahrzeug-Illustrationen. Direkt nach dem Vertrauen, weil hier die Entscheidung fällt.
 4. **Ablauf** – Die Straße wird sticky, das Auto fährt durch Anmelden, Unterlagen, Theorie, Fahrstunden, Prüfung, Führerschein. Signatur-Moment und Antwort auf „Wie läuft das ab?“.
