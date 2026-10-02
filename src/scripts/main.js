@@ -31,10 +31,13 @@ function initMenu() {
   const open = () => {
     lastFocus = document.activeElement;
     menu.hidden = false;
-    requestAnimationFrame(() => menu.classList.add('is-open'));
     openBtn.setAttribute('aria-expanded', 'true');
     document.documentElement.style.overflow = 'hidden';
-    closeBtn.focus({ preventScroll: true });
+    requestAnimationFrame(() => {
+      menu.classList.add('is-open');
+      // erst sichtbar, dann fokussierbar
+      requestAnimationFrame(() => closeBtn.focus({ preventScroll: true }));
+    });
   };
   const close = () => {
     menu.classList.remove('is-open');
@@ -52,8 +55,10 @@ function initMenu() {
   menu.addEventListener('click', (e) => {
     if (e.target.closest('a')) close();
   });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) close();
+  });
   menu.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
     if (e.key === 'Tab') {
       const items = focusables();
       const first = items[0];
@@ -140,13 +145,13 @@ function initJourney() {
       const c = document.createElementNS(svgNS, 'circle');
       c.setAttribute('cx', x);
       c.setAttribute('cy', y);
-      c.setAttribute('r', vertical ? 15 : 22);
+      c.setAttribute('r', vertical ? 15 : 30);
       g.append(c);
       const t = document.createElementNS(svgNS, 'text');
       t.setAttribute('x', x);
-      t.setAttribute('y', y + (vertical ? 5.5 : 7.5));
+      t.setAttribute('y', y + (vertical ? 5.5 : 10));
       t.setAttribute('text-anchor', 'middle');
-      if (!vertical) t.setAttribute('font-size', '22');
+      if (!vertical) t.setAttribute('font-size', '30');
       t.textContent = String(i + 1);
       g.append(t);
       const title = document.createElementNS(svgNS, 'title');
@@ -155,7 +160,8 @@ function initJourney() {
       group.append(g);
       return g;
     });
-    return { svg, path, trail, car, length, fractions, stations, vertical };
+    const scale = vertical ? 1 : 1.5;
+    return { svg, path, trail, car, length, fractions, stations, vertical, scale };
   });
 
   let current = -1;
@@ -197,7 +203,7 @@ function initJourney() {
       }
       const at = f * length;
       const { x, y, angle } = placeOnPath(road.path, length, at);
-      road.car.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)})`);
+      road.car.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)}) scale(${road.scale})`);
       road.trail.style.strokeDashoffset = `${(length - at).toFixed(1)}`;
       road.stations.forEach((g, i) => g.classList.toggle('is-passed', progress >= i - 0.02));
     }
