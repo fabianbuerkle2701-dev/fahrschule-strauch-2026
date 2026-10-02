@@ -43,6 +43,12 @@ Die Formular-Vorschauen (`pdf-*`) sind die ersten Seiten der PDFs, erzeugt mit `
 - Inhalt von `dist/` hochladen. Weiterleitungen von den alten Adressen liegen als `.htaccess` (Apache) und `_redirects` (Netlify) bei.
 - Schriften, Icons und Bilder sind selbst gehostet; es werden keine Drittanbieter geladen. Externe Links: Fahrschulmanager (Online-Anmeldung), STARTHILFE, Google Maps (nur Link), Instagram, Facebook.
 
+## Vorschau auf GitHub Pages
+
+https://fabianbuerkle2701-dev.github.io/fahrschule-strauch-2026/ (russisch: …/ru/)
+
+Aktualisieren mit `sh scripts/deploy-pages.sh`: baut die Seite, setzt alle Pfade auf den Unterordner (`scripts/pages-base.mjs`) und schiebt `dist/` in den Branch `gh-pages`. Ein automatischer GitHub-Workflow ist nicht eingerichtet, weil die GitHub-Anmeldung keine Rechte für Workflow-Dateien hat (`gh auth refresh -s workflow` würde das ändern).
+
 ## Offene Punkte für die Fahrschule
 
 1. **Telefonnummer klären**: Kopf/Footer der alten Seite nennen +49 155 60 41 04 13, Impressum, Preis-PDFs und Schaufenster 0151 42522180. Die Website nutzt die erste als Kontaktnummer, das Impressum unverändert die zweite.
