@@ -1,0 +1,22 @@
+{
+  "name": "fahrschule-strauch",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "images": "node scripts/images.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@fontsource-variable/onest": "^5.3.1",
+    "@fontsource/barlow-semi-condensed": "^5.3.0",
+    "@phosphor-icons/core": "^2.1.1",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.2"
+  },
+  "private": true
+}
