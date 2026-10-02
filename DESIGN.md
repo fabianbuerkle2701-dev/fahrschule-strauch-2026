@@ -1,47 +1,230 @@
+---
+name: Fahrschule Strauch
+description: Das S im Logo ist eine Straße; die Website ist die Strecke von der Anmeldung zum Führerschein.
+colors:
+  brand: "#0199a6"
+  brand-ink: "#00717b"
+  brand-dark: "#0b5258"
+  brand-night: "#0e3b3f"
+  brand-light: "#e3f3f4"
+  brand-mist: "#f1f8f8"
+  petrol-glow: "#a5e1e6"
+  petrol-glow-strong: "#7fd3da"
+  neutral-950: "#1c2224"
+  neutral-800: "#3e4547"
+  neutral-600: "#565d60"
+  neutral-400: "#8a8f92"
+  neutral-300: "#acadaf"
+  neutral-200: "#d9dcdd"
+  neutral-100: "#eceeef"
+  neutral-50: "#f6f7f7"
+  background: "#ffffff"
+typography:
+  display:
+    fontFamily: "Barlow Semi Condensed, Barlow Fallback, Arial Narrow, sans-serif"
+    fontSize: "clamp(3.25rem, 2rem + 5.2vw, 6rem)"
+    fontWeight: 600
+    lineHeight: 0.95
+    letterSpacing: "-0.02em"
+  h1:
+    fontFamily: "Barlow Semi Condensed, Barlow Fallback, Arial Narrow, sans-serif"
+    fontSize: "clamp(2.5rem, 1.6rem + 4vw, 4.75rem)"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "-0.02em"
+  h2:
+    fontFamily: "Barlow Semi Condensed, Barlow Fallback, Arial Narrow, sans-serif"
+    fontSize: "clamp(2.125rem, 1.45rem + 3vw, 4rem)"
+    fontWeight: 600
+    lineHeight: 1.02
+    letterSpacing: "-0.015em"
+  h3:
+    fontFamily: "Barlow Semi Condensed, Barlow Fallback, Arial Narrow, sans-serif"
+    fontSize: "clamp(1.375rem, 1.15rem + 1vw, 2rem)"
+    fontWeight: 600
+    lineHeight: 1.12
+    letterSpacing: "-0.01em"
+  lead:
+    fontFamily: "Onest, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem)"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "-0.01em"
+  body:
+    fontFamily: "Onest, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1rem, 0.97rem + 0.15vw, 1.0625rem)"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "-0.005em"
+  small:
+    fontFamily: "Onest, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+    lineHeight: 1.5
+  label:
+    fontFamily: "Onest, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: "0.02em"
+  button:
+    fontFamily: "Onest, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "0"
+rounded:
+  sm: "12px"
+  md: "20px"
+  lg: "clamp(20px, 1rem + 1.4vw, 36px)"
+  pill: "999px"
+spacing:
+  "1": "0.25rem"
+  "2": "0.5rem"
+  "3": "0.75rem"
+  "4": "1rem"
+  "5": "1.5rem"
+  "6": "2rem"
+  "7": "3rem"
+  "8": "4rem"
+  "9": "6rem"
+  "10": "8rem"
+  "11": "10rem"
+  section: "clamp(5rem, 3rem + 8vw, 10rem)"
+  gutter: "clamp(1rem, 0.5rem + 2.5vw, 3rem)"
+  grid-gap: "clamp(1rem, 0.5rem + 1.5vw, 2rem)"
+  container: "1320px"
+  container-narrow: "760px"
+components:
+  button-primary:
+    backgroundColor: "{colors.brand-ink}"
+    textColor: "{colors.background}"
+    typography: "{typography.button}"
+    rounded: "{rounded.pill}"
+    padding: "0 1.75rem"
+    height: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.brand-dark}"
+  button-secondary:
+    backgroundColor: "transparent"
+    textColor: "{colors.neutral-950}"
+    typography: "{typography.button}"
+    rounded: "{rounded.pill}"
+    padding: "0 1.75rem"
+    height: "52px"
+  button-secondary-hover:
+    textColor: "{colors.brand-ink}"
+  button-light:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.brand-dark}"
+    rounded: "{rounded.pill}"
+    height: "52px"
+  button-light-hover:
+    backgroundColor: "{colors.brand-light}"
+    textColor: "{colors.brand-night}"
+  button-roll:
+    backgroundColor: "{colors.brand-ink}"
+    textColor: "{colors.background}"
+    rounded: "{rounded.pill}"
+    padding: "0 6px 0 1.6rem"
+    height: "52px"
+  button-roll-arrow:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.brand-ink}"
+    rounded: "{rounded.pill}"
+    size: "40px"
+  nav-link:
+    textColor: "{colors.neutral-800}"
+    rounded: "{rounded.pill}"
+    padding: "0 0.85rem"
+    height: "44px"
+  nav-link-hover:
+    backgroundColor: "{colors.neutral-100}"
+    textColor: "{colors.neutral-950}"
+  subnav-chip:
+    textColor: "{colors.neutral-950}"
+    typography: "{typography.small}"
+    rounded: "{rounded.pill}"
+    padding: "0 1.1rem"
+    height: "44px"
+  subnav-chip-current:
+    backgroundColor: "{colors.neutral-950}"
+    textColor: "{colors.background}"
+  class-tile-mint:
+    backgroundColor: "{colors.brand-light}"
+    textColor: "{colors.neutral-950}"
+    rounded: "{rounded.lg}"
+    padding: "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
+  class-tile-line:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.neutral-950}"
+    rounded: "{rounded.lg}"
+    padding: "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
+  class-tile-night:
+    backgroundColor: "{colors.brand-night}"
+    textColor: "{colors.background}"
+    rounded: "{rounded.lg}"
+    padding: "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
+  panel:
+    backgroundColor: "{colors.background}"
+    rounded: "{rounded.lg}"
+    padding: "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
+  panel-tint:
+    backgroundColor: "{colors.brand-mist}"
+    rounded: "{rounded.lg}"
+    padding: "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
+  finale:
+    backgroundColor: "{colors.brand-ink}"
+    textColor: "{colors.background}"
+---
+
 # Design
 
 Leitidee: **Das S im Logo ist eine Straße.** Zwei Randlinien, eine Kurve. Aus dieser Fahrbahn entsteht das Bildsystem der Website: Die Startseite ist eine Strecke, auf der ein Fahrschulauto beim Scrollen von der Anmeldung bis zum Führerschein fährt. Das zweite echte Markenelement kommt von den Autos selbst: das Schrägstreifen-Band der Fahrzeugbeklebung (petrolfarbene Parallelogramme an Front und Flanke).
 
 Haltung: Editorial-Layout einer Consumer-Marke, ruhig und präzise wie HOKI, aber mit eigener Welt (Straße, Fahrbahnmarkierung, Streifen-Band, DIN-artige Straßenschrift statt Wellness-Groteske).
 
+Die Token im Kopf dieser Datei (YAML) sind verbindlich und entsprechen `src/styles/tokens.css`. Der Text erklärt, wo und warum sie eingesetzt werden. Bewegung, Schatten und Breakpoints stehen zusätzlich maschinenlesbar in `.impeccable/design.json`.
+
 ---
 
 ## Brand
 
 ### Farben (aus dem Logo extrahiert)
-Pixelauswertung von `Logo_Viktor_Strauch.png`: Petrol **#0199A6** (2.100 Pixel, dominant), Grau **#ACADAF** (Schriftzug „Viktor Strauch“). Petrol erreicht auf Weiß nur 3,44:1, deshalb gibt es eine dunklere Text-Stufe.
+Pixelauswertung von `Logo_Viktor_Strauch.png`: Logo-Petrol `brand` (#0199A6, dominant), Logo-Grau `neutral-300` (#ACADAF, Schriftzug „Viktor Strauch“). Petrol erreicht auf Weiß nur 3,44:1, deshalb gibt es eine dunklere Text-Stufe.
 
-```css
-:root {
-  --color-brand:        #0199A6; /* Logo-Petrol: Grafik, Flächen, große Schrift ≥ 24 px */
-  --color-brand-ink:    #00717B; /* Petrol für Text, Links, Buttons (5,76:1 auf Weiß) */
-  --color-brand-dark:   #0B5258; /* Hover, Text auf Mint (7,8:1) */
-  --color-brand-night:  #0E3B3F; /* Linien der Illustrationen, dunkle Flächen */
-  --color-brand-light:  #E3F3F4; /* Mint: Kachelflächen, Markierungen */
-  --color-brand-mist:   #F1F8F8; /* Abschnittsgrund */
+| Rolle | Token | Einsatz |
+|---|---|---|
+| Logo-Petrol | `brand` #0199A6 | Grafik, Straßen-Randlinien, Fahrspur hinter dem Auto, Klassen-Buchstaben, Fokus-Ring, Auswahl; als Schrift nur ab 24 px |
+| Petrol-Ink | `brand-ink` #00717B | Eingefärbtes Wort in Überschriften, Links, Haupt-Button, Abschluss-Fläche (5,76:1 auf Weiß) |
+| Petrol dunkel | `brand-dark` #0B5258 | Hover von Button und Links, Asphalt der Abschluss-Straße |
+| Nacht-Petrol | `brand-night` #0E3B3F | Linien der Illustrationen, dunkle Flächen (B197-Kachel, Team-Bühne, Anmelde-Block) |
+| Mint | `brand-light` #E3F3F4 | Klasse-B-Kachel, offener Akkordeon-Knopf, Hover heller Button |
+| Nebel | `brand-mist` #F1F8F8 | Grund des Ablaufs, getönte Panels, Hover der Angebotszeilen |
+| Petrol hell auf Dunkel | `petrol-glow` #A5E1E6, `petrol-glow-strong` #7FD3DA | Eingefärbtes Wort in Überschriften auf dunklem Grund (Team, Abschluss, Footer-Claim, B197) |
+| Text | `neutral-950` #1C2224 | Text, Footer-Grund, aktiver Unterseiten-Chip |
+| Asphalt | `neutral-800` #3E4547 | Fahrbahn, Footer-Fahrstreifen, Navigationslinks |
+| Sekundärtext | `neutral-600` #565D60 | Leads, Beschreibungen, noch nicht erreichte Etappen (6,7:1) |
+| Deko-Grau | `neutral-400` #8A8F92 | nur Pfeile im Mobilmenü, nie Fließtext |
+| Logo-Grau | `neutral-300` #ACADAF | Rahmen sekundärer Buttons, Stationen, Schildmast |
+| Linie | `neutral-200` #D9DCDD | Trennlinien, Kartenrand (innen, 1 px) |
+| Fläche | `neutral-100` / `neutral-50` | Hover-Grund, Bildplatzhalter / Abschnittsgrund Klassen und Kontakt |
 
-  --color-neutral-950:  #1C2224; /* Text, Footer */
-  --color-neutral-800:  #3E4547; /* Asphalt */
-  --color-neutral-600:  #565D60; /* Sekundärtext (6,7:1) */
-  --color-neutral-400:  #8A8F92; /* nur Deko, nie Text */
-  --color-neutral-300:  #ACADAF; /* Logo-Grau: Linien, Rahmen */
-  --color-neutral-200:  #D9DCDD;
-  --color-neutral-100:  #ECEEEF;
-  --color-neutral-50:   #F6F7F7;
+**Die Ein-Fläche-Regel.** Weiß trägt die Seite. Petrol erscheint als eingefärbtes Wort, auf dem Haupt-Button und in den Illustrationen; als ganze Fläche besitzt es pro Seite nur den Abschluss (Petrol-Ink). Dunkle Flächen sind Nacht-Petrol, nicht Logo-Petrol. Keine weiteren Buntfarben.
 
-  --color-background:   #FFFFFF;
-  --color-surface:      #F6F7F7;
-}
-```
-Strategie: zurückhaltend mit einem Farbblock. Weiß trägt die Seite, Petrol erscheint als eingefärbtes Wort in Überschriften, auf dem Haupt-Button und in den Illustrationen. Einmal pro Seite darf Petrol eine ganze Fläche besitzen (Abschluss-CTA). Keine weiteren Farben, keine Verläufe.
+**Die Verlaufs-Regel.** Keine dekorativen Farbverläufe. Verläufe gibt es nur funktional: als Abdunklung über Teamfotos (Lesbarkeit), als Ausblendkante unter der Sticky-Straße und als wachsende Unterstreichung der Textlinks.
 
 ### Logo
-Original-PNG, unverändert, Höhe 44 px (Header) bzw. 56 px (Footer, auf Dunkel). Kein Nachzeichnen des Logos. Das Straßen-S der Illustrationen ist eine eigene Zeichnung, angelehnt an die Logo-Kurve, nicht das Logo selbst.
+Original-Logo als Bild, unverändert, Höhe 40 px mobil und 44 px ab 1024 px (Header und Mobilmenü); in der schwebenden Navigation auf 85 % skaliert. Kein Nachzeichnen des Logos. Der Footer zeigt nicht das Logo-Bild, sondern eine Petrol-Kreismarke mit gezeichnetem Straßen-S und die übergroße Wortmarke „Fahrschule Strauch“ in Straßenschrift. Das Straßen-S ist eine eigene Zeichnung, angelehnt an die Logo-Kurve.
 
 ### Motive
-- **Fahrbahn**: zwei parallele Randlinien (Petrol), dazwischen Asphalt (#3E4547) und weiße Mittelstreifen (gestrichelt 18/14). Einsatz: Hero, Ablauf, Kontakt, Abschluss. Nicht in jeder Sektion.
-- **Streifen-Band**: schräg gestellte Petrol-Parallelogramme auf Weiß, wie an Front und Flanke der Fahrschulautos. Einsatz: Seitenlinie der Auto-Illustrationen, Trennlinie über dem Footer, Fokus auf kleine Details.
-- **Fahrschulauto von oben**: weiß, Dachschild Petrol. Fährt im Ablauf.
+- **Fahrbahn**: Petrol-Randlinien (Strich 84, darin Asphalt 70), weiße Mittellinie 3 px gestrichelt 16/14. Einsatz: Hero, Ablauf (mit Petrol-Spur 6 px hinter dem Auto), Abschluss (Asphalt Petrol-dunkel, Rand Weiß 12 %). Nicht in jeder Sektion.
+- **Streifen-Band (Beklebung)**: schräge Petrol-Parallelogramme. Als SVG-Muster (`#livery`, 13 × 10) auf den gezeichneten Autos (Flanke, Dachkanten). Genau einmal als Kante: 12 px hohe Oberkante des Klassen-Abschnitts (SVG-Kachel 26 × 12).
+- **Footer-Fahrstreifen**: 64 px Asphalt mit 5 px Petrol-Kanten oben und unten, weiße Mittellinie (34/28) läuft endlos nach links.
+- **Fahrschulauto**: von oben (weiß, Dachschild Petrol, Beklebung an den Flanken) fährt im Hero und im Ablauf; von der Seite (SUV) in den Klassen-Kacheln und Seitenköpfen.
+- **Straßenschild**: weißes Schild mit dunklem Rand und Petrol-Hausnummernschild im Kontakt.
+
+**Die Beklebungs-Regel.** Das Streifen-Band gehört an Fahrzeuge und erscheint als Kante genau einmal (Klassen-Oberkante). Nicht als Trennlinie wiederholen.
 
 ---
 
@@ -49,79 +232,114 @@ Original-PNG, unverändert, Höhe 44 px (Header) bzw. 56 px (Footer, auf Dunkel)
 
 | Rolle | Schrift | Grund |
 |---|---|---|
-| Display, Überschriften | **Barlow Semi Condensed** 600 (selbst gehostet) | Abgeleitet von Straßen- und Kennzeichenschriften, erinnert an DIN 1451 der deutschen Verkehrsschilder. Leicht schmal, damit lange deutsche Wörter („Führerscheinklassen“) in große Größen passen. |
-| Text, UI | **Onest** variabel 400–650 (selbst gehostet) | Sehr gut lesbar, freundlich, mit Kyrillisch für die russische Seite. |
+| Display, Überschriften | **Barlow Semi Condensed** 600 (selbst gehostet, Latin + Latin-Ext) | Abgeleitet von Straßen- und Kennzeichenschriften, erinnert an DIN 1451 der Verkehrsschilder. Leicht schmal, damit lange deutsche Wörter in große Größen passen. Metrisch angepasste Ersatzschrift („Barlow Fallback“, Arial Narrow 88 %) gegen Layoutsprünge. |
+| Text, UI | **Onest** variabel (selbst gehostet, mit Kyrillisch) | Gut lesbar, freundlich, trägt die russische Seite. Genutzte Gewichte 400, 500, 520 (Navigation), 560, 600, 620 (fett), 650. |
 
 Keine dritte Schrift, keine Monospace-Labels.
 
 | Stufe | Größe (clamp, 360→1440 px) | Zeilenhöhe | Tracking | Gewicht |
 |---|---|---|---|---|
-| Display | `clamp(2.75rem, 1.4rem + 5.9vw, 6rem)` 44→96 | 0,95 | −0,02em | 600 |
-| H1 (Unterseiten) | `clamp(2.5rem, 1.6rem + 4vw, 4.75rem)` 40→76 | 1,0 | −0,02em | 600 |
-| H2 | `clamp(2.125rem, 1.45rem + 3vw, 4rem)` 34→64 | 1,02 | −0,015em | 600 |
-| H3 | `clamp(1.375rem, 1.15rem + 1vw, 2rem)` 22→32 | 1,12 | −0,01em | 600 |
-| Lead | `clamp(1.125rem, 1.05rem + .35vw, 1.375rem)` 18→22 | 1,5 | −0,01em | 400 |
-| Body | `clamp(1rem, .97rem + .15vw, 1.0625rem)` 16→17 | 1,6 | −0,005em | 400 |
-| Small | 0,9375rem / 15 | 1,5 | 0 | 400 |
-| Label | 0,875rem / 14 | 1,3 | +0,02em | 600 (Onest, nicht versal) |
-| Button | 1rem / 16 | 1 | 0 | 600 |
+| Display | 52 → 96 px | 0,95 | −0,02em | 600 |
+| H1 (Unterseiten) | 40 → 76 px | 1,0 | −0,02em | 600 |
+| H2 | 34 → 64 px | 1,02 | −0,015em | 600 |
+| H3 | 22 → 32 px | 1,12 | −0,01em | 600 |
+| Lead | 18 → 22 px | 1,5 | −0,01em | 400 (Intro: 500) |
+| Body | 16 → 17 px | 1,6 | −0,005em | 400 |
+| Small | 15 px | 1,5 | 0 | 400 |
+| Label | 14 px | 1,3 | +0,02em | 600 (Onest, nicht versal) |
+| Button | 16 px | 1 | 0 | 600 |
 
-Regeln: Fließtext max. 64ch. Überschriften `text-wrap: balance`, Fließtext `text-wrap: pretty`, `hyphens: auto` mit `lang="de"`. Zweifarbige Überschriften: Der zweite Satzteil steht in `--color-brand-ink` bzw. `--color-brand` ab 32 px. Keine Versal-Kicker über Überschriften.
+Sondergrößen in Straßenschrift: Klassen-Buchstabe bis 240 px (Zeilenhöhe 0,78, −0,04em), Footer-Wortmarke bis 184 px (0,8, −0,035em), Telefonnummer 32 → 60 px, Angebotstitel 26 → 40 px, Mobilmenü 32 → 44 px.
+
+**Die Straßenschrift-Regel.** Alles, was man wie ein Schild liest (Überschriften, Klassen, Telefonnummer, Jahreszahlen, Namen, Wortmarke), steht in Barlow Semi Condensed 600; alles, was man liest wie einen Satz, in Onest.
+
+Regeln: Fließtext max. 64ch, Lead max. 34em. Überschriften `text-wrap: balance` ohne automatische Trennung, Fließtext `text-wrap: pretty` mit `hyphens: auto` unter `lang="de"` (schmale Spalten wie Intro-Lead und Team-Zitat ohne Trennung). Zweifarbige Überschriften: der zweite Satzteil in Petrol-Ink, auf Dunkel in Petrol hell. Keine Versal-Kicker über Überschriften.
 
 ---
 
 ## Spacing
 
-Skala (rem): 0,25 · 0,5 · 0,75 · 1 · 1,5 · 2 · 3 · 4 · 6 · 8 · 10 (4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 160 px).
+Skala im 4er-Raster (`spacing.1`–`spacing.11`): 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 160 px.
 
-- Container: `max-width: 1320px`, Rand `clamp(1rem, .5rem + 2.5vw, 3rem)` (16→48 px). Schmaler Container 760 px für Lesetext.
-- Abschnittsabstand: `--section: clamp(5rem, 3rem + 8vw, 10rem)` (80→160 px). Abschnitte variieren bewusst: Ablauf ist überhoch (Scroll-Strecke), FAQ kompakt, Abschluss vollflächig.
-- Über einer Überschrift mehr Raum als darunter (H2 → Inhalt 1,5–2 rem).
+- **Container**: 1320 px Inhalt plus Rand `gutter` (16 → 48 px). Schmaler Container 760 px für Rechtstexte und Lesetext.
+- **Abschnittsabstand** `section`: 80 → 160 px oben und unten. Abschnitte variieren bewusst: Ablauf ist überhoch (Scroll-Strecke, Etappen 40svh mobil, 62svh Desktop), Abschluss hat unten mehr Raum (144 → 208 px) für die auslaufende Straße.
+- **Abschnittskopf**: max. 52rem breit, darunter 40 → 72 px bis zum Inhalt; Lead 20 px unter der H2.
+- **Rasterabstand** `grid-gap`: 16 → 32 px; zweispaltige Desktop-Layouts nehmen das Doppelte oder Dreifache.
+- Über einer Überschrift mehr Raum als darunter.
 
 ---
 
 ## UI
 
-- **Buttons** (genau drei Typen, Primär und Sekundär optional als Roll-Variante):
-  - Primär „Jetzt anmelden“: Pille, Höhe 52 px (mobil 56), Polster 0 28 px, `--color-brand-ink` mit Weiß, Hover `--color-brand-dark` + Pfeil 3 px nach rechts, aktiv `scale(.98)`.
-  - Sekundär: Pille, transparent, 1,5 px Rand `--color-neutral-300`, Text `--color-neutral-950`; Hover Rand Petrol.
-  - Textlink: Text `--color-brand-ink`, Unterstreichung 1,5 px, Abstand 0,2em; Hover wächst die Linie von links.
-  - Roll-Variante `.btn--roll` (nach MotionSites „Axion About“): Beschriftung rollt beim Hover eine Zeile nach oben (500 ms, `cubic-bezier(.25,.1,.25,1)`), Pfeil im 40-px-Kreis dreht sich von −45° auf 0°. Für alle Pfeil-CTAs („Jetzt anmelden“, „Mehr über uns“).
-- **Links im Fließtext**: unterstrichen, Petrol-Ink.
-- **Karten**: nur wo echte Gruppierung (Klassen-Kacheln, Team). Keine Karten-in-Karten. Kein Schatten auf Karten, Hierarchie über Fläche (Mint, Weiß mit Linie, Night).
-- **Formfelder**: nicht benötigt (Anmeldung extern). Falls doch: Label über Feld, 52 px hoch, Radius 12 px, Rand neutral-300, Fokus 3 px Petrol-Ring.
-- **Radien** (fest): 12 px kleine Elemente, 20 px Kacheln und Karten, `clamp(20px, 1rem + 1.4vw, 36px)` große Bildflächen, 999 px Buttons, Navigation, Chips.
-- **Borders**: 1 px `--color-neutral-200` für Trennungen, 1,5 px für sekundäre Buttons.
-- **Schatten** (genau einer): `0 18px 40px -18px rgb(14 59 63 / .28)` für die schwebende Navigation und das Auto.
-- **Fokus**: 3 px Ring `--color-brand` mit 3 px Abstand, auf dunklem Grund Weiß.
-- **Auswahl, Caret, Scrollbar** in Petrol.
+### Buttons
+Genau drei Grundtypen, alle als Pille, 52 px hoch (unter 480 px 56 px), Onest 600 16 px.
+- **Primär** „Jetzt anmelden“: Petrol-Ink mit Weiß; Hover Petrol dunkel, Pfeil 3 px nach rechts; aktiv `scale(.98)`.
+- **Sekundär**: transparent, 1,5 px Rand Logo-Grau, Text dunkel; Hover Rand und Text Petrol-Ink.
+- **Textlink**: Petrol-Ink, 600; Unterstreichung 1,5 px wächst beim Hover von links (320 ms), Pfeil 3 px nach rechts.
+- **Auf Dunkel/Petrol**: hell (Weiß, Text Petrol dunkel; Hover Mint) und Geist-hell (transparent, Rand Weiß 55 %).
+- **Roll-Variante** (nach MotionSites „Axion About“): Beschriftung rollt beim Hover oder Fokus eine Zeile nach oben, der Pfeil im 40-px-Kreis (mobil 44 px) dreht sich von −45° auf 0° (beides 500 ms, `cubic-bezier(.25,.1,.25,1)`). Kreis weiß auf Primär, dunkel auf Sekundär (Hover Petrol-Ink), Petrol-Ink auf Hell. Für Pfeil-CTAs im Inhalt („Jetzt anmelden“ im Hero, „Mehr über uns“). Der kompakte Header-Button (44 px) bleibt einfach.
+
+### Links, Navigation, Chips
+- **Links im Fließtext**: Petrol-Ink, unterstrichen 1,5 px mit 0,22em Abstand; Hover Petrol dunkel.
+- **Navigationslinks**: 44 px hohe Pillen, Asphalt-Text; Hover Grund `neutral-100`; aktuelle Seite Petrol-Ink mit 4-px-Punkt darunter.
+- **Unterseiten-Sprungleiste**: sticky Chips (44 px, Weiß 90 % mit Blur, innere 1-px-Linie); Hover 1,5-px-Linie Petrol-Ink, aktueller Chip dunkel gefüllt.
+
+### Karten und Flächen
+Nur wo echte Gruppierung: Klassen-Kacheln, Module, Panels, Anmelde-Block, Downloads, Team. Keine Karten in Karten.
+
+**Die Inset-Linien-Regel.** Karten werfen keinen Schatten. Hierarchie entsteht über Fläche: Mint, Weiß mit innerer 1-px-Linie (`box-shadow: inset`), Nebel oder Nacht-Petrol.
+
+### Formfelder
+Keine eigenen Felder: die Anmeldung läuft extern (Fahrschulmanager), auf der Seite ist sie nur ein Formular mit hellem Button auf Nacht-Petrol. Falls Felder nötig werden: Label über dem Feld, 52 px hoch, Radius `sm`, Rand Logo-Grau, Fokus 3-px-Petrol-Ring.
+
+### Akkordeon (FAQ)
+Fragen in Onest 600 (17 → 20 px), mindestens 72 px hoch, Linien oben und unten. Plus-Zeichen in einem 40-px-Kreis (`neutral-100`), dreht beim Öffnen 45° und wird Mint. Höhe animiert über `::details-content` (320 ms).
+
+### Radien, Borders, Schatten
+- **Radien**: `sm` 12 px kleine Elemente und Hover-Flächen, `md` 20 px Module, kleines Intro-Foto, Hinweise; `lg` 20 → 36 px Kacheln, Panels, Bildrahmen, Team-Bühne; `pill` Buttons, Navigation, Chips. Avatare, Pfeil-Knöpfe, Footer-Marke kreisrund.
+- **Borders**: 1 px `neutral-200` für Trennungen und Kartenränder (innen), 1,5 px für sekundäre Buttons und Karussell-Pfeile, 1 px `neutral-950` als kräftige Oberkante der Angebotsliste.
+- **Schatten**: ein UI-Schatten (`shadow-float`, Petrol-getönt) für die schwebende Navigation und das Hero-Foto. Die gezeichneten Autos und das Straßenschild tragen eigene, ebenfalls Petrol-getönte Bodenschatten als Teil der Illustration.
+
+**Die Ein-Schatten-Regel.** Es gibt genau einen UI-Schatten, und er ist Petrol-getönt, nie grau oder schwarz.
+
+### Fokus und Details
+Fokus: 3-px-Ring Logo-Petrol mit 3 px Abstand, auf dunklem Grund Weiß. Textauswahl Petrol mit Weiß, Caret und Formular-Akzent Petrol-Ink, Scrollbar Logo-Grau. Icons stammen aus einem SVG-Sprite (Pfeile, Menü, Schließen, Telefon), Größe 1,25em.
+
+---
 
 ## Layout
 
-- Mobile first. Breakpoints (min-width): 480 · 768 · 1024 · 1280 · 1600.
-- 12-Spalten-Grid ab 1024 px, Spaltenabstand `clamp(1rem, .5rem + 1.5vw, 2rem)`. Darunter 1 Spalte, 768–1023 teils 2 Spalten.
-- Asymmetrie: Text startet in Spalte 1, Bilder brechen rechts aus dem Container aus (bis zum Viewport-Rand) oder sitzen versetzt.
-- Hero nutzt `min-height: 100svh`, nie `100vh`.
+- **Mobile first.** Breakpoints im Code: 480 (nur Button-Höhe), 640, 768, **1024** (Hauptumbruch zu Desktop), 1100 (nur Footer-Spalten).
+- **Raster**: Ein 12-Spalten-Raster nutzt nur das Klassen-Mosaik ab 1024 px (B 7 Spalten über zwei Zeilen, BE und B197 je 5 Spalten rechts, BF17 volle Breite). Alle anderen Abschnitte sind zweispaltige Verhältnisse: Hero 6:6, Ablauf 5:6, Kontakt 7:5, Angebote und FAQ 4:7 mit sticky Überschrift links, Anmelde-Block 7:4, Intro 26 % · Text · 48 %. Zwischen 768 und 1023 px meist zwei Spalten, darunter eine.
+- **Asymmetrie**: Text startet links; die Hero-Grafik bricht rechts bis zum Viewport-Rand aus dem Container aus, die Straße verlässt den Bildschirm am rechten Rand.
+- **Hero**: ab 1024 px `min-height: min(100svh, 980px)`, nie `100vh`.
+- **Header**: fest, 76 px hoch; Desktop-Links ab 1024 px, Anmelde-Button ab 640 px, darunter Menü-Knopf (48 px) mit Vollbild-Menü.
+- **Footer**: Claim und drei Spalten (ab 768 px drei Spalten mit Claim darüber, ab 1100 px vier Spalten in einer Zeile), darunter die Wortmarke und die Rechtszeile.
+
+---
 
 ## Animation
 
 | Token | Wert | Verwendung |
 |---|---|---|
-| `--ease-out` | `cubic-bezier(.16, 1, .3, 1)` | Reveals, Auto |
-| `--ease-ui` | `cubic-bezier(.4, 0, .2, 1)` | Hover, Menü, Accordion |
-| `--dur-ui` | 180 ms | Buttons, Links |
-| `--dur-med` | 320 ms | Accordion, Menü |
+| `--ease-out` | `cubic-bezier(.16, 1, .3, 1)` | Reveals, Hero, Auto, Header-Morph, Pfeile |
+| `--ease-ui` | `cubic-bezier(.4, 0, .2, 1)` | Hover, Menü, Akkordeon, Etappen-Farben |
+| `--dur-ui` | 180 ms | Buttons, Links, Farben |
+| `--dur-med` | 320 ms | Akkordeon, Menü, Header, Unterstreichung |
 | `--dur-reveal` | 800 ms | Scroll-Reveal |
+| Roll-Kurve | `cubic-bezier(.25, .1, .25, 1)`, 500 ms | Roll-Button |
 
-- **Reveal**: Opacity 0→1, Y 24→0 px, ausgelöst per IntersectionObserver (Schwelle 15 %), einmalig. Inhalte sind ohne JS sichtbar (Klasse `js` am `<html>` schaltet Reveal erst ein).
-- **Stagger**: 70 ms je Element, max. 6 Elemente (Klassen-Kacheln, Team, Angebote).
-- **Parallax**: nur Fuhrpark-Foto im Intro, max. 5 % Versatz, nur ab 1024 px.
-- **Team-Bühne**: Überblendung 700 ms ease-out, Zitat und Name blenden 500 ms mit 4 px Hub ein, Pfeiltasten wechseln zwischen Fahrlehrern.
-- **Footer-Fahrbahn**: Mittellinie läuft in 18 s endlos nach links (nur ohne reduzierte Bewegung).
-- **Signatur: Fahrt durch die Ausbildung.** Im Ablauf ist die Straße sticky; der Scrollfortschritt durch sechs Stationen bewegt das Auto (`getPointAtLength`, Rotation per Tangente) und färbt die Strecke hinter ihm Petrol. Jede Station wird aktiv, wenn das Auto sie erreicht.
-- **Hero**: Fahrbahn zeichnet sich einmal beim Laden (stroke-dashoffset, 1,4 s).
-- **Navigation**: wird nach 24 px Scroll zur schwebenden Pille (Hintergrund Weiß 88 %, Blur 16 px, Schatten).
-- **prefers-reduced-motion**: kein Reveal (Inhalte sofort sichtbar), kein Parallax, keine Fahrbahn-Zeichnung, Ablauf ohne Sticky, Auto steht am Ziel, alle Stationen aktiv.
+- **Hero beim Laden**: Die Straße zeichnet sich über eine Maske (1,6 s, ab 0,15 s). Die zwei Zeilen der Headline, Lead und Buttons steigen 22 px auf (0,9 s, versetzt 0 / 0,08 / 0,18 / 0,26 s), das Foto kommt mit 18 px Hub und Skalierung 0,98 (1 s, ab 0,35 s), das Auto blendet zuletzt ein (0,7 s, ab 0,9 s).
+- **Reveal**: Opacity 0→1, Y 24→0 px, 800 ms, per IntersectionObserver (Schwelle 12 %, unterer Rand −6 %), einmalig. Ohne JS sichtbar (Klasse `js` am `<html>` schaltet Reveal erst ein).
+- **Stagger**: 70 ms je Stufe, im Markup Stufen 0–4 (Intro-Bilder und Text, Klassen-Kacheln, Angebote, Kontakt). Mobilmenü: Links steigen 12 px auf, 520 ms, 45 ms Versatz plus 60 ms.
+- **Parallax**: nur das große Intro-Porträt von Viktor Strauch, ±5 % Versatz (Bild 112 % hoch), nur ab 1024 px und ohne reduzierte Bewegung.
+- **Header-Morph**: Nach 24 px Scroll (Sentinel) wird die volle weiße Leiste (96 %) zur schwebenden Pille: `translateY(12px)`, max. 1120 px breit, 64 px hoch, Weiß 86 % mit Blur 16 px und Sättigung 1,4, UI-Schatten plus 1-px-Innenlinie; das Logo skaliert auf `scale(.85)`. Alles 320 ms, über Transform statt Positionswechsel.
+- **Signatur: Fahrt durch die Ausbildung.** Im Ablauf ist die Straße sticky (Desktop: senkrechte Straße links neben den Etappen; mobil: waagrechte Straße oben mit Nebel-Ausblendkante). Der Scrollfortschritt durch sechs Etappen bewegt das Auto (`getPointAtLength`, Rotation per Tangente) und färbt die Spur dahinter Petrol. Erreichte Stationen füllen sich Petrol, die Etappennummer wird Petrol-Ink. Noch nicht erreichte Etappen sind über die Farbe gedämpft (`neutral-600` für Titel und Text, 6:1 lesbar), nicht über Deckkraft; Farbwechsel 300–400 ms.
+- **Team-Bühne**: Fotos überblenden in 700 ms ease-out, Zitat und Name blenden 500 ms mit 4 px Hub ein, Avatar hebt sich beim Hover 2 px, Pfeiltasten wechseln zwischen Fahrlehrern.
+- **Klassen-Kacheln**: Beim Hover fährt das Auto 10 px nach rechts, Schaltknauf und Sitze heben sich 4 px (600–700 ms).
+- **Angebotszeilen**: Hover-Fläche Nebel wächst aus `scaleY(.85)`, Pfeil 6 px nach rechts.
+- **Footer-Fahrstreifen**: Mittellinie läuft in 18 s linear endlos nach links (nur ohne reduzierte Bewegung).
+- **prefers-reduced-motion**: alle Dauern auf 0,01 ms, kein Reveal (Inhalte sofort sichtbar), keine Parallaxe, keine Straßenzeichnung, kein laufender Footer-Streifen, Ablauf ohne Sticky, Auto steht am Ziel, alle Stationen aktiv.
 
 ---
 
@@ -129,16 +347,17 @@ Skala (rem): 0,25 · 0,5 · 0,75 · 1 · 1,5 · 2 · 3 · 4 · 6 · 8 · 10 (4 �
 
 | Seite | Pfad | Zweck |
 |---|---|---|
-| Startseite | `/` | Geführte Geschichte, beantwortet die sechs Kernfragen |
-| Führerschein | `/fuehrerschein/` | Klassen B, BE, B197, BF17 im Detail, Schnellkurs, Auffrischung, Preis-PDFs |
-| Berufskraftfahrer | `/berufskraftfahrer/` | BKF-Weiterbildung Module 1–5 (eigene Zielgruppe) |
-| Über uns | `/ueber-uns/` | Team, Haltung, Fuhrpark, Stellenanzeige |
-| Anmeldung & Kontakt | `/anmeldung/` | Online-Anmeldung, Unterlagen, Formulare, App MAX, Finanzierung, Kontakt, Anfahrt |
+| Startseite | `/` | Geführte Geschichte, beantwortet die Kernfragen von „wer, was, wo“ bis „wie anmelden“ |
+| Führerschein | `/fuehrerschein/` | Klassen B, BE, B197, BF17 im Detail, Schnellkurs, Auffrischung, Preis-PDFs; sticky Sprungleiste |
+| Berufskraftfahrer | `/berufskraftfahrer/` | BKF-Weiterbildung Module 1–5, Schlüsselzahl 95 (eigene Zielgruppe) |
+| Über uns | `/ueber-uns/` | Team, Haltung, Fuhrpark, Stellenanzeige (`#jobs`) |
+| Anmeldung & Kontakt | `/anmeldung/` | Online-Anmeldung (extern), Unterlagen, Formulare, App MAX, Finanzierung, Kontakt (`#kontakt`), Anfahrt |
 | По-русски | `/ru/` | Kompakte russische Seite mit den wichtigsten Fakten |
 | Impressum | `/impressum/` | Text unverändert vom Original |
 | Datenschutz | `/datenschutz/` | Text unverändert vom Original |
+| 404 | `/404.html` | „Falsch abgebogen.“ mit Weg zurück |
 
-Hauptnavigation: Führerschein · Ablauf · Über uns · Kontakt · RU · [Jetzt anmelden]. Die alten Menüpunkte „Information“, „Maxi“, „BF17“, „BKF“ gehen in sprechenden Seiten auf.
+Hauptnavigation (Desktop): Führerschein · Ablauf · Über uns · Kontakt · RU · [Jetzt anmelden]. Mobilmenü zusätzlich mit Berufskraftfahrer und „По-русски“ ausgeschrieben. Footer: Kontakt, Fahrschule (inkl. „Fahrlehrer gesucht“), Folgen (Instagram, Facebook), Impressum, Datenschutz. Die alten Menüpunkte „Information“, „Maxi“, „BF17“, „BKF“ gehen in sprechenden Seiten auf.
 
 ## Übernommene Vorlagen (MotionSites)
 
@@ -146,20 +365,20 @@ Auf Wunsch wurden Muster aus der MotionSites-Bibliothek übernommen. Übernommen
 
 | Vorlage | Einsatz | Anpassung |
 |---|---|---|
-| Axion About | Startseite, Intro | Raster 26 % · Text · 48 % mit kleinem Foto unten links, Text oben in der Mitte, großem Foto rechts; Roll-Button |
-| Talent Collective | Startseite, Team | Bühne im Container (statt Vollbild, weil die Fotos nur 1200 px breit sind), 700-ms-Überblendung, Avatar-Leiste mit Jahreszahl statt Punkt, Meta-Zeile Name · seit · Link; Zitat unten, damit es keine Gesichter verdeckt |
-| Stark Minimal Footer | Footer aller Seiten | Punkte-Band ersetzt durch Fahrbahn mit laufender Mittellinie (18 s, linear, aus bei reduzierter Bewegung), Claim + drei Spalten, übergroße Wortmarke mit Straßen-S, Rechtszeile 15 px statt 9 px |
+| Axion About | Startseite, Intro | Raster 26 % · Text · 48 % ab 1024 px: kleines Schaufensterfoto unten links (Radius `md`), Text oben in der Mitte, großes Porträt von Inhaber Viktor Strauch rechts mit Parallaxe; Roll-Button „Mehr über uns“. Keine Jahreszahlen im Intro. 640–1023 px: Text über zwei Fotos (45:55). |
+| Talent Collective | Startseite, Team | Bühne im Container statt Vollbild, weil die Fotos nur 1200 px breit sind. Ab 1024 px steht das Foto nur in den rechten 60 %, links eine Nacht-Petrol-Fläche (40 %) mit Überschrift, Zitat, Avatar-Leiste und Meta-Zeile; unter 1024 px liegt die Überschrift auf einem Nacht-Petrol-Band über dem Foto, damit kein Gesicht verdeckt wird. 700-ms-Überblendung; Avatar-Leiste mit Jahreszahl (1984 · 1988 · 2000 · 2007) statt Punkt, aktiver Avatar mit Petrol- und Weißring; Meta-Zeile Name · seit · Link. |
+| Stark Minimal Footer | Footer aller Seiten | Punkte-Band ersetzt durch Footer-Fahrstreifen (Asphalt, Petrol-Kanten, laufende Mittellinie 18 s, aus bei reduzierter Bewegung). Claim „Wir sehen uns auf der Straße.“ plus drei Spalten, übergroße Wortmarke mit Straßen-S-Kreismarke, Rechtszeile 15 px statt 9 px. |
 
 Die passenderen Auto- und Scroll-Vorlagen (z. B. „Scroll Landing Page“, „Avelon Drive“) sind Premium und ohne MotionSites-Abo nicht abrufbar.
 
 ## Startseite
 
-1. **Hero** – „Führerschein in Lahr.“ in großer Straßenschrift, darunter ein Satz zu Klassen und Ort, „Jetzt anmelden“ und „Klassen ansehen“. Rechts schlängelt sich das Straßen-S aus dem Logo durch den Bildschirm, im Bogen sitzt das echte Fuhrparkfoto. Beantwortet sofort: wer, was, wo.
-2. **Intro: Bei uns darfst du Fehler machen** – Haltung in zwei Sätzen, Hinweis auf Russisch, Schaufensterfoto und Fuhrparkfoto im asymmetrischen Raster. Vertrauen kommt vor dem Angebot, weil Eltern zuerst wissen wollen, wem sie ihr Kind anvertrauen.
-3. **Führerscheinklassen** – Vier unterschiedlich große Kacheln: B, BE, B197 („Automatik oder Schaltung? Beides.“), BF17. Große Klassen-Typografie, eigene Fahrzeug-Illustrationen. Direkt nach dem Vertrauen, weil hier die Entscheidung fällt.
+1. **Hero** – „Führerschein / in Lahr.“ in großer Straßenschrift (Lahr in Petrol), darunter ein Satz zu Klassen und Ort, Roll-Button „Jetzt anmelden“ und „Klassen ansehen“. Rechts schlängelt sich das Straßen-S durch den Bildschirm und verlässt ihn am rechten Rand, im Bogen sitzt das echte Fuhrparkfoto, am Straßenanfang das Fahrschulauto. Beantwortet sofort: wer, was, wo.
+2. **Intro: Bei uns darfst du Fehler machen** – Haltung in zwei Sätzen, Hinweis auf Russisch, Schaufensterfoto und Porträt von Viktor Strauch im asymmetrischen Raster. Vertrauen kommt vor dem Angebot, weil Eltern zuerst wissen wollen, wem sie ihr Kind anvertrauen; der Inhaber steht mit Gesicht dafür.
+3. **Führerscheinklassen** – Streifen-Band als Oberkante, dann ein Mosaik aus vier unterschiedlich großen Kacheln: B (Mint, groß), BE (Weiß mit Linie), B197 („Automatik oder Schaltung? Beides.“, Nacht-Petrol), BF17 (Weiß, Querformat). Große Klassen-Buchstaben, eigene Fahrzeug-Illustrationen. Direkt nach dem Vertrauen, weil hier die Entscheidung fällt.
 4. **Ablauf** – Die Straße wird sticky, das Auto fährt durch Anmelden, Unterlagen, Theorie, Fahrstunden, Prüfung, Führerschein. Signatur-Moment und Antwort auf „Wie läuft das ab?“.
-5. **Team** – Bühne mit den vier Fahrlehrern am eigenen Auto; Avatar-Leiste zeigt die Jahreszahlen 1984 · 1988 · 2000 · 2007 als Beleg, ein Klick wechselt Foto, Spruch und Name. Echte Menschen als Bildmoment nach dem abstrakten Ablauf.
-6. **Mehr als die erste Fahrstunde** – Editoriale Liste: Schnellkurs, Auffrischung, BKF-Weiterbildung, Finanzierung, App MAX. Für die zweite Zielgruppe (Erwachsene, Profis), deshalb nach dem Kernangebot.
-7. **Kontakt & Standort** – Telefonnummer groß, E-Mail, Adresse, Unterrichtszeiten, Routenlink, russischer Hinweis. Kein Formular.
-8. **FAQ** – Sieben echte Fragen (Alter, Unterlagen, Automatik, Kosten, Russisch, Schnellkurs, Finanzierung) mit Antworten aus den Originalinhalten.
-9. **Abschluss** – Petrol-Fläche: „Bereit für die erste Fahrstunde?“, Anmelden und Anrufen. Die Straße endet hier.
+5. **Team** – Bühne mit den vier Fahrlehrern am eigenen Auto; die Avatar-Leiste zeigt die Jahreszahlen 1984 · 1988 · 2000 · 2007 als Beleg, ein Klick wechselt Foto, Spruch und Name. Echte Menschen als Bildmoment nach dem abstrakten Ablauf.
+6. **Mehr als die erste Fahrstunde** – Editoriale Liste mit sticky Überschrift: Theorie-Schnellkurs, Auffrischung, BKF-Weiterbildung, Finanzierung, App Fahren Lernen MAX. Für die zweite Zielgruppe (Erwachsene, Profis), deshalb nach dem Kernangebot.
+7. **Kontakt & Standort** – Telefonnummer groß in Straßenschrift, E-Mail, Adresse, Unterrichtszeiten, Routenlink, russischer Hinweis; daneben das gezeichnete Straßenschild mit Hausnummer. Kein Formular, weil Anruf und Online-Anmeldung die echten Wege sind.
+8. **FAQ** – Sieben echte Fragen (Alter, Unterlagen, Automatik, Kosten, Russisch, Schnellkurs, Finanzierung) mit Antworten aus den Originalinhalten; räumt die letzten Einwände vor dem Abschluss aus.
+9. **Abschluss** – Petrol-Ink-Fläche: „Bereit für die erste Fahrstunde?“, Anmelden und Anrufen. Die Straße läuft unten aus; danach folgt der Footer mit dem Fahrstreifen.

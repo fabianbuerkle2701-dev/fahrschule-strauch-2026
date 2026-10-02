@@ -430,7 +430,7 @@
   color: rgb(255 255 255 / 0.78);
 }
 .class-tile__em {
-  color: #7fd3da;
+  color: var(--color-brand-glow);
 }
 .class-tile--b197 .link {
   color: #fff;
@@ -464,7 +464,7 @@
 }
 .gear-arrow {
   fill: none;
-  stroke: #7fd3da;
+  stroke: var(--color-brand-glow);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -808,7 +808,7 @@
   letter-spacing: -0.015em;
 }
 .crew__title span {
-  color: #a5e1e6;
+  color: var(--color-brand-glow);
 }
 .crew__quote {
   max-width: 26rem;
@@ -919,7 +919,7 @@
   transition: color var(--dur-ui) var(--ease-ui);
 }
 .crew__link:hover {
-  color: #a5e1e6;
+  color: var(--color-brand-glow);
 }
 @media (max-width: 1023px) {
   /* Überschrift auf eigener dunkler Fläche über dem Foto, damit kein Gesicht verdeckt wird */
@@ -969,9 +969,6 @@
   }
   .crew__quote {
     max-width: 24rem;
-  }
-  .crew__quote {
-    max-width: 30rem;
   }
   .crew__avatar {
     width: 64px;
@@ -1214,7 +1211,7 @@
   max-width: 14ch;
 }
 .finale__em {
-  color: #a5e1e6;
+  color: var(--color-brand-glow);
 }
 .finale .actions {
   margin-top: 2.5rem;
