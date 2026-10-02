@@ -263,6 +263,7 @@
   aspect-ratio: 3 / 2;
 }
 .intro__large img {
+  object-position: 100% 50%;
   height: 112%;
   margin-top: -6%;
   will-change: transform;
@@ -654,6 +655,9 @@
 .station.is-passed text {
   fill: #fff;
 }
+.journey__road--h .station text {
+  font-size: 33px;
+}
 
 .journey__steps {
   counter-reset: step;
@@ -960,8 +964,8 @@
     background: linear-gradient(90deg, var(--color-brand-night) 0%, rgb(14 59 63 / 0) 28%);
   }
   .crew__content {
-    width: 44%;
-    padding-right: 0;
+    width: 40%;
+    padding-right: clamp(1.5rem, 1rem + 1vw, 2.25rem);
   }
   .crew__quote {
     max-width: 24rem;
