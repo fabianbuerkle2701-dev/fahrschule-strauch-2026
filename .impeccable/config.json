@@ -80,6 +80,16 @@
         "value": "rgb(0, 0, 0)",
         "createdAt": "2026-10-02T09:09:08.184Z",
         "reason": "Footer text is black on the mint footer, as in the shophoki.com footer the layout copies; other text resolves to --ink #1c2224"
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "createdAt": "2026-10-02T13:33:11.170Z"
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-10-02T13:33:11.181Z"
       }
     ]
   }
