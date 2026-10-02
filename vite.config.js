@@ -23,14 +23,17 @@ function includes() {
   };
 }
 
-const pages = ['', 'fuehrerschein', 'berufskraftfahrer', 'ueber-uns', 'anmeldung', 'ru', 'impressum', 'datenschutz'];
+const pages = [
+  '', 'fuehrerschein', 'berufskraftfahrer', 'ueber-uns', 'anmeldung', 'impressum', 'datenschutz',
+  'ru', 'ru/fuehrerschein', 'ru/berufskraftfahrer', 'ru/ueber-uns', 'ru/anmeldung',
+];
 
 export default defineConfig({
   plugins: [includes()],
   build: {
     rollupOptions: {
       input: Object.fromEntries([
-        ...pages.map((p) => [p || 'home', resolve(import.meta.dirname, p, 'index.html')]),
+        ...pages.map((p) => [p.replace('/', '-') || 'home', resolve(import.meta.dirname, p, 'index.html')]),
         ['404', resolve(import.meta.dirname, '404.html')],
       ]),
     },

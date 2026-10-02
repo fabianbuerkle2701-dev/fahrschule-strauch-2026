@@ -528,12 +528,21 @@
 }
 
 /* Russische Seite: Barlow hat kein Kyrillisch, Überschriften in Onest */
-:lang(ru) :is(h1, h2, h3, .h1, .h2, .h3),
+/* Russische Seiten: Barlow hat kein Kyrillisch. Alle Texte in Straßenschrift
+   wechseln auf Onest; reine Zeichen wie B, BE, 17, Jahreszahlen bleiben in Barlow. */
+html:lang(ru) {
+  --font-display: var(--font-text);
+}
+:lang(ru) :is(h1, h2, h3, .h1, .h2, .h3, .display, .offer__title, .crew__name, .hero__info-btn, .footer__claim, .menu__links a) {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+:lang(ru) :is(.class-tile__glyph, .block__glyph, .module__num, .crew__year, .footer__word, .contact__phone, .gear-text, .gear-num, .sign-text, .sign-number__text, .truck-95, .station text) {
+  font-family: 'Barlow Semi Condensed', 'Barlow Fallback', sans-serif;
+}
 .menu__links a[lang='ru'],
 .footer__nav [lang='ru'] {
   font-family: var(--font-text);
-  font-weight: 650;
-  letter-spacing: -0.03em;
 }
 
 /* Personen (Über-uns-Seite) */

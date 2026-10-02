@@ -1,0 +1,49 @@
+<a class="skip-link" href="#inhalt">Перейти к содержанию</a>
+<header class="site-header" data-header>
+  <nav class="nav" aria-label="Основная навигация">
+    <a class="nav__logo" href="/ru/" aria-label="Автошкола Viktor Strauch, на главную">
+      <img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" />
+    </a>
+    <div class="nav__links">
+      <a class="nav__link" href="/ru/fuehrerschein/" {{current:fuehrerschein}}>Права</a>
+      <a class="nav__link" href="/ru/#ablauf">Обучение</a>
+      <a class="nav__link" href="/ru/ueber-uns/" {{current:ueber-uns}}>О нас</a>
+      <a class="nav__link" href="/ru/anmeldung/#kontakt" {{current:anmeldung}}>Контакты</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Sprache / Язык" data-lang-switch>
+      <a class="lang-switch__opt" href="{{de}}" lang="de" hreflang="de" data-lang="de"><span aria-hidden="true">DE</span><span class="visually-hidden">Deutsch</span></a>
+      <a class="lang-switch__opt" href="{{ru}}" lang="ru" hreflang="ru" data-lang="ru"><span aria-hidden="true">RU</span><span class="visually-hidden">Русский</span></a>
+      <span class="lang-switch__thumb" aria-hidden="true"></span>
+    </div>
+    <a class="btn nav__cta" href="/ru/anmeldung/">Записаться</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-list" /></svg>
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+  </nav>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Меню" data-menu hidden>
+  <div class="menu__top">
+    <a href="/ru/" aria-label="На главную"><img src="/images/logo.webp" width="350" height="112" alt="Fahrschule Viktor Strauch" /></a>
+    <button class="menu__close" type="button" data-menu-close>
+      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-x" /></svg>
+      <span class="visually-hidden">Закрыть меню</span>
+    </button>
+  </div>
+  <nav class="menu__links" aria-label="Мобильная навигация">
+    <a href="/ru/fuehrerschein/" style="--i: 0" {{current:fuehrerschein}}>Права <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+    <a href="/ru/#ablauf" style="--i: 1">Обучение <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+    <a href="/ru/ueber-uns/" style="--i: 2" {{current:ueber-uns}}>О нас <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+    <a href="/ru/berufskraftfahrer/" style="--i: 3" {{current:berufskraftfahrer}}>Профводители <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+    <a href="/ru/anmeldung/#kontakt" style="--i: 4" {{current:anmeldung}}>Контакты <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn" href="/ru/anmeldung/">Записаться</a>
+    <a class="btn btn--secondary" href="tel:+4915560410413">
+      <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>
+      +49 155 60 41 04 13
+    </a>
+    <p class="menu__note">Schwarzwaldstraße 93, 77933 Lahr</p>
+  </div>
+</div>

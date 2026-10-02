@@ -354,7 +354,7 @@ Fokus: 3-px-Ring Logo-Petrol mit 3 px Abstand, auf dunklem Grund Weiß. Textausw
 | Berufskraftfahrer | `/berufskraftfahrer/` | BKF-Weiterbildung Module 1–5, Schlüsselzahl 95 (eigene Zielgruppe) |
 | Über uns | `/ueber-uns/` | Team, Haltung, Fuhrpark, Stellenanzeige (`#jobs`) |
 | Anmeldung & Kontakt | `/anmeldung/` | Online-Anmeldung (extern), Unterlagen, Formulare, App MAX, Finanzierung, Kontakt (`#kontakt`), Anfahrt |
-| По-русски | `/ru/` | Kompakte russische Seite mit den wichtigsten Fakten |
+| Russische Fassung | `/ru/`, `/ru/fuehrerschein/`, `/ru/berufskraftfahrer/`, `/ru/ueber-uns/`, `/ru/anmeldung/` | Vollständige Übersetzung aller Inhaltsseiten (Anrede „вы“), erzeugt mit `scripts/translate_ru.py` aus den deutschen Seiten. Impressum und Datenschutz bleiben deutsch und sind aus dem russischen Footer verlinkt |
 | Impressum | `/impressum/` | Text unverändert vom Original |
 | Datenschutz | `/datenschutz/` | Text unverändert vom Original |
 | 404 | `/404.html` | „Falsch abgebogen.“ mit Weg zurück |

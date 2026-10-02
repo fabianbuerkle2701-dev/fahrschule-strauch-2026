@@ -334,7 +334,8 @@ function initCrew() {
     const pick = picks[i];
     slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
     picks.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
-    quote.innerHTML = `<p>„${pick.dataset.quote}“</p>`;
+    const [open, close] = document.documentElement.lang.startsWith('ru') ? ['«', '»'] : ['„', '“'];
+    quote.innerHTML = `<p>${open}${pick.dataset.quote}${close}</p>`;
     name.textContent = pick.dataset.name;
     role.textContent = pick.dataset.role;
     if (!reduceMotion.matches) [quote, name].forEach(replay);

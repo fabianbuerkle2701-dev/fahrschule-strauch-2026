@@ -10,6 +10,8 @@ npm run dev       # Entwicklung auf http://localhost:5173
 npm run build     # fertige Seite in dist/
 npm run preview   # dist/ lokal ansehen
 npm run images    # Bilder aus assets-src/ neu erzeugen (AVIF + WebP)
+python3 scripts/translate_ru.py   # russische Seiten aus den deutschen neu erzeugen
+node scripts/check-ru.mjs         # russische Seiten auf übrig gebliebenes Deutsch prüfen (Dev-Server muss laufen)
 ```
 
 ## Aufbau
@@ -37,5 +39,6 @@ Bausteine werden beim Bauen über `<!-- @include name -->` eingesetzt (kleines P
 1. **Telefonnummer klären**: Kopf/Footer der alten Seite nennen +49 155 60 41 04 13, Impressum, Preis-PDFs und Schaufenster 0151 42522180. Die Website nutzt die erste als Kontaktnummer, das Impressum unverändert die zweite.
 2. **Datenschutzerklärung aktualisieren** (Stand 2018, nennt YouTube und TMG). Text wurde unverändert übernommen.
 3. **Schnellkurs-Termine**: Der letzte Termin (24.–31.08.2026) ist vorbei; die Seite verweist auf Anfrage.
-4. **Russische Seite** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen. Der DE/RU-Umschalter führt auf eine kompakte russische Seite; die Unterseiten gibt es nur auf Deutsch.
+4. **Russische Fassung** von einer Muttersprachlerin oder einem Muttersprachler gegenlesen lassen. Alle Inhaltsseiten gibt es auf Russisch (Anrede „вы“); der DE/RU-Umschalter springt jeweils zur passenden Seite. Impressum, Datenschutz, PDF-Formulare und die Online-Anmeldung bleiben deutsch.
+   Wichtig bei Textänderungen: deutsche Seite ändern, dann `python3 scripts/translate_ru.py` ausführen. Das Skript bricht ab, wenn ein geänderter deutscher Satz noch keine russische Entsprechung hat.
 5. Fotos liegen nur in 640×480 vor (hochskaliert). Neue Fotos in höherer Auflösung würden Hero, Team-Bühne und Intro deutlich schärfer machen.
