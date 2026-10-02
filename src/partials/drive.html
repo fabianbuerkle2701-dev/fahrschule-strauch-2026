@@ -1,0 +1,40 @@
+<!-- Fahrschulauto, das beim Scrollen die Straße am rechten Rand herunterfährt (Logo auf der Motorhaube) -->
+<div class="drive" aria-hidden="true" data-drive>
+  <div class="drive__lane"></div>
+  <div class="drive__start"></div>
+  <div class="drive__finish"></div>
+  <svg class="drive__car" viewBox="0 0 60 150">
+    <defs>
+      <pattern id="drive-livery" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+        <rect width="3.5" height="7" fill="#0199a6" />
+      </pattern>
+      <radialGradient id="drive-beam" cx="0.5" cy="0" r="1">
+        <stop offset="0" stop-color="#fff6c8" stop-opacity="0.85" />
+        <stop offset="1" stop-color="#fff6c8" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    <g class="drive__beams">
+      <path d="M12 104 L-2 150 L24 150 Z" fill="url(#drive-beam)" />
+      <path d="M48 104 L36 150 L62 150 Z" fill="url(#drive-beam)" />
+    </g>
+    <rect x="5" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
+    <rect x="49" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
+    <rect x="5" y="76" width="6" height="18" rx="2.5" fill="#1c2224" />
+    <rect x="49" y="76" width="6" height="18" rx="2.5" fill="#1c2224" />
+    <rect x="8" y="4" width="44" height="104" rx="14" fill="#fff" stroke="#0e3b3f" stroke-width="1.6" />
+    <rect x="8.8" y="40" width="4.2" height="44" fill="url(#drive-livery)" />
+    <rect x="47" y="40" width="4.2" height="44" fill="url(#drive-livery)" />
+    <path d="M15 14 Q30 9 45 14 L43 25 Q30 22 17 25 Z" fill="#1c2224" />
+    <path d="M15 84 Q30 80 45 84 L47 96 Q30 92 13 96 Z" fill="#1c2224" />
+    <rect x="15" y="26" width="30" height="56" rx="7" fill="#f6f7f7" stroke="#0e3b3f" stroke-width="1.2" />
+    <rect x="17" y="47" width="26" height="8" rx="2" fill="#0199a6" />
+    <rect x="13" y="97" width="34" height="10" rx="3" fill="#fff" />
+    <image href="/images/logo.png" x="14" y="97.4" width="32" height="10.2" preserveAspectRatio="xMidYMid meet" />
+    <ellipse cx="4.5" cy="76" rx="2.6" ry="1.6" fill="#fff" stroke="#0e3b3f" stroke-width="1" />
+    <ellipse cx="55.5" cy="76" rx="2.6" ry="1.6" fill="#fff" stroke="#0e3b3f" stroke-width="1" />
+    <rect class="drive__head" x="11" y="103" width="9" height="3.4" rx="1.5" />
+    <rect class="drive__head" x="40" y="103" width="9" height="3.4" rx="1.5" />
+    <rect class="drive__tail" x="11" y="5.2" width="9" height="3.2" rx="1.4" />
+    <rect class="drive__tail" x="40" y="5.2" width="9" height="3.2" rx="1.4" />
+  </svg>
+</div>

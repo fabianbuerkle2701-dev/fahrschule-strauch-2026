@@ -242,6 +242,217 @@ function initLangSwitch() {
   });
 }
 
+/* --- Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter --- */
+function initDrive() {
+  const drive = document.querySelector('[data-drive]');
+  if (!drive) return;
+  if (reduceMotion.matches) {
+    drive.hidden = true;
+    return;
+  }
+  const car = drive.querySelector('.drive__car');
+  const root = document.documentElement;
+  let last = window.scrollY;
+  let vel = 0;
+  let raf = 0;
+  let stopTimer = 0;
+  const update = () => {
+    raf = 0;
+    const max = root.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
+    const top = Math.max(16, headerH + 16 - window.scrollY);
+    const body = car.getBoundingClientRect().width * (108 / 60);
+    const y = top + p * (window.innerHeight - top - body - 18);
+    const dy = window.scrollY - last;
+    last = window.scrollY;
+    vel = vel * 0.75 + dy * 0.25;
+    const steer = Math.max(-9, Math.min(9, Math.sin(p * Math.PI * 14) * Math.min(1, Math.abs(vel) / 30) * 9));
+    car.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) rotate(${steer.toFixed(2)}deg)`;
+    if (dy !== 0) {
+      car.classList.toggle('is-forward', dy > 0);
+      car.classList.toggle('is-reverse', dy < 0);
+      car.classList.remove('is-brake');
+      clearTimeout(stopTimer);
+      stopTimer = setTimeout(() => {
+        car.classList.remove('is-forward', 'is-reverse');
+        car.classList.add('is-brake');
+        setTimeout(() => car.classList.remove('is-brake'), 700);
+      }, 160);
+    }
+  };
+  const queue = () => {
+    if (!raf) raf = requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
+}
+
+/* --- Scroll-Effekte: Wort-für-Wort-Überschriften, einfahrende Karten, Parallaxe, Zähler --- */
+function splitWords(el) {
+  let i = 0;
+  const walk = (node) => {
+    for (const child of [...node.childNodes]) {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const parts = child.textContent.split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        for (const part of parts) {
+          if (!part) continue;
+          if (/^\s+$/.test(part)) {
+            frag.append(part);
+            continue;
+          }
+          const w = document.createElement('span');
+          w.className = 'w';
+          const inner = document.createElement('span');
+          inner.textContent = part;
+          inner.style.setProperty('--i', i++);
+          w.append(inner);
+          frag.append(w);
+        }
+        child.replaceWith(frag);
+      } else if (child.nodeType === Node.ELEMENT_NODE && !child.classList.contains('visually-hidden')) {
+        walk(child);
+      }
+    }
+  };
+  walk(el);
+}
+
+function countUp(el) {
+  const m = el.textContent.trim().match(/^(\d[\d.]*)(\s*[^\d]*)$/);
+  if (!m) return;
+  const sep = m[1].includes('.') ? '.' : '';
+  const target = parseInt(m[1].replace(/\./g, ''), 10);
+  const from = target >= 1900 && target <= 2100 ? target - 60 : 0;
+  const fmt = (n) => (sep ? n.toLocaleString('de-DE') : String(n)) + m[2];
+  const t0 = performance.now();
+  const dur = 1400;
+  const tick = (t) => {
+    const k = Math.min(1, (t - t0) / dur);
+    const e = 1 - Math.pow(1 - k, 3);
+    el.textContent = fmt(Math.round(from + (target - from) * e));
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  el.textContent = fmt(from);
+  requestAnimationFrame(tick);
+}
+
+function initScrollFx() {
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) return;
+
+  // einmalige Effekte beim Hineinscrollen
+  const once = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.classList.add('is-in');
+        if (e.target.hasAttribute('data-count')) countUp(e.target);
+        once.unobserve(e.target);
+      }
+    },
+    { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
+  );
+  document
+    .querySelectorAll('.sol__h, .revhead h2, .sec-h, .qa__h, .pz__h, .faq__h, .ig__h, .ki__h .l1, .ki__lead h3, .cm__h .small, .pr__h1')
+    .forEach((el) => {
+      if (el.querySelector('.rot')) return;
+      // Überschriften im ersten Bildschirm sofort zeigen (schneller sichtbarer Inhalt beim Laden)
+      if (el.getBoundingClientRect().top < window.innerHeight && window.scrollY < 10) return;
+      el.setAttribute('data-split', '');
+      splitWords(el);
+      once.observe(el);
+    });
+  document.querySelectorAll('.sol__row, .cm__cards, .cm__videos, .tiles, .ki__tiles, .qa__cards').forEach((row) => {
+    row.setAttribute('data-row-in', '');
+    [...row.children].forEach((c, i) => c.style.setProperty('--i', Math.min(i, 6)));
+    once.observe(row);
+  });
+  document.querySelectorAll('.nf__cards, .pz__steps, .faq__list, .nf__stack').forEach((group) => {
+    [...group.children].forEach((c, i) => {
+      c.setAttribute('data-pop', '');
+      c.style.setProperty('--i', Math.min(i, 8));
+      once.observe(c);
+    });
+  });
+  document.querySelectorAll('.cm__h .big, .proof__r b, .social__i b').forEach((el) => {
+    if (!/^\d/.test(el.textContent.trim())) return;
+    el.setAttribute('data-count', '');
+    once.observe(el);
+  });
+
+  // laufende Effekte, nur solange sichtbar
+  const fx = [];
+  const add = (sel, kind, f = 0) =>
+    document.querySelectorAll(sel).forEach((el) => {
+      fx.push({ el, kind, f, on: false });
+    });
+  add('.sol__media img', 'hero');
+  add('.sol__text', 'heroText');
+  add('.cm__hero > picture img', 'zoom');
+  add('.pr__media > picture img', 'drift', 0.06);
+  add('.tile--photo > picture img, .big--photo > picture img, .cm__vtile img', 'drift', 0.08);
+  add('.ki__art > *', 'float', 0.1);
+  add('.sol__art img, .nf__circle picture img, .qa__img--ill img', 'driveIn');
+  const steps = document.querySelector('[data-steps]');
+
+  const seen = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const item = fx.find((x) => x.el === e.target);
+      if (item) item.on = e.isIntersecting;
+    }
+  });
+  fx.forEach((x) => seen.observe(x.el));
+
+  let raf = 0;
+  const frame = () => {
+    raf = 0;
+    const vh = window.innerHeight;
+    const sy = window.scrollY;
+    for (const x of fx) {
+      if (!x.on && x.kind !== 'hero' && x.kind !== 'heroText') continue;
+      const r = x.el.getBoundingClientRect();
+      const center = r.top + r.height / 2 - vh / 2;
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+      let t = '';
+      if (x.kind === 'hero') {
+        if (sy > vh * 1.2) continue;
+        t = `translate3d(0, ${(sy * 0.32).toFixed(1)}px, 0) scale(${(1 + sy * 0.00012).toFixed(4)})`;
+      } else if (x.kind === 'heroText') {
+        if (sy > vh * 1.2) continue;
+        x.el.style.opacity = Math.max(0, 1 - sy / (vh * 0.75)).toFixed(3);
+        t = `translate3d(0, ${(sy * 0.18).toFixed(1)}px, 0)`;
+      } else if (x.kind === 'zoom') {
+        t = `scale(${(1.2 - 0.2 * Math.min(1, p * 1.6)).toFixed(4)})`;
+      } else if (x.kind === 'drift') {
+        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) scale(1.14)`;
+      } else if (x.kind === 'float') {
+        t = `translate3d(0, ${(-center * x.f).toFixed(1)}px, 0) rotate(${(center * -0.006).toFixed(2)}deg)`;
+      } else if (x.kind === 'driveIn') {
+        const k = Math.min(1, p * 2.2);
+        t = `translate3d(${((1 - k) * -26).toFixed(1)}%, 0, 0)`;
+      }
+      x.el.style.transform = t;
+    }
+    if (steps) {
+      const r = steps.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        const k = Math.min(0.999, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+        const idx = Math.floor(k * steps.children.length);
+        [...steps.children].forEach((s, i) => s.classList.toggle('on', i === idx));
+      }
+    }
+  };
+  const queue = () => {
+    if (!raf) raf = requestAnimationFrame(frame);
+  };
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  // erst ab dem ersten Scrollen rechnen, damit das Hero-Bild beim Laden sofort gemalt wird
+  if (window.scrollY > 0) frame();
+}
+
 initHeader();
 initMenu();
 initReveal();
@@ -251,3 +462,5 @@ initRotate();
 initFaq();
 initSteps();
 initLangSwitch();
+initDrive();
+initScrollFx();

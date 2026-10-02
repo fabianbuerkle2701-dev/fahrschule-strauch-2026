@@ -2770,6 +2770,149 @@ html:lang(ru) .qa__tx q {
   margin-top: 40px;
 }
 
+/* ==========================================================================
+   Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter
+   ========================================================================== */
+:root {
+  --lane: 24px;
+  --car: 28px; /* auf dem Handy etwas breiter als die Spur, damit das Logo erkennbar bleibt */
+}
+@media (min-width: 1000px) {
+  :root {
+    --lane: 46px;
+    --car: 36px;
+  }
+}
+@media (min-width: 1300px) {
+  :root {
+    --lane: 64px;
+    --car: 50px;
+  }
+}
+.drive {
+  position: absolute;
+  top: var(--header-h);
+  bottom: 0;
+  right: 0;
+  width: var(--lane);
+  z-index: 45;
+  pointer-events: none;
+}
+.drive[hidden] {
+  display: none;
+}
+.drive__lane {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(180deg, rgb(255 255 255 / 0.9) 0 22px, transparent 22px 50px) center / 2px 100% no-repeat,
+    linear-gradient(90deg, rgb(255 255 255 / 0.55) 0 1.5px, transparent 1.5px calc(100% - 1.5px), rgb(255 255 255 / 0.55) calc(100% - 1.5px)),
+    #3e4547;
+  border-radius: 10px 0 0 10px;
+  box-shadow: inset 6px 0 10px -6px rgb(0 0 0 / 0.35);
+}
+.drive__start,
+.drive__finish {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: repeating-conic-gradient(#fff 0 25%, #1c2224 0 50%) 0 0 / 14px 14px;
+}
+.drive__start {
+  top: 0;
+  border-radius: 10px 0 0 0;
+}
+.drive__finish {
+  bottom: 0;
+}
+.drive__car {
+  position: fixed;
+  top: 0;
+  right: calc((var(--lane) - var(--car)) / 2);
+  width: var(--car);
+  height: auto;
+  overflow: visible;
+  will-change: transform;
+  filter: drop-shadow(0 6px 8px rgb(0 0 0 / 0.35));
+  transform: translate3d(0, calc(var(--header-h) + 24px), 0);
+}
+.drive__beams {
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+.drive__car.is-forward .drive__beams {
+  opacity: 1;
+}
+.drive__head {
+  fill: #fff4bf;
+}
+.drive__tail {
+  fill: #b3261e;
+  transition: fill 0.15s var(--ease), filter 0.15s var(--ease);
+}
+.drive__car.is-brake .drive__tail {
+  fill: #ff3b30;
+  filter: drop-shadow(0 0 3px #ff3b30);
+}
+.drive__car.is-reverse .drive__tail {
+  fill: #fff;
+  filter: drop-shadow(0 0 3px #fff);
+}
+
+/* --- Scroll-Effekte (gesteuert in main.js) -------------------------------- */
+.js [data-split] .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.js [data-split] .w > span {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+.js [data-split].is-in .w > span {
+  transform: none;
+}
+.js [data-row-in] > * {
+  opacity: 0;
+  translate: 48px 0;
+  transition: opacity 0.7s var(--ease-out), translate 0.9s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js [data-row-in].is-in > * {
+  opacity: 1;
+  translate: 0 0;
+}
+.js [data-pop] {
+  opacity: 0;
+  scale: 0.86;
+  transition: opacity 0.6s var(--ease-out), scale 0.8s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.js [data-pop].is-in {
+  opacity: 1;
+  scale: 1;
+}
+/* Grundzoom der Fotos, damit die Parallaxe beim Scrollen keine Ränder zeigt */
+.js .tile--photo > picture img,
+.js .big--photo > picture img,
+.js .cm__vtile img,
+.js .pr__media > picture img {
+  transform: scale(1.14);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .tile--photo > picture img,
+  .js .big--photo > picture img,
+  .js .cm__vtile img,
+  .js .pr__media > picture img {
+    transform: none;
+  }
+}
+
 /* --- Scroll-Reveal -------------------------------------------------------- */
 .js [data-reveal] {
   opacity: 0;
@@ -2795,6 +2938,17 @@ html:lang(ru) .qa__tx q {
   .js [data-reveal] {
     opacity: 1;
     translate: none;
+  }
+  .drive {
+    display: none;
+  }
+  .js [data-split] .w > span,
+  .js [data-row-in] > *,
+  .js [data-pop] {
+    transform: none;
+    translate: none;
+    scale: none;
+    opacity: 1;
   }
 }
 .legal--head {
