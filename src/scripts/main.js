@@ -260,9 +260,12 @@ function initDrive() {
   // feste Fensterhöhe: die ein- und ausfahrende Adressleiste am Handy soll nichts verschieben
   let vh = window.innerHeight;
   let width = window.innerWidth;
+  const trail = drive.querySelector('.drive__trail');
   let from = 0;
   let to = 1;
   let travel = 0;
+  let trailFrom = 0;
+  let trailTo = 1;
 
   const measure = () => {
     const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
@@ -280,13 +283,23 @@ function initDrive() {
     car.style.setProperty('--car-from', `${Math.round(from)}px`);
     car.style.setProperty('--car-to', `${Math.round(to)}px`);
     car.style.setProperty('--car-travel', `${Math.round(travel)}px`);
+    // feine Linie: der gefahrene Teil bis zur Wagenmitte färbt sich petrol
+    const laneH = Math.max(1, drive.offsetHeight);
+    trailFrom = (14 + carH / 2) / laneH;
+    trailTo = Math.min(1, (14 + carH / 2 + travel) / laneH);
+    trail.style.setProperty('--trail-from', trailFrom.toFixed(4));
+    trail.style.setProperty('--trail-to', trailTo.toFixed(4));
     drive.classList.add('is-ready');
     if (!nativeTimeline) position();
   };
   const position = () => {
     const k = Math.min(1, Math.max(0, (window.scrollY - from) / (to - from)));
     car.style.translate = `0 ${(k * travel).toFixed(1)}px`;
+    trail.style.scale = `1 ${(trailFrom + k * (trailTo - trailFrom)).toFixed(4)}`;
   };
+  // während der Etappen-Fahrt im Ablauf fährt nur ein Auto
+  const journey = document.querySelector('[data-journey]');
+  if (journey) new IntersectionObserver(([e]) => drive.classList.toggle('is-away', e.isIntersecting), { rootMargin: '-15% 0px' }).observe(journey);
 
   // Lenken und Lichter: nur Schreiben, kein Messen pro Bild
   let last = window.scrollY;
@@ -328,6 +341,136 @@ function initDrive() {
     vh = window.innerHeight;
     measure();
   });
+  let pending = 0;
+  new ResizeObserver(() => {
+    cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(measure);
+  }).observe(document.body);
+  measure();
+}
+
+/* --- Ablauf: das Fahrschulauto fährt beim Scrollen durch sechs Stationen ---
+   Pfad und Etappen werden bei Größenänderungen einmal vermessen; beim Scrollen wird nur
+   noch nachgeschlagen und geschrieben (kein Messen pro Bild). */
+function initJourney() {
+  const section = document.querySelector('[data-journey]');
+  if (!section) return;
+  const steps = [...section.querySelectorAll('[data-step]')];
+  const labels = steps.map((st) => st.querySelector('.jr__title').textContent.trim());
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const wide = window.matchMedia('(min-width: 1000px)');
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+
+  const roads = [...section.querySelectorAll('[data-road]')].map((svg) => {
+    const vertical = svg.dataset.road === 'v';
+    const path = svg.querySelector('.road-asphalt');
+    const trail = svg.querySelector('[data-trail]');
+    const car = svg.querySelector('[data-car]');
+    const length = path.getTotalLength();
+    // Punkte einmal vorab berechnen
+    const N = 400;
+    const pts = Array.from({ length: N + 1 }, (_, i) => path.getPointAtLength((length * i) / N));
+    const at = (f) => {
+      const x = clamp(f) * N;
+      const i = Math.min(N - 1, Math.floor(x));
+      const t = x - i;
+      const p = pts[i];
+      const q = pts[i + 1];
+      return { x: p.x + (q.x - p.x) * t, y: p.y + (q.y - p.y) * t, angle: (Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI };
+    };
+    const [a, b] = vertical ? [0.07, 0.93] : [0.08, 0.92];
+    const fractions = steps.map((_, i) => a + ((b - a) * i) / (steps.length - 1));
+    trail.style.strokeDasharray = `${length} ${length}`;
+    trail.style.strokeDashoffset = `${length}`;
+    const group = svg.querySelector('[data-stations]');
+    const stations = fractions.map((f, i) => {
+      const { x, y } = at(f);
+      const g = document.createElementNS(svgNS, 'g');
+      g.setAttribute('class', 'station');
+      const c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('cx', x);
+      c.setAttribute('cy', y);
+      c.setAttribute('r', vertical ? 15 : 36);
+      const t = document.createElementNS(svgNS, 'text');
+      t.setAttribute('x', x);
+      t.setAttribute('y', y + (vertical ? 5.5 : 11.5));
+      t.setAttribute('text-anchor', 'middle');
+      t.textContent = String(i + 1);
+      const title = document.createElementNS(svgNS, 'title');
+      title.textContent = labels[i];
+      g.append(c, t, title);
+      group.append(g);
+      return g;
+    });
+    return { vertical, trail, car, length, fractions, stations, at, scale: vertical ? 0.78 : 1.2, passed: -1 };
+  });
+
+  let centers = [];
+  let vh = window.innerHeight;
+  const measure = () => {
+    vh = window.innerHeight;
+    centers = steps.map((st) => {
+      const r = st.getBoundingClientRect();
+      return r.top + window.scrollY + r.height / 2;
+    });
+    update();
+  };
+
+  let current = -2;
+  const update = () => {
+    let progress; // -1 … steps.length-1, kontinuierlich
+    if (reduceMotion.matches) progress = steps.length - 1;
+    else {
+      const anchor = window.scrollY + vh * 0.55;
+      if (anchor <= centers[0]) progress = clamp((anchor - (centers[0] - vh * 0.5)) / (vh * 0.5)) - 1;
+      else if (anchor >= centers[centers.length - 1]) progress = steps.length - 1;
+      else {
+        let i = 0;
+        while (i < centers.length - 2 && anchor > centers[i + 1]) i++;
+        progress = i + (anchor - centers[i]) / (centers[i + 1] - centers[i]);
+      }
+    }
+    const active = progress < -0.5 ? -1 : Math.round(clamp(progress, 0, steps.length - 1));
+    if (active !== current) {
+      current = active;
+      steps.forEach((st, i) => {
+        st.classList.toggle('is-active', i === active);
+        st.classList.toggle('is-done', i < active);
+      });
+    }
+    const road = roads.find((r) => r.vertical === wide.matches);
+    if (!road) return;
+    let f;
+    if (progress < 0) f = road.fractions[0] * (1 + progress * 0.6);
+    else {
+      const i = Math.min(Math.floor(progress), road.fractions.length - 2);
+      f = road.fractions[i] + (road.fractions[i + 1] - road.fractions[i]) * clamp(progress - i);
+    }
+    const { x, y, angle } = road.at(f);
+    road.car.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)}) scale(${road.scale})`);
+    road.trail.style.strokeDashoffset = `${(road.length * (1 - clamp(f))).toFixed(1)}`;
+    const passed = Math.floor(progress + 0.02);
+    if (passed !== road.passed) {
+      road.passed = passed;
+      road.stations.forEach((g, i) => g.classList.toggle('is-passed', i <= passed));
+    }
+  };
+
+  let visible = false;
+  let raf = 0;
+  const queue = () => {
+    if (visible && !raf)
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        update();
+      });
+  };
+  new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting;
+    queue();
+  }, { rootMargin: '20% 0px' }).observe(section);
+  window.addEventListener('scroll', queue, { passive: true });
+  wide.addEventListener('change', measure);
   let pending = 0;
   new ResizeObserver(() => {
     cancelAnimationFrame(pending);
@@ -411,7 +554,7 @@ function initScrollFx() {
       splitWords(el);
       once.observe(el);
     });
-  document.querySelectorAll('.sol__row, .cm__cards, .cm__videos, .tiles, .ki__tiles, .qa__cards').forEach((row) => {
+  document.querySelectorAll('.sol__row, .cm__videos, .tiles, .ki__tiles, .qa__cards').forEach((row) => {
     row.setAttribute('data-row-in', '');
     [...row.children].forEach((c, i) => c.style.setProperty('--i', Math.min(i, 6)));
     once.observe(row);
@@ -469,4 +612,5 @@ initFaq();
 initSteps();
 initLangSwitch();
 initDrive();
+initJourney();
 initScrollFx();

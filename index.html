@@ -145,71 +145,100 @@
           <h2>So läuft deine <em>Ausbildung</em></h2>
           <p>in sechs Etappen, von der Anmeldung bis zum Führerschein</p>
         </div>
-        <ol class="row cm__cards" data-row role="list">
-          <li class="cm__card expert">
-            <div>
-              <span class="cm__badge">Unser Anspruch</span>
-              <p class="cm__quote">„Bei uns darfst du Fehler machen. Fragen sind erwünscht, und niemand muss Angst vor einem Fehler haben.“</p>
+        <!-- Ablauf: das Fahrschulauto fährt beim Scrollen durch sechs Stationen -->
+        <div class="wrap">
+          <div class="jr" data-journey>
+            <div class="jr__stage" aria-hidden="true">
+            <svg class="jr__road jr__road--v" viewBox="0 0 360 1000" preserveAspectRatio="xMidYMid meet" data-road="v">
+              <path class="road-edge" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
+              <path class="road-asphalt" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
+              <path class="road-center" d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
+              <path class="road-trail" data-trail d="M180 -30 C 180 90, 64 100, 64 210 C 64 340, 296 320, 296 450 C 296 580, 64 560, 64 690 C 64 820, 296 800, 296 900 C 296 960, 180 980, 180 1030" />
+              <g data-stations></g>
+              <use href="#car-top" data-car />
+            </svg>
+            <svg class="jr__road jr__road--h" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" data-road="h">
+              <path class="road-edge" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
+              <path class="road-asphalt" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
+              <path class="road-center" d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
+              <path class="road-trail" data-trail d="M30 110 C 110 110, 110 40, 190 40 C 310 40, 290 180, 410 180 C 530 180, 510 40, 630 40 C 750 40, 730 180, 850 180 C 910 180, 890 110, 970 110" />
+              <g data-stations></g>
+              <use href="#car-top" data-car />
+            </svg>
             </div>
-            <div class="cm__cf">
-              <div class="cm__exrow">
-                <span class="cm__avs" aria-hidden="true">
-                  <img src="/images/avatar-viktor-strauch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
-                  <img src="/images/avatar-peter-harter-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
-                  <img src="/images/avatar-gerold-remmele-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
-                  <img src="/images/avatar-nadine-duerr-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
-                </span>
-                <div class="cm__who">
-                  <span class="cm__name">Das Team der Fahrschule</span>
-                  <span class="cm__verif"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-seal-check" /></svg>Viktor, Peter, Gerold und Nadine</span>
-                </div>
+            <ol class="jr__steps" role="list">
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 1</span>
+                <h3 class="jr__title">Anmelden</h3>
+                <p>Online über den Fahrschulmanager, mit dem Anmeldeformular oder direkt bei uns in der Schwarzwaldstraße&nbsp;93.</p>
+                <a class="jr__link" href="/anmeldung/">Zur Anmeldung <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
               </div>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Online über den Fahrschulmanager, mit dem Anmeldeformular oder direkt bei uns in der Schwarzwaldstraße&nbsp;93.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Anmelden</span><a class="cm__verif" href="/anmeldung/">Zur Anmeldung <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a></div>
-              <span class="cm__num" aria-hidden="true">01/06</span>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Sehtest, Erste-Hilfe-Kurs, biometrisches Passfoto und Ausweis. Den Führerscheinantrag bekommst du bei uns als Formular.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Unterlagen</span><span class="cm__verif">Etappe 2</span></div>
-              <span class="cm__num" aria-hidden="true">02/06</span>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Unterricht montags von 19:00 bis 20:30 Uhr, mittwochs nach Vereinbarung. Zwischendurch lernst du mit der App Fahren Lernen MAX.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Theorie</span><span class="cm__verif">Etappe 3</span></div>
-              <span class="cm__num" aria-hidden="true">03/06</span>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Grundausbildung und die Sonderfahrten über Land, auf der Autobahn und bei Dunkelheit. Im Schalt- oder im Automatikwagen.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Fahrstunden</span><span class="cm__verif">Etappe 4</span></div>
-              <span class="cm__num" aria-hidden="true">04/06</span>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Erst die Theorieprüfung, dann die praktische Prüfung. Wir melden dich an, wenn du so weit bist.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Prüfung</span><span class="cm__verif">Etappe 5</span></div>
-              <span class="cm__num" aria-hidden="true">05/06</span>
-            </div>
-          </li>
-          <li class="cm__card">
-            <p class="cm__quote">Bestanden. Mit Begleitetem Fahren ab 17 fährst du zunächst mit Begleitung, sonst ab sofort allein.</p>
-            <div class="cm__cf">
-              <div class="cm__who"><span class="cm__name">Führerschein</span><span class="cm__verif">Etappe 6</span></div>
-              <span class="cm__num" aria-hidden="true">06/06</span>
-            </div>
-          </li>
-        </ol>
-        <div class="sbar" data-sbar><div class="sbar__track"><span class="sbar__fill"></span></div><button class="sbar__arw" type="button" data-sbar-next><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg><span class="visually-hidden">Nächste Etappe</span></button></div>
+            </li>
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 2</span>
+                <h3 class="jr__title">Unterlagen</h3>
+                <p>Sehtest, Erste-Hilfe-Kurs, biometrisches Passfoto und Ausweis. Den Führerscheinantrag bekommst du bei uns als Formular.</p>
+              </div>
+            </li>
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 3</span>
+                <h3 class="jr__title">Theorie</h3>
+                <p>Unterricht montags von 19:00 bis 20:30 Uhr, mittwochs nach Vereinbarung. Zwischendurch lernst du mit der App Fahren Lernen MAX.</p>
+              </div>
+            </li>
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 4</span>
+                <h3 class="jr__title">Fahrstunden</h3>
+                <p>Grundausbildung und die Sonderfahrten über Land, auf der Autobahn und bei Dunkelheit. Im Schalt- oder im Automatikwagen.</p>
+              </div>
+            </li>
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 5</span>
+                <h3 class="jr__title">Prüfung</h3>
+                <p>Erst die Theorieprüfung, dann die praktische Prüfung. Wir melden dich an, wenn du so weit bist.</p>
+              </div>
+            </li>
+            <li class="jr__step" data-step>
+              <div class="jr__card">
+                <span class="jr__num">Etappe 6</span>
+                <h3 class="jr__title">Führerschein</h3>
+                <p>Bestanden. Mit Begleitetem Fahren ab 17 fährst du zunächst mit Begleitung, sonst ab sofort allein.</p>
+              </div>
+            </li>
+            </ol>
+          </div>
+        </div>
+        <!-- Fahrschulauto von oben mit dem echten Logo auf der Motorhaube, fährt in Richtung +x -->
+        <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="jr-livery" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><rect width="3.5" height="7" fill="#0199a6" /></pattern>
+            <g id="car-top">
+              <g transform="rotate(-90) translate(-30 -56)">
+                <rect x="5" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
+                <rect x="49" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
+                <rect x="5" y="76" width="6" height="18" rx="2.5" fill="#1c2224" />
+                <rect x="49" y="76" width="6" height="18" rx="2.5" fill="#1c2224" />
+                <rect x="8" y="4" width="44" height="104" rx="14" fill="#fff" stroke="#0e3b3f" stroke-width="1.6" />
+                <rect x="8.8" y="40" width="4.2" height="44" fill="url(#jr-livery)" />
+                <rect x="47" y="40" width="4.2" height="44" fill="url(#jr-livery)" />
+                <path d="M15 14 Q30 9 45 14 L43 25 Q30 22 17 25 Z" fill="#1c2224" />
+                <path d="M15 84 Q30 80 45 84 L47 96 Q30 92 13 96 Z" fill="#1c2224" />
+                <rect x="15" y="26" width="30" height="56" rx="7" fill="#f6f7f7" stroke="#0e3b3f" stroke-width="1.2" />
+                <rect x="17" y="47" width="26" height="8" rx="2" fill="#0199a6" />
+                <image href="/images/logo.png" x="14" y="97.4" width="32" height="10.2" preserveAspectRatio="xMidYMid meet" />
+                <rect x="11" y="103" width="9" height="3.4" rx="1.5" fill="#fff4bf" />
+                <rect x="40" y="103" width="9" height="3.4" rx="1.5" fill="#fff4bf" />
+                <rect x="11" y="5.2" width="9" height="3.2" rx="1.4" fill="#b3261e" />
+                <rect x="40" y="5.2" width="9" height="3.2" rx="1.4" fill="#b3261e" />
+              </g>
+            </g>
+          </defs>
+        </svg>
 
         <div class="revhead" id="team">
           <h2>Wer neben dir <em>sitzt</em></h2>

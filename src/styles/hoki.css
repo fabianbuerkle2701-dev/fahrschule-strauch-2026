@@ -957,6 +957,212 @@ html:lang(ru) .lang__thumb {
 }
 
 /* ==========================================================================
+   Ablauf: Fahrschulauto fährt beim Scrollen durch sechs Stationen
+   ========================================================================== */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.jr {
+  position: relative;
+  margin-top: 22px;
+  border-radius: 34px;
+  background: var(--mint);
+  border: 1px solid var(--mint2);
+  padding: 0 clamp(18px, 4vw, 52px);
+}
+.jr__stage {
+  position: sticky;
+  top: 72px;
+  z-index: 2;
+  margin: 0 calc(clamp(18px, 4vw, 52px) * -1);
+  padding: 14px clamp(18px, 4vw, 52px) 10px;
+  border-radius: 34px 34px 0 0;
+  background: var(--mint);
+}
+.jr__stage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 26px;
+  background: linear-gradient(var(--mint), rgb(227 243 244 / 0));
+  pointer-events: none;
+}
+.jr__road {
+  overflow: visible;
+}
+.jr__road--v {
+  display: none;
+}
+.jr__road--h {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+}
+.road-edge,
+.road-asphalt,
+.road-center,
+.road-trail {
+  fill: none;
+  stroke-linejoin: round;
+}
+.road-edge {
+  stroke: var(--accent);
+  stroke-width: 64;
+}
+.road-asphalt {
+  stroke: #3e4547;
+  stroke-width: 52;
+}
+.road-center {
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-dasharray: 16 14;
+}
+.road-trail {
+  stroke: var(--lime);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.station circle {
+  fill: #fff;
+  stroke: #acadaf;
+  stroke-width: 4;
+  transition: fill 0.3s var(--ease), stroke 0.3s var(--ease);
+}
+.station.is-passed circle {
+  fill: var(--forest);
+  stroke: #fff;
+}
+.station text {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 15px;
+  fill: var(--muted);
+  transition: fill 0.3s var(--ease);
+}
+.jr__road--h .station text {
+  font-size: 33px;
+}
+.station.is-passed text {
+  fill: #fff;
+}
+[data-car] {
+  filter: drop-shadow(0 5px 6px rgb(10 44 47 / 0.3));
+}
+.jr__steps {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 10px 0 40px;
+  list-style: none;
+}
+.jr__step {
+  display: grid;
+  align-content: center;
+  min-height: 42svh;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.jr__card {
+  display: grid;
+  gap: 8px;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid transparent;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), translate 0.4s var(--ease);
+}
+.jr__num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.jr__title {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  color: var(--forest);
+}
+.jr__step p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.jr__link {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--forest);
+}
+.jr__link .icon {
+  width: 14px;
+  height: 14px;
+}
+/* noch nicht erreichte Etappen gedämpft, aber gut lesbar */
+.js .jr__step:not(.is-active):not(.is-done) .jr__title,
+.js .jr__step:not(.is-active):not(.is-done) p {
+  color: var(--muted);
+}
+.jr__step.is-active .jr__card {
+  background: #fff;
+  border-color: var(--mint2);
+  box-shadow: 0 16px 38px rgb(10 44 47 / 0.1);
+}
+@media (min-width: 1000px) {
+  .jr {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: 48px;
+  }
+  .jr__stage {
+    top: 84px;
+    align-self: start;
+    height: calc(100svh - 104px);
+    margin: 0;
+    padding: 24px 0;
+    background: none;
+    border-radius: 0;
+  }
+  .jr__stage::after {
+    display: none;
+  }
+  .jr__road--h {
+    display: none;
+  }
+  .jr__road--v {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .jr__steps {
+    padding: 12svh 0 18svh;
+  }
+  .jr__step {
+    min-height: 56svh;
+    margin: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jr__stage {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* ==========================================================================
    Startseite 3: Instagram-Karussell (Coverflow)
    ========================================================================== */
 .ig {
@@ -2774,8 +2980,8 @@ html:lang(ru) .qa__tx q {
    Fahrschulauto fährt beim Scrollen am rechten Rand herunter (ohne Straße)
    ========================================================================== */
 :root {
-  --lane: 24px;
-  --car: 28px; /* auf dem Handy etwas breiter als die Spur, damit das Logo erkennbar bleibt */
+  --lane: 22px;
+  --car: 20px; /* bleibt auf dem Handy im Seitenrand, ohne Text zu überdecken */
 }
 @media (min-width: 1000px) {
   :root {
@@ -2805,6 +3011,40 @@ html:lang(ru) .qa__tx q {
 .drive:not(.is-ready) {
   visibility: hidden;
 }
+.drive__path,
+.drive__trail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 2px;
+}
+.drive__path {
+  background: repeating-linear-gradient(180deg, rgb(14 59 63 / 0.22) 0 8px, transparent 8px 16px);
+}
+.drive__trail {
+  background: var(--accent);
+  transform-origin: top;
+  scale: 1 var(--trail-from, 0);
+}
+.drive__dot {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+}
+.drive__dot--start {
+  top: -5px;
+}
+.drive__dot--end {
+  bottom: -5px;
+}
 .drive__car {
   position: absolute;
   top: 14px;
@@ -2814,7 +3054,10 @@ html:lang(ru) .qa__tx q {
   overflow: visible;
   will-change: translate, rotate;
   filter: drop-shadow(0 6px 8px rgb(0 0 0 / 0.35));
-  transition: rotate 0.35s var(--ease);
+  transition: rotate 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+.drive.is-away .drive__car {
+  opacity: 0;
 }
 /* Fahrt über die Scroll-Zeitleiste des Browsers: läuft flüssig, ohne JavaScript pro Bild */
 @supports (animation-timeline: scroll()) {
@@ -2822,6 +3065,19 @@ html:lang(ru) .qa__tx q {
     animation: car-drive linear both;
     animation-timeline: scroll(root);
     animation-range: var(--car-from, 0px) var(--car-to, 100%);
+  }
+  .drive__trail {
+    animation: trail-grow linear both;
+    animation-timeline: scroll(root);
+    animation-range: var(--car-from, 0px) var(--car-to, 100%);
+  }
+}
+@keyframes trail-grow {
+  from {
+    scale: 1 var(--trail-from, 0);
+  }
+  to {
+    scale: 1 var(--trail-to, 1);
   }
 }
 @keyframes car-drive {
@@ -2831,13 +3087,6 @@ html:lang(ru) .qa__tx q {
   to {
     translate: 0 var(--car-travel, 0px);
   }
-}
-.drive__beams {
-  opacity: 0;
-  transition: opacity 0.25s var(--ease);
-}
-.drive__car.is-forward .drive__beams {
-  opacity: 1;
 }
 .drive__head {
   fill: #fff4bf;

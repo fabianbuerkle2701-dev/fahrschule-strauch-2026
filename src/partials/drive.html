@@ -1,19 +1,15 @@
-<!-- Fahrschulauto, das beim Scrollen am rechten Rand herunterfährt (Logo auf der Motorhaube) -->
+<!-- Fahrschulauto fährt beim Scrollen am rechten Rand auf einer feinen Linie herunter (Logo auf der Motorhaube) -->
 <div class="drive" aria-hidden="true" data-drive>
-  <svg class="drive__car" viewBox="0 0 60 150">
+  <div class="drive__path"></div>
+  <div class="drive__trail"></div>
+  <span class="drive__dot drive__dot--start"></span>
+  <span class="drive__dot drive__dot--end"></span>
+  <svg class="drive__car" viewBox="0 0 60 112">
     <defs>
       <pattern id="drive-livery" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
         <rect width="3.5" height="7" fill="#0199a6" />
       </pattern>
-      <radialGradient id="drive-beam" cx="0.5" cy="0" r="1">
-        <stop offset="0" stop-color="#fff6c8" stop-opacity="0.85" />
-        <stop offset="1" stop-color="#fff6c8" stop-opacity="0" />
-      </radialGradient>
     </defs>
-    <g class="drive__beams">
-      <path d="M12 104 L-2 150 L24 150 Z" fill="url(#drive-beam)" />
-      <path d="M48 104 L36 150 L62 150 Z" fill="url(#drive-beam)" />
-    </g>
     <rect x="5" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
     <rect x="49" y="20" width="6" height="18" rx="2.5" fill="#1c2224" />
     <rect x="5" y="76" width="6" height="18" rx="2.5" fill="#1c2224" />
