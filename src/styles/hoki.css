@@ -219,7 +219,7 @@
   align-items: center;
   height: var(--header-h);
   padding: 0 18px;
-  background: #fff;
+  background: var(--forest2); /* dunkles Petrol, Logo in Weiß */
 }
 .hd__left,
 .hd__right {
@@ -239,7 +239,7 @@
   border: 0;
   border-radius: 50%;
   background: none;
-  color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
 }
@@ -248,6 +248,12 @@
   height: 21px;
 }
 .hd__icon:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+.drawer .hd__icon {
+  color: var(--ink);
+}
+.drawer .hd__icon:hover {
   background: var(--mint);
 }
 .hd__logo {
@@ -280,11 +286,11 @@
   height: 44px;
   padding: 0 16px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.85);
+  background: rgb(18 56 58 / 0.86);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  border: 1px solid rgb(255 255 255 / 0.8);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
   animation: hd-in 0.32s var(--ease-out);
 }
 .hd.is-scrolled .hd__logo img {
@@ -308,15 +314,15 @@
   height: 32px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--forest);
-  color: #fff;
+  background: var(--lime);
+  color: var(--forest3);
   font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.15s var(--ease);
 }
 .hd__cta:hover {
-  background: var(--forest-hover);
+  background: var(--lime-hover);
 }
 @media (min-width: 700px) {
   .hd__cta {
@@ -378,7 +384,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 3px;
   border-radius: 999px;
-  background: var(--mint);
+  background: rgb(255 255 255 / 0.12);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -392,12 +398,12 @@
   height: 26px;
   padding: 0 8px;
   border-radius: 999px;
-  color: var(--forest);
+  color: #fff;
   text-decoration: none;
   transition: color 0.2s var(--ease);
 }
 .lang__opt[aria-current='true'] {
-  color: #fff;
+  color: var(--forest3);
 }
 .lang__thumb {
   position: absolute;
@@ -406,7 +412,7 @@
   left: 3px;
   width: calc(50% - 3px);
   border-radius: 999px;
-  background: var(--forest);
+  background: var(--lime);
   transition: translate 0.32s var(--ease-out);
 }
 html:lang(ru) .lang__thumb {

@@ -395,3 +395,7 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 ## Bildsprache (seit 03.10.2026)
 
 Fotorealistische, ruhige Editorial-Bilder wie bei HOKI statt Illustrationen: warmes Licht, gedämpfte Salbei- und Beigetöne, leichte Körnung, viel Ruhe im Bild, keine Gesichter. Fahrzeuge tragen immer das echte Logo (per `scripts/fotos.py` aufgesetzt). Klassen-Kacheln sind Foto-Kacheln mit Verlauf nach unten und weißer Beschrift (Marke in Hell-Akzent), wie HOKIs Produktkacheln. Kreis-Karten zeigen die Fotos rund beschnitten, das B197-Band ein gerahmtes Hochformatfoto (Radius 28). KI-Bilder sind im Footer und in den Alt-Texten als Symbolbilder gekennzeichnet; Teamfotos sind echt.
+
+## Kopfzeile (seit 03.10.2026)
+
+Dunkles Petrol (`--forest2`) statt Weiß, Logo als weiße Negativ-Version (`/images/logo-weiss.webp`, aus dem Original-Logo eingefärbt), Symbole weiß, Anmelde-Knopf und Sprachschalter-Daumen in Hell-Akzent (`--lime`) mit dunkler Schrift. Die schwebende Pille beim Scrollen ist ebenfalls dunkles Petrol, halbtransparent mit Unschärfe. Menü-Schublade bleibt weiß mit Original-Logo.
