@@ -76,22 +76,22 @@
 
   /* HOKI-Rollen, mit Petrol statt Waldgrün besetzt */
   --paper: #ffffff;
-  --mint: #e3f3f4; /* HOKI #EAF2E6 */
-  --mint2: #d2e9eb; /* HOKI #E1EDDB */
-  --cream: #f1f8f8; /* HOKI #f4f1ea, Grund der Kreis-Karten */
+  --mint: #e7efed; /* HOKI #EAF2E6; gedämpftes Salbei-Petrol statt Eisblau */
+  --mint2: #d8e5e1; /* HOKI #E1EDDB */
+  --cream: #f3f6f4; /* HOKI #f4f1ea, Grund der Kreis-Karten */
   --forest: #0b5258; /* HOKI #26401F: Knöpfe, Füllbalken, Text auf Mint */
   --forest-hover: #0d6269;
-  --forest2: #0e3b3f; /* HOKI #1A2C18: dunkle Flächen */
+  --forest2: #12383a; /* HOKI #1A2C18: dunkle Flächen */
   --forest3: #0a2c2f; /* tiefster Ton der Verläufe */
-  --forest-glow: #12676e; /* heller Ton der Verläufe (HOKI #3c5b35) */
+  --forest-glow: #285f60; /* heller Ton der Verläufe (HOKI #3c5b35) */
   --green: #00717b; /* HOKI #56613E: Mono-Etiketten auf Weiß */
-  --accent: #0199a6; /* HOKI #7ba64c / #6f9a45: Akzentwort in großen Überschriften */
-  --lime: #a5e1e6; /* HOKI #C6E09B: Akzent auf dunklem Grund */
-  --lime-hover: #bdeaee;
+  --accent: #2f7f86; /* HOKI #7ba64c / #6f9a45: Akzentwort in großen Überschriften (gedämpftes Petrol) */
+  --lime: #b5dbd3; /* HOKI #C6E09B: Akzent auf dunklem Grund (warmes Seegrün statt Eisblau) */
+  --lime-hover: #c8e6df;
   --ink: #1c2224; /* HOKI #1C2419 */
   --muted: #565d60; /* HOKI #6B7563, für AA etwas dunkler */
-  --line: #dbe7e8; /* HOKI #DDE6D7 */
-  --footer: #d4e6e7; /* HOKI rgb(213 222 205) */
+  --line: #dde6e3; /* HOKI #DDE6D7 */
+  --footer: #d7e2de; /* HOKI rgb(213 222 205) */
   --scrim: 8 34 37; /* HOKI rgba(14,22,10,…) */
 
   --disp: 'Schibsted Grotesk', 'Geist', system-ui, sans-serif;

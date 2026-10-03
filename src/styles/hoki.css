@@ -699,7 +699,7 @@ html:lang(ru) .lang__thumb {
 .sol__card:hover .sol__brand .icon {
   transform: translate(2px, -2px);
 }
-.sol__cap h2 {
+.sol__cap h3 {
   font-family: var(--disp);
   font-weight: 500;
   font-size: 19px;
@@ -710,7 +710,7 @@ html:lang(ru) .lang__thumb {
 .sol__tile--dark .sol__brand {
   color: var(--lime);
 }
-.sol__tile--dark h2 {
+.sol__tile--dark h3 {
   color: #fff;
 }
 .sol__effect {
@@ -890,8 +890,8 @@ html:lang(ru) .lang__thumb {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--lime);
-  background: rgb(165 225 230 / 0.12);
-  border: 1px solid rgb(165 225 230 / 0.34);
+  background: rgb(181 219 211 / 0.12);
+  border: 1px solid rgb(181 219 211 / 0.34);
   padding: 5px 11px;
   border-radius: 100px;
 }
@@ -1082,7 +1082,7 @@ html:lang(ru) .lang__thumb {
   right: 0;
   top: 100%;
   height: 26px;
-  background: linear-gradient(var(--mint), rgb(227 243 244 / 0));
+  background: linear-gradient(var(--mint), rgb(231 239 237 / 0));
   pointer-events: none;
 }
 .jr__road {
@@ -1105,27 +1105,32 @@ html:lang(ru) .lang__thumb {
   stroke-linejoin: round;
 }
 .road-edge {
-  stroke: var(--accent);
-  stroke-width: 64;
+  stroke: none;
 }
 .road-asphalt {
-  stroke: #3e4547;
-  stroke-width: 52;
+  stroke: rgb(18 56 58 / 0.14);
+  stroke-width: 2;
 }
 .road-center {
-  stroke: #fff;
-  stroke-width: 3;
-  stroke-dasharray: 16 14;
+  stroke: rgb(18 56 58 / 0.32);
+  stroke-width: 2;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
 }
 .road-trail {
-  stroke: var(--lime);
-  stroke-width: 6;
+  stroke: var(--forest);
+  stroke-width: 3;
   stroke-linecap: round;
+}
+.jr__road--h .road-asphalt,
+.jr__road--h .road-center,
+.jr__road--h .road-trail {
+  stroke-width: 4;
 }
 .station circle {
   fill: #fff;
-  stroke: #acadaf;
-  stroke-width: 4;
+  stroke: var(--mint2);
+  stroke-width: 2;
   transition: fill 0.3s var(--ease), stroke 0.3s var(--ease);
 }
 .station.is-passed circle {
@@ -1134,13 +1139,13 @@ html:lang(ru) .lang__thumb {
 }
 .station text {
   font-family: var(--sans);
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 11px;
   fill: var(--muted);
   transition: fill 0.3s var(--ease);
 }
 .jr__road--h .station text {
-  font-size: 33px;
+  font-size: 24px;
 }
 .station.is-passed text {
   fill: #fff;
@@ -2007,7 +2012,7 @@ html:lang(ru) .lang__thumb {
   box-shadow: 0 24px 46px rgb(10 44 47 / 0.14);
 }
 .nf__card:hover .nf__circle::after {
-  border-color: rgb(165 225 230 / 0.95);
+  border-color: rgb(181 219 211 / 0.95);
 }
 .nf__circle picture {
   position: absolute;
@@ -2144,7 +2149,7 @@ html:lang(ru) .lang__thumb {
   box-shadow: 0 20px 46px rgb(10 44 47 / 0.2);
 }
 .big--dark .ic {
-  background: rgb(165 225 230 / 0.16);
+  background: rgb(181 219 211 / 0.16);
   color: var(--lime);
 }
 .big--dark .bd {
@@ -2256,7 +2261,7 @@ html:lang(ru) .lang__thumb {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(38% 48% at 16% 18%, rgb(165 225 230 / 0.32), transparent 70%), radial-gradient(42% 55% at 90% 88%, rgb(1 153 166 / 0.4), transparent 70%);
+  background: radial-gradient(38% 48% at 16% 18%, rgb(181 219 211 / 0.32), transparent 70%), radial-gradient(42% 55% at 90% 88%, rgb(47 127 134 / 0.4), transparent 70%);
   background-size: 200% 200%;
   animation: ki-glow 12s ease-in-out infinite alternate;
 }
@@ -2703,8 +2708,8 @@ html:lang(ru) .qa__tx q {
   background: rgb(255 255 255 / 0.09);
 }
 .pz__step.on {
-  background: rgb(165 225 230 / 0.14);
-  border-color: rgb(165 225 230 / 0.45);
+  background: rgb(181 219 211 / 0.14);
+  border-color: rgb(181 219 211 / 0.45);
   box-shadow: 0 16px 36px rgb(0 0 0 / 0.25);
 }
 .pz__snum {
@@ -2731,7 +2736,7 @@ html:lang(ru) .qa__tx q {
   right: 22px;
   width: 26px;
   height: 26px;
-  color: rgb(165 225 230 / 0.55);
+  color: rgb(181 219 211 / 0.55);
   transition: color 0.35s var(--ease);
 }
 .pz__step.on .pz__sic {
@@ -2756,8 +2761,8 @@ html:lang(ru) .qa__tx q {
   font-size: 12.5px;
   font-weight: 600;
   color: var(--lime);
-  background: rgb(165 225 230 / 0.14);
-  border: 1px solid rgb(165 225 230 / 0.3);
+  background: rgb(181 219 211 / 0.14);
+  border: 1px solid rgb(181 219 211 / 0.3);
   padding: 5px 12px;
   border-radius: 999px;
 }
@@ -2824,7 +2829,7 @@ html:lang(ru) .qa__tx q {
   transition: all 0.18s var(--ease);
 }
 .faq__chip:hover {
-  border-color: #b9cfd1;
+  border-color: #bcd2cc;
 }
 .faq__chip[aria-pressed='true'] {
   background: var(--forest);
@@ -2845,7 +2850,7 @@ html:lang(ru) .qa__tx q {
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 .faq__item[open] {
-  border-color: #a9d3d7;
+  border-color: #b6d3cc;
   box-shadow: 0 14px 34px rgb(10 44 47 / 0.08);
 }
 .faq__item[hidden] {
@@ -2867,7 +2872,7 @@ html:lang(ru) .qa__tx q {
   display: none;
 }
 .faq__q:hover {
-  background: #f6fafa;
+  background: #f4f8f6;
 }
 .faq__qtx {
   flex: 1;

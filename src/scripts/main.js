@@ -283,10 +283,10 @@ function initJourney() {
       const c = document.createElementNS(svgNS, 'circle');
       c.setAttribute('cx', x);
       c.setAttribute('cy', y);
-      c.setAttribute('r', vertical ? 15 : 36);
+      c.setAttribute('r', vertical ? 11 : 26);
       const t = document.createElementNS(svgNS, 'text');
       t.setAttribute('x', x);
-      t.setAttribute('y', y + (vertical ? 5.5 : 11.5));
+      t.setAttribute('y', y + (vertical ? 4 : 8.5));
       t.setAttribute('text-anchor', 'middle');
       t.textContent = String(i + 1);
       const title = document.createElementNS(svgNS, 'title');
