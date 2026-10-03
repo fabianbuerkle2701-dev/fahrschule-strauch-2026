@@ -28,6 +28,31 @@ function picture(attrs) {
   return `<picture${cls}>${narrow}<source type="image/avif" srcset="${set('avif')}" sizes="${p.sizes}" /><img src="/images/${p.src}-${fallback}.webp" srcset="${set('webp')}" sizes="${p.sizes}" width="${m.width}" height="${m.height}" alt="${p.alt ?? ''}"${style} ${load} decoding="async" /></picture>`;
 }
 
+// Strukturierte Daten aus dem fertigen Seiteninhalt: FAQ (aus den Akkordeons) und Brotkrumen.
+// So stimmen sie automatisch auch auf den russischen Seiten.
+function structuredData(html) {
+  const strip = (t) => t.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  const blocks = [];
+  const faq = [...html.matchAll(/<span class="faq__qtx">([\s\S]*?)<\/span>[\s\S]*?<div class="faq__a">([\s\S]*?)<\/div>\s*<\/details>/g)];
+  if (faq.length)
+    blocks.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((m) => ({ '@type': 'Question', name: strip(m[1]), acceptedAnswer: { '@type': 'Answer', text: strip(m[2]) } })) });
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  const title = html.match(/<meta property="og:title" content="([^"]+)"/)?.[1];
+  const ru = /<html lang="ru"/.test(html);
+  if (canonical && title && !/\.de\/(ru\/)?$/.test(canonical)) {
+    const home = ru ? 'https://www.fahrschule-strauch.de/ru/' : 'https://www.fahrschule-strauch.de/';
+    blocks.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: ru ? 'Автошкола Strauch' : 'Fahrschule Strauch', item: home },
+      { '@type': 'ListItem', position: 2, name: title, item: canonical },
+    ] });
+  }
+  if (canonical && /\.de\/(ru\/)?$/.test(canonical))
+    blocks.push({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Fahrschule Strauch', url: canonical, inLanguage: ru ? 'ru' : 'de' });
+  if (!blocks.length) return html;
+  const tags = blocks.map((b) => `<script type="application/ld+json">${JSON.stringify(b)}</script>`).join('\n    ');
+  return html.replace('</head>', `    ${tags}\n  </head>`);
+}
+
 function includes() {
   const render = (html, depth = 0) =>
     html.replace(/<!--\s*@include\s+([\w-]+)((?:\s+\w+="[^"]*")*)\s*-->/g, (_, name, attrs) => {
@@ -39,7 +64,7 @@ function includes() {
     }).replace(/<!--\s*@pic((?:\s+[\w-]+="[^"]*")*)\s*-->/g, (_, attrs) => picture(attrs));
   return {
     name: 'html-includes',
-    transformIndexHtml: { order: 'pre', handler: (html) => render(html) },
+    transformIndexHtml: { order: 'pre', handler: (html) => structuredData(render(html)) },
     handleHotUpdate({ file, server }) {
       if (file.includes('/src/partials/') || file.endsWith('image-manifest.json')) server.ws.send({ type: 'full-reload' });
     },

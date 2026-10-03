@@ -382,7 +382,6 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 
 ## Scroll-Animationen (seit 02.10.2026, Kundenwunsch)
 
-- **Fahrschulauto am rechten Rand:** Auf einer feinen 2-px-Linie (vor dem Auto gestrichelt, hinter ihm petrol, Punkte an Start und Ende), keine Straße mehr. Das Auto fährt vom Ende des Heros bis zum Seitenende (der Hero bleibt unberührt) (`src/partials/drive.html`, im Header-Baustein eingebunden). Das Auto ist ein SVG von oben mit dem echten Logo auf der Motorhaube. Es fährt mit dem Scrollfortschritt von oben nach unten, lenkt bei schnellem Scrollen leicht ein und hat weiße Rückfahrlichter beim Hochscrollen und Bremslichter beim Anhalten. Während der Etappen-Fahrt im Ablauf blendet es sich aus, damit nur ein Auto fährt. Randbreite/Auto: 22/20 px mobil (bleibt im Seitenrand), 46/36 px ab 1000 px, 64/50 px ab 1300 px.
 - **Ablauf mit Etappen-Fahrt (Startseite, `.jr`):** Statt der Kartenreihe eine mintfarbene Fläche (Radius 34). Desktop: Straße links (bleibt beim Scrollen stehen), rechts die sechs Etappen; mobil: Straße waagerecht oben. Das Fahrschulauto (gleiches SVG mit Logo, als `#car-top`) fährt mit dem Scrollen von Station zu Station, die Spur hinter ihm färbt sich hellpetrol, erreichte Stationen werden petrol, die aktuelle Etappe wird zur weißen Karte. Pfadpunkte und Etappenpositionen werden nur bei Größenänderungen vermessen, beim Scrollen nur nachgeschlagen.
 - **Überschriften** unterhalb des ersten Bildschirms blenden Wort für Wort leicht ein (`data-split`, 0,3 em, 25 ms Versatz). Überschriften im ersten Bildschirm stehen sofort, damit der sichtbare Inhalt schnell lädt.
 - **Kartenreihen** gleiten gestaffelt 16 px von rechts herein, Kreis-Karten, Schritte und FAQ-Einträge blenden mit 97 % Größe ein.
@@ -390,5 +389,5 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 - **Zähler:** „1984“ und Kennzahlen wie „3.500 kg“ zählen hoch.
 - **Drei Schritte** leuchten nacheinander auf, während man durch den Abschnitt scrollt.
 - Am 02.10.2026 auf Wunsch abgeschwächt: Hero-Bild 0,12, Hero-Text 0,05, Fotozoom 6 %, Drift 2–2,5 %, Einfahren 8 %, Lenken max. 4°.
-- **Technik gegen Ruckeln:** Das Auto hängt an der Straße und fährt über eine CSS-Scroll-Animation (`animation-timeline: scroll()`), Parallaxe, Zoom und einfahrende Autos über View-Timelines (`data-fx`). Der Browser rechnet das selbst, JavaScript setzt nur Startwerte, Lenken und Lichter. Browser ohne diese Technik bekommen die Fahrt per JavaScript, die Parallaxe entfällt dort.
+- **Technik gegen Ruckeln:** Parallaxe, Zoom und einfahrende Autos über View-Timelines (`data-fx`). Der Browser rechnet das selbst, Browser ohne diese Technik lassen die Parallaxe weg.
 - Alles wird erst ab dem ersten Scrollen berechnet und läuft nur für sichtbare Elemente. Bei „Bewegung reduzieren“ entfällt alles, die Straße wird ausgeblendet.

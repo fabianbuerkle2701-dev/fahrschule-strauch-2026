@@ -3,7 +3,7 @@
   <head>
     <!-- @include head locale="de_DE" -->
     <title>Fahrschule Strauch in Lahr | Führerschein Klasse B, BE, BF17 und B197</title>
-    <meta name="description" content="Fahrschule Viktor Strauch in Lahr, Schwarzwaldstraße 93: Führerschein Klasse B und BE, Begleitetes Fahren ab 17, Automatik mit Schaltberechtigung (B197), Auffrischung und BKF-Weiterbildung." />
+    <meta name="description" content="Fahrschule Viktor Strauch in Lahr: Führerschein Klasse B und BE, Begleitetes Fahren ab 17 und Automatik mit B197. Jetzt online anmelden, auch auf Russisch." />
     <link rel="canonical" href="https://www.fahrschule-strauch.de/" />
     <link rel="alternate" hreflang="de" href="https://www.fahrschule-strauch.de/" />
     <link rel="alternate" hreflang="ru" href="https://www.fahrschule-strauch.de/ru/" />
@@ -16,6 +16,7 @@
       {
         "@context": "https://schema.org",
         "@type": "DrivingSchool",
+        "@id": "https://www.fahrschule-strauch.de/#fahrschule",
         "name": "Fahrschule Viktor Strauch",
         "alternateName": "Fahrschule Strauch",
         "url": "https://www.fahrschule-strauch.de/",
@@ -31,8 +32,28 @@
           "addressRegion": "Baden-Württemberg",
           "addressCountry": "DE"
         },
-        "areaServed": "Lahr/Schwarzwald",
+        "areaServed": { "@type": "City", "name": "Lahr/Schwarzwald" },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Fahrschule%20Strauch%2C%20Schwarzwaldstra%C3%9Fe%2093%2C%2077933%20Lahr",
         "knowsLanguage": ["de", "ru"],
+        "employee": [
+          { "@type": "Person", "name": "Viktor Strauch", "jobTitle": "Inhaber und Fahrlehrer" },
+          { "@type": "Person", "name": "Peter Harter", "jobTitle": "Fahrlehrer" },
+          { "@type": "Person", "name": "Gerold Remmele", "jobTitle": "Fahrlehrer" },
+          { "@type": "Person", "name": "Nadine Dürr", "jobTitle": "Fahrlehrerin" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Ausbildung",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Führerschein Klasse B", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#klasse-b" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Führerschein Klasse BE", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#klasse-be" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatik mit Schaltberechtigung (B197)", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#b197" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Begleitetes Fahren ab 17", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#bf17" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Theorie-Schnellkurs", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#schnellkurs" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auffrischungsstunden", "url": "https://www.fahrschule-strauch.de/fuehrerschein/#auffrischung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "BKF-Weiterbildung (Schlüsselzahl 95)", "url": "https://www.fahrschule-strauch.de/berufskraftfahrer/" } }
+          ]
+        },
         "sameAs": ["https://instagram.com/fahrschulestrauch", "https://www.facebook.com/profile.php?id=100063727025765"]
       }
     </script>
@@ -49,19 +70,23 @@
           </div>
           <div class="sol__scrim" aria-hidden="true"></div>
           <div class="sol__text">
-            <span class="sol__label">Fahrschule Viktor Strauch · Lahr</span>
-            <h1 class="sol__h" id="hero-title">Sicher und selbstbewusst <em>ans Steuer.</em></h1>
+            <h1 class="sol__h1" id="hero-title"><span class="sol__label">Fahrschule Viktor Strauch in Lahr</span><span class="visually-hidden">: </span><span class="sol__h">Sicher und selbstbewusst <em>ans Steuer.</em></span></h1>
             <p class="sol__lead">Klasse B und BE, Begleitetes Fahren ab 17 und Automatik mit Schaltberechtigung. In der Schwarzwaldstraße 93, auf Deutsch und Russisch.</p>
+            <div class="sol__cta">
+              <a class="cta cta--lime" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+              <a class="cta cta--ghost" href="tel:+4915560410413"><svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-phone" /></svg>Anrufen</a>
+            </div>
           </div>
         </div>
 
+        <h2 class="visually-hidden">Führerscheinklassen</h2>
         <div class="row sol__row" id="klassen" data-row aria-label="Führerscheinklassen">
           <a class="sol__card" href="/fuehrerschein/#klasse-b">
             <div class="sol__tile">
               <div class="sol__art"><!-- @pic src="ill-auto-seite" sizes="260px" alt="" --></div>
               <div class="sol__cap">
                 <span class="sol__brand">Klasse B <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
-                <h2><span class="visually-hidden">Klasse B: </span>Der Führerschein fürs Auto</h2>
+                <h3><span class="visually-hidden">Klasse B: </span>Der Führerschein fürs Auto</h3>
               </div>
             </div>
             <div class="sol__effect">
@@ -74,7 +99,7 @@
               <div class="sol__art"><!-- @pic src="ill-auto-anhaenger" sizes="260px" alt="" --></div>
               <div class="sol__cap">
                 <span class="sol__brand">Klasse BE <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
-                <h2><span class="visually-hidden">Klasse BE: </span>Für den großen Anhänger</h2>
+                <h3><span class="visually-hidden">Klasse BE: </span>Für den großen Anhänger</h3>
               </div>
             </div>
             <div class="sol__effect">
@@ -87,7 +112,7 @@
               <div class="sol__art"><!-- @pic src="ill-automatik-schaltung" sizes="260px" alt="" --></div>
               <div class="sol__cap">
                 <span class="sol__brand">B197 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
-                <h2><span class="visually-hidden">B197: </span>Automatik oder Schaltung? Beides.</h2>
+                <h3><span class="visually-hidden">B197: </span>Automatik oder Schaltung? Beides.</h3>
               </div>
             </div>
             <div class="sol__effect">
@@ -100,7 +125,7 @@
               <div class="sol__art"><!-- @pic src="ill-begleitet-17" sizes="260px" alt="" --></div>
               <div class="sol__cap">
                 <span class="sol__brand">BF17 <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
-                <h2><span class="visually-hidden">BF17: </span>Begleitetes Fahren ab 17</h2>
+                <h3><span class="visually-hidden">BF17: </span>Begleitetes Fahren ab 17</h3>
               </div>
             </div>
             <div class="sol__effect">
@@ -113,7 +138,7 @@
               <div class="sol__art"><!-- @pic src="ill-lkw" sizes="260px" alt="" --></div>
               <div class="sol__cap">
                 <span class="sol__brand">BKF <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-up-right" /></svg></span>
-                <h2><span class="visually-hidden">BKF: </span>Weiterbildung für Berufskraftfahrer</h2>
+                <h3><span class="visually-hidden">BKF: </span>Weiterbildung für Berufskraftfahrer</h3>
               </div>
             </div>
             <div class="sol__effect">
@@ -212,6 +237,10 @@
             </li>
             </ol>
           </div>
+        </div>
+        <div class="cta-wrap">
+          <a class="cta" href="/anmeldung/">Jetzt anmelden <svg class="icon" aria-hidden="true"><use href="/icons/sprite.svg#i-arrow-right" /></svg></a>
+          <span class="cta-note">Fragen? Ruf an: <a href="tel:+4915560410413">+49 155 60 41 04 13</a></span>
         </div>
         <!-- Fahrschulauto von oben mit dem echten Logo auf der Motorhaube, fährt in Richtung +x -->
         <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">

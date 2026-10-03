@@ -301,6 +301,76 @@
   }
 }
 
+/* Anmelde-Knopf in der Kopfzeile (ab Tablet) */
+.hd__cta {
+  display: none;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--forest);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s var(--ease);
+}
+.hd__cta:hover {
+  background: var(--forest-hover);
+}
+@media (min-width: 700px) {
+  .hd__cta {
+    display: inline-flex;
+  }
+}
+.hd.is-scrolled .hd__cta {
+  height: 30px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+/* Feste Leiste mit Anrufen und Anmelden (nur Handy, nach dem Hero) */
+.mbar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 48;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.9);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgb(255 255 255 / 0.8);
+  box-shadow: 0 10px 30px rgb(10 44 47 / 0.18);
+  translate: 0 calc(100% + 24px);
+  transition: translate 0.4s var(--ease-out);
+}
+.mbar.is-on {
+  translate: 0 0;
+}
+.mbar .cta {
+  padding: 12px 14px;
+  font-size: 14.5px;
+  box-shadow: none;
+}
+.mbar .cta--outline {
+  padding: 10px 14px;
+}
+@media (min-width: 700px) {
+  .mbar {
+    display: none;
+  }
+}
+@media (max-width: 699px) {
+  .ft {
+    padding-bottom: calc(34px + 84px);
+  }
+}
+
 /* Sprachwahl DE/RU */
 .lang {
   position: relative;
@@ -504,6 +574,10 @@ html:lang(ru) .lang__thumb {
   padding: 0 var(--pad) clamp(44px, 6vw, 64px);
   text-shadow: 0 1px 14px rgb(4 20 22 / 0.45);
 }
+.sol__h1 {
+  margin: 0;
+  font-weight: 500;
+}
 .sol__label {
   display: block;
   font-family: var(--mono);
@@ -513,6 +587,7 @@ html:lang(ru) .lang__thumb {
   color: var(--lime);
 }
 .sol__h {
+  display: block;
   margin: 16px 0 0;
   max-width: 20ch;
   font-family: var(--disp);
@@ -527,6 +602,24 @@ html:lang(ru) .lang__thumb {
 .ki__h em {
   font-style: normal;
   color: var(--lime);
+}
+.sol__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.cta--ghost {
+  color: #fff;
+  background: rgb(255 255 255 / 0.08);
+  border: 1.5px solid rgb(255 255 255 / 0.55);
+  padding: 12.5px 24px;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.cta--ghost:hover {
+  background: rgb(255 255 255 / 0.16);
 }
 .sol__lead {
   margin: 16px 0 0;
@@ -1452,6 +1545,23 @@ html:lang(ru) .lang__thumb {
 }
 .pr__h1 .ac {
   color: var(--accent);
+}
+.pr__h1 > .eyebrow {
+  display: flex;
+  margin-bottom: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+}
+.pr__h1-main {
+  display: block;
+}
+.pr__text > .pr__h1:first-child {
+  margin-top: 0;
+}
+.rot__sizer::before,
+.rot__w::before {
+  content: attr(data-w);
 }
 .rot {
   position: relative;
@@ -2976,134 +3086,6 @@ html:lang(ru) .qa__tx q {
   margin-top: 40px;
 }
 
-/* ==========================================================================
-   Fahrschulauto fährt beim Scrollen am rechten Rand herunter (ohne Straße)
-   ========================================================================== */
-:root {
-  --lane: 22px;
-  --car: 20px; /* bleibt auf dem Handy im Seitenrand, ohne Text zu überdecken */
-}
-@media (min-width: 1000px) {
-  :root {
-    --lane: 46px;
-    --car: 36px;
-  }
-}
-@media (min-width: 1300px) {
-  :root {
-    --lane: 64px;
-    --car: 50px;
-  }
-}
-.drive {
-  position: absolute;
-  top: var(--header-h);
-  bottom: 0;
-  right: 0;
-  width: var(--lane);
-  z-index: 45;
-  pointer-events: none;
-}
-.drive[hidden] {
-  display: none;
-}
-/* erst zeigen, wenn main.js den Anfang unter dem Hero berechnet hat (kein Layoutsprung) */
-.drive:not(.is-ready) {
-  visibility: hidden;
-}
-.drive__path,
-.drive__trail {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  margin-left: -1px;
-  border-radius: 2px;
-}
-.drive__path {
-  background: repeating-linear-gradient(180deg, rgb(14 59 63 / 0.22) 0 8px, transparent 8px 16px);
-}
-.drive__trail {
-  background: var(--accent);
-  transform-origin: top;
-  scale: 1 var(--trail-from, 0);
-}
-.drive__dot {
-  position: absolute;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  margin-left: -5px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid var(--accent);
-}
-.drive__dot--start {
-  top: -5px;
-}
-.drive__dot--end {
-  bottom: -5px;
-}
-.drive__car {
-  position: absolute;
-  top: 14px;
-  right: calc((var(--lane) - var(--car)) / 2);
-  width: var(--car);
-  height: auto;
-  overflow: visible;
-  will-change: translate, rotate;
-  filter: drop-shadow(0 6px 8px rgb(0 0 0 / 0.35));
-  transition: rotate 0.35s var(--ease), opacity 0.35s var(--ease);
-}
-.drive.is-away .drive__car {
-  opacity: 0;
-}
-/* Fahrt über die Scroll-Zeitleiste des Browsers: läuft flüssig, ohne JavaScript pro Bild */
-@supports (animation-timeline: scroll()) {
-  .drive__car {
-    animation: car-drive linear both;
-    animation-timeline: scroll(root);
-    animation-range: var(--car-from, 0px) var(--car-to, 100%);
-  }
-  .drive__trail {
-    animation: trail-grow linear both;
-    animation-timeline: scroll(root);
-    animation-range: var(--car-from, 0px) var(--car-to, 100%);
-  }
-}
-@keyframes trail-grow {
-  from {
-    scale: 1 var(--trail-from, 0);
-  }
-  to {
-    scale: 1 var(--trail-to, 1);
-  }
-}
-@keyframes car-drive {
-  from {
-    translate: 0 0;
-  }
-  to {
-    translate: 0 var(--car-travel, 0px);
-  }
-}
-.drive__head {
-  fill: #fff4bf;
-}
-.drive__tail {
-  fill: #b3261e;
-  transition: fill 0.15s var(--ease), filter 0.15s var(--ease);
-}
-.drive__car.is-brake .drive__tail {
-  fill: #ff3b30;
-  filter: drop-shadow(0 0 3px #ff3b30);
-}
-.drive__car.is-reverse .drive__tail {
-  fill: #fff;
-  filter: drop-shadow(0 0 3px #fff);
-}
-
 /* --- Scroll-Effekte (gesteuert in main.js) -------------------------------- */
 .js [data-split] .w {
   display: inline-block;
@@ -3223,9 +3205,6 @@ html:lang(ru) .qa__tx q {
   .js [data-reveal] {
     opacity: 1;
     translate: none;
-  }
-  .drive {
-    display: none;
   }
   .js [data-split] .w > span,
   .js [data-row-in] > *,

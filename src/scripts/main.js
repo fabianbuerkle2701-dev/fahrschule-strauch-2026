@@ -242,113 +242,6 @@ function initLangSwitch() {
   });
 }
 
-/* --- Fahrschulauto fährt beim Scrollen die Straße am rechten Rand herunter ---
-   Das Auto hängt an der Straße (scrollt also nativ mit) und wird zusätzlich über eine
-   CSS-Scroll-Animation bewegt, die der Browser selbst flüssig rechnet. Die Straße beginnt
-   unter dem Hero, das Auto berührt den Hero nie. */
-function initDrive() {
-  const drive = document.querySelector('[data-drive]');
-  if (!drive) return;
-  if (reduceMotion.matches) {
-    drive.hidden = true;
-    return;
-  }
-  const car = drive.querySelector('.drive__car');
-  const root = document.documentElement;
-  const hero = document.querySelector('.sol__hero, .pr__hero, .legal--head, .notfound');
-  const nativeTimeline = CSS.supports('animation-timeline: scroll()');
-  // feste Fensterhöhe: die ein- und ausfahrende Adressleiste am Handy soll nichts verschieben
-  let vh = window.innerHeight;
-  let width = window.innerWidth;
-  const trail = drive.querySelector('.drive__trail');
-  let from = 0;
-  let to = 1;
-  let travel = 0;
-  let trailFrom = 0;
-  let trailTo = 1;
-
-  const measure = () => {
-    const headerH = parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
-    const laneTop = hero ? hero.getBoundingClientRect().bottom + window.scrollY + 24 : headerH;
-    drive.style.top = `${Math.round(laneTop)}px`;
-    const carH = car.getBoundingClientRect().width * (108 / 60);
-    const max = Math.max(0, root.scrollHeight - vh);
-    // das Auto setzt sich in Bewegung, wenn der Straßenanfang bei 55 % der Fensterhöhe ist,
-    // und kommt am Seitenende unten im Fenster an
-    from = Math.max(0, Math.min(max, laneTop + 14 - vh * 0.55));
-    to = Math.max(from + 1, max);
-    // Weg = Scrollstrecke + Abstand von der Startposition im Fenster bis unten
-    const startVy = laneTop + 14 - from;
-    travel = Math.max(0, to - from + (vh - carH - 18) - startVy);
-    car.style.setProperty('--car-from', `${Math.round(from)}px`);
-    car.style.setProperty('--car-to', `${Math.round(to)}px`);
-    car.style.setProperty('--car-travel', `${Math.round(travel)}px`);
-    // feine Linie: der gefahrene Teil bis zur Wagenmitte färbt sich petrol
-    const laneH = Math.max(1, drive.offsetHeight);
-    trailFrom = (14 + carH / 2) / laneH;
-    trailTo = Math.min(1, (14 + carH / 2 + travel) / laneH);
-    trail.style.setProperty('--trail-from', trailFrom.toFixed(4));
-    trail.style.setProperty('--trail-to', trailTo.toFixed(4));
-    drive.classList.add('is-ready');
-    if (!nativeTimeline) position();
-  };
-  const position = () => {
-    const k = Math.min(1, Math.max(0, (window.scrollY - from) / (to - from)));
-    car.style.translate = `0 ${(k * travel).toFixed(1)}px`;
-    trail.style.scale = `1 ${(trailFrom + k * (trailTo - trailFrom)).toFixed(4)}`;
-  };
-  // während der Etappen-Fahrt im Ablauf fährt nur ein Auto
-  const journey = document.querySelector('[data-journey]');
-  if (journey) new IntersectionObserver(([e]) => drive.classList.toggle('is-away', e.isIntersecting), { rootMargin: '-15% 0px' }).observe(journey);
-
-  // Lenken und Lichter: nur Schreiben, kein Messen pro Bild
-  let last = window.scrollY;
-  let vel = 0;
-  let raf = 0;
-  let stopTimer = 0;
-  let state = '';
-  const setState = (next) => {
-    if (next === state) return;
-    car.classList.remove('is-forward', 'is-reverse', 'is-brake');
-    if (next) car.classList.add(next);
-    state = next;
-  };
-  const frame = () => {
-    raf = 0;
-    const sy = window.scrollY;
-    const dy = sy - last;
-    last = sy;
-    vel = vel * 0.8 + dy * 0.2;
-    if (!nativeTimeline) position();
-    car.style.rotate = `${Math.max(-4, Math.min(4, vel * -0.12)).toFixed(2)}deg`;
-    if (dy !== 0) {
-      setState(dy > 0 ? 'is-forward' : 'is-reverse');
-      clearTimeout(stopTimer);
-      stopTimer = setTimeout(() => {
-        car.style.rotate = '0deg';
-        vel = 0;
-        setState('is-brake');
-        setTimeout(() => state === 'is-brake' && setState(''), 700);
-      }, 160);
-    }
-  };
-  window.addEventListener('scroll', () => {
-    if (!raf) raf = requestAnimationFrame(frame);
-  }, { passive: true });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth === width) return; // nur echte Größenänderungen, nicht die Adressleiste
-    width = window.innerWidth;
-    vh = window.innerHeight;
-    measure();
-  });
-  let pending = 0;
-  new ResizeObserver(() => {
-    cancelAnimationFrame(pending);
-    pending = requestAnimationFrame(measure);
-  }).observe(document.body);
-  measure();
-}
-
 /* --- Ablauf: das Fahrschulauto fährt beim Scrollen durch sechs Stationen ---
    Pfad und Etappen werden bei Größenänderungen einmal vermessen; beim Scrollen wird nur
    noch nachgeschlagen und geschrieben (kein Messen pro Bild). */
@@ -602,7 +495,21 @@ function initScrollFx() {
   }, { passive: true });
 }
 
+/* --- Handy: feste Leiste mit Anrufen/Anmelden erscheint nach dem Hero --- */
+function initMobileBar() {
+  const bar = document.querySelector('[data-mbar]');
+  if (!bar) return;
+  const hero = document.querySelector('.sol__hero, .pr__hero, .legal--head, .notfound');
+  const sentinel = document.createElement('div');
+  sentinel.setAttribute('aria-hidden', 'true');
+  sentinel.style.cssText = 'position:absolute;left:0;width:1px;height:1px;pointer-events:none';
+  sentinel.style.top = `${hero ? Math.round(hero.getBoundingClientRect().bottom + window.scrollY) : 600}px`;
+  document.body.append(sentinel);
+  new IntersectionObserver(([e]) => bar.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(sentinel);
+}
+
 initHeader();
+initMobileBar();
 initMenu();
 initReveal();
 initRows();
@@ -611,6 +518,5 @@ initRotate();
 initFaq();
 initSteps();
 initLangSwitch();
-initDrive();
 initJourney();
 initScrollFx();
