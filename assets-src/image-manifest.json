@@ -154,6 +154,69 @@
       1271
     ]
   },
+  "foto-b197": {
+    "width": 1024,
+    "height": 1280,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "foto-bf17": {
+    "width": 1024,
+    "height": 1280,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "foto-hero": {
+    "width": 2048,
+    "height": 1152,
+    "widths": [
+      960,
+      1440,
+      2048
+    ]
+  },
+  "foto-klasse-b": {
+    "width": 1024,
+    "height": 1280,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "foto-klasse-be": {
+    "width": 1024,
+    "height": 1280,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "foto-lkw": {
+    "width": 1024,
+    "height": 1280,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "foto-theorie": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      640,
+      1024,
+      1536
+    ]
+  },
   "ill-hero-rechts": {
     "width": 1468,
     "height": 782,

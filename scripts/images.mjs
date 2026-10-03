@@ -61,6 +61,22 @@ for (const file of (await readdir(path.join(SRC, 'illustrationen/final'))).filte
   console.log('✓ ill-' + name, width + '×' + height, widths.join('/'));
 }
 
+// Fotos (KI-erzeugt in Abacus AI Studio, echtes Logo per scripts/fotos.py aufgesetzt)
+for (const file of (await readdir(path.join(SRC, 'fotos-ki/final'))).filter((f) => f.endsWith('.png'))) {
+  const name = `foto-${path.basename(file, '.png')}`;
+  const input = sharp(path.join(SRC, 'fotos-ki/final', file));
+  const { width, height } = await input.metadata();
+  const steps = width >= 2000 ? [960, 1440, width] : width >= 1500 ? [640, 1024, width] : [480, 800, width];
+  const widths = steps.filter((w, i, a) => w <= width && a.indexOf(w) === i);
+  manifest[name] = { width, height, widths };
+  for (const w of widths) {
+    const pipe = input.clone().resize({ width: w });
+    await pipe.clone().avif({ quality: 55, effort: 6 }).toFile(path.join(OUT, `${name}-${w}.avif`));
+    await pipe.clone().webp({ quality: 78 }).toFile(path.join(OUT, `${name}-${w}.webp`));
+  }
+  console.log('✓', name, widths.join('/'));
+}
+
 // Hero-Ausschnitt für schmale Bildschirme: rechte Hälfte der Szene ohne Ladenschild
 // (sonst stünde das Schild-Logo direkt unter dem Logo der Kopfzeile), mit Figuren und Auto samt Logo
 {

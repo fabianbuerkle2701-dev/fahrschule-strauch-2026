@@ -1,3 +1,5 @@
+**Stand 03.10.2026: Die Illustrationen sind auf der Website durch fotorealistische KI-Symbolbilder ersetzt** (Abacus AI Studio, echtes Logo per `scripts/fotos.py`, Details in `assets-src/fotos-ki/README.md`). Nur das kleine Auto in der Etappen-Fahrt ist noch ein SVG mit Logo. Der Text unten beschreibt den früheren Stand.
+
 # Illustrationen zum Austausch
 
 **Stand 02.10.2026:** Sechs Illustrationen sind generiert (inklusive der Hero-Szene auf der Startseite), alle tragen das echte Logo der Fahrschule. Die fünf kleineren sind mit dem echten Logo versehen und eingebaut (Auto, Auto mit Anhänger, Automatik/Schaltung, Begleitetes Fahren, Lkw). Herkunft und Job-Nummern stehen in `assets-src/illustrationen/README.md`. Das Straßenschild (Kontakt auf der Anmeldeseite) ist weiterhin SVG, mit Logo-Tafel. Seit dem Umbau nach HOKI-Vorbild gibt es kein fahrendes Auto im Ablauf mehr. Ein Bild lässt sich austauschen, indem die PNG in `assets-src/illustrationen/` ersetzt und danach `python3 scripts/illustrations.py` und `npm run images` ausgeführt werden (Logo-Position in `scripts/illustrations.py` anpassen).

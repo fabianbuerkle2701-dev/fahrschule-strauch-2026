@@ -391,3 +391,7 @@ Jede Illustration trägt das echte Logo der Fahrschule, nie ein vom Bildgenerato
 - Am 02.10.2026 auf Wunsch abgeschwächt: Hero-Bild 0,12, Hero-Text 0,05, Fotozoom 6 %, Drift 2–2,5 %, Einfahren 8 %, Lenken max. 4°.
 - **Technik gegen Ruckeln:** Parallaxe, Zoom und einfahrende Autos über View-Timelines (`data-fx`). Der Browser rechnet das selbst, Browser ohne diese Technik lassen die Parallaxe weg.
 - Alles wird erst ab dem ersten Scrollen berechnet und läuft nur für sichtbare Elemente. Bei „Bewegung reduzieren“ entfällt alles, die Straße wird ausgeblendet.
+
+## Bildsprache (seit 03.10.2026)
+
+Fotorealistische, ruhige Editorial-Bilder wie bei HOKI statt Illustrationen: warmes Licht, gedämpfte Salbei- und Beigetöne, leichte Körnung, viel Ruhe im Bild, keine Gesichter. Fahrzeuge tragen immer das echte Logo (per `scripts/fotos.py` aufgesetzt). Klassen-Kacheln sind Foto-Kacheln mit Verlauf nach unten und weißer Beschrift (Marke in Hell-Akzent), wie HOKIs Produktkacheln. Kreis-Karten zeigen die Fotos rund beschnitten, das B197-Band ein gerahmtes Hochformatfoto (Radius 28). KI-Bilder sind im Footer und in den Alt-Texten als Symbolbilder gekennzeichnet; Teamfotos sind echt.

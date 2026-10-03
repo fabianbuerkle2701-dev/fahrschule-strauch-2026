@@ -530,23 +530,20 @@ html:lang(ru) .lang__thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Desktop: Ausschnitt nach rechts, damit das Logo am Schaufenster nicht unter dem Logo
-     der Kopfzeile steht. Unter 1200 px kommt ein eigener Ausschnitt ohne Schild (ill-hero-rechts). */
-  object-position: 100% 40%;
-}
-@media (max-width: 1199px) {
-  .sol__media img {
-    object-position: 30% 50%;
-  }
+  /* Foto: Auto steht rechts, links ruhige Fläche für den Text */
+  object-position: 85% 62%;
 }
 /* Handy: Szene oben, Text darunter auf dunklem Grund, damit er Figuren und Logo nicht verdeckt */
 @media (max-width: 699px) {
+  .sol__hero {
+    min-height: 680px;
+  }
   .sol__media {
     bottom: auto;
-    height: 62%;
+    height: 58%;
   }
   .sol__media img {
-    object-position: 46% 50%;
+    object-position: 82% 60%;
     -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
     mask-image: linear-gradient(180deg, #000 72%, transparent);
   }
@@ -646,8 +643,28 @@ html:lang(ru) .lang__thumb {
   aspect-ratio: 4 / 5;
   border-radius: 22px;
   overflow: hidden;
-  background: radial-gradient(120% 90% at 50% 18%, #fff 0%, var(--mint) 70%);
+  background: var(--mint);
   transition: transform 0.3s var(--ease);
+}
+.sol__photo,
+.sol__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.sol__photo img {
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.sol__card:hover .sol__photo img {
+  transform: scale(1.04);
+}
+.sol__tilescrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(var(--scrim) / 0) 40%, rgb(var(--scrim) / 0.62) 100%);
 }
 .sol__tile--dark {
   background: radial-gradient(120% 120% at 82% 0%, var(--forest-glow) 0%, var(--forest2) 50%, var(--forest3) 100%);
@@ -679,6 +696,7 @@ html:lang(ru) .lang__thumb {
   left: 18px;
   right: 18px;
   bottom: 17px;
+  text-shadow: 0 1px 10px rgb(4 20 22 / 0.55);
 }
 .sol__brand {
   display: inline-flex;
@@ -689,7 +707,7 @@ html:lang(ru) .lang__thumb {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: -0.1px;
-  color: var(--green);
+  color: var(--lime);
 }
 .sol__brand .icon {
   width: 14px;
@@ -705,7 +723,7 @@ html:lang(ru) .lang__thumb {
   font-size: 19px;
   line-height: 1.14;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: #fff;
 }
 .sol__tile--dark .sol__brand {
   color: var(--lime);
@@ -2020,6 +2038,13 @@ html:lang(ru) .lang__thumb {
   display: grid;
   place-items: center;
 }
+.nf__circle--photo picture {
+  inset: 0;
+}
+.nf__circle--photo img {
+  object-fit: cover;
+  object-position: var(--pos, 50%) 50%;
+}
 .nf__circle img {
   width: 100%;
   height: 100%;
@@ -2360,6 +2385,21 @@ html:lang(ru) .lang__thumb {
   max-width: 420px;
   height: auto;
   filter: drop-shadow(0 26px 54px rgb(2 14 16 / 0.42));
+}
+/* Foto im Petrol-Band: gerahmt wie die HOKI-App-Abbildung */
+.ki__photo {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+}
+.ki__art .ki__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  filter: none;
+  box-shadow: 0 26px 54px rgb(2 14 16 / 0.42);
 }
 .ki__lead {
   max-width: var(--wrap);
@@ -3087,8 +3127,14 @@ html:lang(ru) .qa__tx q {
   padding: 60px var(--pad) 90px;
 }
 .notfound__art {
+  display: block;
   width: min(100%, 520px);
   margin-top: 40px;
+}
+.notfound__art img {
+  border-radius: 28px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 /* --- Scroll-Effekte (gesteuert in main.js) -------------------------------- */
