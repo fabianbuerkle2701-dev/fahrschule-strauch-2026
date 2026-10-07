@@ -406,13 +406,17 @@ Umschalter (Mond/Sonne) in der Kopfzeile; ohne eigene Wahl gilt die Geräte-Eins
 
 | Rolle | Hell | Dunkel |
 |---|---|---|
-| Seitengrund `--paper` | #ffffff | #0f1b1c |
-| Mint `--mint` | #e7efed | #172b2b (tiefes Salbei-Petrol) |
-| Karten `--surface` / hervorgehoben `--surface-raised` | #ffffff / #ffffff | #182a2b / #24403f |
-| Schrift `--ink` / leise `--muted` | #1c2224 / #565d60 | #e6eeec / #a3b2af |
-| Petrol als Schrift `--forest` | #0b5258 | #b5dbd3 |
-| Petrol als Fläche `--brand-bg` | #0b5258 | #0d5d64 |
-| Akzentwort `--accent` | #2f7f86 | #7cc4bd |
-| Footer `--footer` | #d7e2de | #122425 |
+| Kopfzeile `--hd-bg` | #0199a6 (Logo-Petrol) | #016a74 |
+| Seitengrund `--paper` | #ffffff | #032226 (tiefes Logo-Petrol) |
+| Mint `--mint` | #e3f3f4 (Tönung des Logo-Petrols) | #062e33 |
+| Karten `--surface` / hervorgehoben `--surface-raised` | #ffffff / #ffffff | #08353b / #0d4a52 |
+| Schrift `--ink` / leise `--muted` | #1c2224 / #565d60 | #e8f4f5 / #a6c3c6 |
+| Petrol als Schrift `--forest` | #00717b | #a5e1e6 |
+| Petrol als Fläche `--brand-bg` (Knöpfe, weiße Schrift ≥ 4,7:1) | #00808b | #007f8a |
+| Akzentwort `--accent` (nur ≥ 24 px) | #0199a6 | #4cc6d0 |
+| Hell-Akzent auf dunklem Grund `--lime` | #a5e1e6 | #a5e1e6 |
+| Footer `--footer` | #d2eaec | #042a2e |
 
-Fotos und die dunkle Kopfzeile bleiben in beiden Modi gleich. Logos auf dunklem Grund (Footer, Menü-Schublade) wechseln im Dunkelmodus auf die weiße Version.
+Seit 07.10.2026 auf Wunsch wieder durchgehend in der Fahrschulfarbe: Logo-Petrol #0199A6 (aus dem Logo gemessen) und seine Tönungen statt der gedämpften Salbei-Töne. Weißer Text direkt auf #0199A6 erreicht nur 3,44:1, deshalb tragen Knöpfe #00808B und der Sprachschalter in der Kopfzeile einen leicht abgedunkelten Grund.
+
+Fotos und die Kopfzeile bleiben in beiden Modi gleich. Logos auf dunklem Grund (Footer, Menü-Schublade) wechseln im Dunkelmodus auf die weiße Version.

@@ -76,36 +76,37 @@
 
   /* HOKI-Rollen, mit Petrol statt Waldgrün besetzt */
   --paper: #ffffff;
-  --mint: #e7efed; /* HOKI #EAF2E6; gedämpftes Salbei-Petrol statt Eisblau */
-  --mint2: #d8e5e1; /* HOKI #E1EDDB */
-  --cream: #f3f6f4; /* HOKI #f4f1ea, Grund der Kreis-Karten */
-  --forest: #0b5258; /* HOKI #26401F: Petrol als Schriftfarbe (Titel, Chips, Links) */
-  --forest-hover: #0d6269;
-  --brand-bg: #0b5258; /* Petrol als Fläche mit weißer Schrift (Knöpfe, Bänder) */
-  --brand-bg-hover: #0d6269;
+  --mint: #e3f3f4; /* HOKI #EAF2E6; helle Tönung des Logo-Petrols */
+  --mint2: #cfe8ea; /* HOKI #E1EDDB */
+  --cream: #f0f8f8; /* HOKI #f4f1ea, Grund der Kreis-Karten */
+  --forest: #00717b; /* HOKI #26401F: Petrol als Schriftfarbe (Titel, Chips, Links) */
+  --forest-hover: #007f8a;
+  --brand-bg: #00808b; /* Petrol als Fläche mit weißer Schrift (Knöpfe, Bänder) */
+  --brand-bg-hover: #008f9b;
   --surface: #ffffff; /* Karten und Flächen */
   --glass: rgb(255 255 255 / 0.9);
   --glass-border: rgb(255 255 255 / 0.8);
   --ft-ink: #000;
   --ft-pill: rgb(255 255 255 / 0.55);
   --body-text: #3e4547;
-  --hover: #f4f8f6;
-  --open-border: #b6d3cc;
+  --hover: #f0f8f8;
+  --open-border: #9fd3d8;
+  --hd-bg: #0199a6; /* Kopfzeile in Logo-Petrol */
   --surface-raised: #ffffff; /* hervorgehobene Karte auf Mint */
   --road: rgb(18 56 58 / 0.32);
   --road-faint: rgb(18 56 58 / 0.14);
-  --forest2: #12383a; /* HOKI #1A2C18: dunkle Flächen */
-  --forest3: #0a2c2f; /* tiefster Ton der Verläufe */
-  --forest-glow: #285f60; /* heller Ton der Verläufe (HOKI #3c5b35) */
+  --forest2: #004b53; /* HOKI #1A2C18: dunkle Flächen */
+  --forest3: #00353b; /* tiefster Ton der Verläufe */
+  --forest-glow: #0199a6; /* heller Ton der Verläufe (HOKI #3c5b35) */
   --green: #00717b; /* HOKI #56613E: Mono-Etiketten auf Weiß */
-  --accent: #2f7f86; /* HOKI #7ba64c / #6f9a45: Akzentwort in großen Überschriften (gedämpftes Petrol) */
-  --lime: #b5dbd3; /* HOKI #C6E09B: Akzent auf dunklem Grund (warmes Seegrün statt Eisblau) */
-  --lime-hover: #c8e6df;
+  --accent: #0199a6; /* HOKI #7ba64c / #6f9a45: Akzentwort in großen Überschriften (Logo-Petrol #0199A6) */
+  --lime: #a5e1e6; /* HOKI #C6E09B: Akzent auf dunklem Grund (warmes Seegrün statt Eisblau) */
+  --lime-hover: #c1ecef;
   --ink: #1c2224; /* HOKI #1C2419 */
   --muted: #565d60; /* HOKI #6B7563, für AA etwas dunkler */
-  --line: #dde6e3; /* HOKI #DDE6D7 */
-  --footer: #d7e2de; /* HOKI rgb(213 222 205) */
-  --scrim: 8 34 37; /* HOKI rgba(14,22,10,…) */
+  --line: #d6e8ea; /* HOKI #DDE6D7 */
+  --footer: #d2eaec; /* HOKI rgb(213 222 205) */
+  --scrim: 0 40 46; /* HOKI rgba(14,22,10,…) */
 
   --disp: 'Schibsted Grotesk', 'Geist', system-ui, sans-serif;
   --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -133,66 +134,67 @@ html:lang(ru) {
 /* Dunkelmodus: per Umschalter (data-theme) oder nach Geräte-Einstellung */
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0f1b1c;
-  --surface: #182a2b;
-  --mint: #172b2b; /* Mint wird zu tiefem Salbei-Petrol */
-  --mint2: #24393a;
-  --cream: #142627;
-  --forest: #b5dbd3;
-  --forest-hover: #c8e6df;
-  --brand-bg: #0d5d64;
-  --brand-bg-hover: #127079;
-  --forest2: #12393b;
-  --forest3: #0a2122;
-  --green: #8ec9bf;
-  --accent: #7cc4bd;
-  --ink: #e6eeec;
-  --muted: #a3b2af;
-  --line: #2a4140;
-  --footer: #122425;
-  --glass: rgb(24 42 43 / 0.9);
+  --paper: #032226;
+  --surface: #08353b;
+  --surface-raised: #0d4a52;
+  --mint: #062e33; /* Mint wird zu tiefem Logo-Petrol */
+  --mint2: #0b3e44;
+  --cream: #052a2f;
+  --forest: #a5e1e6;
+  --forest-hover: #c1ecef;
+  --brand-bg: #007f8a;
+  --brand-bg-hover: #008f9b;
+  --forest2: #04434a;
+  --forest3: #021a1d;
+  --forest-glow: #0b6f78;
+  --green: #7fd3db;
+  --accent: #4cc6d0;
+  --ink: #e8f4f5;
+  --muted: #a6c3c6;
+  --line: #0f444b;
+  --footer: #042a2e;
+  --glass: rgb(8 53 59 / 0.9);
   --glass-border: rgb(255 255 255 / 0.1);
-  --ft-ink: #e6eeec;
+  --ft-ink: #e8f4f5;
   --ft-pill: rgb(255 255 255 / 0.08);
-  --body-text: #c3cfcd;
-  --hover: #1d3233;
-  --open-border: #3d5c5a;
-  --surface-raised: #24403f;
-  --road: rgb(230 238 236 / 0.34);
-  --road-faint: rgb(230 238 236 / 0.14);
+  --body-text: #c6dcde;
+  --hover: #0a3a40;
+  --open-border: #1d6670;
+  --road: rgb(232 244 245 / 0.34);
+  --road-faint: rgb(232 244 245 / 0.14);
+  --hd-bg: #016a74;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #0f1b1c;
-    --surface: #182a2b;
-    --mint: #172b2b; /* Mint wird zu tiefem Salbei-Petrol */
-    --mint2: #24393a;
-    --cream: #142627;
-    --forest: #b5dbd3;
-    --forest-hover: #c8e6df;
-    --brand-bg: #0d5d64;
-    --brand-bg-hover: #127079;
-    --forest2: #12393b;
-    --forest3: #0a2122;
-    --green: #8ec9bf;
-    --accent: #7cc4bd;
-    --ink: #e6eeec;
-    --muted: #a3b2af;
-    --line: #2a4140;
-    --footer: #122425;
-    --glass: rgb(24 42 43 / 0.9);
+    --paper: #032226;
+    --surface: #08353b;
+    --surface-raised: #0d4a52;
+    --mint: #062e33; /* Mint wird zu tiefem Logo-Petrol */
+    --mint2: #0b3e44;
+    --cream: #052a2f;
+    --forest: #a5e1e6;
+    --forest-hover: #c1ecef;
+    --brand-bg: #007f8a;
+    --brand-bg-hover: #008f9b;
+    --forest2: #04434a;
+    --forest3: #021a1d;
+    --forest-glow: #0b6f78;
+    --green: #7fd3db;
+    --accent: #4cc6d0;
+    --ink: #e8f4f5;
+    --muted: #a6c3c6;
+    --line: #0f444b;
+    --footer: #042a2e;
+    --glass: rgb(8 53 59 / 0.9);
     --glass-border: rgb(255 255 255 / 0.1);
-    --ft-ink: #e6eeec;
+    --ft-ink: #e8f4f5;
     --ft-pill: rgb(255 255 255 / 0.08);
-    --body-text: #c3cfcd;
-    --hover: #1d3233;
-    --open-border: #3d5c5a;
-    --surface-raised: #24403f;
-    --road: rgb(230 238 236 / 0.34);
-    --road-faint: rgb(230 238 236 / 0.14);
-  --surface-raised: #24403f;
-  --road: rgb(230 238 236 / 0.34);
-  --road-faint: rgb(230 238 236 / 0.14);
+    --body-text: #c6dcde;
+    --hover: #0a3a40;
+    --open-border: #1d6670;
+    --road: rgb(232 244 245 / 0.34);
+    --road-faint: rgb(232 244 245 / 0.14);
+    --hd-bg: #016a74;
   }
 }

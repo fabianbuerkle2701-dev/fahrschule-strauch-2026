@@ -219,7 +219,7 @@
   align-items: center;
   height: var(--header-h);
   padding: 0 18px;
-  background: var(--forest2); /* dunkles Petrol, Logo in Weiß */
+  background: var(--hd-bg); /* Logo-Petrol, Logo in Weiß */
 }
 .hd__left,
 .hd__right {
@@ -286,7 +286,7 @@
   height: 44px;
   padding: 0 16px;
   border-radius: 999px;
-  background: rgb(18 56 58 / 0.86);
+  background: color-mix(in srgb, var(--hd-bg) 88%, transparent);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   border: 1px solid rgb(255 255 255 / 0.12);
@@ -314,15 +314,15 @@
   height: 32px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--lime);
-  color: var(--forest3);
+  background: #fff;
+  color: #00717b;
   font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.15s var(--ease);
 }
 .hd__cta:hover {
-  background: var(--lime-hover);
+  background: #e3f3f4;
 }
 @media (min-width: 700px) {
   .hd__cta {
@@ -384,7 +384,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 3px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.12);
+  background: rgb(0 0 0 / 0.22);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -403,7 +403,7 @@
   transition: color 0.2s var(--ease);
 }
 .lang__opt[aria-current='true'] {
-  color: var(--forest3);
+  color: #00717b;
 }
 .lang__thumb {
   position: absolute;
@@ -412,7 +412,7 @@
   left: 3px;
   width: calc(50% - 3px);
   border-radius: 999px;
-  background: var(--lime);
+  background: #fff;
   transition: translate 0.32s var(--ease-out);
 }
 html:lang(ru) .lang__thumb {
@@ -914,8 +914,8 @@ html:lang(ru) .lang__thumb {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--lime);
-  background: rgb(181 219 211 / 0.12);
-  border: 1px solid rgb(181 219 211 / 0.34);
+  background: rgb(165 225 230 / 0.12);
+  border: 1px solid rgb(165 225 230 / 0.34);
   padding: 5px 11px;
   border-radius: 100px;
 }
@@ -2036,7 +2036,7 @@ html:lang(ru) .lang__thumb {
   box-shadow: 0 24px 46px rgb(10 44 47 / 0.14);
 }
 .nf__card:hover .nf__circle::after {
-  border-color: rgb(181 219 211 / 0.95);
+  border-color: rgb(165 225 230 / 0.95);
 }
 .nf__circle picture {
   position: absolute;
@@ -2180,7 +2180,7 @@ html:lang(ru) .lang__thumb {
   box-shadow: 0 20px 46px rgb(10 44 47 / 0.2);
 }
 .big--dark .ic {
-  background: rgb(181 219 211 / 0.16);
+  background: rgb(165 225 230 / 0.16);
   color: var(--lime);
 }
 .big--dark .bd {
@@ -2292,7 +2292,7 @@ html:lang(ru) .lang__thumb {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(38% 48% at 16% 18%, rgb(181 219 211 / 0.32), transparent 70%), radial-gradient(42% 55% at 90% 88%, rgb(47 127 134 / 0.4), transparent 70%);
+  background: radial-gradient(38% 48% at 16% 18%, rgb(165 225 230 / 0.32), transparent 70%), radial-gradient(42% 55% at 90% 88%, rgb(1 153 166 / 0.45), transparent 70%);
   background-size: 200% 200%;
   animation: ki-glow 12s ease-in-out infinite alternate;
 }
@@ -2755,8 +2755,8 @@ html:lang(ru) .qa__tx q {
   background: rgb(255 255 255 / 0.09);
 }
 .pz__step.on {
-  background: rgb(181 219 211 / 0.14);
-  border-color: rgb(181 219 211 / 0.45);
+  background: rgb(165 225 230 / 0.14);
+  border-color: rgb(165 225 230 / 0.45);
   box-shadow: 0 16px 36px rgb(0 0 0 / 0.25);
 }
 .pz__snum {
@@ -2783,7 +2783,7 @@ html:lang(ru) .qa__tx q {
   right: 22px;
   width: 26px;
   height: 26px;
-  color: rgb(181 219 211 / 0.55);
+  color: rgb(165 225 230 / 0.55);
   transition: color 0.35s var(--ease);
 }
 .pz__step.on .pz__sic {
@@ -2808,8 +2808,8 @@ html:lang(ru) .qa__tx q {
   font-size: 12.5px;
   font-weight: 600;
   color: var(--lime);
-  background: rgb(181 219 211 / 0.14);
-  border: 1px solid rgb(181 219 211 / 0.3);
+  background: rgb(165 225 230 / 0.14);
+  border: 1px solid rgb(165 225 230 / 0.3);
   padding: 5px 12px;
   border-radius: 999px;
 }
