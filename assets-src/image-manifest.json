@@ -172,7 +172,7 @@
       1024
     ]
   },
-  "foto-hero": {
+  "foto-hero-tiguan": {
     "width": 2048,
     "height": 1152,
     "widths": [
@@ -181,7 +181,7 @@
       2048
     ]
   },
-  "foto-klasse-b": {
+  "foto-klasse-b-tiguan": {
     "width": 1024,
     "height": 1280,
     "widths": [
@@ -190,7 +190,7 @@
       1024
     ]
   },
-  "foto-klasse-be": {
+  "foto-klasse-be-tiguan": {
     "width": 1024,
     "height": 1280,
     "widths": [

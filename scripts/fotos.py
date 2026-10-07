@@ -32,9 +32,9 @@ def quad(cx, cy, w, slope=0.0, near=1.0, far_left=True):
 # Bild: (Variante, [Logo-Vierecke])
 JOBS = {
     # echter VW Tiguan der Fahrschule (Referenz: assets-src/fotos-ki/referenz/tiguan.jpg)
-    'hero': ('echt-hero-c', [quad(1700, 726, 166, slope=-0.13, near=0.93, far_left=False)]),
-    'klasse-b': ('echt-klasse-b-b', [quad(452, 682, 158, slope=0.0, near=0.97)]),
-    'klasse-be': ('echt-klasse-be-b', [quad(343, 656, 106, slope=0.0, near=0.98, far_left=False)]),
+    'hero-tiguan': ('echt-hero-c', [quad(1700, 726, 166, slope=-0.13, near=0.93, far_left=False)]),
+    'klasse-b-tiguan': ('echt-klasse-b-b', [quad(452, 682, 158, slope=0.0, near=0.97)]),
+    'klasse-be-tiguan': ('echt-klasse-be-b', [quad(343, 656, 106, slope=0.0, near=0.98, far_left=False)]),
     'b197': ('b197-a', []),  # Innenraum, kein Auto von außen
     'bf17': ('bf17-a', []),
     'lkw': ('lkw-b', [quad(335, 758, 220, slope=0.07, near=0.9)]),
