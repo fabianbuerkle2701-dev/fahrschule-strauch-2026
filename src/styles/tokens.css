@@ -79,8 +79,21 @@
   --mint: #e7efed; /* HOKI #EAF2E6; gedämpftes Salbei-Petrol statt Eisblau */
   --mint2: #d8e5e1; /* HOKI #E1EDDB */
   --cream: #f3f6f4; /* HOKI #f4f1ea, Grund der Kreis-Karten */
-  --forest: #0b5258; /* HOKI #26401F: Knöpfe, Füllbalken, Text auf Mint */
+  --forest: #0b5258; /* HOKI #26401F: Petrol als Schriftfarbe (Titel, Chips, Links) */
   --forest-hover: #0d6269;
+  --brand-bg: #0b5258; /* Petrol als Fläche mit weißer Schrift (Knöpfe, Bänder) */
+  --brand-bg-hover: #0d6269;
+  --surface: #ffffff; /* Karten und Flächen */
+  --glass: rgb(255 255 255 / 0.9);
+  --glass-border: rgb(255 255 255 / 0.8);
+  --ft-ink: #000;
+  --ft-pill: rgb(255 255 255 / 0.55);
+  --body-text: #3e4547;
+  --hover: #f4f8f6;
+  --open-border: #b6d3cc;
+  --surface-raised: #ffffff; /* hervorgehobene Karte auf Mint */
+  --road: rgb(18 56 58 / 0.32);
+  --road-faint: rgb(18 56 58 / 0.14);
   --forest2: #12383a; /* HOKI #1A2C18: dunkle Flächen */
   --forest3: #0a2c2f; /* tiefster Ton der Verläufe */
   --forest-glow: #285f60; /* heller Ton der Verläufe (HOKI #3c5b35) */
@@ -115,4 +128,71 @@
 html:lang(ru) {
   --disp: 'Geist', system-ui, sans-serif;
   --mono: 'Geist Mono', ui-monospace, Menlo, monospace;
+}
+
+/* Dunkelmodus: per Umschalter (data-theme) oder nach Geräte-Einstellung */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0f1b1c;
+  --surface: #182a2b;
+  --mint: #172b2b; /* Mint wird zu tiefem Salbei-Petrol */
+  --mint2: #24393a;
+  --cream: #142627;
+  --forest: #b5dbd3;
+  --forest-hover: #c8e6df;
+  --brand-bg: #0d5d64;
+  --brand-bg-hover: #127079;
+  --forest2: #12393b;
+  --forest3: #0a2122;
+  --green: #8ec9bf;
+  --accent: #7cc4bd;
+  --ink: #e6eeec;
+  --muted: #a3b2af;
+  --line: #2a4140;
+  --footer: #122425;
+  --glass: rgb(24 42 43 / 0.9);
+  --glass-border: rgb(255 255 255 / 0.1);
+  --ft-ink: #e6eeec;
+  --ft-pill: rgb(255 255 255 / 0.08);
+  --body-text: #c3cfcd;
+  --hover: #1d3233;
+  --open-border: #3d5c5a;
+  --surface-raised: #24403f;
+  --road: rgb(230 238 236 / 0.34);
+  --road-faint: rgb(230 238 236 / 0.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #0f1b1c;
+    --surface: #182a2b;
+    --mint: #172b2b; /* Mint wird zu tiefem Salbei-Petrol */
+    --mint2: #24393a;
+    --cream: #142627;
+    --forest: #b5dbd3;
+    --forest-hover: #c8e6df;
+    --brand-bg: #0d5d64;
+    --brand-bg-hover: #127079;
+    --forest2: #12393b;
+    --forest3: #0a2122;
+    --green: #8ec9bf;
+    --accent: #7cc4bd;
+    --ink: #e6eeec;
+    --muted: #a3b2af;
+    --line: #2a4140;
+    --footer: #122425;
+    --glass: rgb(24 42 43 / 0.9);
+    --glass-border: rgb(255 255 255 / 0.1);
+    --ft-ink: #e6eeec;
+    --ft-pill: rgb(255 255 255 / 0.08);
+    --body-text: #c3cfcd;
+    --hover: #1d3233;
+    --open-border: #3d5c5a;
+    --surface-raised: #24403f;
+    --road: rgb(230 238 236 / 0.34);
+    --road-faint: rgb(230 238 236 / 0.14);
+  --surface-raised: #24403f;
+  --road: rgb(230 238 236 / 0.34);
+  --road-faint: rgb(230 238 236 / 0.14);
+  }
 }

@@ -399,3 +399,20 @@ Fotorealistische, ruhige Editorial-Bilder wie bei HOKI statt Illustrationen: war
 ## Kopfzeile (seit 03.10.2026)
 
 Dunkles Petrol (`--forest2`) statt Weiß, Logo als weiße Negativ-Version (`/images/logo-weiss.webp`, aus dem Original-Logo eingefärbt), Symbole weiß, Anmelde-Knopf und Sprachschalter-Daumen in Hell-Akzent (`--lime`) mit dunkler Schrift. Die schwebende Pille beim Scrollen ist ebenfalls dunkles Petrol, halbtransparent mit Unschärfe. Menü-Schublade bleibt weiß mit Original-Logo.
+
+## Hell- und Dunkelmodus (seit 07.10.2026)
+
+Umschalter (Mond/Sonne) in der Kopfzeile; ohne eigene Wahl gilt die Geräte-Einstellung (`prefers-color-scheme`), die Wahl wird in `localStorage` (`theme`) gemerkt und vor dem ersten Zeichnen gesetzt (kein Aufblitzen). Alle Farben laufen über Tokens in `tokens.css`; der Dunkelmodus überschreibt sie unter `:root[data-theme='dark']` bzw. per Media-Query.
+
+| Rolle | Hell | Dunkel |
+|---|---|---|
+| Seitengrund `--paper` | #ffffff | #0f1b1c |
+| Mint `--mint` | #e7efed | #172b2b (tiefes Salbei-Petrol) |
+| Karten `--surface` / hervorgehoben `--surface-raised` | #ffffff / #ffffff | #182a2b / #24403f |
+| Schrift `--ink` / leise `--muted` | #1c2224 / #565d60 | #e6eeec / #a3b2af |
+| Petrol als Schrift `--forest` | #0b5258 | #b5dbd3 |
+| Petrol als Fläche `--brand-bg` | #0b5258 | #0d5d64 |
+| Akzentwort `--accent` | #2f7f86 | #7cc4bd |
+| Footer `--footer` | #d7e2de | #122425 |
+
+Fotos und die dunkle Kopfzeile bleiben in beiden Modi gleich. Logos auf dunklem Grund (Footer, Menü-Schublade) wechseln im Dunkelmodus auf die weiße Version.

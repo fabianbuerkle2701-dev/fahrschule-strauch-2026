@@ -27,7 +27,7 @@
   font-size: 15px;
   line-height: 1.2;
   color: #fff;
-  background: var(--forest);
+  background: var(--brand-bg);
   border: none;
   padding: 14px 28px;
   border-radius: 999px;
@@ -37,7 +37,7 @@
   transition: all 0.15s var(--ease);
 }
 .cta:hover {
-  background: var(--forest-hover);
+  background: var(--brand-bg-hover);
   transform: translateY(-1px);
 }
 .cta:active {
@@ -55,7 +55,7 @@
   box-shadow: none;
 }
 .cta--outline:hover {
-  background: var(--forest);
+  background: var(--brand-bg);
   color: #fff;
 }
 .cta--lime {
@@ -347,10 +347,10 @@
   gap: 8px;
   padding: 6px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.9);
+  background: var(--glass);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  border: 1px solid rgb(255 255 255 / 0.8);
+  border: 1px solid var(--glass-border);
   box-shadow: 0 10px 30px rgb(10 44 47 / 0.18);
   translate: 0 calc(100% + 24px);
   transition: translate 0.4s var(--ease-out);
@@ -449,7 +449,7 @@ html:lang(ru) .lang__thumb {
   gap: 28px;
   padding: 18px 26px 30px;
   overflow-y: auto;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 30px 70px rgb(0 0 0 / 0.25);
   translate: -100% 0;
   transition: translate 0.42s var(--ease-out);
@@ -1106,7 +1106,7 @@ html:lang(ru) .lang__thumb {
   right: 0;
   top: 100%;
   height: 26px;
-  background: linear-gradient(var(--mint), rgb(231 239 237 / 0));
+  background: linear-gradient(var(--mint), transparent);
   pointer-events: none;
 }
 .jr__road {
@@ -1132,11 +1132,11 @@ html:lang(ru) .lang__thumb {
   stroke: none;
 }
 .road-asphalt {
-  stroke: rgb(18 56 58 / 0.14);
+  stroke: var(--road-faint);
   stroke-width: 2;
 }
 .road-center {
-  stroke: rgb(18 56 58 / 0.32);
+  stroke: var(--road);
   stroke-width: 2;
   stroke-dasharray: 2 10;
   stroke-linecap: round;
@@ -1152,13 +1152,13 @@ html:lang(ru) .lang__thumb {
   stroke-width: 4;
 }
 .station circle {
-  fill: #fff;
+  fill: var(--surface-raised);
   stroke: var(--mint2);
   stroke-width: 2;
   transition: fill 0.3s var(--ease), stroke 0.3s var(--ease);
 }
 .station.is-passed circle {
-  fill: var(--forest);
+  fill: var(--brand-bg);
   stroke: #fff;
 }
 .station text {
@@ -1239,7 +1239,7 @@ html:lang(ru) .lang__thumb {
   color: var(--muted);
 }
 .jr__step.is-active .jr__card {
-  background: #fff;
+  background: var(--surface-raised);
   border-color: var(--mint2);
   box-shadow: 0 16px 38px rgb(10 44 47 / 0.1);
 }
@@ -1340,7 +1340,7 @@ html:lang(ru) .lang__thumb {
   padding: 14% 10%;
 }
 .ig__item--ill {
-  background: radial-gradient(120% 90% at 50% 20%, #fff 0%, var(--mint) 70%);
+  background: radial-gradient(120% 90% at 50% 20%, var(--surface) 0%, var(--mint) 70%);
 }
 .ig__item.is-active {
   cursor: default;
@@ -1421,7 +1421,7 @@ html:lang(ru) .lang__thumb {
    ========================================================================== */
 .ft {
   background: var(--footer);
-  color: #000;
+  color: var(--ft-ink);
   padding: 72px 0 34px;
   font-size: 15px;
 }
@@ -1450,7 +1450,7 @@ html:lang(ru) .lang__thumb {
 .ft__links a {
   font-size: 16px;
   font-weight: 400;
-  color: #000;
+  color: var(--ft-ink);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -1485,10 +1485,10 @@ html:lang(ru) .lang__thumb {
   height: 36px;
   margin: -6px;
   border-radius: 50%;
-  color: #1a1a1a;
+  color: var(--ft-ink);
 }
 .ft__social a:hover {
-  background: rgb(255 255 255 / 0.5);
+  background: var(--ft-pill);
 }
 .ft__social .icon {
   width: 24px;
@@ -1504,14 +1504,14 @@ html:lang(ru) .lang__thumb {
 .ft__langsel a {
   padding: 6px 12px;
   border-radius: 999px;
-  color: #000;
+  color: var(--ft-ink);
   text-decoration: none;
 }
 .ft__langsel a[aria-current='true'] {
-  background: rgb(255 255 255 / 0.6);
+  background: var(--ft-pill);
 }
 .ft__langsel a:not([aria-current='true']):hover {
-  background: rgb(255 255 255 / 0.35);
+  background: var(--ft-pill);
 }
 .ft__bottom {
   display: flex;
@@ -1536,7 +1536,7 @@ html:lang(ru) .lang__thumb {
 }
 .ft__legal a {
   font-weight: 400;
-  color: #000;
+  color: var(--ft-ink);
   text-decoration: none;
 }
 .ft__legal a:hover {
@@ -1639,7 +1639,7 @@ html:lang(ru) .lang__thumb {
   width: fit-content;
   margin: 22px 0 0;
   align-items: stretch;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -1679,7 +1679,7 @@ html:lang(ru) .lang__thumb {
   margin-top: 24px;
   border-radius: 28px;
   overflow: hidden;
-  background: radial-gradient(120% 90% at 50% 20%, #fff 0%, var(--mint) 72%);
+  background: radial-gradient(120% 90% at 50% 20%, var(--surface) 0%, var(--mint) 72%);
 }
 .pr__media > picture img {
   width: 100%;
@@ -1708,7 +1708,7 @@ html:lang(ru) .lang__thumb {
   color: #fff;
   padding: 9px 15px 9px 13px;
   border-radius: 999px;
-  background: linear-gradient(120deg, var(--forest-glow), var(--forest), #1a8c95, var(--forest2), var(--forest));
+  background: linear-gradient(120deg, var(--forest-glow), var(--brand-bg), #1a8c95, var(--forest2), var(--brand-bg));
   background-size: 320% 320%;
   animation: chip-flow 5s var(--ease) infinite;
   box-shadow: 0 6px 18px rgb(4 20 22 / 0.35);
@@ -1800,7 +1800,7 @@ html:lang(ru) .lang__thumb {
 }
 .tile--wald {
   color: #fff;
-  background: radial-gradient(120% 120% at 82% 0%, var(--forest-glow) 0%, var(--forest) 46%, var(--forest2) 100%);
+  background: radial-gradient(120% 120% at 82% 0%, var(--forest-glow) 0%, var(--brand-bg) 46%, var(--forest2) 100%);
 }
 .tile--photo {
   color: #fff;
@@ -1890,7 +1890,7 @@ html:lang(ru) .lang__thumb {
   color: var(--ink);
 }
 .check--dark li::before {
-  background-color: var(--forest);
+  background-color: var(--brand-bg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.4'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E");
 }
 .check small {
@@ -2013,7 +2013,7 @@ html:lang(ru) .lang__thumb {
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 42%, #fff 0%, var(--cream) 78%);
+  background: radial-gradient(circle at 50% 42%, var(--surface) 0%, var(--cream) 78%);
   border: 1px solid var(--mint2);
   box-shadow: 0 14px 32px rgb(10 44 47 / 0.08);
   transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
@@ -2176,7 +2176,7 @@ html:lang(ru) .lang__thumb {
 }
 .big--dark {
   color: #fff;
-  background: radial-gradient(130% 130% at 85% 0%, var(--forest-glow) 0%, var(--forest) 48%, var(--forest2) 100%);
+  background: radial-gradient(130% 130% at 85% 0%, var(--forest-glow) 0%, var(--brand-bg) 48%, var(--forest2) 100%);
   box-shadow: 0 20px 46px rgb(10 44 47 / 0.2);
 }
 .big--dark .ic {
@@ -2191,7 +2191,7 @@ html:lang(ru) .lang__thumb {
   border: 1px solid var(--mint2);
 }
 .big--mint .ic {
-  background: #fff;
+  background: var(--surface);
   color: var(--forest);
   border: 1px solid var(--mint2);
 }
@@ -2274,7 +2274,7 @@ html:lang(ru) .lang__thumb {
   position: relative;
   overflow: hidden;
   color: #fff;
-  background: linear-gradient(120deg, var(--forest3), var(--forest), var(--forest-glow), #157e86, var(--forest), var(--forest3));
+  background: linear-gradient(120deg, var(--forest3), var(--brand-bg), var(--forest-glow), #157e86, var(--brand-bg), var(--forest3));
   background-size: 320% 320%;
   animation: ki-flow 16s ease infinite;
 }
@@ -2339,6 +2339,7 @@ html:lang(ru) .lang__thumb {
   color: rgb(255 255 255 / 0.88);
 }
 .ki__pill {
+  color: #1c2224 !important;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2367,12 +2368,12 @@ html:lang(ru) .lang__thumb {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--forest);
+  background: var(--brand-bg);
   color: #fff;
   transition: background 0.15s var(--ease);
 }
 .ki__pill:hover .send {
-  background: var(--forest-hover);
+  background: var(--brand-bg-hover);
 }
 .ki__pill .send .icon {
   width: 17px;
@@ -2454,7 +2455,7 @@ html:lang(ru) .lang__thumb {
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--mint2);
   box-shadow: 0 6px 16px rgb(10 44 47 / 0.06);
   color: var(--forest);
@@ -2640,7 +2641,7 @@ html:lang(ru) .lang__thumb {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--forest);
-  background: rgb(255 255 255 / 0.9);
+  background: var(--glass);
   padding: 5px 10px;
   border-radius: 999px;
 }
@@ -2705,7 +2706,7 @@ html:lang(ru) .qa__tx q {
   overflow: hidden;
   padding: 58px 0 62px;
   color: #fff;
-  background: radial-gradient(120% 100% at 50% 0%, var(--forest-glow) 0%, var(--forest) 48%, var(--forest3) 100%);
+  background: radial-gradient(120% 100% at 50% 0%, var(--forest-glow) 0%, var(--brand-bg) 48%, var(--forest3) 100%);
   scroll-margin-top: 70px;
 }
 .pz__in {
@@ -2867,7 +2868,7 @@ html:lang(ru) .qa__tx q {
   font-weight: 600;
   font-size: 12.5px;
   color: var(--forest);
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--line);
   padding: 7px 13px;
   border-radius: 999px;
@@ -2875,11 +2876,11 @@ html:lang(ru) .qa__tx q {
   transition: all 0.18s var(--ease);
 }
 .faq__chip:hover {
-  border-color: #bcd2cc;
+  border-color: var(--open-border);
 }
 .faq__chip[aria-pressed='true'] {
-  background: var(--forest);
-  border-color: var(--forest);
+  background: var(--brand-bg);
+  border-color: var(--brand-bg);
   color: #fff;
 }
 .faq__list {
@@ -2892,11 +2893,11 @@ html:lang(ru) .qa__tx q {
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 .faq__item[open] {
-  border-color: #b6d3cc;
+  border-color: var(--open-border);
   box-shadow: 0 14px 34px rgb(10 44 47 / 0.08);
 }
 .faq__item[hidden] {
@@ -2918,7 +2919,7 @@ html:lang(ru) .qa__tx q {
   display: none;
 }
 .faq__q:hover {
-  background: #f4f8f6;
+  background: var(--hover);
 }
 .faq__qtx {
   flex: 1;
@@ -2939,7 +2940,7 @@ html:lang(ru) .qa__tx q {
   height: 15px;
 }
 .faq__item[open] .faq__icon {
-  background: var(--forest);
+  background: var(--brand-bg);
   color: #fff;
   rotate: 45deg;
 }
@@ -2947,7 +2948,7 @@ html:lang(ru) .qa__tx q {
   padding: 0 20px 20px;
   font-size: 15px;
   line-height: 1.6;
-  color: #3e4547;
+  color: var(--body-text);
 }
 .faq__a p + p {
   margin-top: 10px;
@@ -3051,7 +3052,7 @@ html:lang(ru) .qa__tx q {
 .legal p,
 .legal ul {
   max-width: 68ch;
-  color: #3e4547;
+  color: var(--body-text);
   line-height: 1.6;
 }
 .legal p + p {
@@ -3277,4 +3278,36 @@ html:lang(ru) .qa__tx q {
 }
 .legal--body {
   padding-top: 0;
+}
+
+/* Dunkelmodus: Logos auf dunklem Grund in Weiß */
+html[data-theme='dark'] .ft__logo,
+html[data-theme='dark'] .drawer__top img {
+  content: url(/images/logo-weiss.webp);
+  mix-blend-mode: normal;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) .ft__logo,
+  html:not([data-theme='light']) .drawer__top img {
+    content: url(/images/logo-weiss.webp);
+    mix-blend-mode: normal;
+  }
+}
+/* Umschalter Hell/Dunkel */
+.hd__theme .i-sun {
+  display: none;
+}
+html[data-theme='dark'] .hd__theme .i-sun {
+  display: block;
+}
+html[data-theme='dark'] .hd__theme .i-moon {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) .hd__theme .i-sun {
+    display: block;
+  }
+  html:not([data-theme='light']) .hd__theme .i-moon {
+    display: none;
+  }
 }

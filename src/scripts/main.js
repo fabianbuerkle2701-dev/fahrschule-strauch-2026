@@ -508,7 +508,30 @@ function initMobileBar() {
   new IntersectionObserver(([e]) => bar.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(sentinel);
 }
 
+/* --- Hell/Dunkel: Umschalter merkt sich die Wahl, sonst gilt die Geräte-Einstellung --- */
+function initTheme() {
+  const btn = document.querySelector('[data-theme-toggle]');
+  if (!btn) return;
+  const root = document.documentElement;
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const current = () => root.dataset.theme || (media.matches ? 'dark' : 'light');
+  const sync = () => btn.setAttribute('aria-pressed', String(current() === 'dark'));
+  btn.addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {
+      /* privater Modus: Wahl gilt nur für diesen Besuch */
+    }
+    sync();
+  });
+  media.addEventListener('change', sync);
+  sync();
+}
+
 initHeader();
+initTheme();
 initMobileBar();
 initMenu();
 initReveal();

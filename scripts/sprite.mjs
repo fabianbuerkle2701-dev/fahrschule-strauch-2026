@@ -18,7 +18,7 @@ const icons = [
   ['certificate', 'certificate', 'regular'], ['truck', 'truck', 'regular'], ['shield-check', 'shield-check', 'regular'],
   ['lightning', 'lightning', 'regular'], ['moon-stars', 'moon-stars', 'regular'], ['snowflake', 'snowflake', 'regular'],
   ['package', 'package', 'regular'], ['warning-circle', 'warning-circle', 'regular'], ['heartbeat', 'heartbeat', 'regular'],
-  ['leaf', 'leaf', 'regular'], ['camera', 'camera', 'regular'], ['images', 'images', 'regular'], ['chat-circle', 'chat-circle', 'regular'], ['whatsapp-logo', 'whatsapp-logo', 'regular'],
+  ['leaf', 'leaf', 'regular'], ['camera', 'camera', 'regular'], ['images', 'images', 'regular'], ['chat-circle', 'chat-circle', 'regular'], ['whatsapp-logo', 'whatsapp-logo', 'regular'], ['moon', 'moon', 'regular'], ['sun', 'sun', 'regular'],
 ];
 
 let out = '<svg xmlns="http://www.w3.org/2000/svg">\n<!-- Phosphor Icons (MIT), gebaut mit scripts/sprite.mjs -->\n';
