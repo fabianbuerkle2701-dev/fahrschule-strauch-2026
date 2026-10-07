@@ -6,9 +6,9 @@ Salbei-/Beigetöne, leichte Körnung, keine Gesichter, keine Schrift, keine Logo
 
 | Datei (Auswahl) | Motiv | Format | eingesetzt |
 |---|---|---|---|
-| `strauch-ki-hero-a.png` | Fahrschulauto in ruhiger Straße, Abendlicht | 2048 × 1152 | Startseite Hero, Karussell, Kontakt-Kreis Auffrischung |
-| `strauch-ki-klasse-b-b.png` | Fahrschulauto auf Schwarzwald-Landstraße | 1024 × 1280 | Kachel Klasse B, Kreis, Karussell, Kontakt-Band, 404 |
-| `strauch-ki-klasse-be-a.png` | Fahrschulauto mit Kastenanhänger | 1024 × 1280 | Kachel Klasse BE, Kreis |
+| `strauch-ki-echt-hero-c.png` | **echter VW Tiguan der Fahrschule** in ruhiger Straße, Abendlicht | 2048 × 1152 | Startseite Hero, Karussell, Kreis Auffrischung |
+| `strauch-ki-echt-klasse-b-b.png` | **echter VW Tiguan** auf Schwarzwald-Landstraße | 1024 × 1280 | Kachel Klasse B, Kreis, Karussell, Kontakt-Band, 404 |
+| `strauch-ki-echt-klasse-be-b.png` | **echter VW Tiguan** mit Kastenanhänger | 1024 × 1280 | Kachel Klasse BE, Kreis |
 | `strauch-ki-b197-a.png` | Automatik-Wählhebel, Schaltknüppel dahinter | 1024 × 1280 | Kachel B197, Kreis, B197-Band |
 | `strauch-ki-bf17-a.png` | Fahrerin am Steuer, Begleitperson von hinten | 1024 × 1280 | Kachel BF17, Kreis, Karte „Mit 16 anfangen“ |
 | `strauch-ki-lkw-b.png` | Lkw auf der Autobahn bei Abendlicht | 1024 × 1280 | Kachel BKF, Kopf der BKF-Seite, Karussell |
@@ -22,3 +22,7 @@ Danach `npm run images`.
 
 **Kennzeichnung:** Im Footer steht, dass Fahrzeug- und Raumbilder KI-erzeugte Symbolbilder sind;
 die Alt-Texte enden mit „(KI-Symbolbild)“. Die Teamfotos sind echt.
+
+## Echte Fahrzeuge (seit 07.10.2026)
+
+Für Hero, Klasse B und Klasse BE wurde der **echte VW Tiguan der Fahrschule** als Referenzbild mitgegeben (`referenz/tiguan.jpg`, aus `photos/viktor-strauch.jpg` ausgeschnitten: Person entfernt, Kennzeichen geleert). Der Generator gibt Modell, Form, Felgen und Dachschild wieder; Türen bleiben ohne Beschriftung, das echte Logo setzt `scripts/fotos.py` auf. Eine zweite Referenz liegt bereit: `referenz/audi-a3.jpg` (Front des Audi A3). Hochladen in Abacus: Datei-Feld per Skript anlegen, Datei einsetzen und per Drag-and-drop-Ereignis an das Eingabefeld übergeben.
