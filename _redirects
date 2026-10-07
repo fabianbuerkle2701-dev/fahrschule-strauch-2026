@@ -1,0 +1,18 @@
+# Alte Adressen der bisherigen Website (Netlify-Format)
+/index.html                      /                       301
+/ueber_uns.html                  /ueber-uns/             301
+/information.html                /fuehrerschein/         301
+/begleitetes-fahren-ab-17.html   /fuehrerschein/#bf17    301
+/berufskraftfahrer.html          /berufskraftfahrer/     301
+/maxi.html                       /anmeldung/             301
+/kursangebot.html                /anmeldung/             301
+/impressum.html                  /impressum/             301
+/index-ru.html                   /ru/                    301
+/information-ru.html             /ru/                    301
+/kursangebot-ru.html             /ru/                    301
+/kontakt-ru.html                 /ru/                    301
+/impressum-ru.html               /impressum/             301
+/images/pdf/Anmeldung.pdf        /files/anmeldeformular.pdf  301
+/images/pdf/Formular-B.pdf       /files/info-preise-klasse-b.pdf  301
+/images/pdf/Formular-BE.pdf      /files/info-preise-klasse-be.pdf  301
+/images/pdf/Fuehrerscheinantrag.pdf  /files/fuehrerscheinantrag.pdf  301

@@ -1,0 +1,28 @@
+# Alte Adressen der bisherigen Website (Apache)
+ErrorDocument 404 /404.html
+RedirectMatch 301 ^/index\.html$ /
+Redirect 301 /ueber_uns.html /ueber-uns/
+Redirect 301 /information.html /fuehrerschein/
+Redirect 301 /begleitetes-fahren-ab-17.html /fuehrerschein/
+Redirect 301 /berufskraftfahrer.html /berufskraftfahrer/
+Redirect 301 /maxi.html /anmeldung/
+Redirect 301 /kursangebot.html /anmeldung/
+Redirect 301 /impressum.html /impressum/
+Redirect 301 /index-ru.html /ru/
+Redirect 301 /information-ru.html /ru/
+Redirect 301 /kursangebot-ru.html /ru/
+Redirect 301 /kontakt-ru.html /ru/
+Redirect 301 /impressum-ru.html /impressum/
+Redirect 301 /images/pdf/Anmeldung.pdf /files/anmeldeformular.pdf
+Redirect 301 /images/pdf/Formular-B.pdf /files/info-preise-klasse-b.pdf
+Redirect 301 /images/pdf/Formular-BE.pdf /files/info-preise-klasse-be.pdf
+Redirect 301 /images/pdf/Fuehrerscheinantrag.pdf /files/fuehrerscheinantrag.pdf
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
