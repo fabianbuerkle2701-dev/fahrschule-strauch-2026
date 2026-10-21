@@ -1,0 +1,11 @@
+{
+  "_anleitung": [
+    "Kurzer Hinweis-Balken oben auf allen Seiten, z. B. für Urlaub oder geänderte Zeiten. Pflege über /verwaltung/.",
+    "\"aktiv\": true zeigt den Balken. \"bis\": letzter Tag der Anzeige als JJJJ-MM-TT, danach verschwindet er von selbst; null = ohne Ende.",
+    "\"text_ru\": russische Fassung. Fehlt sie, steht auf der russischen Seite der deutsche Text."
+  ],
+  "aktiv": false,
+  "text": "",
+  "text_ru": "",
+  "bis": null
+}

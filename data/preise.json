@@ -1,0 +1,43 @@
+{
+  "_anleitung": [
+    "Preise für den Kostenrechner auf /fuehrerschein/#kosten. Quelle: Preisaushang Klasse B und BE (public/files/info-preise-klasse-b.pdf und -be.pdf).",
+    "Beträge in Euro mit Punkt als Dezimalzeichen, z. B. 73.00. Ändert sich der Aushang, hier und im PDF gleich ändern.",
+    "\"stand\": Datum des Preisaushangs als JJJJ-MM-TT. Solange null, zeigt der Rechner sichtbar 'Stand wird ergänzt'.",
+    "\"standardStunden\": Vorschlag für die Zahl der Übungsstunden, mit dem der Rechner startet. Jede Person braucht unterschiedlich viele."
+  ],
+  "stand": null,
+  "klassen": {
+    "B": {
+      "grundbetrag": 420.0,
+      "grundstunde": 73.0,
+      "sonderstunde": 83.0,
+      "sonderfahrten": { "ueberland": 5, "autobahn": 4, "nacht": 3 },
+      "vorstellungTheorie": 60.0,
+      "vorstellungPraxis": 230.0,
+      "testfahrtB197": 33.0,
+      "simulatorstunde": 35.0,
+      "tuevTheorie": 24.99,
+      "tuevPraxis": 129.83,
+      "standardStunden": 15,
+      "maxStunden": 60
+    },
+    "BE": {
+      "grundbetrag": 230.0,
+      "grundstunde": 75.0,
+      "sonderstunde": 85.0,
+      "sonderfahrten": { "ueberland": 3, "autobahn": 1, "nacht": 1 },
+      "vorstellungTheorie": 0,
+      "vorstellungPraxis": 240.0,
+      "tuevTheorie": 0,
+      "tuevPraxis": 129.83,
+      "standardStunden": 3,
+      "maxStunden": 20
+    }
+  },
+  "gebuehren": {
+    "sehtest": 6.43,
+    "verwaltung": 5.1,
+    "behoerdeMitProbezeit": 38.3,
+    "behoerdeOhneProbezeit": 37.5
+  }
+}

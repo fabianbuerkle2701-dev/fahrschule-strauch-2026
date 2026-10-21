@@ -1,0 +1,151 @@
+{
+  "_anleitung": [
+    "Hier pflegt die Fahrschule die Termine (Theorie gibt es nur im Schnellkurs, keinen wöchentlichen Unterricht). Die Seiten /termine/, die Startseite und /ru/ lesen diese Datei beim Aufruf.",
+    "Datum immer als JJJJ-MM-TT, z. B. 2026-11-16. Vergangene Termine blendet die Seite automatisch aus.",
+    "Steht ein Datum noch nicht fest: \"start\": null. Dann erscheint sichtbar markiert 'Datum folgt'.",
+    "Der erste kommende Termin mit \"art\": \"schnellkurs\" wird als 'Nächster Schnellkurs startet am' angezeigt.",
+    "Felder mit _ru sind die russische Fassung. Fehlen sie, steht auf der russischen Seite der deutsche Text.",
+    "\"aktion\": Kooperation zu diesem Termin, z. B. ein Gutschein eines Partners bei Anmeldung (Kurztext). \"aktion_ru\": russische Fassung.",
+    "\"beispiel\": true markiert Beispiel-Einträge für die Vorschau. Sie erscheinen sichtbar als Beispiel und werden durch echte Termine ersetzt. \"aktion_beispiel\": true markiert nur die Aktion als Beispiel (Termin ist echt).",
+    "\"themen\": die 14 Theorie-Themen Klasse B. Im Schnellkurs kommen pro Kurstag zwei Themen dran (Tag 1: Thema 1 + 2, Tag 2: Thema 3 + 4 …), Sonntage zählen nicht mit. Die Seite rechnet das selbst aus."
+  ],
+  "themen": [
+    {
+      "nr": 1,
+      "titel": "Persönliche Voraussetzungen",
+      "titel_ru": "Личные предпосылки"
+    },
+    {
+      "nr": 2,
+      "titel": "Risikofaktor Mensch",
+      "titel_ru": "Фактор риска «человек»"
+    },
+    {
+      "nr": 3,
+      "titel": "Rechtliche Rahmenbedingungen",
+      "titel_ru": "Правовые основы"
+    },
+    {
+      "nr": 4,
+      "titel": "Straßenverkehrssystem und seine Nutzung",
+      "titel_ru": "Система дорожного движения и её использование"
+    },
+    {
+      "nr": 5,
+      "titel": "Vorfahrt und Verkehrsregelungen",
+      "titel_ru": "Преимущество проезда и регулирование движения"
+    },
+    {
+      "nr": 6,
+      "titel": "Verkehrszeichen und Verkehrseinrichtungen sowie Bahnübergänge",
+      "titel_ru": "Дорожные знаки, дорожные устройства и железнодорожные переезды"
+    },
+    {
+      "nr": 7,
+      "titel": "Andere Teilnehmer im Straßenverkehr",
+      "titel_ru": "Другие участники дорожного движения"
+    },
+    {
+      "nr": 8,
+      "titel": "Geschwindigkeit, Abstand und umweltschonende Fahrweise",
+      "titel_ru": "Скорость, дистанция и экологичный стиль вождения"
+    },
+    {
+      "nr": 9,
+      "titel": "Verkehrsverhalten bei Fahrmanövern, Verkehrsbeobachtung",
+      "titel_ru": "Поведение при манёврах, наблюдение за движением"
+    },
+    {
+      "nr": 10,
+      "titel": "Ruhender Verkehr",
+      "titel_ru": "Остановка и стоянка"
+    },
+    {
+      "nr": 11,
+      "titel": "Verhalten in besonderen Situationen, Folgen von Verstößen gegen Verkehrsvorschriften",
+      "titel_ru": "Поведение в особых ситуациях, последствия нарушений ПДД"
+    },
+    {
+      "nr": 12,
+      "titel": "Lebenslanges Lernen",
+      "titel_ru": "Обучение на протяжении всей жизни"
+    },
+    {
+      "nr": 13,
+      "titel": "Technische Bedingungen, Personen- und Güterbeförderung, umweltbewusster Umgang mit Kraftfahrzeugen",
+      "titel_ru": "Технические условия, перевозка людей и грузов, экологичное обращение с автомобилем"
+    },
+    {
+      "nr": 14,
+      "titel": "Fahren mit Solokraftfahrzeugen und Zügen",
+      "titel_ru": "Вождение одиночных транспортных средств и автопоездов"
+    }
+  ],
+  "termine": [
+    {
+      "art": "schnellkurs",
+      "kategorie": "Schnellkurs",
+      "kategorie_ru": "Интенсивный курс",
+      "titel": "Theorieschnellkurs Klasse B",
+      "titel_ru": "Интенсивный курс теории, категория B",
+      "start": "2026-08-24",
+      "ende": "2026-08-31",
+      "zeiten": [
+        "Mo.–Fr. 17:15–20:30 Uhr",
+        "Sa. 09:00–12:15 Uhr"
+      ],
+      "zeiten_ru": [
+        "Пн–Пт 17:15–20:30",
+        "Сб 09:00–12:15"
+      ]
+    },
+    {
+      "art": "schnellkurs",
+      "kategorie": "Schnellkurs",
+      "kategorie_ru": "Интенсивный курс",
+      "titel": "Theorieschnellkurs Klasse B",
+      "titel_ru": "Интенсивный курс теории, категория B",
+      "zeiten": [
+        "Mo.–Fr. 17:15–20:30 Uhr",
+        "Sa. 09:00–12:15 Uhr",
+        "Abschluss am Montag darauf"
+      ],
+      "zeiten_ru": [
+        "Пн–Пт 17:15–20:30",
+        "Сб 09:00–12:15",
+        "Завершение в следующий понедельник"
+      ],
+      "start": "2026-11-02",
+      "ende": "2026-11-09"
+    },
+    {
+      "art": "schnellkurs",
+      "kategorie": "Schnellkurs",
+      "kategorie_ru": "Интенсивный курс",
+      "titel": "Theorieschnellkurs Klasse B",
+      "titel_ru": "Интенсивный курс теории, категория B",
+      "zeiten": [
+        "Mo.–Fr. 17:15–20:30 Uhr",
+        "Sa. 09:00–12:15 Uhr",
+        "Abschluss am Montag darauf"
+      ],
+      "zeiten_ru": [
+        "Пн–Пт 17:15–20:30",
+        "Сб 09:00–12:15",
+        "Завершение в следующий понедельник"
+      ],
+      "start": "2026-12-07",
+      "ende": "2026-12-14"
+    },
+    {
+      "art": "bkf",
+      "kategorie": "Berufskraftfahrer",
+      "kategorie_ru": "Профводители",
+      "titel": "BKF-Weiterbildung, Module 1 bis 5 (Schlüsselzahl 95)",
+      "titel_ru": "Повышение квалификации BKF, модули 1–5 (код 95)",
+      "start": null,
+      "ende": null,
+      "zeiten": []
+    }
+  ]
+}
